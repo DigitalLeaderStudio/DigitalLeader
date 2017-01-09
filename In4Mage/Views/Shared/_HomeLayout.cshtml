@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="branding-container">
+                @*<div class="logo"></div>*@
+                <div class="site-name">@Html.ActionLink("Digital Leader", "Index", "Home", new { area = "" }, new { @class = "" })</div>
+                <div class="motto">your best IT services provider</div>
+            </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-links">
+                <li>@Html.ActionLink("Company", "Company", "Home")</li>
+                <li>@Html.ActionLink("Serives", "Serives", "Home")</li>
+                <li>@Html.ActionLink("Clients", "Clients", "Home")</li>
+                <li>@Html.ActionLink("Blog", "Contact", "Home")</li>
+                <li>@Html.ActionLink("News", "News", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

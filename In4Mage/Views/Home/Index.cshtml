@@ -1,31 +1,86 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Digital Leader  - your best IT services provider";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container-fluid fullscreen-bg">
+    <video loop muted autoplay poster="~/Content/images/videoframe.jpg" class="fullscreen-bg__video">
+        @*<source src="video/big_buck_bunny.webm" type="video/webm">*@
+        <source src="~/Content/video/video-bg.mp4" type="video/mp4">
+        @*<source src="vikdeo/big_buck_bunny.ogv" type="video/ogg">*@
+    </video>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div class="container-fluid home">
+    <div class="row">
+        <div class="col-md-6 headlines">
+            <div class="row">
+                <div class="col-md-12 promo-text">
+                    <h1>Digital solutions for your precious business</h1>
+                    <p>Everything you need to make your business successful during information technology era</p>
+                </div>
+            </div>
+        </div>
+        <!-- services -->
+        <div class="col-md-6 services">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 item">
+                    <div>
+                        <div class="icon">
+                            <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+                        </div>
+                        <div class="title">
+                            <a href="#">Software Consulting <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 item">
+                    <div>
+                        <div class="icon">
+                            <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+                        </div>
+                        <div class="title">
+                            <a href="#">Software Development <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 item">
+                    <div>
+                        <div class="icon">
+                            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                        </div>
+                        <div class="title">
+                            <a href="#">IT Outsourcing <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 item">
+                    <div>
+                        <div class="icon">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                        </div>
+                        <div class="title">
+                            <a href="#">Online Marketing <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contacts -->
+        <div class="col-md-12 contacts">
+            <p>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                <a href="mailto:office@digitalleader.solutions">office@digitalleader.solutions</a>
+            </p>
+            <p>
+                <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+                <a href="call:+380961212713">+380961212713</a>
+            </p>
+            <p class="social-links">
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </p>
+        </div>
     </div>
 </div>
