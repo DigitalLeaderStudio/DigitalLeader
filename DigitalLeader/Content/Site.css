@@ -2,12 +2,13 @@
 body {
     font-size: 16px;
     color: #333;
+    font-family: 'Exo 2', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    /padding-left: 15px;
+    /padding-right: 15px;
     margin-top: 80px;
 }
 
@@ -27,6 +28,12 @@ textarea {
 
 * {
     box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.row {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .navbar {
@@ -124,6 +131,15 @@ textarea {
     background: none !important;
     transition: color 0.4s;
 }
+
+
+a, a:active, a:visited, .home-pages a, .home-pages a:active, .home-pages a:visited {
+    color:#0094ff;
+}
+a:hover, .home-pages a:hover {
+    color:#333;
+}
+
 
 /*HOME*/
 .fullscreen-bg {
@@ -263,32 +279,232 @@ textarea {
 
 
 
+.page-header {
+    height: 300px;
+    background: #0094ff !important;
+    margin: 0 0 20px 0 !important;
+    padding: 60px 0 0 0;
+}
+.page-header .row {
+    padding: 0;
+}
+.page-header h1 {
+    text-align: center;
+    font-size: 4em;
+    color: #ffffff;
+}
+.page-header h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+
+.main-pages h3 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.main-pages h3.center {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.main-pages h3 i {
+    color: #0094ff;
+    padding-right: 10px;
+}
+
+
+.basic-info {
+    margin-bottom: 30px;
+}
+
+.basic-info .row > div {
+    padding: 10px 30px;
+}
+
+.countries {
+    margin-bottom: 30px;
+}
+.countries img {
+    width: 100%;
+}
+
+.tech-focus {
+    margin-bottom: 30px;
+}
+.tech-focus .row > div {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.tech-focus .icon {
+    font-size: 5em;
+}
+
+.ready-to-contact {
+    margin-bottom: 100px;
+}
+.ready-to-contact img {
+    width: 100%;
+}
+.ready-to-contact .fields-box {
+    margin-bottom: 30px;
+}
+
+
 
 footer {
-    color: #fff;
-    text-align: right;
-    overflow: auto;
-    padding-right: 20px;
+    /background: rgba(202, 202, 202, 0.2)
 }
-footer a, footer a:active, footer a:visited {
-    color: #fff;
-}
-footer a:hover {
-    opacity: 0.8;
-    color: #fff;
-}
-ul.footer-nav {
+footer ul.copyright-and-additional-links {
+    padding: 10px 0;
     list-style: none;
+    text-align: center;
+    font-size: 0.8em;
+    margin:0;
+}
+footer ul.copyright-and-additional-links li {
     padding: 0;
-    display: inline-block;
-    float: right;
-}
-ul.footer-nav li {
+    padding-right: 20px;
     list-style: none;
+    color: #333;
     display: inline-block;
-    padding-left: 20px;
+}
+footer .row > div {
+    padding: 0;
+} 
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 148, 255, 0), rgba(0, 148, 255, 0.75), rgba(0, 148, 255, 0));
+    color: #0094ff;
+    margin-bottom: 90px;
 }
 
+footer hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(153, 153, 153, 0), rgba(153, 153, 153, 0.3), rgba(153, 153, 153, 0));
+    color: #0094ff;
+    margin-bottom: 0px;
+}
+
+
+.contacts {
+    margin-bottom: 100px;
+}
+.contacts .row .row div {
+    padding: 0;
+}
+.contacts .follow-us p i {
+    margin-right: 10px;
+    font-size: 1.1em;
+    color: #666;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #0094ff;
+    padding: 8px 0 0 0;
+    text-align: center;
+    line-height: 10px;
+}
+.contacts .follow-us p i:hover {
+    margin-right: 10px;
+    font-size: 1.1em;
+    color: #0094ff;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #333;
+    padding: 8px 0 0 0;
+    text-align: center;
+    line-height: 10px;
+}
+
+form .fields-box {
+    padding: 0;
+}
+form input[type="text"] {
+    width: 100% !important;
+    max-width: unset;
+    margin: 0 0 10px 0;
+    outline: none;
+    border-radius: 0;
+    padding: 20px 10px;
+}
+form input[type="text"]:focus {
+    border: 1px solid #0094ff;
+    box-shadow: none;
+}
+form textarea {
+    width: 100% !important;
+    max-width: unset;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 0 !important;
+    padding: 20px 10px;
+}
+form textarea:focus {
+    border: 1px solid #0094ff;
+    box-shadow: none !important;
+}
+form input[type="submit"] {
+    width: 30% !important;
+    max-width: unset;
+    margin: 0 auto 10px auto;
+    outline: none;
+    display: block;
+    border-radius: 0;
+    border: 2px solid #0094ff;
+    font-weight: bold;
+    font-size: 1.1em;
+    background: #fff;
+    color: #333;
+    padding: 7px 0;
+}
+form input[type="submit"]:hover {
+    border: 2px solid #333;
+    background: #fff;
+    color: #333;
+    transition: border 0.3s;
+}
+
+
+/*services*/
+.services-list .item {
+    text-align: center;
+}
+.services-list a {
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #333;
+    display:block;
+    height: 230px;
+}
+.services-list a:hover {
+    border: 1px solid #0094ff;
+}
+.services-list a.active {
+    color: #0094ff;
+    border: 1px solid #0094ff;
+}
+
+.services-list a i {
+    font-size: 7em;
+    padding: 20px 0;
+}
+.services-list a p {
+    font-size: 1.2em;
+    padding: 0 10px;
+    font-weight:bold;
+}
+
+h6 {
+    font-size: 1.5em;
+}
+
+.services hr {
+    margin: 20px 0 0 0;
+}
 
 
 
