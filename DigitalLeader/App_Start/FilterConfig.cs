@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace In4Mage
+namespace DigitalLeader
 {
     public class FilterConfig
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace In4Mage.Models
+namespace DigitalLeader.Models
 {
     public class IndexViewModel
     {

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DigitalLeader.Controllers;
 
-namespace In4Mage
+namespace DigitalLeader
 {
     public class RouteConfig
     {
@@ -15,10 +16,26 @@ namespace In4Mage
             routes.LowercaseUrls = true;
 
             routes.MapRoute(
+                "Root",
+                "{action}",
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new { isMethodInHomeController = new RootRouteConstraint<HomeController>() }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+        }
+    }
+
+    public class RootRouteConstraint<T> : IRouteConstraint
+    {
+        public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)
+        {
+            var rootMethodNames = typeof(T).GetMethods().Select(x => x.Name.ToLower());
+            return rootMethodNames.Contains(values["action"].ToString().ToLower());
         }
     }
 }

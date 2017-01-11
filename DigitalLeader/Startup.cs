@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(In4Mage.Startup))]
-namespace In4Mage
+[assembly: OwinStartupAttribute(typeof(DigitalLeader.Startup))]
+namespace DigitalLeader
 {
     public partial class Startup
     {

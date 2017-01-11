@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace In4Mage.Models
+namespace DigitalLeader.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

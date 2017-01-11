@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using In4Mage.Models;
+using DigitalLeader.Models;
 
-namespace In4Mage
+namespace DigitalLeader
 {
     public partial class Startup
     {

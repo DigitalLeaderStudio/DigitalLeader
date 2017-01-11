@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using In4Mage.Models;
+using DigitalLeader.Models;
 
-namespace In4Mage.Controllers
+namespace DigitalLeader.Controllers
 {
     [Authorize]
     public class AccountController : Controller

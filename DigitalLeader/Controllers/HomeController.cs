@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace In4Mage.Controllers
+namespace DigitalLeader.Controllers
 {
     public class HomeController : Controller
     {

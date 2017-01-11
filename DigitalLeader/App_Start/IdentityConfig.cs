@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using In4Mage.Models;
+using DigitalLeader.Models;
 
-namespace In4Mage
+namespace DigitalLeader
 {
     public class EmailService : IIdentityMessageService
     {
