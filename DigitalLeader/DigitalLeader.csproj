@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>In4Mage</RootNamespace>
-    <AssemblyName>In4Mage</AssemblyName>
+    <RootNamespace>DigitalLeader</RootNamespace>
+    <AssemblyName>DigitalLeader</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
@@ -196,12 +196,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogpostController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701111404564_BlogModelAdded.cs" />
+    <Compile Include="Migrations\201701111404564_BlogModelAdded.Designer.cs">
+      <DependentUpon>201701111404564_BlogModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701111520529_BlogModelUpdated-int-bug-fixed.cs" />
+    <Compile Include="Migrations\201701111520529_BlogModelUpdated-int-bug-fixed.Designer.cs">
+      <DependentUpon>201701111520529_BlogModelUpdated-int-bug-fixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701112119449_BlogModelUpdated-keywords-categories-and-UA-added.cs" />
+    <Compile Include="Migrations\201701112119449_BlogModelUpdated-keywords-categories-and-UA-added.Designer.cs">
+      <DependentUpon>201701112119449_BlogModelUpdated-keywords-categories-and-UA-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701112148156_BlogModelUpdated-category-table-added.cs" />
+    <Compile Include="Migrations\201701112148156_BlogModelUpdated-category-table-added.Designer.cs">
+      <DependentUpon>201701112148156_BlogModelUpdated-category-table-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BlogpostModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -284,6 +304,19 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Shared\_MainPagesLayout.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Shared\_BlogLayout.cshtml" />
+    <Content Include="Views\Blogpost\Create.cshtml" />
+    <Content Include="Views\Blogpost\Delete.cshtml" />
+    <Content Include="Views\Blogpost\Details.cshtml" />
+    <Content Include="Views\Blogpost\Edit.cshtml" />
+    <Content Include="Views\Blogpost\Index.cshtml" />
+    <Content Include="Views\Shared\Categories.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,6 +325,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701111404564_BlogModelAdded.resx">
+      <DependentUpon>201701111404564_BlogModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701111520529_BlogModelUpdated-int-bug-fixed.resx">
+      <DependentUpon>201701111520529_BlogModelUpdated-int-bug-fixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701112119449_BlogModelUpdated-keywords-categories-and-UA-added.resx">
+      <DependentUpon>201701112119449_BlogModelUpdated-keywords-categories-and-UA-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701112148156_BlogModelUpdated-category-table-added.resx">
+      <DependentUpon>201701112148156_BlogModelUpdated-category-table-added.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

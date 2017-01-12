@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DigitalLeader.Models.Blogpost>
+
+@{
+    ViewBag.Title = "Blog posts administration";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Index</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PublishedOn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Visible)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Views)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PublishedOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Visible)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Views)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+

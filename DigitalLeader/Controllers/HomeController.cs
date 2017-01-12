@@ -31,5 +31,12 @@ namespace DigitalLeader.Controllers
 
             return View();
         }
+
+        public ActionResult Test()
+        {
+            ViewBag.Message = "Test page";
+
+            return View();
+        }
     }
 }

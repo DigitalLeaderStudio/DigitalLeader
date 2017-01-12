@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_MainPagesLayout.cshtml";
+}
+
+<h2>Test</h2>
+
+
+@using (Html.BeginForm("ckeditor", "Home", FormMethod.Post, new { style = "margin-top:100px;" }))
+{
+    @Html.Label("The Badboy Web Editor")<br />
+    @Html.TextArea("editorplace", new { @id = "editor1" })
+    <input type="submit" value="Submit" id="btnSubmit" />
+        <script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('editor1');
+        </script>
+}
+

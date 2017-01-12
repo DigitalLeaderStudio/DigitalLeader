@@ -14,12 +14,19 @@ namespace DigitalLeader
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.LowercaseUrls = true;
+            routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
-                "Root",
+                "RootPages",
                 "{action}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 new { isMethodInHomeController = new RootRouteConstraint<HomeController>() }
+                );
+
+            routes.MapRoute(
+                "BlogCategoriesRoute",
+                 "Admin/Blogpost/Category/{action}/{id}",
+                new { controller = "Category", action = "Index", id = UrlParameter.Optional }
                 );
 
             routes.MapRoute(
@@ -27,6 +34,7 @@ namespace DigitalLeader
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
         }
     }
 
