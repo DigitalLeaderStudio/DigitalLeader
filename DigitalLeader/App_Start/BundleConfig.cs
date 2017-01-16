@@ -30,6 +30,13 @@ namespace DigitalLeader
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new LessBundle("~/Content/less")
+                .Include("~/Content/less/navbar.less",
+                        "~/Content/less/general.less",
+                        "~/Content/less/homepage.less",
+                        "~/Content/less/company.less",
+                        "~/Content/less/footer.less"));
         }
     }
 }
