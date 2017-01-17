@@ -36,6 +36,8 @@ namespace DigitalLeader
                         "~/Content/less/general.less",
                         "~/Content/less/homepage.less",
                         "~/Content/less/company.less",
+                        "~/Content/less/services.less",
+                        "~/Content/less/contact.less",
                         "~/Content/less/footer.less"));
         }
     }

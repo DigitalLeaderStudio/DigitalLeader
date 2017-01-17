@@ -10,51 +10,66 @@ body {
     color: @color-text;
     font-family: @font-main;
 
-    input,
-    select,
-    textarea {
-        width: 100%;
-        outline: none;
-        border: 1px solid @color-light-blue;
-        border-radius: 0;
-        margin-bottom: 10px;
-        padding: 10px;
-        background: @bg-form-field;
+    form {
+        input,
+        select,
+        textarea {
+            width: 100%;
+            outline: none;
+            border: 1px solid @color-light-blue;
+            border-radius: 0;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: @bg-form-field;
 
-        &:focus {
-            background: @bg-form-field-focus;
+            &:focus {
+                background: @bg-form-field-focus;
+                border-color: @color-dark-blue;
+            }
+        }
+        textarea {
+            resize: vertical;
+            height: 260px;
+        }
+        input[type="submit"] {
+            width: 100% !important;
+            max-width: unset;
+            margin: 0 auto 10px auto;
+            outline: none;
+            display: block;
+            border-radius: 0;
+            border: 2px solid #0094ff;
+            font-weight: bold;
+            font-size: 1.1em;
+            background: #fff;
+            color: #333;
+            padding: 7px 0;
+        }
+        input[type="submit"]:hover {
+            border: 2px solid #333;
+            background: #fff;
+            color: #333;
+            transition: border 0.3s;
+        }
+        input[type="submit"].promo-btn {
+            width: 100%;
+            border: 0px solid @color-dark-blue;
+            background: @bg-form-btn;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 10px;
+            color: #fff;
+            margin: 20px 0;
+            text-transform: uppercase;
+            padding: 10px;
+            outline: none;
+            font-family: @open-sans;
+
+            &:hover {
+                background: @color-light-blue;
+            }
         }
     }
-
-    textarea {
-        resize: vertical;
-        height: 260px;
-    }
-
-    .promo-btn {
-        width: 100%;
-        border: 0px solid @color-dark-blue;
-        background: @bg-form-btn;
-        font-size: 28px;
-        font-weight: bold;
-        border-radius: 10px;
-        color: #fff;
-        margin: 20px 0;
-        text-transform: uppercase;
-        padding: 10px;
-        outline: none;
-        font-family: @open-sans;
-
-        &:hover {
-            background: @color-light-blue;
-        }
-
-        i {
-            padding-left: 10px;
-            display: inline-block;
-        }
-    }
-
 }
 
 .body-content {
@@ -75,6 +90,11 @@ body {
         text-align: center;
         font-size: 22px;    
         margin-bottom: 20px;
+
+        i {
+            color: #0094ff;
+            padding-right: 10px;
+        }
     }
 }
 

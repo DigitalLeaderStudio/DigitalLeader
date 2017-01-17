@@ -1,60 +1,65 @@
 ﻿@{
     ViewBag.Title = "Contact";
-    ViewBag.Message = "We are happy to new friends";
+    ViewBag.Message = "Feel like you need IT consultation? Tell us about your business problem.";
 
     Layout = "~/Views/Shared/_MainPagesLayout.cshtml";
 }
 
-<div class="container-fluid page-header">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<div class="container-fluid contact">
+    <div class="row header clearfix">
+        <div>
             <h1>@ViewBag.Title</h1>
             <h2>@ViewBag.Message</h2>
         </div>
     </div>
-</div>
 
-<div class="container contacts">
     <div class="row">
-        <div class="col-md-4">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h3><i class="fa fa-map-marker" aria-hidden="true"></i>Headquarters</h3>
-                    <address>Ukraine, Kyiv, 03040, Mykhailo Stelmakh Street, Building 10A</address>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><i class="fa fa-map-marker" aria-hidden="true"></i>Headquarters</h3>
+                            <address>Ukraine, Kyiv, 03040, Mykhailo Stelmakh Street, Building 10A</address>
+                        </div>
+                        <div class="col-md-12">
+                            <h3><i class="fa fa-phone" aria-hidden="true"></i>Phone</h3>
+                            <address><a href="">+333 5555 4444</a></address>
+                        </div>
+                        <div class="col-md-12">
+                            <h3><i class="fa fa-at" aria-hidden="true"></i>Email</h3>
+                            <address><a href="">info@digitalleader.solutions</a></address>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <h3><i class="fa fa-phone" aria-hidden="true"></i>Phone</h3>
-                    <address><a href="">+333 5555 4444</a></address>
+
+                <div class="col-md-4">
+                    <h3><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact Now</h3>
+                    <form class="row">
+                        <div class="col-md-12">
+                            <input type="text" id="FirstName" placeholder="First name" />
+                            <input type="text" id="LastName" placeholder="Last name" />
+                            <input type="email" id="Email" placeholder="my.email@example.com" />
+                            <input type="text" id="Company" placeholder="Company" />
+                            <input type="tel" id="Phone" placeholder="Phone number" />
+                            <textarea rows="8" id="comment">Describe your business problem</textarea>
+                        </div>
+                        <div class="col-md-6 col-md-offset-3">
+                            <input type="submit" id="send" value="Contact now" />
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-12">
-                    <h3><i class="fa fa-at" aria-hidden="true"></i>Email</h3>
-                    <address><a href="">info@digitalleader.solutions</a></address>
+
+                <div class="col-md-3 col-md-offset-1 follow-us">
+                    <h3><i class="fa fa-comments-o" aria-hidden="true"></i>Follow Us</h3>
+                    <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a></p>
+                    <p><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></p>
+                    <p><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></p>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4">
-            <h3><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact Now</h3>
-            <form class="row">
-                <div class="col-md-12 fields-box">
-                    <input type="text" class="form-control" id="FirstName" placeholder="First name" />
-                    <input type="text" class="form-control" id="LastName" placeholder="Last name" />
-                    <input type="text" class="form-control" id="Email" placeholder="Email" />
-                    <input type="text" class="form-control" id="Company" placeholder="Company" />
-                    <input type="text" class="form-control" id="Phone" placeholder="Phone" />
-                    <textarea class="form-control" rows="8" id="comment">Message</textarea>
-                    <input type="submit" class="btn btn-info" id="Submit" value="Send" />
-                </div>
-            </form>
-        </div>
-
-        <div class="col-md-3 col-md-offset-1 follow-us">
-            <h3><i class="fa fa-comments-o" aria-hidden="true"></i>Follow Us</h3>
-            <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a></p>
-            <p><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></p>
-            <p><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></p>
-        </div>
     </div>
+
 </div>
 
 

@@ -242,7 +242,6 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\Images\1.jpg.png" />
     <Content Include="Content\Images\video-background.png" />
     <Content Include="Content\Images\world-map.svg" />
     <Content Include="Content\less\settings.less" />
@@ -253,7 +252,7 @@
     <Content Include="Content\less\company.less" />
     <Content Include="Content\less\services.less" />
     <Content Include="Content\less\footer.less" />
-    <Content Include="Content\less\contacts.less" />
+    <Content Include="Content\less\contact.less" />
     <Content Include="Content\Video\5.mp4" />
     <Content Include="Content\Video\5.ogv" />
     <Content Include="Content\Video\5.webm" />
@@ -261,7 +260,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <None Include="Content\Site.ccss" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
