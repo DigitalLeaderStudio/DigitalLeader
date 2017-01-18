@@ -8,6 +8,10 @@ namespace DigitalLeader
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            var lessBundle = new Bundle("~/Content/LessFiles").IncludeDirectory("~/Content/less", "*.less");
+            lessBundle.Transforms.Add(new LessTransform(HttpRuntime.AppDomainAppPath + "/Content/less"));
+            bundles.Add(lessBundle);
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -31,14 +35,27 @@ namespace DigitalLeader
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new LessBundle("~/Content/less")
-                .Include("~/Content/less/navbar.less",
-                        "~/Content/less/general.less",
-                        "~/Content/less/homepage.less",
-                        "~/Content/less/company.less",
-                        "~/Content/less/service.less",
-                        "~/Content/less/contact.less",
-                        "~/Content/less/footer.less"));
+
+            //var lessBundle = new Bundle("~/Content/LessFiles");
+            //lessBundle.Include("~/Content/less/navbar.less",
+            //            "~/Content/less/general.less",
+            //            "~/Content/less/homepage.less",
+            //            "~/Content/less/company.less",
+            //            "~/Content/less/service.less",
+            //            "~/Content/less/contact.less",
+            //            "~/Content/less/footer.less");
+            //lessBundle.Transforms.Add(new CssMinify());
+
+            //bundles.Add(new LessBundle("~/Content/lessFiles")
+            //    .Include("~/Content/less/navbar.less",
+            //            "~/Content/less/general.less",
+            //            "~/Content/less/homepage.less",
+            //            "~/Content/less/company.less",
+            //            "~/Content/less/service.less",
+            //            "~/Content/less/contact.less",
+            //            "~/Content/less/footer.less"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
