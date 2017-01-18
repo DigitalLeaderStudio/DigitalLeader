@@ -1,27 +1,31 @@
 ﻿@{
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
-    ViewBag.Title = "Digital Leader  - your best IT services provider";
-
-    var pathToVideoCover = Url.Content("~/Content/Images/video-background.png");
+    ViewBag.Title = "Digital Leader  - your best digital solutions provider";
 }
 
-
-<div class="container-fluid fullscreen-bg">
-    <video id="video" loop muted autoplay
-           poster="@pathToVideoCover" class="fullscreen-bg__video">
-        <source src="@Url.Content("~/Content/Video/5.webm")" type="video/webm">
-        <source src="@Url.Content("~/Content/Video/5.mp4")" type="video/mp4">
-        <source src="@Url.Content("~/Content/Video/5.ogv")" type="video/ogg">
-    </video>
-</div>
-
-<div class="container-fluid home">
+<div class="container">
     <div class="row">
         <div class="col-md-6 headlines">
             <div class="row">
                 <div class="col-md-12 promo-text">
                     <h1>Digital solutions for your precious business</h1>
                     <p>Everything you need to make your business successful during information technology era</p>
+                </div>
+                <!-- contacts -->
+                <div class="col-md-12 contacts">
+                    <p>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:office@digitalleader.solutions">office@digitalleader.solutions</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="call:+380961212713">+380961212713</a>
+                    </p>
+                    <p class="social-links">
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -31,73 +35,48 @@
                 <div class="col-md-6 col-sm-6 item">
                     <div>
                         <div class="icon">
-                            <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+                            <img src="~/Content/Images/Services/consult.svg" />
                         </div>
+                        <hr />
                         <div class="title">
-                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Software Consulting</a>
+                            <a href="~/services">Digital <br />Consulting<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 item">
                     <div>
                         <div class="icon">
-                            <i class="fa fa-code" aria-hidden="true"></i>
+                            <img src="~/Content/Images/Services/development.svg" />
                         </div>
+                        <hr />
                         <div class="title">
-                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Software Development</a>
+                            <a href="~/services">Software <br />Development<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 item">
                     <div>
                         <div class="icon">
-                            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                            <img src="~/Content/Images/Services/outsourcing.svg" />
                         </div>
+                        <hr />
                         <div class="title">
-                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>IT Outsourcing</a>
+                            <a href="~/services">Technology <br />Outsourcing<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 item">
                     <div>
                         <div class="icon">
-                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                            <img src="~/Content/Images/Services/marketing.svg" />
                         </div>
+                        <hr />
                         <div class="title">
-                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Online Marketing</a>
+                            <a href="~/services">Digital <br />Marketing<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- contacts -->
-        <div class="col-md-12 contacts">
-            <p>
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <a href="mailto:office@digitalleader.solutions">office@digitalleader.solutions</a>
-            </p>
-            <p>
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <a href="call:+380961212713">+380961212713</a>
-            </p>
-            <p class="social-links">
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            </p>
-        </div>
     </div>
 </div>
-
-<script>
-    //function myOnload() {
-    //    var ua = navigator.userAgent;
-    //    if (typeof ua != "undefined" && ua.match(/Android.* 2\.[0 – 2](\.[0 – 9]+)*[^.0 – 9]/i) !== null) {
-    //        var vid = document.getElementById("video");
-    //        vid.addEventListener("click", function() {
-    //            vid.play();
-    //        }, false);
-    //    }
-    //}
-    //window.onload = myOnload;
-</script>

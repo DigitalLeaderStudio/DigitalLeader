@@ -1,65 +1,175 @@
-﻿@{
-    ViewBag.Title = "Our Services";
-    ViewBag.Message = "Innovating your business with modern technologies";
-
+﻿
+@{
+    ViewBag.Title = "Our Digital Services";
+    ViewBag.Message = "Modern info technologoes for your business";
     Layout = "~/Views/Shared/_MainPagesLayout.cshtml";
 }
 
-<div class="container-fluid page-header">
+<div class="container-fluid service">
+    <div class="row header clearfix">
+        <div>
+            <div>
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 item">
+                    <img src="~/Content/Images/Services/consult.svg" />
+                    <hr />
+                    <h3>Digital <br />Consulting</h3>
+                    <hr />
+                    <p>Everybody and everything is online nowadays. Digital Consulting helps to identify why, how, where and when your business should exists digitally. Digital means everything connected to online: websites, mobile phones, computers, networks, communication devices and software and many more communicational means of information sharing. By utilizing Digital Consultancy businesses get automated and thus highly effective</p>
+
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Software consulting</h5>
+                            <p>Give your business the best of technologies</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Competitive reserch</h5>
+                            <p>Keep an eye on your competitiors online</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Digital Strategy</h5>
+                            <p>Be prepared to leverage all the benefits of digital tools</p>
+                        </a>
+                    </div>
+                    @*<a href="#" class="btn">Learn more</a>*@
+                </div>
+                <div class="col-md-3 col-sm-6 item">
+                    <img src="~/Content/Images/Services/development.svg" />
+                    <hr />
+                    <h3>Software <br />Development</h3>
+                    <hr />
+                    <p>This is a possible way of your business evolution. Software development is the process of  software applications creation and maintenance resulting in a software product. The aim of the software product is to automate entire business or its specific processes to reduce consumption of resources such as time, employees, money and so on. On the other hand, your business might already use some some software that needs customization to fit its needs.</p>
+
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Web applications</h5>
+                            <p>Solve problems and create new oppurtunities</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Websites</h5>
+                            <p>Get new cutomers and retain the old ones</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Mobile applications</h5>
+                            <p>Solutions that are always in hand</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Enterprise systems</h5>
+                            <p>Simple software for complex business</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>CMS customization</h5>
+                            <p>Enhance existing solutions</p>
+                        </a>
+                    </div>
+
+                    @*<a href="#" class="btn">Learn more</a>*@
+                </div>
+                <div class="col-md-3 col-sm-6 item">
+                    <img src="~/Content/Images/Services/outsourcing.svg" />
+                    <hr />
+                    <h3>IT Services <br />Outsourcing</h3>
+                    <hr />
+                    <p>IT outsourcing is the way of use of external information technology service provider to effectively deliver IT-enabled business process and infrastructure solutions for its client. It includes many information technology services such as software as a service and cloud services. Your enterprise can benefit by delegating IT related processes to information technology outsourcing company. Those benefits include costs reduction, marketing life cycle acceleration, and external expertise, assets and intellectual property exploitation.</p>
+
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Software infrastructure</h5>
+                            <p>We'll take care of your in-house software</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Cloud management</h5>
+                            <p>All your data is safe and sound in the digital cloud</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Software as a Service</h5>
+                            <p>You won't buy any software, only pay when you use it</p>
+                        </a>
+                    </div>
+                    @*<a href="#" class="btn">Learn more</a>*@
+                </div>
+                <div class="col-md-3 col-sm-6 item">
+                    <img src="~/Content/Images/Services/marketing.svg" />
+                    <hr />
+                    <h3>Digital <br />Marketing</h3>
+                    <hr />
+                    <p>This is the most important method of marketing your products in today's economy. The volume of sales made via Internet or digital devices increases with every day.  Digital Marketing consists of many modern methodologies and techniques, which if used and performed properly can sky rocket your business revenues. Friendly saying, if you don't do Digital Marketing or do it badly, your businesses becomes dead very soon in the severe ocean of competition.</p>
+
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Marketing strategy</h5>
+                            <p>Reach your customers precisly and fastly</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Analytics & optimization</h5>
+                            <p>Tune your digital marketing channels to be effective</p>
+                        </a>
+                    </div>
+                    <div class="specific-wrapper">
+                        <a href="" class="specific">
+                            <h5>Content marketing</h5>
+                            <p>Give value to your customers</p>
+                        </a>
+                    </div>
+                    
+                    @*<a href="#" class="btn">Learn more</a>*@
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
+        <div class="col-md-12 ready-to-contact">
+            <hr>
+            <h3 class="center"><i class="fa fa-envelope-o" aria-hidden="true"></i>Ready to upgrade your business?</h3>
+            <p class="text-center">Tell us about your business problem and get FREE costs estimation for a digital solution</p>
+            <form class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <textarea rows="8" id="comment">Describe your business problem</textarea>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" id="FirstName" placeholder="First name" />
+                    <input type="text" id="LastName" placeholder="Last name" />
+                    <input type="email" id="Email" placeholder="my.email@example.com" />
+                    <input type="text" id="Company" placeholder="Company" />
+                    <input type="tel" id="Phone" placeholder="Phone number" />
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="submit" id="send" value="Get estimate now" class="promo-btn" />
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
-<div class="container-fluid services">
-    <div class="container">
-        <div class="row services-list">
-            <div class="col-md-2 col-md-offset-2 item">
-                <a href="#">
-                    <i class="fa fa-cloud" aria-hidden="true"></i>
-                    <p>Software Consulting</p>
-                </a>
-            </div>
-            <div class="col-md-2 item">
-                <a href="#" class="active">
-                    <i class="fa fa-code" aria-hidden="true"></i>
-                    <p>Software Development</p>
-                </a>
-            </div>
-            <div class="col-md-2 item">
-                <a href="#">
-                    <i class="fa fa-reply" aria-hidden="true"></i>
-                    <p>Digital Outsourcing</p>
-                </a>
-            </div>
-            <div class="col-md-2 item">
-                <a href="#">
-                    <i class="fa fa-sellsy" aria-hidden="true"></i>
-                    <p>Digital Marketing</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-md-offset-0">
-                <h2>Software Development</h2>
-                <h6>noBugsException is a software solution studio in Kyiv, Ukraine that was established in 2015. Our primary service is web applications development. We are eager to deliver exceptionally qualitative software to our customers. noBugsException team already consists of nine experienced software developers who design and code with much of love.</h6>
-                <h6>noBugsException is a software solution studio in Kyiv, Ukraine that was established in 2015. Our primary service is web applications development. We are eager to deliver exceptionally qualitative software to our customers. noBugsException team already consists of nine experienced software developers who design and code with much of love.</h6>
-                <h6>noBugsException is a software solution studio in Kyiv, Ukraine that was established in 2015. Our primary service is web applications development. We are eager to deliver exceptionally qualitative software to our customers. noBugsException team already consists of nine experienced software developers who design and code with much of love.</h6>
-            </div>
-        </div>
-    </div>
-</div>

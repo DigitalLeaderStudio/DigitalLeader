@@ -209,6 +209,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -250,7 +251,7 @@
     <Content Include="Content\less\homepage.less" />
     <Content Include="Content\less\blog.less" />
     <Content Include="Content\less\company.less" />
-    <Content Include="Content\less\services.less" />
+    <Content Include="Content\less\service.less" />
     <Content Include="Content\less\footer.less" />
     <Content Include="Content\less\contact.less" />
     <Content Include="Content\Video\5.mp4" />
@@ -417,6 +418,11 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\DigitalConsulting.cshtml" />
+    <Content Include="Views\Service\SoftwareDevelopment.cshtml" />
+    <Content Include="Views\Service\ItOutsourcing.cshtml" />
+    <Content Include="Views\Service\DigitalMarketing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
