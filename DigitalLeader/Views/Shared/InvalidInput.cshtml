@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Input error";
+    ViewBag.Message = "There's a problem with the data you are trying to send us";
+
+    Layout = "~/Views/Shared/_MainPagesLayout.cshtml";
+}
+
+<div class="container-fluid contact">
+    <div class="row header clearfix">
+        <div>
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 input-error">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    <p>@ViewBag.Message</p>
+                    <p>If you are experiencing this problem several times, it might be well for you to contact us via email: 
+                        <strong>info@digitalleader.solutions</strong></p>
+                    <p>Sorry for inconvinience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

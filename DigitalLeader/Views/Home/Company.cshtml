@@ -87,27 +87,10 @@
 </div>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 ready-to-contact">
-            <hr>
-            <h3 class="center"><i class="fa fa-envelope-o" aria-hidden="true"></i>Ready to upgrade your business?</h3>
-            <p class="text-center">Tell us about your business problem and get FREE costs estimation for a digital solution</p>
-            <form class="row">
-                <div class="col-md-5 col-md-offset-1">
-                    <textarea rows="8" id="comment">Describe your business problem</textarea>
-                </div>
-                <div class="col-md-5">
-                    <input type="text" id="FirstName" placeholder="First name" />
-                    <input type="text" id="LastName" placeholder="Last name" />
-                    <input type="email" id="Email" placeholder="my.email@example.com" />
-                    <input type="text" id="Company" placeholder="Company" />
-                    <input type="tel" id="Phone" placeholder="Phone number" />
-                </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <input type="submit" id="send" value="Get estimate now" class="promo-btn" />
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+@{ Html.RenderAction("Promo", "Home"); }
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

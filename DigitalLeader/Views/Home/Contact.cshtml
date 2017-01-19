@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DigitalLeader.Models.PromoFormViewModel
+@{
     ViewBag.Title = "Contact";
     ViewBag.Message = "Feel like you need IT consultation? Tell us about your business problem.";
 
@@ -35,19 +36,35 @@
 
                 <div class="col-md-4">
                     <h3><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact Now</h3>
-                    <form class="row">
+                    @using (Html.BeginForm("Promo", "Home", FormMethod.Post, new { role = "form", @class = "row" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                         <div class="col-md-12">
-                            <input type="text" id="FirstName" placeholder="First name" />
-                            <input type="text" id="LastName" placeholder="Last name" />
-                            <input type="email" id="Email" placeholder="my.email@example.com" />
-                            <input type="text" id="Company" placeholder="Company" />
-                            <input type="tel" id="Phone" placeholder="Phone number" />
-                            <textarea rows="8" id="comment">Describe your business problem</textarea>
+                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First name" })
+
+                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last name" })
+
+                            @Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Company, new { @placeholder = "Company" })
+
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Email, new { @placeholder = "my.email@example.com" })
+
+                            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Phone, new { @placeholder = "111 2222 33333" })
+                        </div>
+                        <div class="col-md-12">
+                            @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+                            @Html.TextAreaFor(m => m.Message)
                         </div>
                         <div class="col-md-6 col-md-offset-3">
-                            <input type="submit" id="send" value="Contact now" />
+                            <input type="submit" id="send" value="Get estimate now" class="btn" />
                         </div>
-                    </form>
+                    }
                 </div>
 
                 <div class="col-md-3 col-md-offset-1 follow-us">
@@ -62,7 +79,9 @@
 
 </div>
 
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
 
 
