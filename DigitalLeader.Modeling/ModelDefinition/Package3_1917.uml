@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="32d433dc-0a01-45da-9c84-90fe014aecc0"
+  name="EntityFramework"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="51c896ac-ed6a-47ac-9f95-374a945a3e4f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMicrosoft.AspNet.Identity.EntityFramework"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f000d23b-6890-43e9-b6e4-8dae783b8ea5"
+        name="IdentityUserRole&lt;Int32‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="42fec475-57e0-47ea-a795-79113efaecb2"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a44edf7d-1ca8-4492-82dc-f76caac7b545">
+                <propertyInstance
+                  Id="7bd3396c-20d4-4e1e-a1c6-c9f6816ec8e9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3456cb8d-d4bd-45d6-92ce-92720561f626">
+                <propertyInstance
+                  Id="80aee806-7488-4857-a22a-deddec994dfa"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="91a140f8-3240-46fe-81b1-b0c7b53a81e9">
+                <propertyInstance
+                  Id="4c2f8acc-7045-4411-a312-81adbcb58d87"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="174294d2-36ff-4e56-88fe-2f8d8c44c552">
+                <propertyInstance
+                  Id="71d8cdc7-1c95-428b-8e33-84c65a307d27"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="37501334-632d-42c9-be76-ca36c652c174">
+                <propertyInstance
+                  Id="c94222e6-6851-461c-8c8b-a28b9d5fe9db"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="0b43d7d8-e6fc-49df-b8a4-152db5636709">
+            <redefinableTemplateSignatureMoniker
+              Id="280e653f-81c1-4a88-adf8-67d48718545d"
+              LastKnownLocation="Package3_1917.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="7707d6df-682e-4102-a95a-91a1199f1688">
+                  <actuals>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="DigitalLeader.Modeling.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="2d4329a1-e633-47bd-9e4f-32960df38623"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3574d816-df66-4d23-9072-28354c37e14e"
+        name="IdentityUserRole"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="bc3ae453-0b89-4ba8-a076-22c5517bc1bd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUserRole GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="082a718c-5591-4824-a8c0-1a6d5c074a59"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bfe39ba6-8a4e-4cb8-af5c-4a11e0bd5a5d">
+                <propertyInstance
+                  Id="3e29954a-83e8-4b4b-989e-d07c2e92b4c0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7a623efd-fc16-4fd3-91d0-081e0ac0dc58">
+                <propertyInstance
+                  Id="8415811c-25d6-424e-b19a-20b7d8260252"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a3312879-49b9-4fe6-aee2-35204716280b">
+                <propertyInstance
+                  Id="1cace1ad-b38f-4573-bd30-4c73119f398c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c5d0d85-12cf-42fa-94f1-e01b973fff55">
+                <propertyInstance
+                  Id="ce0d5995-9c7a-4f9f-81f8-f85a31b2ba63"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d17ba016-9eae-43e0-97a9-b7ca8d2212d2">
+                <propertyInstance
+                  Id="d84266e0-8dae-4f77-96d1-bbd62e3a9d5e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="280e653f-81c1-4a88-adf8-67d48718545d"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="2d4329a1-e633-47bd-9e4f-32960df38623">
+                <referencesInternal>
+                  <reference
+                    Id="43c30e8c-5bcb-4991-9393-f248e86e1c01"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUserRole GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="77dc5779-a4a6-406f-aefb-97334f25ef12"
+                    name="TKey"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="53045d7d-1b40-424d-a44d-f00f60466f1d"
+        name="IdentityUserLogin&lt;Int32‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="87c46092-fcfe-413b-9c79-12bcb54ded72"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2e52d311-90df-4511-9399-80f25cdd5b3b">
+                <propertyInstance
+                  Id="58cc05ef-8e99-4d52-8ab0-6dae31e80c8b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b6e75913-8bea-4e02-b3b2-481eca00ee7a">
+                <propertyInstance
+                  Id="d3b15b89-7a4e-46d3-8468-f97c45aae2b4"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d78a9e6d-3228-4725-b8e3-4eaf72a7f5e4">
+                <propertyInstance
+                  Id="f2ad2e64-733b-4b6e-9dae-2f89b3f0ea6a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c742680b-9d99-4fed-8f96-9797262c0057">
+                <propertyInstance
+                  Id="a4301d3d-7be5-4f97-9c16-0889f87bbe00"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="79400c54-dbfc-4dae-9280-d60409d5d709">
+                <propertyInstance
+                  Id="2cba5592-ea73-41d1-93dd-cf3a3ca01527"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="41c0f86c-1cad-417b-834d-8dbd1a7974ba">
+            <redefinableTemplateSignatureMoniker
+              Id="9e8201f7-970d-4c01-8b02-0e2b7c590854"
+              LastKnownLocation="Package3_1917.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="f397fa4e-e782-49ee-919a-a656034b626e">
+                  <actuals>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="DigitalLeader.Modeling.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="96b9f45c-9b07-4329-a20e-66eee0d31357"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1a10b265-8475-4cde-a5ee-b6a30982b173"
+        name="IdentityUserLogin"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c5871cb0-84cd-40e8-96a5-6b88d937b943"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUserLogin GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7e522177-cfe6-4bde-a4b6-6914bef70b31"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="df79a48d-0bde-4518-9bb3-76a55fa84e54">
+                <propertyInstance
+                  Id="467d0e93-5aa3-4b1a-a075-1ae54512a358"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eb82d10d-ac37-4e1f-9caf-c4a0a6399b66">
+                <propertyInstance
+                  Id="f6ff94d5-7e3d-4163-b636-ef8b4b5337ec"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a7db735-bfc0-4a84-9f4e-f98cbec45205">
+                <propertyInstance
+                  Id="1cd551bc-80a5-4a96-b6e5-c470d5dee641"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c03dfb22-78e1-4e16-9cc5-9376b8b14105">
+                <propertyInstance
+                  Id="7e836164-a880-4e86-bae1-882738221161"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8881d2a5-e7a5-4ac5-accf-7d3f615b9d80">
+                <propertyInstance
+                  Id="38c19cf7-007c-43b7-b8ae-e07da3b18903"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="9e8201f7-970d-4c01-8b02-0e2b7c590854"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="96b9f45c-9b07-4329-a20e-66eee0d31357">
+                <referencesInternal>
+                  <reference
+                    Id="c5421cf5-8a74-4cb9-908e-6846b299b6ba"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUserLogin GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="097d8d5f-e703-4f55-83d8-bf6dcc0a432b"
+                    name="TKey"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5b3364d7-0e28-4883-9297-b1254c7e7ab5"
+        name="IdentityUserClaim&lt;Int32‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="57212ec4-ff1f-46cb-8e98-bd281c1ef5e7"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ef8b96f-7515-462f-b577-0f1c7bb90a34">
+                <propertyInstance
+                  Id="64ab6af7-168a-48d1-830b-9dabdca496d4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="397acc7a-7de5-412f-96ce-68718a7f3b84">
+                <propertyInstance
+                  Id="fcb7457a-0df6-49e1-b551-2bcc7bff949a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c65c13b6-bd62-4380-a6e2-92d62d0ec20a">
+                <propertyInstance
+                  Id="bb49375d-edd7-4a86-b6ab-f3688bd704cc"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cc62f0b6-0893-430d-9b1d-9cc44167e296">
+                <propertyInstance
+                  Id="c5e486ae-ee9e-4342-8bdb-7b99c7f67606"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="10b4dda0-3dab-408d-9183-b84587901b2e">
+                <propertyInstance
+                  Id="b5d4fce1-904e-43d2-9c21-207f6b60b8c0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="2f19cfe2-b670-4a52-aefe-7f1213118e22">
+            <redefinableTemplateSignatureMoniker
+              Id="9027391a-3b49-48b2-ad75-c1b7e26627c5"
+              LastKnownLocation="Package3_1917.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="c3c5274e-0f07-4ff1-8642-28a3ec928fad">
+                  <actuals>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="DigitalLeader.Modeling.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="dc0e234b-dc19-4782-bfb2-e51af9d005eb"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="48df0138-f002-42b6-8a2f-856388e7f2fc"
+        name="IdentityUserClaim"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0c22cc77-e945-401d-96d7-b051540e1940"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUserClaim GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="42285113-dd05-4cfe-8558-fe3900272d86"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d1be1c49-b29d-41c3-9f99-871a1b702ae5">
+                <propertyInstance
+                  Id="cd225893-8e9c-4c2b-b019-ec6019a74c4c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1731d1bd-a725-4677-ba62-3c81ec7e25b0">
+                <propertyInstance
+                  Id="37e0d362-a508-4fa4-99f0-3592321c6fd3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2f0c7ee6-3171-494f-937f-0d3edda267f3">
+                <propertyInstance
+                  Id="c536778b-f3af-44fa-a14c-0fcbed0ef24f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c912a5ce-4582-4178-93a8-081341606136">
+                <propertyInstance
+                  Id="6f174a69-a736-48d7-88f5-c764ee6071ea"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="adb6d358-1843-4527-bcd3-f80553cc368a">
+                <propertyInstance
+                  Id="930084da-0e8d-44b3-bf56-3e3407633b44"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="9027391a-3b49-48b2-ad75-c1b7e26627c5"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="dc0e234b-dc19-4782-bfb2-e51af9d005eb">
+                <referencesInternal>
+                  <reference
+                    Id="013bf61d-377c-43dd-9d61-30d6d4b08c0d"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUserClaim GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="995b4ead-c2fc-42ba-9992-029b8e0a003a"
+                    name="TKey"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="13c0aae1-e119-495a-91af-68526d23ab8a"
+        name="IdentityRole&lt;Int32‎, UserRole‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3ddfadc8-f6f9-4e4b-8eed-7993b98c7f57"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7dc61555-d9b8-49d4-81a2-c22ea420c18e">
+                <propertyInstance
+                  Id="00a5254d-146c-4b4b-9bad-ab186f8d06ba"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="259783ed-3a1f-4c9e-9c80-5c1c537633f2">
+                <propertyInstance
+                  Id="dea9191a-d679-4c16-a220-162c1cf92fba"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="833a2fbe-04ea-4f83-bf67-3240a85466ec">
+                <propertyInstance
+                  Id="16d66efe-3036-4472-8964-b12606115f56"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="39e37603-2f51-488f-b48d-595f0393fea2">
+                <propertyInstance
+                  Id="85feea09-baf2-4af2-beee-77c7e07ea21e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2b924e8b-ac7e-4d4d-a41c-5da4020ad1c7">
+                <propertyInstance
+                  Id="f3bb76a0-8936-46bb-91c5-cdcf94b7e861"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="84ebb0fe-d9b6-453f-b990-50819f4e292c">
+            <redefinableTemplateSignatureMoniker
+              Id="7a990f87-5802-4d73-94a6-25aa423694f8"
+              LastKnownLocation="Package3_1917.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="d12a022a-c912-49f5-835a-ce53cd48fb52">
+                  <actuals>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="DigitalLeader.Modeling.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="8eca868a-879f-4ad6-b718-390767673171"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="134dce72-3d6f-4834-a641-922143340013">
+                  <actuals>
+                    <classMoniker
+                      Id="588dedd7-a766-4eca-8c18-e0c090933df6"
+                      LastKnownName="UserRole"
+                      LastKnownLocation="Package2_1915.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="7e52e9ae-bd87-4f6d-9b8f-c152f7cf9617"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e2ef5421-f079-402b-b173-9cc1b7e812e7"
+        name="IdentityRole"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="62214a09-51e0-468f-ab2c-c0ce14945c1c"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityRole GenericParameterCount%3D2)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="267380a6-a01d-4452-ad81-fefbe75306d8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b04d22ad-5c81-4d3c-839c-5644020dcfd1">
+                <propertyInstance
+                  Id="cb66742d-f6cc-45f3-b403-35a746df443f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cbdc727-3641-48bf-9d8f-5ce6d208cc25">
+                <propertyInstance
+                  Id="e7fb866d-142e-4f5a-8828-8934b16021c2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="448652f3-a5bd-407f-9210-7496b2d9af6c">
+                <propertyInstance
+                  Id="086cc50f-a35c-4c83-b015-598f9372f2de"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5eaf9140-cb0c-4582-bc7f-9ab36900eb9c">
+                <propertyInstance
+                  Id="84fa1109-11a1-4b8e-92a5-c40339babfc3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d917c2a1-5423-411e-96ff-c2cab297b657">
+                <propertyInstance
+                  Id="c0232c2b-d3c6-49e7-bc22-21e4773258a7"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="7a990f87-5802-4d73-94a6-25aa423694f8"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="8eca868a-879f-4ad6-b718-390767673171">
+                <referencesInternal>
+                  <reference
+                    Id="7e779158-769f-4cb7-bbeb-b0858206281f"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityRole GenericParameterCount%3D2) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="274db061-a420-4315-bb23-103746ac4f1e"
+                    name="TKey"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="7e52e9ae-bd87-4f6d-9b8f-c152f7cf9617">
+                <referencesInternal>
+                  <reference
+                    Id="2e3a6114-571c-4cc6-b67a-ef66dd2af4eb"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityRole GenericParameterCount%3D2) ParameterIdentifier%3D1"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="2a1d78c2-3614-46c1-9869-ec7f104f2fb1"
+                    name="TUserRole"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="852f353f-ad29-44b9-8735-b4ddf1892eb1"
+        name="IdentityUser&lt;Int32‎, UserLogin‎, UserRole‎, UserClaim‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="829e1315-f4f4-495a-a6f6-5b735a836761"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ba4acbbc-0f22-4fbd-9434-2beac4b816df">
+                <propertyInstance
+                  Id="862b8eaa-ca58-41ab-b2a5-d9a2fe16192a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="70a6ddc9-64ac-4b0a-aae7-aa1cb078436e">
+                <propertyInstance
+                  Id="c98e64ad-449f-4de0-aa39-20ae0f58f3a2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aec792f1-1ded-485f-b41e-43f1a40c96af">
+                <propertyInstance
+                  Id="40678577-8e65-4239-acd2-985379360a00"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f179cabb-a771-4357-a2c3-34bd6432f058">
+                <propertyInstance
+                  Id="8aaf1f8e-1764-4015-be40-790a6c8915ee"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eccbf254-5796-4bd8-a754-e6e346dbfcb5">
+                <propertyInstance
+                  Id="b43ddd06-4b0f-4594-9072-dbe6fc4b588f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="eed5eb78-92e9-4ff6-afe8-5e994a0877c2">
+            <redefinableTemplateSignatureMoniker
+              Id="edc55b88-361c-45ae-a260-3a6aebc35202"
+              LastKnownLocation="Package3_1917.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="2b64f952-9abe-4d49-a822-0a608449d2ba">
+                  <actuals>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="DigitalLeader.Modeling.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="37ae0167-6b06-4319-a085-253908cb0d9e"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="b547049c-553f-4dc4-843e-b8e76d1e4bfd">
+                  <actuals>
+                    <classMoniker
+                      Id="61508c0c-5a20-4129-89f4-2e4db140144c"
+                      LastKnownName="UserLogin"
+                      LastKnownLocation="Package2_1915.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="7af5a0cd-7026-4ae3-b5cd-ae8720d5939f"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="e1f35303-c22d-42cb-980a-49291ed07880">
+                  <actuals>
+                    <classMoniker
+                      Id="588dedd7-a766-4eca-8c18-e0c090933df6"
+                      LastKnownName="UserRole"
+                      LastKnownLocation="Package2_1915.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="4b1d7ffc-3062-4fd0-8c68-a45598eb9810"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="ab810657-5b0d-4473-8743-f536af76185d">
+                  <actuals>
+                    <classMoniker
+                      Id="db7550a5-accd-4ddf-a99c-d15e3254159f"
+                      LastKnownName="UserClaim"
+                      LastKnownLocation="Package2_1915.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="5d57674b-1e64-4820-80ea-977e96a9c472"
+                      LastKnownLocation="Package3_1917.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ab0b5bbc-d02e-4001-b639-737167c09290"
+        name="IdentityUser"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="07cf0f71-ed3c-4449-bf1f-074b27d03112"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0cffc03b-0512-49e4-aca7-65c0be69615c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7df927f6-5a71-4228-8636-7a5f58e613d1">
+                <propertyInstance
+                  Id="d7be7f5e-0929-4638-9c20-71c147b45262"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ff57cd71-5825-44a5-978b-a090afc739ee">
+                <propertyInstance
+                  Id="8a77094c-83a6-4adc-ac8d-eef2640cc612"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="864978f2-3067-49fe-b22a-96f67a29d5d9">
+                <propertyInstance
+                  Id="129d55f7-bad2-4a48-b27d-d989c9583a65"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a9c994bb-24c9-41e0-b996-279a4564b92b">
+                <propertyInstance
+                  Id="fff2e826-45c0-4ff8-bb20-533dcc5b9045"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8b95389f-34fc-45fd-8b88-af0c76b71184">
+                <propertyInstance
+                  Id="43754703-a855-4b5d-910b-e0a90ea122ad"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="edc55b88-361c-45ae-a260-3a6aebc35202"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="37ae0167-6b06-4319-a085-253908cb0d9e">
+                <referencesInternal>
+                  <reference
+                    Id="97e7f0a5-812e-49b6-9286-8c67275aa93e"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="9b7c0ab5-1b84-44c9-bc01-341a1efad0dc"
+                    name="TKey"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="7af5a0cd-7026-4ae3-b5cd-ae8720d5939f">
+                <referencesInternal>
+                  <reference
+                    Id="afb1d88f-3c8a-46f7-be91-d90c2b19de8e"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D1"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="6297b45d-c6d6-4d4d-9e3c-f0733c04844c"
+                    name="TLogin"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="4b1d7ffc-3062-4fd0-8c68-a45598eb9810">
+                <referencesInternal>
+                  <reference
+                    Id="defa2085-b511-4694-97cc-296839230094"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D2"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="cb2194dc-a297-4819-9fbd-e80af0207b19"
+                    name="TRole"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="5d57674b-1e64-4820-80ea-977e96a9c472">
+                <referencesInternal>
+                  <reference
+                    Id="848d5690-5e91-4658-b975-4b2b71ab466f"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Ftoha%2FWork%2FProjects%2FDigitalLeader%2Fpackages%2FMicrosoft.AspNet.Identity.EntityFramework.2.2.1%2Flib%2Fnet45%2FMicrosoft.AspNet.Identity.EntityFramework.dll Namespace%3DMicrosoft.AspNet.Identity.EntityFramework Type%3D(Name%3DIdentityUser GenericParameterCount%3D4) ParameterIdentifier%3D3"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="438f4866-3653-47b0-825a-a6477799a09a"
+                    name="TClaim"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
