@@ -31,14 +31,14 @@
 
 		public DateTime EndDate { get; set; }
 
-		public int ClientId { get; set; }
+		public int ClientID { get; set; }
 
-		public Client Client { get; set; }
-		
+		public virtual Client Client { get; set; }
+
 		public int? ImageId { get; set; }
 
 		public virtual File Image { get; set; }
-		
+
 		public virtual ICollection<User> Contributors { get; set; }
 
 		public virtual ICollection<Technology> Technologies { get; set; }

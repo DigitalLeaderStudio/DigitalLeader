@@ -1,5 +1,6 @@
 ﻿namespace DigitalLeader.Web
 {
+	using DigitalLeader.Web.App_Start;
 	using System.Web.Mvc;
 	using System.Web.Optimization;
 	using System.Web.Routing;
@@ -9,7 +10,7 @@
 		protected void Application_Start()
 		{
 			AutofacConfig.ConfigureContainer();
-
+			AutoMapperConfig.Config();
 			AreaRegistration.RegisterAllAreas();
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);

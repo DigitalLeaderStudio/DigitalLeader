@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DigitalLeader.ViewModels.ProjectViewModel>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Projects list</h2>
+<hr />
+
+<p>
+	@Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Title)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ProjectUrl)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Objective)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.StartDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.EndDate)
+		</th>
+		<th>
+			Client
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ProjectUrl)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Objective)
+			</td>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.StartDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.EndDate)
+			</td>
+			<td>
+				@string.Format("{0} {1} ({2})", item.Client.FirstName, item.Client.LastName, item.Client.Company)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+				@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.ID })
+			</td>
+		</tr>
+	}
+
+</table>

@@ -2,11 +2,12 @@
 {
 	using DigitalLeader.Entities;
 	using DigitalLeader.Entities.Identity;
+	using EntityFramework.DbContextScope.Interfaces;
 	using Microsoft.AspNet.Identity.EntityFramework;
 	using System.Data.Entity;
 
 	public class ApplicationDbContext :
-		IdentityDbContext<User, Role, int, UserLogin, UserRole, UserClaim>
+		IdentityDbContext<User, Role, int, UserLogin, UserRole, UserClaim>, IDbContext
 	{
 		public ApplicationDbContext()
 			: base("DegitalLeaderConnection")

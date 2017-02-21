@@ -1,26 +1,31 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/LessFiles")
-    @Styles.Render("~/Content/font-awesome")
-    @Scripts.Render("~/bundles/modernizr")
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#001e33" />
+
+	<title>@ViewBag.Title</title>
+
+	@Scripts.Render("~/bundles/modernizr")
+
+	@Styles.Render("~/Content/core-css")
+	@Styles.Render("~/Content/core-less")
+
+	<link rel="icon" href="@Url.Content("~/Content/Images/favicon.png")" />
 
 </head>
 <body>
-    @Html.Partial("_NavigationBar")
+	@Html.Partial("_NavigationBar")
 
-    <div class="body-content">
-        @RenderBody()
-    </div>
+	<div class="body-content">
+		@RenderBody()
+	</div>
 
-    @Html.Partial("_Footer")
+	@Html.Partial("_Footer")
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
 </body>
 </html>
