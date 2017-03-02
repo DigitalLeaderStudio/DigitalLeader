@@ -8,40 +8,40 @@
 	using System.Collections.Generic;
 	using System.Web.Mvc;
 
-	public class ClientController : BaseAdminController
+	public class UserController : BaseAdminController
 	{
-		private IClientService _clientService;
+		private IUserService _userService;
 
-		public ClientController(IClientService clientService)
+		public UserController(IUserService userService)
 		{
-			_clientService = clientService;
+			_userService = userService;
 		}
 
-		// GET: Admin/Client
+		// GET: Admin/User/Client
 		public ActionResult Index()
 		{
-			var viewModel = Mapper.Map<IEnumerable<Client>, List<ClientViewModel>>(_clientService.GetAll());
+			var viewModel = Mapper.Map<IEnumerable<User>, List<UserViewModel>>(_userService.GetAll());
 
 			return View(viewModel);
 		}
 
-		// GET: Admin/Client/Create
+		// GET: Admin/User/Create
 		public ActionResult Create()
 		{
 			return View();
 		}
 
-		// POST: Admin/Client/Create
+		// POST: Admin/User/Create
 		[HttpPost]
-		public ActionResult Create(ClientViewModel viewModel)
+		public ActionResult Create(UserViewModel viewModel)
 		{
 			try
 			{
 				if (ModelState.IsValid)
 				{
-					var client = Mapper.Map<ClientViewModel, Client>(viewModel);
+					var client = Mapper.Map<UserViewModel, User>(viewModel);
 
-					_clientService.Insert(client);
+					_userService.Insert(client);
 
 					return RedirectToAction("Index");
 				}
@@ -54,25 +54,25 @@
 			return View(viewModel);
 		}
 
-		// GET: Admin/Client/Edit
+		// GET: Admin/User/Edit
 		public ActionResult Edit(int id)
 		{
-			var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
+			var viewModel = Mapper.Map<User, UserViewModel>(_userService.GetById(id));
 
 			return View(viewModel);
 		}
 
-		// POST: Admin/Client/Edit
+		// POST: Admin/User/Edit
 		[HttpPost]
-		public ActionResult Edit(ClientViewModel viewModel)
+		public ActionResult Edit(UserViewModel viewModel)
 		{
 			try
 			{
 				if (ModelState.IsValid)
 				{
-					var client = Mapper.Map<ClientViewModel, Client>(viewModel);
+					var user = Mapper.Map<UserViewModel, User>(viewModel);
 
-					_clientService.Update(client);
+					_userService.Update(user);
 				}
 			}
 			catch (Exception e)
@@ -85,10 +85,10 @@
 			return RedirectToAction("Index");
 		}
 
-		// GET: Admin/Client/Details
+		// GET: Admin/User/Details
 		public ActionResult Details(int id)
 		{
-			var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
+			var viewModel = Mapper.Map<User, UserViewModel>(_userService.GetById(id));
 
 			return View(viewModel);
 		}

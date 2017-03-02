@@ -67,6 +67,7 @@
 							map.MapLeftKey("UserId");
 							map.MapRightKey("TechnologyId");
 						});
+
 			#endregion
 
 			#region Project relations

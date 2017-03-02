@@ -1,6 +1,7 @@
 ﻿namespace DigitalLeader.Web.MappingProfiles
 {
 	using AutoMapper;
+	using DigitalLeader.Entities;
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.ViewModels;
 	using System.Web.Mvc;
@@ -21,14 +22,14 @@
 
 			CreateMap<User, UserViewModel>();
 
-			CreateMap<UserViewModel, User>();
-			//	.AfterMap((vm, entity) =>
-			//	{
-			//		if (vm.File != null)
-			//		{
-			//			entity.Image = (File)MapperImageConverter.ImageConverter(vm);
-			//		}
-			//	});
+			CreateMap<UserViewModel, User>()
+				.AfterMap((vm, entity) =>
+				{
+					if (vm.File != null)
+					{
+						entity.Image = (File)MapperImageConverter.ImageConverter(vm);
+					}
+				});
 		}
 	}
 }

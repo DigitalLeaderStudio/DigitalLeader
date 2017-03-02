@@ -10,7 +10,7 @@
 	using System.Linq;
 	using System.Linq.Expressions;
 
-	public class UserService : IUserService
+	public class UserService : BaseService, IUserService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
@@ -70,12 +70,39 @@
 
 		public void Update(User value)
 		{
-			throw new NotImplementedException();
+			using (var scope = _dbContextScopeFactory.Create())
+			{
+				var dbContext = scope.DbContexts
+					.Get<ApplicationDbContext>();
+
+				var existed = dbContext.Set<User>().SingleOrDefault(u => u.Id == value.Id);
+
+				existed.Image = HandleFile(existed.Image, value.Image);
+
+				existed.Biography = value.Biography;
+				existed.Email = value.Email;
+				existed.EmailConfirmed = value.EmailConfirmed;
+				existed.ExperianceYears = existed.ExperianceYears;
+				existed.PhoneNumber = value.PhoneNumber;
+				existed.PhoneNumberConfirmed = value.PhoneNumberConfirmed;
+				existed.Title = value.Title;
+				existed.UserName = value.UserName;
+
+				scope.SaveChanges();
+			}
 		}
 
 		public void Insert(User value)
 		{
-			throw new NotImplementedException();
+			using (var scope = _dbContextScopeFactory.Create())
+			{
+				var dbContext = scope.DbContexts
+					.Get<ApplicationDbContext>();
+
+				dbContext.Set<User>().Add(value);
+
+				scope.SaveChanges();
+			}
 		}
 
 		public void Delete(User value)
