@@ -31,6 +31,9 @@ namespace DigitalLeader.Web
 			bundles.Add(new ScriptBundle("~/bundles/core-js").Include(
 					  "~/Scripts/custom/site.js"));
 
+			bundles.Add(new ScriptBundle("~/bundles/chosen").Include(
+					  "~/Scripts/chosen.jquery.js"));
+
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap-datetime")
 				.Include("~/Scripts/moment.js")
 				.Include("~/Scripts/bootstrap-datetimepicker.js"));
@@ -40,6 +43,9 @@ namespace DigitalLeader.Web
 			bundles.Add(new StyleBundle("~/Content/core-css")
 				.Include("~/Content/bootstrap.css")
 				.Include("~/Content/font-awesome.css"));
+
+			bundles.Add(new StyleBundle("~/Content/chosen")
+				.Include("~/Content/bootstrap-chosen.css"));
 
 			//LESS
 
@@ -51,6 +57,12 @@ namespace DigitalLeader.Web
 
 			bundles.Add(new LessBundle("~/Content/homepage.less")
 				.Include("~/Content/less/homepage.less"));
+
+			bundles.Add(new LessBundle("~/Content/company.less")
+				.Include("~/Content/less/company.less"));
+
+			bundles.Add(new LessBundle("~/Content/service.less")
+				.Include("~/Content/less/service.less"));
 
 			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker.less")
 				.Include("~/Content/bootstrap-datetimepicker-build.less"));

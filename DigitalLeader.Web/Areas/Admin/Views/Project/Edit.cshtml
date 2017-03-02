@@ -1,11 +1,14 @@
 ﻿@model DigitalLeader.ViewModels.ProjectViewModel
 
 @{
-	ViewBag.Title = "Edit";
+	ViewBag.Title = "Edit project";
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2 class="text-center">Edit project</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
 <hr />
 <div class="col-md-6 col-md-offset-2">
 	@using (Html.BeginForm("Edit", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -19,16 +22,8 @@
 			@Html.HiddenFor(model => model.ID)
 
 			<div class="form-group">
-				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-				</div>
-			</div>
-
-			<div class="form-group">
 				@Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-3">
+				<div class="col-md-10">
 					@{
 		var srcAction = Model.ImageId.HasValue ?
 		Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
@@ -37,6 +32,14 @@
 					<img src="@srcAction" class="img-responsive" />
 
 					@Html.TextBoxFor(model => model.File, new { @type = "file" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
 				</div>
 			</div>
 
@@ -111,7 +114,12 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+					<div class="input-group date datetimepicker" date-format="DD/MM/YYYY">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+						@Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
 					@Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
 				</div>
 			</div>
@@ -119,7 +127,12 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+					<div class="input-group date datetimepicker" date-format="DD/MM/YYYY">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+						@Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
 					@Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
 				</div>
 			</div>
@@ -129,6 +142,63 @@
 				<div class="col-md-6">
 					@Html.DropDownListFor(m => m.ClientID, Model.Clients,
 					new { @class = "form-control", data_service = "" })
+				</div>
+				<div class="col-md-4">
+					<a href="@Url.Action("Index", "Client", new { area = "Admin"})" target="_blank">Edit clients</a>
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.TechnologiesSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					<select id="@Html.IdFor(m => m.TechnologiesIds)"
+							name="@Html.NameFor(m => m.TechnologiesIds)"
+							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+						@foreach (var option in Model.TechnologiesSelectList)
+						{
+							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+						}
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<a href="@Url.Action("Index", "Technology", new { area = "Admin"})" target="_blank">Edit technologies</a>
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.ServicesSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					<select id="@Html.IdFor(m => m.ServicesIds)"
+							name="@Html.NameFor(m => m.ServicesIds)"
+							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+						@foreach (var option in Model.ServicesSelectList)
+						{
+							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+						}
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit services</a>
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.ContributorsSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					<select id="@Html.IdFor(m => m.ContributorsIds)"
+							name="@Html.NameFor(m => m.ContributorsIds)"
+							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+						@foreach (var option in Model.ContributorsSelectList)
+						{
+							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+						}
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit users</a>
 				</div>
 			</div>
 
@@ -140,7 +210,9 @@
 		</div>
 	}
 
-	<div>
+</div>
+<div class="col-md-12">
+	<p class="text-center">
 		@Html.ActionLink("Back to List", "Index")
-	</div>
+	</p>
 </div>

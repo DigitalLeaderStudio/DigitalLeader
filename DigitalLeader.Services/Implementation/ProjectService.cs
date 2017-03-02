@@ -7,8 +7,10 @@
 	using System.Collections.Generic;
 	using System.Data.Entity;
 	using System.Linq;
+	using DigitalLeader.Services.Extensions;
+	using DigitalLeader.Entities.Identity;
 
-	public class ProjectService : IProjectService
+	public class ProjectService : BaseService, IProjectService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
@@ -23,7 +25,12 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Projects.Include(p => p.Client).ToList();
+				return dbContext.Set<Project>()
+					.Include(p => p.Client)
+					.Include(p => p.Technologies)
+					.Include(p => p.Services)
+					.Include(p => p.Contributors)
+					.ToList();
 			}
 		}
 
@@ -33,7 +40,12 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Projects.Include(p => p.Client).First(p => p.ID == id);
+				return dbContext.Projects
+					.Include(p => p.Client)
+					.Include(p => p.Technologies)
+					.Include(p => p.Services)
+					.Include(p => p.Contributors)
+					.First(p => p.ID == id);
 			}
 		}
 
@@ -44,25 +56,40 @@
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				var existedProject = dbContext
-					.Projects.Find(value.ID);
+				var existed = GetById(value.ID);
 
-				existedProject.ClientID = value.ClientID;
-				//existedProject.Contributors = value.Contributors;
-				existedProject.EndDate = value.EndDate;
-				existedProject.Image = value.Image;
-				existedProject.IsCaseStudy = value.IsCaseStudy;
-				existedProject.IsFeatured = value.IsFeatured;
-				existedProject.Kewywords = value.Kewywords;
-				existedProject.Objective = value.Objective;
-				existedProject.Overview = value.Overview;
-				existedProject.ProjectUrl = value.ProjectUrl;
-				existedProject.ResultOverview = value.ResultOverview;
-				existedProject.Services = value.Services;
-				existedProject.StartDate = value.StartDate;
-				existedProject.Technologies = value.Technologies;
-				existedProject.Title = value.Title;
-				existedProject.WorkOverview = value.WorkOverview;
+				existed.ClientID = value.ClientID;
+				existed.EndDate = value.EndDate;
+				existed.IsCaseStudy = value.IsCaseStudy;
+				existed.IsFeatured = value.IsFeatured;
+				existed.Kewywords = value.Kewywords;
+				existed.Objective = value.Objective;
+				existed.Overview = value.Overview;
+				existed.ProjectUrl = value.ProjectUrl;
+				existed.ResultOverview = value.ResultOverview;
+				existed.StartDate = value.StartDate;
+				existed.Title = value.Title;
+				existed.WorkOverview = value.WorkOverview;
+
+				existed.Image = HandleFile(existed.Image, value.Image);
+
+				existed.Technologies = HandleCollection<Technology, int>(
+					existed.Technologies.ToList(),
+					value.Technologies.ToList(),
+					tech => tech.ID,
+					dbContext);
+
+				existed.Services = HandleCollection<Service, int>(
+					existed.Services.ToList(),
+					value.Services.ToList(),
+					srv => srv.ID,
+					dbContext);
+
+				existed.Contributors = HandleCollection<User, int>(
+					existed.Contributors.ToList(),
+					value.Contributors.ToList(),
+					user => user.Id,
+					dbContext);
 
 				scope.SaveChanges();
 			}
@@ -74,6 +101,10 @@
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
+
+				value.Technologies = HandleCollection<Technology>(value.Technologies.ToList(), dbContext);
+				value.Contributors = HandleCollection<User>(value.Contributors.ToList(), dbContext);
+				value.Services	= HandleCollection<Service>(value.Services.ToList(), dbContext);
 
 				dbContext.Projects.Add(value);
 
@@ -94,6 +125,11 @@
 
 				scope.SaveChanges();
 			}
+		}
+
+		public List<Project> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Project, object>>[] includes)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

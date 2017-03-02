@@ -55,54 +55,81 @@
 	}
 
 	.services {
+		padding: 5px;
 		padding-top: 15px;
+		background-color: rgba(255, 255, 255, 0.4);
 
-		& > .row {
-			background-color: rgba(255, 255, 255, 0.4);
-			padding: 5px;
+		.item {
+			background-color: #FFF;
+			padding: 10px;
 
-			.item {
-				padding: 5px;
+			img {
+				width: 100%;
+				padding: 10px 40px;
+				margin: 0 auto;
+				display: block;
+			}
 
-				& > div {
+			h3 {
+				height: 60px;
+				padding: 0 20px;
+				font-weight: bold;
+				font-size: 28px;
+			}
+
+			p {
+				height: 395px;
+				padding: 10px 0;
+				display: inline-block;
+				font-size: 16px;
+				text-align: left;
+				margin-bottom: 0;
+			}
+
+			a {
+				margin-top: 20px;
+			}
+
+			hr {
+				margin: 0;
+				margin-bottom: 15px;
+			}
+
+			.specific-wrapper {
+
+				a.specific {
+					border: 2px solid @color-light-blue;
+					text-decoration: none;
+					display: inline-block;
+					padding: 10px;
+					color: #333;
+					margin-top: 10px;
 					width: 100%;
 					text-align: center;
-					background-color: rgba(255, 255, 255, 1);
 
-					.icon {
-						img {
-							padding: 10px;
-							width: 70%;
-						}
-					}
-
-					.title {
+					h5 {
 						text-align: center;
-
-						a {
-							padding: 10px;
-							width: 100%;
-							display: block;
-							text-align: center;
-							min-height: 50px;
-							color: @color-text;
-							font-weight: bold;
-							text-transform: uppercase;
-							font-size: 1.2em;
-							text-decoration: none;
-
-							&:hover {
-								color: @color-light-blue;
-							}
-
-							i {
-								padding: 0 0 0 10px;
-							}
-						}
+						font-weight: bold;
+						font-size: 18px;
+						margin: 0 0 4px 0;
+						text-transform: uppercase;
 					}
 
-					hr {
+					p {
+						text-align: center;
 						margin: 0;
+						padding: 0;
+						color: #999;
+						font-size: 14px;
+						line-height: 14px;
+						height: auto;
+						display: inline-block;
+					}
+
+					&:hover {
+						border-color: @color-dark-blue;
+						cursor: pointer;
+						color: @color-light-blue;
 					}
 				}
 			}

@@ -3,8 +3,29 @@
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Admin</h2>
-
-
-
-<a href="@Url.Action("Index", "Project",new { area = "Admin"})">View projects</a>
+<h2 class="text-center">Admin main page</h2>
+<hr />
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<ul class="list-group">
+			<li class="list-group-item">
+				<a href="@Url.Action("Index", "Blogpost", new { area = "Admin"})">View blog</a>
+			</li>
+			<li class="list-group-item">
+				<a href="@Url.Action("Index", "Category", new { area = "Admin"})">View categories</a>
+			</li>
+			<li class="list-group-item">
+				<a href="@Url.Action("Index", "Service", new { area = "Admin" })">View services</a>
+			</li>
+			<li class="list-group-item">
+				<a href="@Url.Action("Index", "Project",new { area = "Admin"})">View projects</a>
+			</li>
+			<li class="list-group-item">
+				<a href="@Url.Action("Index", "Client",new { area = "Admin"})">View clients</a>
+			</li>
+			<li class="list-group-item">
+				<a href="@Url.Action("Index", "Technology", new { area = "Admin" })">View technologies</a>
+			</li>
+		</ul>
+	</div>
+</div>

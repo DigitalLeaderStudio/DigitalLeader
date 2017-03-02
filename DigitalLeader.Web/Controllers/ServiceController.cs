@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-namespace DigitalLeader.Web
+﻿namespace DigitalLeader.Web.Controllers
 {
-    public class ServiceController : Controller
-    {
-        // GET: Services
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult DigitalConsulting()
-        {
-            return View();
-        }
-        public ActionResult SoftwareDevelopment()
-        {
-            return View();
-        }
-        public ActionResult ItOutsourcing()
-        {
-            return View();
-        }
-        public ActionResult DigitalMarketing()
-        {
-            return View();
-        }
+	using AutoMapper;
+	using DigitalLeader.Entities;
+	using DigitalLeader.Services.Interfaces;
+	using DigitalLeader.ViewModels;
+	using DigitalLeader.Web.Controllers.Controllers;
+	using System.Web.Mvc;
 
-    }
+	public class ServiceController : BaseController
+	{
+		//private ICategoryService _categoryService;
+		private IServiceService _serviceService;
+
+		public ServiceController(IServiceService serviceService)
+		{
+			_serviceService = serviceService;
+		}
+
+		// GET: Services
+		[Route("Service/{service}")]
+		public ActionResult Index(string service)
+		{
+			var viewModel = Mapper.Map<Service, ServiceViewModel>(_serviceService.GetByName(service));
+
+			return View(viewModel);
+		}
+	}
 }

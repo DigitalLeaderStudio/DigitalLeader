@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DigitalLeader.ViewModels.BlogpostViewModel>
+
+@{
+	ViewBag.Title = "Blogposts list";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Blogposts list</h2>
+<p class="text-center">
+	@Html.ActionLink("Create New", "Create")
+</p>
+<hr />
+
+<table class="table table-hover">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.PublishedDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Title)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Overview)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Keywords)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ViewsCount)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.IsPublished)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.PublishedDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Overview)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Keywords)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ViewsCount)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.IsPublished)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+				@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.ID })
+			</td>
+		</tr>
+	}
+
+</table>

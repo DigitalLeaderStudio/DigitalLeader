@@ -2,24 +2,35 @@
 {
 	using AutoMapper;
 	using DigitalLeader.Entities;
-	using DigitalLeader.Entities.Identity;
+	using System.Linq;
 	using DigitalLeader.ViewModels;
 
 	public class ProjectProfile : Profile
 	{
-		protected override void Configure()
+		public ProjectProfile()
 		{
 			CreateMap<Project, ProjectViewModel>()
 				.ForMember(vm => vm.Client, opt => opt.ResolveUsing(e =>
 				{
 					return Mapper.Map<ClientViewModel>(e.Client);
 				}))
+				.ForMember(vm => vm.TechnologiesIds, opt => opt.MapFrom(item => item.Technologies.Select(t => t.ID).ToArray()))
+				.ForMember(vm => vm.ServicesIds, opt => opt.MapFrom(item => item.Services.Select(s => s.ID).ToArray()))
+				.ForMember(vm => vm.ContributorsIds, opt => opt.MapFrom(item => item.Contributors.Select(s => s.Id).ToArray()))
 				.ForMember(viewModel => viewModel.ImageId, opt => opt.MapFrom(project => project.ImageId));
 
 			CreateMap<ProjectViewModel, Project>()
 				.ForMember(entity => entity.Client, opt => opt.Ignore())
-				.ForMember(entity => entity.Image,
-					opt => opt.ResolveUsing(MapperImageConverter.ImageConverter));
+				.ForMember(entity => entity.Technologies, opt => opt.Ignore())
+				.ForMember(entity => entity.Services, opt => opt.Ignore())
+				.ForMember(entity => entity.Contributors, opt => opt.Ignore())
+				.AfterMap((vm, entity) =>
+				{
+					if (vm.File != null)
+					{
+						entity.Image = (File)MapperImageConverter.ImageConverter(vm);
+					}
+				});
 		}
 	}
 }

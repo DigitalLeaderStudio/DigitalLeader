@@ -1,91 +1,95 @@
 @import "settings.less";
 
 .navbar {
-    border: 0;
-    padding: 10px 10%;
-    background: @color-dark-blue;
-    height: 80px;
-    margin: 0;
-    /*border-bottom: 1px solid @color-light-blue;*/
-   
-    .navbar-header {
-        width: 40%;
-        float: left;
-        margin: 0 !important;
+	border: 0;
+	padding: 10px 10%;
+	background: @color-dark-blue;
+	height: 80px;
+	margin: 0;
+	/*border-bottom: 1px solid @color-light-blue;*/
+	.dropdown.open > .dropdown-menu {
+		background-color: @color-dark-blue;
+	}
 
-        .branding-container {
-            padding: 2px 0 0;
-            width: 100%;
-            overflow: auto;
+	.navbar-header {
+		width: 40%;
+		float: left;
+		margin: 0 !important;
 
-            .site-name {
-                float: left;
-                width: 100%;
-                padding: 0;
-                font-size: 2.2em;
-                line-height: 36px;
+		.branding-container {
+			padding: 2px 0 0;
+			width: 100%;
+			overflow: auto;
 
-                a, a:active, a:visited {
-                    text-decoration: none;
-                    font-weight: bold;
-                    color: @color-light-blue;
-                    font-family: @font-main;
+			.site-name {
+				float: left;
+				width: 100%;
+				padding: 0;
+				font-size: 2.2em;
+				line-height: 36px;
 
-                    &:hover {
-                        color: #fff !important;
-                        transition: color 0.3s;
-                    }
-                }
-            }
-            .motto {
-                float: left;
-                width: 100%;
-                color: #fff;
-                padding: 0;
-                line-height: 20px;
-                font-family: 'Exo 2', sans-serif;
-            }
-        }
+				a, a:active, a:visited {
+					text-decoration: none;
+					font-weight: bold;
+					color: @color-light-blue;
+					font-family: @font-main;
 
-        .navbar-toggle {
-            width: 10%;
-            float: right;
-            margin: 0 auto;
-            background: #0094ff;
-            padding: 10px;
-        }
-    }
+					&:hover {
+						color: #fff !important;
+						transition: color 0.3s;
+					}
+				}
+			}
 
-    #mainNavLinks {
-        width:60%;
-        float: left;
+			.motto {
+				float: left;
+				width: 100%;
+				color: #fff;
+				padding: 0;
+				line-height: 20px;
+				font-family: 'Exo 2', sans-serif;
+			}
+		}
 
-        .navbar-links {
-            float: right;
-            padding: 0;
-            padding-top: 20px;
+		.navbar-toggle {
+			width: 10%;
+			float: right;
+			margin: 0 auto;
+			background: #0094ff;
+			padding: 10px;
+		}
+	}
 
-            li {
-                list-style: none;
-                display: inline-block;
-                padding-left: 20px;
+	#mainNavLinks {
+		width: 60%;
+		float: left;
 
-                a {
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    font-size: 0.9em;
-                    text-decoration: none;
-                    color: #fff !important;
+		.navbar-links {
+			float: right;
+			padding: 0;
+			padding-top: 20px;
 
-                    &:hover {
-                        color: #0094ff !important;
-                        background: none !important;
-                        transition: color 0.4s;
-                    }
-                }
-            }
-        }
-    }
+			li {
+				list-style: none;
+				display: inline-block;
+				padding-left: 20px;
+
+				a {
+					text-transform: uppercase;
+					font-weight: bold;
+					font-size: 0.9em;
+					text-decoration: none;
+					color: #fff !important;
+
+					&:hover {
+						color: #0094ff !important;
+						background: none !important;
+						transition: color 0.4s;
+					}
+				}
+			}
+		}
+	}
 }
 
 
@@ -97,185 +101,185 @@
 
 /*RESPONSIVE*/
 /* xxs */
-@media (max-width: 375px) { 
-        .navbar {
-        padding: 0;
-        margin: 0;
-  
-        .container-fluid {
-            padding: 0;
-            margin: 0;
+@media (max-width: 375px) {
+	.navbar {
+		padding: 0;
+		margin: 0;
 
-            .navbar-header {
-                width:100%;
-                float: left;
-                margin: 0 !important;
+		.container-fluid {
+			padding: 0;
+			margin: 0;
 
-                .branding-container {
-                    width: 80%;
-                    float: left;
-                    padding: 10px 0 10px 15px;
+			.navbar-header {
+				width: 100%;
+				float: left;
+				margin: 0 !important;
 
-                    .site-name {
-                        font-size: 24px;
-                        line-height: 30px;
-                    }
-                    .motto {
-                        font-size: 14px;
-                        line-height: 14px;
-                    }
-                }
+				.branding-container {
+					width: 80%;
+					float: left;
+					padding: 10px 0 10px 15px;
 
-                .navbar-toggle {
-                    width: 30px !important;
-                    height: 30px;
-                    float: right;
-                    margin: 20px 15px 2px;
-                    background: #0094ff;
-                    padding: 0px 0 0 0px !important;
-                    border: 0;
-                    padding: 3px;
-                    color: #001e33;
+					.site-name {
+						font-size: 24px;
+						line-height: 30px;
+					}
 
-                    &:focus {
-                        background: #333;
-                        color: #fff;
-                    }
-                }
-    
-            }
+					.motto {
+						font-size: 14px;
+						line-height: 14px;
+					}
+				}
 
-            #mainNavLinks {
-                width:100%;
-                float: left !important;
-                width: 100%;
-                margin: 0 !important;
-                padding: 10px 30px;
-                text-align: right;
-                height: 100%;
-                background: linear-gradient(to bottom, rgba(0, 30, 51, 1), rgba(0, 30, 51, 0.9), rgba(0, 30, 51, 0.8), rgba(0, 30, 51, 0.7), rgba(0, 30, 51, 0));
+				.navbar-toggle {
+					width: 30px !important;
+					height: 30px;
+					float: right;
+					margin: 20px 15px 2px;
+					background: #0094ff;
+					padding: 0px 0 0 0px !important;
+					border: 0;
+					padding: 3px;
+					color: #001e33;
 
-                ul {
-                    float: left;
-                    width: 100%;
-                    margin: 0 0 40px;
-                    padding: 0;
-                    text-align: right;
+					&:focus {
+						background: #333;
+						color: #fff;
+					}
+				}
+			}
 
-                    li {
-                        display: block;
-                        padding: 5px 0;
-                    }
-                }
-            }
-        }
-    }
+			#mainNavLinks {
+				width: 100%;
+				float: left !important;
+				width: 100%;
+				margin: 0 !important;
+				padding: 10px 30px;
+				text-align: right;
+				height: 100%;
+				background: linear-gradient(to bottom, rgba(0, 30, 51, 1), rgba(0, 30, 51, 0.9), rgba(0, 30, 51, 0.8), rgba(0, 30, 51, 0.7), rgba(0, 30, 51, 0));
+
+				ul {
+					float: left;
+					width: 100%;
+					margin: 0 0 40px;
+					padding: 0;
+					text-align: right;
+
+					li {
+						display: block;
+						padding: 5px 0;
+					}
+				}
+			}
+		}
+	}
 }
 /* xs */
-@media (min-width: 375px) and (max-width: 767px) { 
-    .navbar {
-        padding: 0;
-        margin: 0;
-  
-        .container-fluid {
-            padding: 0;
-            margin: 0;
+@media (min-width: 375px) and (max-width: 767px) {
+	.navbar {
+		padding: 0;
+		margin: 0;
 
-            .navbar-header {
-                width:100%;
-                float: left;
-                margin: 0 !important;
+		.container-fluid {
+			padding: 0;
+			margin: 0;
 
-                .branding-container {
-                    width: 80%;
-                    float: left;
-                    padding: 10px 0 10px 15px;
-                }
+			.navbar-header {
+				width: 100%;
+				float: left;
+				margin: 0 !important;
 
-                .navbar-toggle {
-                    width: 30px !important;
-                    height: 30px;
-                    float: right;
-                    margin: 20px 15px 2px;
-                    background: #0094ff;
-                    padding: 0px 0 0 0px !important;
-                    border: 0;
-                    padding: 3px;
-                    color: #001e33;
-                }
-                .navbar-toggle:focus {
-                    background: #333;
-                    color: #fff;
-                }
-    
-            }
+				.branding-container {
+					width: 80%;
+					float: left;
+					padding: 10px 0 10px 15px;
+				}
 
-            #mainNavLinks {
-                width:100%;
-                float: left !important;
-                width: 100%;
-                margin: 0 !important;
-                padding: 10px 30px;
-                text-align: right;
-                height: 100%;
-                background: linear-gradient(to bottom, rgba(0, 30, 51, 1), rgba(0, 30, 51, 0.9), rgba(0, 30, 51, 0.8), rgba(0, 30, 51, 0.7), rgba(0, 30, 51, 0));
+				.navbar-toggle {
+					width: 30px !important;
+					height: 30px;
+					float: right;
+					margin: 20px 15px 2px;
+					background: #0094ff;
+					padding: 0px 0 0 0px !important;
+					border: 0;
+					padding: 3px;
+					color: #001e33;
+				}
 
-                ul {
-                    float: left;
-                    width: 100%;
-                    margin: 0 0 40px;
-                    padding: 0;
-                    text-align: right;
+				.navbar-toggle:focus {
+					background: #333;
+					color: #fff;
+				}
+			}
 
-                    li {
-                        display: block;
-                        padding: 5px 0;
-                    }
-                }
-            }
-        }
-    }
+			#mainNavLinks {
+				width: 100%;
+				float: left !important;
+				width: 100%;
+				margin: 0 !important;
+				padding: 10px 30px;
+				text-align: right;
+				height: 100%;
+				background: linear-gradient(to bottom, rgba(0, 30, 51, 1), rgba(0, 30, 51, 0.9), rgba(0, 30, 51, 0.8), rgba(0, 30, 51, 0.7), rgba(0, 30, 51, 0));
+
+				ul {
+					float: left;
+					width: 100%;
+					margin: 0 0 40px;
+					padding: 0;
+					text-align: right;
+
+					li {
+						display: block;
+						padding: 5px 0;
+					}
+				}
+			}
+		}
+	}
 }
 /* sm */
-@media (min-width: 768px) and (max-width: 991px) { 
-    .navbar {
-        height: 125px;  
-        background: #001e33;
-        padding: 10px 1%;
+@media (min-width: 768px) and (max-width: 991px) {
+	.navbar {
+		height: 125px;
+		background: #001e33;
+		padding: 10px 1%;
 
-        .navbar-header {
-            width:100%;
-            float: left;
-            margin: 0 !important;
+		.navbar-header {
+			width: 100%;
+			float: left;
+			margin: 0 !important;
+		}
 
-        }
+		#mainNavLinks {
+			width: 100%;
+			float: left !important;
 
-        #mainNavLinks {
-            width:100%;
-            float: left !important;
-        
-            ul {
-                width: 100%;
-                text-align: right;
-                float: left;
-                padding: 0;
-                padding-top: 10px;
-                padding-bottom: 5px;
-            }
-            li {
-                padding: 0;
-                padding-right: 20px;
-            }
-        }
-    }
+			ul {
+				width: 100%;
+				text-align: right;
+				float: left;
+				padding: 0;
+				padding-top: 10px;
+				padding-bottom: 5px;
+			}
+
+			li {
+				padding: 0;
+				padding-right: 20px;
+			}
+		}
+	}
 }
 /* md */
-@media (min-width: 992px) and (max-width: 1199px) { 
-    .navbar {
-        background: #001e33;
-        padding: 10px 1%;
-    }
+@media (min-width: 992px) and (max-width: 1199px) {
+	.navbar {
+		background: #001e33;
+		padding: 10px 1%;
+	}
 }
 /* lg */
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
 }

@@ -1,0 +1,82 @@
+﻿@model DigitalLeader.ViewModels.BlogpostViewModel
+
+@{
+	ViewBag.Title = "Blogpost details";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Blogpost details</h2>
+<hr />
+
+<div>
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.PublishedDate)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.PublishedDate)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Title)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Title)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Overview)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Overview)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Keywords)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Keywords)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ViewsCount)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ViewsCount)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.IsPublished)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.IsPublished)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Content)
+		</dt>
+
+		<dd>
+			@Html.Raw(Model.Content)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ServiceId)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ServiceId)
+		</dd>
+
+	</dl>
+</div>
+<p class="text-center">
+	@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+	@Html.ActionLink("Back to List", "Index")
+</p>

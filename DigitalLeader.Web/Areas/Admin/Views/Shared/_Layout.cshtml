@@ -16,6 +16,13 @@
 	@Scripts.Render("~/bundles/bootstrap")
 	@Scripts.Render("~/bundles/core-js")
 
+	@Styles.Render("~/Content/chosen")
+	@Scripts.Render("~/bundles/chosen")
+
+	@Scripts.Render("~/bundles/bootstrap-datetime")
+
+	@Styles.Render("~/Content/bootstrap-datetimepicker.less")
+
 	<link rel="icon" href="@Url.Content("~/Content/Images/favicon.png")" />
 
 </head>
@@ -30,5 +37,12 @@
 
 
 	@RenderSection("scripts", required: false)
+
+	<script type="text/javascript">
+		$(function () {
+			$(".chosen-select").chosen();
+			$(".chosen-select").trigger('chosen:updated');
+		})
+	</script>
 </body>
 </html>

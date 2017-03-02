@@ -2,11 +2,13 @@
 {
 	using Autofac;
 	using Autofac.Integration.Mvc;
+	using DigitalLeader.Services;
 	using DigitalLeader.Services.Implementation;
 	using DigitalLeader.Services.Interfaces;
 	using DigitalLeader.Web;
 	using EntityFramework.DbContextScope;
 	using EntityFramework.DbContextScope.Interfaces;
+	using System.Reflection;
 	using System.Web.Mvc;
 
 
@@ -27,12 +29,13 @@
 
 			// Register our Data dependencies
 			//builder.RegisterModule(new DataModule("MVCWithAutofacDB"));
-			builder.RegisterType<DbContextScopeFactory>().As<IDbContextScopeFactory>();
-			
-			builder.RegisterType<ProjectService>().As<IProjectService>();
-			builder.RegisterType<ClientService>().As<IClientService>();
-			builder.RegisterType<FileService>().As<IFileService>();
+			builder
+				.RegisterType<DbContextScopeFactory>()
+				.As<IDbContextScopeFactory>();
 
+			builder.RegisterAssemblyTypes(typeof(ServiceAssemblyMarker).Assembly)
+				.Where(t => t.Name.EndsWith("Service"))
+				.AsImplementedInterfaces();
 
 			var container = builder.Build();
 

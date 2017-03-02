@@ -17,7 +17,7 @@
 			_clientService = clientService;
 		}
 
-		// GET: Admin/Client
+		// GET: Admin/Clinet/Client
 		public ActionResult Index()
 		{
 			var viewModel = Mapper.Map<IEnumerable<Client>, List<ClientViewModel>>(_clientService.GetAll());
@@ -25,13 +25,13 @@
 			return View(viewModel);
 		}
 
-		// GET: Admin/Create
+		// GET: Admin/Clinet/Create
 		public ActionResult Create()
 		{
 			return View();
 		}
 
-		// POST: Admin/Create
+		// POST: Admin/Clinet/Create
 		[HttpPost]
 		public ActionResult Create(ClientViewModel viewModel)
 		{
@@ -54,8 +54,7 @@
 			return View(viewModel);
 		}
 
-
-		// GET: Admin/Edit
+		// GET: Admin/Clinet/Edit
 		public ActionResult Edit(int id)
 		{
 			var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
@@ -63,7 +62,7 @@
 			return View(viewModel);
 		}
 
-		// POST: Admin/Edit
+		// POST: Admin/Clinet/Edit
 		[HttpPost]
 		public ActionResult Edit(ClientViewModel viewModel)
 		{
@@ -84,6 +83,14 @@
 			}
 
 			return RedirectToAction("Index");
+		}
+
+		// GET: Admin/Clinet/Details
+		public ActionResult Details(int id)
+		{
+			var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
+
+			return View(viewModel);
 		}
 	}
 }

@@ -44,7 +44,7 @@
 
 				var existed = dbContext
 					.Set<File>().Find(value.ID);
-
+				
 				existed.Content = value.Content;
 				existed.ContentType = value.ContentType;
 				existed.FileName = value.FileName;
@@ -79,6 +79,12 @@
 
 				scope.SaveChanges();
 			}
+		}
+
+
+		public List<File> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<File, object>>[] includes)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

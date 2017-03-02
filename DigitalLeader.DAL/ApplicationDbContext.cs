@@ -21,6 +21,10 @@
 
 		#region DbSets
 
+		public virtual DbSet<Blogpost> Blogposts { get; set; }
+
+		public virtual DbSet<Category> Categories { get; set; }
+
 		public virtual DbSet<Project> Projects { get; set; }
 
 		public virtual DbSet<Service> Services { get; set; }

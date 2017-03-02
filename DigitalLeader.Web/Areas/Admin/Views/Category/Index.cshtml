@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DigitalLeader.ViewModels.CategoryViewModel>
+
+@{
+	ViewBag.Title = "Categories list";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Categories list</h2>
+<p class="text-center">
+	@Html.ActionLink("Create New", "Create")
+</p>
+<hr />
+
+<table class="table table-hover">
+	<tr>
+
+		<th>
+			@Html.DisplayNameFor(model => model.Name)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@{
+		var srcAction = item.ImageId.HasValue ?
+		Url.Action("Show", "File", new { area = "", id = item.ImageId }) :
+		"/Content/img/default-user.png";
+				}
+				<img src="@srcAction" alt="@item.Name" class="img-responsive" width="50"/>
+
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+				@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.ID })
+			</td>
+		</tr>
+	}
+
+</table>

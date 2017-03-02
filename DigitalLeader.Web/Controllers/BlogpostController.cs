@@ -1,16 +1,30 @@
-﻿namespace DigitalLeader.Web
+﻿namespace DigitalLeader.Web.Controllers
 {
+	using AutoMapper;
+	using DigitalLeader.Entities;
+	using DigitalLeader.Services.Interfaces;
+	using DigitalLeader.ViewModels;
+	using DigitalLeader.Web.Controllers;
+	using DigitalLeader.Web.Controllers.Controllers;
+	using System.Collections.Generic;
 	using System.Web.Mvc;
 
-	public class BlogpostController : Controller
+	public class BlogpostController : BaseController
 	{
-		//private BlogpostContext db = new BlogpostContext();
+		private IBlogpostService _blogpostService;
 
-		//// GET: Blogpost
-		//public ActionResult Index()
-		//{
-		//	return View(db.Blogposts.ToList());
-		//}
+		public BlogpostController(IBlogpostService blogpostService)
+		{
+			_blogpostService = blogpostService;
+		}
+
+		// GET: Blogpost
+		public ActionResult Index()
+		{
+			var viewModel = Mapper.Map<List<Blogpost>, List<BlogpostViewModel>>(_blogpostService.GetAll());
+
+			return View(viewModel);
+		}
 
 		//// GET: Blogpost/Details/5
 		//public ActionResult Details(int? id)

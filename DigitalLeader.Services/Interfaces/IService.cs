@@ -1,10 +1,14 @@
 ﻿namespace DigitalLeader.Services.Interfaces
 {
+	using System;
 	using System.Collections.Generic;
+	using System.Linq.Expressions;
 
 	public interface IService<T> where T : class
 	{
 		List<T> GetAll();
+
+		List<T> GetAllInclude(params Expression<Func<T, object>>[] includes);
 
 		T GetById(int id);
 

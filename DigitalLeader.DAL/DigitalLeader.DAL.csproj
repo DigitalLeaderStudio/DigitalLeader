@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201702211130549_ChangeFieldName.Designer.cs">
       <DependentUpon>201702211130549_ChangeFieldName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702271548117_CategoryChange.cs" />
+    <Compile Include="Migrations\201702271548117_CategoryChange.Designer.cs">
+      <DependentUpon>201702271548117_CategoryChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703021030131_AddTesimonials.cs" />
+    <Compile Include="Migrations\201703021030131_AddTesimonials.Designer.cs">
+      <DependentUpon>201703021030131_AddTesimonials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +96,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702211130549_ChangeFieldName.resx">
       <DependentUpon>201702211130549_ChangeFieldName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702271548117_CategoryChange.resx">
+      <DependentUpon>201702271548117_CategoryChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703021030131_AddTesimonials.resx">
+      <DependentUpon>201703021030131_AddTesimonials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

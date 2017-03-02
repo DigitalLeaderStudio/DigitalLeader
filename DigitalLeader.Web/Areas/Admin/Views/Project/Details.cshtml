@@ -1,0 +1,112 @@
+﻿@model DigitalLeader.ViewModels.ProjectViewModel
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">View project details</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
+<div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="thumbnail">
+				@{
+					var srcAction = Model.ImageId.HasValue ?
+					Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
+					"/Content/img/default-user.png";
+				}
+				<img src="@srcAction" />
+				<div class="caption">
+					<h3>@Model.Title</h3>
+					<p>
+						<dl class="dl-horizontal">
+							<dt>
+								@Html.DisplayNameFor(model => model.Kewywords)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.Kewywords)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.Overview)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.Overview)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.Objective)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.Objective)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.WorkOverview)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.WorkOverview)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.ResultOverview)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.ResultOverview)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.IsCaseStudy)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.IsCaseStudy)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.IsFeatured)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.IsFeatured)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.StartDate)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.StartDate)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.EndDate)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.EndDate)
+							</dd>
+						</dl>
+					</p>
+					<p>
+						<a href="@Url.Action("Edit", "Project", new { id = Model.ID })" class="btn btn-primary" role="button">Edit</a>
+						<a href="@Model.ProjectUrl" target="_blank" class="btn btn-default" role="button">View: @Model.ProjectUrl</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>

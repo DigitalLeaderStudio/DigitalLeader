@@ -26,6 +26,8 @@
 
 		public virtual File Image { get; set; }
 
+		public virtual ICollection<Testimonial> Testimonial { get; set; }
+
 		public virtual ICollection<Industry> Industries { get; set; }
 
 		public virtual ICollection<Project> Projects { get; set; }

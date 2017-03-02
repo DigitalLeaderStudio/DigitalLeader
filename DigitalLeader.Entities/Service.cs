@@ -24,6 +24,10 @@
 
 		public virtual File Image { get; set; }
 
+		public int CategoryID { get; set; }
+
+		public virtual Category Category { get; set; }
+
 		public virtual ICollection<Blogpost> Blogposts { get; set; }
 
 		public virtual ICollection<User> Employees { get; set; }

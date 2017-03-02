@@ -1,22 +1,45 @@
-﻿namespace DigitalLeader.Web
+﻿namespace DigitalLeader.Web.Controllers
 {
+	using AutoMapper;
+	using DigitalLeader.Entities;
+	using DigitalLeader.Services.Interfaces;
 	using DigitalLeader.ViewModels;
+	using DigitalLeader.Web.Controllers;
+	using DigitalLeader.Web.Controllers.Controllers;
 	using System;
+	using System.Collections.Generic;
 	using System.Net.Mail;
 	using System.Threading.Tasks;
 	using System.Web.Mvc;
 
-
-	public class HomeController : Controller
+	public class HomeController : BaseController
 	{
+		private ICategoryService _categoryService;
+		private IServiceService _serviceService;
+
+		public HomeController(ICategoryService categoryService, IServiceService serviceService)
+		{
+			_categoryService = categoryService;
+
+			_serviceService = serviceService;
+		}
+
 		public ActionResult Index()
 		{
-			return View();
+			var data = _categoryService.GetAll();
+
+			var viewModel = Mapper.Map<List<Category>, List<CategoryViewModel>>(data);
+
+			return View(viewModel);
 		}
 
 		public ActionResult Company()
 		{
-			return View();
+			var data = _categoryService.GetAll();
+
+			var viewModel = Mapper.Map<List<Category>, List<CategoryViewModel>>(data);
+
+			return View(viewModel);
 		}
 
 		public ActionResult Contact()
@@ -25,13 +48,6 @@
 			model.Message = "Describe your business problem";
 
 			return View(model);
-		}
-
-		public ActionResult Services()
-		{
-			ViewBag.Message = "Services page";
-
-			return View();
 		}
 
 		[HttpGet]

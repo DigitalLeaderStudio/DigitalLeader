@@ -1,1 +1,11 @@
-﻿
+﻿@model DigitalLeader.ViewModels.ServiceViewModel
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Digital Leader  - " + Model.Title;
+}
+
+<h1 class="text-center">@Model.Title</h1>
+<hr />
+<p>
+	@Html.Raw(Model.Content)
+</p>

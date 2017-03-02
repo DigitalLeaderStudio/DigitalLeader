@@ -60,14 +60,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\LinqExtensions.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Implementation\BlogpostService.cs" />
+    <Compile Include="Implementation\CategoryService.cs" />
     <Compile Include="Implementation\FileService.cs" />
     <Compile Include="Implementation\ClientService.cs" />
     <Compile Include="Implementation\ProjectService.cs" />
+    <Compile Include="Implementation\ServiceService.cs" />
+    <Compile Include="Implementation\TechnologyService.cs" />
+    <Compile Include="Implementation\TestimonialService.cs" />
+    <Compile Include="Implementation\UserService.cs" />
+    <Compile Include="Interfaces\IBlogpostService.cs" />
+    <Compile Include="Interfaces\ITestimonialService.cs" />
+    <Compile Include="Interfaces\ICategoryService.cs" />
     <Compile Include="Interfaces\IFileService.cs" />
     <Compile Include="Interfaces\IClientService.cs" />
     <Compile Include="Interfaces\IProjectService.cs" />
     <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Interfaces\IServiceService.cs" />
+    <Compile Include="Interfaces\ITechnologyService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceAssemblyMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DigitalLeader.DAL\DigitalLeader.DAL.csproj">

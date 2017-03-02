@@ -1,4 +1,4 @@
-﻿namespace DigitalLeader.Web.Controllers
+﻿namespace DigitalLeader.Web.Controllers.Controllers
 {
 	using DigitalLeader.Services.Interfaces;
 	using System.Web.Mvc;

@@ -9,8 +9,7 @@
 		{
 			Mapper.Initialize(config =>
 			{
-				config.AddProfile<ClientProfile>();
-				config.AddProfile<ProjectProfile>();
+				config.AddProfiles(new string[] { "DigitalLeader.Web" });
 			});
 		}
 	}

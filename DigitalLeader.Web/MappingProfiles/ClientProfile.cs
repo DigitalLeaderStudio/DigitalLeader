@@ -1,14 +1,13 @@
 ﻿namespace DigitalLeader.Web.MappingProfiles
 {
 	using AutoMapper;
-	using DigitalLeader.Entities;
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.ViewModels;
 	using System.Web.Mvc;
 
 	public class ClientProfile : Profile
 	{
-		protected override void Configure()
+		public ClientProfile()
 		{
 			CreateMap<Client, SelectListItem>().ConvertUsing(
 				(src, target) =>

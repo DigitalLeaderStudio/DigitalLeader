@@ -1,4 +1,4 @@
-﻿namespace DigitalLeader.Web.Controllers
+﻿namespace DigitalLeader.Web.Controllers.Controllers
 {
 	using System;
 	using System.Collections.Generic;

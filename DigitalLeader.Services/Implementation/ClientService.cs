@@ -86,5 +86,11 @@
 				scope.SaveChanges();
 			}
 		}
+
+
+		public List<Client> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Client, object>>[] includes)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }
