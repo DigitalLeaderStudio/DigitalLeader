@@ -2,12 +2,13 @@
 
 @{
 	ViewBag.Title = "Users list";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2 class="text-center">Users list</h2>
 <p class="text-center">
-	@Html.ActionLink("Create New", "Create")
+	<a href="@Url.Action("Register", "Account", new { area = ""})">Create new user</a>
+	@*@Html.ActionLink("Create New", "Create")*@
 </p>
 <hr />
 

@@ -1,5 +1,6 @@
 ﻿namespace DigitalLeader.Web.Controllers
 {
+	using AutoMapper;
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.ViewModels;
 	using DigitalLeader.Web.Managers;
@@ -135,7 +136,7 @@
 
 		//
 		// GET: /Account/Register
-		[AllowAnonymous]
+		[Authorize(Roles="Admin")]
 		public ActionResult Register()
 		{
 			return View();
@@ -144,13 +145,15 @@
 		//
 		// POST: /Account/Register
 		[HttpPost]
-		[AllowAnonymous]
+		[Authorize(Roles = "Admin")]
 		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> Register(RegisterViewModel model)
 		{
 			if (ModelState.IsValid)
 			{
-				var user = new User { UserName = model.Email, Email = model.Email };
+				//var user = new User { UserName = model.Email, Email = model.Email };
+				var user = Mapper.Map<RegisterViewModel, User>(model);
+
 				var result = await UserManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{

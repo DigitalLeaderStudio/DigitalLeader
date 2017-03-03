@@ -30,6 +30,16 @@
 						entity.Image = (File)MapperImageConverter.ImageConverter(vm);
 					}
 				});
+
+			CreateMap<RegisterViewModel, User>()
+				.AfterMap((vm, entity) =>
+				{
+					if (vm.File != null)
+					{
+						entity.Image = (File)MapperImageConverter.ImageConverter(vm);
+					}
+				});
+
 		}
 	}
 }

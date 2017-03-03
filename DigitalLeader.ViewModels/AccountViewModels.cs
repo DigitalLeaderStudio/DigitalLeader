@@ -63,12 +63,28 @@
 		public bool RememberMe { get; set; }
 	}
 
-	public class RegisterViewModel
+	public class RegisterViewModel : FileViewModel
 	{
 		[Required]
 		[EmailAddress]
 		[Display(Name = "Email")]
 		public string Email { get; set; }
+
+		[Required]
+		[Display(Name = "Experiance years")]
+		public int ExperianceYears { get; set; }
+
+		[Required]
+		[Display(Name = "Name")]
+		[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+		public string UserName { get; set; }
+
+		[Required]
+		[Display(Name = "Title")]
+		public string Title { get; set; }
+
+		[DataType(DataType.MultilineText)]
+		public string Biography { get; set; }
 
 		[Required]
 		[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
