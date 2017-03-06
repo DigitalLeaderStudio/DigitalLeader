@@ -3,8 +3,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#001E33;}
-	.st1{fill:#0094FF;}
+	.st0{fill:#FFFFFF;}
 </style>
 <g id="Layer_1_1_">
 </g>
@@ -16,13 +15,13 @@
 				c0,42,34.4,76.4,76.4,76.4h718.6c42,0,76.4-34.4,76.4-76.4V247.7C935.7,205.7,901.3,171.3,859.3,171.3L859.3,171.3z"/>
 			<path class="st0" d="M863.1,347.1H140.7c-4.6,0-7.6-3.1-7.6-7.6c0-4.6,3.1-7.6,7.6-7.6h722.4c4.6,0,7.6,3.1,7.6,7.6
 				C870.8,344,867.7,347.1,863.1,347.1z"/>
-			<circle class="st1" cx="175.1" cy="269.1" r="22.9"/>
+			<circle class="st0" cx="175.1" cy="269.1" r="22.9"/>
 			<circle class="st0" cx="243.9" cy="269.1" r="22.9"/>
-			<circle class="st1" cx="312.7" cy="269.1" r="22.9"/>
+			<circle class="st0" cx="312.7" cy="269.1" r="22.9"/>
 		</g>
 		<g>
 			<path class="st0" d="M382,524.1l-119,50.1l119,49.1v24.4l-145.5-61.3V562L382,499.7V524.1z"/>
-			<path class="st1" d="M442.1,704.6H417l140.8-270.8h25.1L442.1,704.6z"/>
+			<path class="st0" d="M442.1,704.6H417l140.8-270.8h25.1L442.1,704.6z"/>
 			<path class="st0" d="M763.5,562v24.4L618,647.7v-24.4l119-49.1l-119-50.1v-24.4L763.5,562z"/>
 		</g>
 	</g>

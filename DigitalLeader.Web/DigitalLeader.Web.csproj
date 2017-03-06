@@ -275,6 +275,7 @@
     <Content Include="Content\Images\default-user.png" />
     <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\home-bg.png" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\services\consult.svg" />
     <Content Include="Content\Images\services\development.svg" />
     <Content Include="Content\Images\services\marketing.svg" />
