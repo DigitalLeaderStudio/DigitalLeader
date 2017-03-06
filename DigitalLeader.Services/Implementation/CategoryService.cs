@@ -54,7 +54,10 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<Category>().SingleOrDefault(c => c.ID == id);
+				return dbContext
+					.Set<Category>()
+					.Include(c => c.Services)
+					.SingleOrDefault(c => c.ID == id);
 			}
 		}
 
