@@ -4,8 +4,6 @@
 	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
-	.st1{font-family:'FontAwesome';}
-	.st2{font-size:868.5056px;}
 </style>
 <g id="Layer_1">
 	<g id="Layer_1_1_">
@@ -91,7 +89,6 @@
 			C602.7,606.6,599.4,598.2,592.1,598.2z"/>
 	</g>
 </g>
-<g id="Layer_4">
-	<text transform="matrix(1 0 0 1 65.4946 823.0586)" class="st0 st1 st2"></text>
+<g id="Layer_3">
 </g>
 </svg>
