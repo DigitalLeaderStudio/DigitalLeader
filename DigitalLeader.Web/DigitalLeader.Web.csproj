@@ -275,12 +275,15 @@
     <Content Include="Content\Images\default-user.png" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\favicon.png" />
+    <Content Include="Content\Images\home-background.png" />
     <Content Include="Content\Images\home-bg.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\services\consult.svg" />
     <Content Include="Content\Images\services\development.svg" />
+    <Content Include="Content\Images\services\marketing-glyph-icon.png" />
     <Content Include="Content\Images\services\marketing.svg" />
     <Content Include="Content\Images\services\outsourcing.svg" />
+    <Content Include="Content\Images\services\technology-glyph-icon.png" />
     <Content Include="Content\Images\services\technology.svg" />
     <Content Include="Content\Images\services\workflow\all.svg" />
     <Content Include="Content\Images\services\workflow\consult proto 2.png" />

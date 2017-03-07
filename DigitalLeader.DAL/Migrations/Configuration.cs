@@ -84,23 +84,9 @@ namespace DigitalLeader.DAL.Migrations
 
 			#region Categories
 
-			var developmentCategory = new Category
-				{
-					Name = "Software Development",
-					Content = @"This is a possible way of your business evolution. Software development is the process of software applications creation and maintenance resulting in a software product. The aim of the software product is to automate entire business or its specific processes to reduce consumption of resources such as time, employees, money and so on. On the other hand, your business might already use some some software that needs customization to fit its needs.",
-					Services = new List<Service>(),
-					Image = new DigitalLeader.Entities.File
-					{
-						ContentType = "image/svg+xml",
-						FileName = "development.svg",
-						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/development.svg"))
-					}
-				};
-			context.Categories.AddOrUpdate(c => c.Name, developmentCategory);
-
 			var outsorcingCategory = new Category
 				{
-					Name = "Technology Outsourcing",
+					Name = "Technology Solutions",
 					Content = @"IT outsourcing is the way of use of external information technology service provider to effectively deliver IT-enabled business process and infrastructure solutions for its client. It includes many information technology services such as software as a service and cloud services. Your enterprise can benefit by delegating IT related processes to information technology outsourcing company. Those benefits include costs reduction, marketing life cycle acceleration, and external expertise, assets and intellectual property exploitation.",
 					Services = new List<Service>(),
 					Image = new DigitalLeader.Entities.File

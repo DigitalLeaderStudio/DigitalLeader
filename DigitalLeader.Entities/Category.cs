@@ -15,7 +15,9 @@
 
 		public string Content { get; set; }
 
-		public int? ImageId { get; set; }
+        public string CssClass { get; set; }
+
+        public int? ImageId { get; set; }
 
 		public virtual File Image { get; set; }
 

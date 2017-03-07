@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201703021656517_ExtendUser.Designer.cs">
       <DependentUpon>201703021656517_ExtendUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703061607059_CssClassAddedToCategories.cs" />
+    <Compile Include="Migrations\201703061607059_CssClassAddedToCategories.Designer.cs">
+      <DependentUpon>201703061607059_CssClassAddedToCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703021656517_ExtendUser.resx">
       <DependentUpon>201703021656517_ExtendUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703061607059_CssClassAddedToCategories.resx">
+      <DependentUpon>201703061607059_CssClassAddedToCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

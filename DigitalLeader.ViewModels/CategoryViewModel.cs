@@ -14,6 +14,8 @@
 		[UIHint("tinymce_full_compressed")]
 		public string Content { get; set; }
 
-		public virtual List<ServiceViewModel> Services { get; set; }
+        public string CssClass { get; set; }
+
+        public virtual List<ServiceViewModel> Services { get; set; }
 	}
 }

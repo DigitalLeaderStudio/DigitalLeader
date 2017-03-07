@@ -39,11 +39,11 @@
                     <div class="row">
                         @foreach (var category in Model)
                         {
-                            var srcAction = category.ImageId.HasValue ?
-                            Url.Action("Show", "File", new { area = "", id = category.ImageId }) : "";
+                            //var srcAction = category.ImageId.HasValue ?
+                            //Url.Action("Show", "File", new { area = "", id = category.ImageId }) : "";
 
                             <a href="#" class="col-md-12 service">
-                                <img src="@srcAction" alt="@category.Name" />
+                                <div class="@category.CssClass"></div>
                                 <hr />
                                 <h3>@category.Name</h3>
                             </a>

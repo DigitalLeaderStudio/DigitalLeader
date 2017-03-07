@@ -1,5 +1,9 @@
 @import "settings.less";
 
+body {
+    background-image: url("../images/home-background.png")
+}
+
 .home {
     margin-top: 130px;
 
@@ -12,6 +16,7 @@
             min-height: 500px;
             border: 2px solid @color-blue;
             padding: 12% 5% 0;
+            background: rgba(255, 255, 255, 0.8);
 
             h1 {
                 text-align: center;
@@ -36,14 +41,41 @@
                 &:hover {
                     background: @color-blue;
                     text-decoration: none;
+
+                    .technology-image, .marketing-image {
+                        background-position: 0 0;
+                    }
+
                 }
 
-                img {
-                    width: 50%;
+                .technology-image {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+                    background: url('../images/services/technology-glyph-icon.png') no-repeat left top;
+                    background-size: cover;
+                    background-position: -100px 0;
+
+                    &:hover {
+                        background-position: 0 0;
+                    }
+                }
+
+                .marketing-image {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+                    background: url('../images/services/marketing-glyph-icon.png') no-repeat left top;
+                    background-size: cover;
+                    background-position: -100px 0;
+
+                    &:hover {
+                        background-position: 0 0;
+                    }
                 }
 
                 hr {
-                    margin: 20px 0 20px;
+                    margin: 10px 0 20px;
                 }
 
                 h3 {
@@ -133,7 +165,7 @@
                     border: 0;
                     background: @color-blue;
                     color: #fff;
-                    font-size: 32px;
+                    font-size: 26px;
                     border-bottom: 3px solid #303131;
 
                     &:hover {
