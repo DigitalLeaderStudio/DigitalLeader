@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLeader.DAL", "DigitalLeader.DAL\DigitalLeader.DAL.csproj", "{E5AB181F-9FAF-487B-92FB-3B499E1C951E}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLeader.ViewModels", "DigitalLeader.ViewModels\DigitalLeader.ViewModels.csproj", "{5B5A7498-16BD-44BE-B733-0968568E5C06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLeader.Web", "DigitalLeader.Web\DigitalLeader.Web.csproj", "{1E650EA5-F95B-415D-9003-1B6A7E5302B3}"
-EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DigitalLeader.Modeling", "DigitalLeader.Modeling\DigitalLeader.Modeling.modelproj", "{497FD7E8-95CA-4239-9A38-3BBA14289171}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLeader.Services", "DigitalLeader.Services\DigitalLeader.Services.csproj", "{931089AA-8D4A-46FB-900B-9B6935107F41}"
 EndProject
@@ -37,10 +35,6 @@ Global
 		{1E650EA5-F95B-415D-9003-1B6A7E5302B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E650EA5-F95B-415D-9003-1B6A7E5302B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E650EA5-F95B-415D-9003-1B6A7E5302B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{497FD7E8-95CA-4239-9A38-3BBA14289171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{497FD7E8-95CA-4239-9A38-3BBA14289171}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{497FD7E8-95CA-4239-9A38-3BBA14289171}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{497FD7E8-95CA-4239-9A38-3BBA14289171}.Release|Any CPU.Build.0 = Release|Any CPU
 		{931089AA-8D4A-46FB-900B-9B6935107F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{931089AA-8D4A-46FB-900B-9B6935107F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{931089AA-8D4A-46FB-900B-9B6935107F41}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -273,13 +273,18 @@
     <Content Include="Content\Images\company\header bg.png" />
     <Content Include="Content\Images\company\world-map.png" />
     <Content Include="Content\Images\default-user.png" />
+    <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\favicon.png" />
+    <Content Include="Content\Images\home-background.png" />
     <Content Include="Content\Images\home-bg.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\services\consult.svg" />
     <Content Include="Content\Images\services\development.svg" />
+    <Content Include="Content\Images\services\marketing-glyph-icon.png" />
     <Content Include="Content\Images\services\marketing.svg" />
     <Content Include="Content\Images\services\outsourcing.svg" />
+    <Content Include="Content\Images\services\technology-glyph-icon.png" />
+    <Content Include="Content\Images\services\technology.svg" />
     <Content Include="Content\Images\services\workflow\all.svg" />
     <Content Include="Content\Images\services\workflow\consult proto 2.png" />
     <Content Include="Content\Images\services\workflow\consult proto 3.png" />
@@ -451,6 +456,8 @@
     <Content Include="Areas\Admin\Views\Testimonial\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Content\Images\logo icons.zip" />
+    <Content Include="Content\Images\favicon.psd" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
