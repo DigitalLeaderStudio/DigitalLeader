@@ -81,3 +81,24 @@
         </div>
     </div>
 </nav>
+<script>
+    $(document).ready(function () {
+        alert("HELLO");
+        $('.navbar-toggle').on('click', function () {
+            $navMenuCont = $($(this).data('target'));
+            $navMenuCont.animate({ 'width': 'toggle' }, 100);
+            $sign = $(this).find("i");
+            
+            if ($sign.hasClass("fa-bars")) {
+                $(this).find("i").removeClass("fa-bars");
+                $(this).find("i").addClass("fa-times");
+                $(".main-cta").hide();
+            }
+            else {
+                $(this).find("i").removeClass("fa-times");
+                $(this).find("i").addClass("fa-bars");
+                $(".main-cta").show();
+            }
+        });
+    });
+    </script>

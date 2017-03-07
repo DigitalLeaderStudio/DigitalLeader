@@ -1,13 +1,12 @@
 ﻿@model List<DigitalLeader.ViewModels.CategoryViewModel>
 
 @{
-	Layout = null;
-	ViewBag.Title = "Digital Leader  - your best digital solutions provider";
+    Layout = null;
+    ViewBag.Title = "Digital Leader  - your best digital solutions provider";
 }
 
 @Styles.Render("~/Content/homepage.less")
 @*@Styles.Render("~/Content/service.less")*@
-
 
 <!DOCTYPE html>
 <html>
@@ -24,6 +23,8 @@
     @Styles.Render("~/Content/core-css")
     @Styles.Render("~/Content/core-less")
     @Styles.Render("~/Content/homepage.less")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
 </head>
 <body>
@@ -76,9 +77,6 @@
     </div>
 
     @*@Html.Partial("_Footer")*@
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
 
