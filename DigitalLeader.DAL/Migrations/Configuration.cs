@@ -118,10 +118,6 @@ namespace DigitalLeader.DAL.Migrations
 
 			#region Services
 
-			
-
-			#endregion
-
 			#region Outsorcing services
 
 			outsorcingCategory.Services.Add(new Service
