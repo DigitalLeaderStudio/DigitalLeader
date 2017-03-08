@@ -164,7 +164,7 @@ namespace DigitalLeader.DAL.Migrations
 
 			context.SaveChanges();
 
-			#endregion
+			
 
 			#region Technologies
 

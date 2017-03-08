@@ -15,7 +15,7 @@
 		public string FirstName { get; set; }
 
 		[Display(Name = "Last name")]
-		[Required]
+//		[Required]
 		[StringLength(30, MinimumLength = 3, ErrorMessage = "Last name should have 3 to 30 letters")]
 		public string LastName { get; set; }
 
@@ -25,7 +25,7 @@
 		public string Email { get; set; }
 
 		[Display(Name = "Company")]
-		[Required]
+	//	[Required]
 		[StringLength(40, MinimumLength = 3, ErrorMessage = "Company name should have 3 to 30 letters")]
 		public string Company { get; set; }
 
