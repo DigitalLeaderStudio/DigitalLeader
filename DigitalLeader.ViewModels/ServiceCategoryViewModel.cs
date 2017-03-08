@@ -4,7 +4,7 @@
 	using System.ComponentModel.DataAnnotations;
 	using System.Web.Mvc;
 
-	public class CategoryViewModel : FileViewModel
+	public class ServiceCategoryViewModel : FileViewModel
 	{
 		public int ID { get; set; }
 
@@ -16,6 +16,6 @@
 
         public string CssClass { get; set; }
 
-        public virtual List<ServiceViewModel> Services { get; set; }
+        public virtual List<ServiceSubcategoryViewModel> ServiceSubcategories { get; set; }
 	}
 }

@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201703061607059_CssClassAddedToCategories.Designer.cs">
       <DependentUpon>201703061607059_CssClassAddedToCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703081418036_AddingSubcategories.cs" />
+    <Compile Include="Migrations\201703081418036_AddingSubcategories.Designer.cs">
+      <DependentUpon>201703081418036_AddingSubcategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -116,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703061607059_CssClassAddedToCategories.resx">
       <DependentUpon>201703061607059_CssClassAddedToCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703081418036_AddingSubcategories.resx">
+      <DependentUpon>201703081418036_AddingSubcategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -82,87 +82,204 @@ namespace DigitalLeader.DAL.Migrations
 
 			#endregion
 
-			#region Categories
+			#region ServiceCategories
 
-			var outsorcingCategory = new Category
+			var technologyCategory = new ServiceCategory
 				{
 					Name = "Technology Solutions",
 					Content = @"IT outsourcing is the way of use of external information technology service provider to effectively deliver IT-enabled business process and infrastructure solutions for its client. It includes many information technology services such as software as a service and cloud services. Your enterprise can benefit by delegating IT related processes to information technology outsourcing company. Those benefits include costs reduction, marketing life cycle acceleration, and external expertise, assets and intellectual property exploitation.",
-					Services = new List<Service>(),
+					ServiceSubcategories = new List<ServiceSubcategory>(),
 					Image = new DigitalLeader.Entities.File
 					{
 						ContentType = "image/svg+xml",
-						FileName = "outsourcing.svg",
-						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/outsourcing.svg"))
+						FileName = "technology-glyph-icon.png",
+						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/technology-glyph-icon.png"))
 					}
 				};
-			context.Categories.AddOrUpdate(c => c.Name, outsorcingCategory);
+			context.ServiceCategories.AddOrUpdate(c => c.Name, technologyCategory);
 
-			var marketingCategory = new Category
+            var marketingCategory = new ServiceCategory
 				{
 					Name = "Digital Marketing",
 					Content = @"This is the most important method of marketing your products in today's economy. The volume of sales made via Internet or digital devices increases with every day. Digital Marketing consists of many modern methodologies and techniques, which if used and performed properly can sky rocket your business revenues. Friendly saying, if you don't do Digital Marketing or do it badly, your businesses becomes dead very soon in the severe ocean of competition.",
-					Services = new List<Service>(),
+					ServiceSubcategories = new List<ServiceSubcategory>(),
 					Image = new DigitalLeader.Entities.File
 					{
 						ContentType = "image/svg+xml",
-						FileName = "marketing.svg",
-						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/marketing.svg"))
+						FileName = "marketing-glyph-icon.png",
+						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/marketing-glyph-icon.png"))
 					}
 				};
-			context.Categories.AddOrUpdate(c => c.Name, marketingCategory);
+			context.ServiceCategories.AddOrUpdate(c => c.Name, marketingCategory);
 
 			context.SaveChanges();
 
-			#endregion
+            #endregion
 
-			#region Services
+            #region ServiceSubcategories
+            
+            //Technology Services Subcategories
+            var developmentServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Development",
+                Services = new List<Service>(),
+            };
+            context.ServiceSubcategories.AddOrUpdate(c => c.Name, developmentServiceSubcategory);
 
-			#region Outsorcing services
+            var designServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Design",
+                Services = new List<Service>(),
+            };
+            context.ServiceSubcategories.AddOrUpdate(c => c.Name, designServiceSubcategory);
 
-			outsorcingCategory.Services.Add(new Service
+            var maintenanceServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Meaintenance",
+                Services = new List<Service>(),
+            };
+            context.ServiceSubcategories.AddOrUpdate(c => c.Name, maintenanceServiceSubcategory);
+
+
+            // Marketing Services Subcategories
+            var contentServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Content",
+                Services = new List<Service>(),
+            };
+            context.ServiceSubcategories.AddOrUpdate(c => c.Name, contentServiceSubcategory);
+
+            var smmServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "SMM",
+                Services = new List<Service>(),
+            };
+            context.ServiceSubcategories.AddOrUpdate(c => c.Name, smmServiceSubcategory);
+
+            var paidServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Paid",
+                Services = new List<Service>(),
+            };
+            context.ServiceSubcategories.AddOrUpdate(c => c.Name, paidServiceSubcategory);
+
+
+            context.SaveChanges();
+
+            #endregion
+
+
+            #region Services
+
+            #region Development services
+
+            developmentServiceSubcategory.Services.Add(new Service
 			{
-				Title = "Software infrastructure",
-				Description = "We'll take care of your in-house software"
+				Title = "Website",
+				Description = "Some text"
 			});
 
-			outsorcingCategory.Services.Add(new Service
+			developmentServiceSubcategory.Services.Add(new Service
 			{
-				Title = "Cloud management",
-				Description = "All your data is safe and sound in the digital cloud"
+				Title = "Design",
+				Description = "Some text"
 			});
 
-			outsorcingCategory.Services.Add(new Service
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Web Application",
+                Description = "Some text"
+            });
+
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Mobile Application",
+                Description = "Some text"
+            });
+
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Enterprise System",
+                Description = "Some text"
+            });
+
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Development consulting",
+                Description = "Some text"
+            });
+
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "UI/UX Design",
+                Description = "Some text"
+
+            });
+
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Brand Identity Design",
+                Description = "Some text"
+
+            });
+
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Brand Identity Design",
+                Description = "Some text"
+
+            });
+
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Graphic Design",
+                Description = "Some text"
+
+            });
+
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Design Consulting",
+                Description = "Some text"
+
+            });
+
+            maintenanceServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Software Upgrade",
+                Description = "Some text"
+
+            });
+
+            #endregion
+
+            #region Marketing services
+
+            contentServiceSubcategory.Services.Add(new Service
 			{
-				Title = "Software as a Service",
-				Description = "You won't buy any software, only pay when you use it"
-			});
-
-			#endregion
-
-			#region Marketing services
-
-			marketingCategory.Services.Add(new Service
-			{
-				Title = "Marketing strategy",
+				Title = "Copy Wrighting",
 				Description = "Reach your customers precisly and fastly"
 			});
 
-			marketingCategory.Services.Add(new Service
-			{
-				Title = "Analytics & optimization",
-				Description = "Reach your customers precisly and fastly"
-			});
 
-			marketingCategory.Services.Add(new Service
-			{
-				Title = "Analytics & optimization",
-				Description = "Tune your digital marketing channels to be effective"
-			});
+            smmServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Facebook",
+                Description = "Reach your customers precisly and fastly"
+            });
 
-			#endregion
+           paidServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Google",
+                Description = "Reach your customers precisly and fastly"
+            });
 
-			context.SaveChanges();
+
+            #endregion
+
+            #endregion
+
+            context.SaveChanges();
 
 			
 

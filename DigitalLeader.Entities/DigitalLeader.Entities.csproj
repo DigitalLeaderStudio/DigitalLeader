@@ -57,8 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blogpost.cs" />
+    <Compile Include="ServiceSubcategory .cs" />
     <Compile Include="Testimonial.cs" />
-    <Compile Include="Category.cs" />
+    <Compile Include="ServiceCategory.cs" />
     <Compile Include="File.cs" />
     <Compile Include="Identity\Client.cs" />
     <Compile Include="Industry.cs" />

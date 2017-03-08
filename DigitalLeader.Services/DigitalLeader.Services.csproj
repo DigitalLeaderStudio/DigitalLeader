@@ -63,7 +63,8 @@
     <Compile Include="Extensions\LinqExtensions.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Implementation\BlogpostService.cs" />
-    <Compile Include="Implementation\CategoryService.cs" />
+    <Compile Include="Implementation\ServiceSubcategoryService .cs" />
+    <Compile Include="Implementation\ServiceCategoryService.cs" />
     <Compile Include="Implementation\FileService.cs" />
     <Compile Include="Implementation\ClientService.cs" />
     <Compile Include="Implementation\ProjectService.cs" />
@@ -72,8 +73,9 @@
     <Compile Include="Implementation\TestimonialService.cs" />
     <Compile Include="Implementation\UserService.cs" />
     <Compile Include="Interfaces\IBlogpostService.cs" />
+    <Compile Include="Interfaces\IServiceSubcategoryService .cs" />
     <Compile Include="Interfaces\ITestimonialService.cs" />
-    <Compile Include="Interfaces\ICategoryService.cs" />
+    <Compile Include="Interfaces\IServiceCategoryService.cs" />
     <Compile Include="Interfaces\IFileService.cs" />
     <Compile Include="Interfaces\IClientService.cs" />
     <Compile Include="Interfaces\IProjectService.cs" />

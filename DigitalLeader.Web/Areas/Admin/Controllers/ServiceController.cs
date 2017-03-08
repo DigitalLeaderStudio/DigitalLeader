@@ -11,14 +11,14 @@
 	public class ServiceController : BaseAdminController
 	{
 		private ITechnologyService _technologyService;
-		private ICategoryService _categoryService;
+		private IServiceCategoryService _categoryService;
 		private IServiceService _serviceService;
 		private IProjectService _projectService;
 		private IClientService _clientService;
 
 		public ServiceController(
 			ITechnologyService technologyService,
-			ICategoryService categoryService,
+			IServiceCategoryService categoryService,
 			IServiceService serviceService,
 			IProjectService projectService,
 			IClientService clientService)
@@ -44,7 +44,7 @@
 		{
 			var viewModel = new ServiceViewModel
 			{
-				CategoriesSelectList = Mapper.Map<List<Category>, List<SelectListItem>>(_categoryService.GetAll())
+				CategoriesSelectList = Mapper.Map<List<ServiceCategory>, List<SelectListItem>>(_categoryService.GetAll())
 			};
 
 			return View(viewModel);
@@ -70,14 +70,14 @@
 				ModelState.AddModelError("", e.Message);
 			}
 
-			viewModel.CategoriesSelectList = Mapper.Map<List<Category>, List<SelectListItem>>(_categoryService.GetAll());
+			viewModel.CategoriesSelectList = Mapper.Map<List<ServiceCategory>, List<SelectListItem>>(_categoryService.GetAll());
 			return View(viewModel);
 		}
 
 		public ActionResult Edit(int id)
 		{
 			var viewModel = Mapper.Map<Service, ServiceViewModel>(_serviceService.GetById(id));
-			viewModel.CategoriesSelectList = Mapper.Map<List<Category>, List<SelectListItem>>(_categoryService.GetAll());
+			viewModel.CategoriesSelectList = Mapper.Map<List<ServiceCategory>, List<SelectListItem>>(_categoryService.GetAll());
 
 			return View(viewModel);
 		}

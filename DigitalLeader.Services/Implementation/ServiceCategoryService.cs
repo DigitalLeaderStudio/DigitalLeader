@@ -10,33 +10,33 @@
 	using System.Linq;
 	using System.Linq.Expressions;
 
-	public class CategoryService : BaseService, ICategoryService
+	public class ServiceCategoryService : BaseService, IServiceCategoryService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
-		public CategoryService(IDbContextScopeFactory dbContextScopeFactory)
+		public ServiceCategoryService(IDbContextScopeFactory dbContextScopeFactory)
 		{
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public List<Category> GetAll()
+		public List<ServiceCategory> GetAll()
 		{
 			using (var scope = _dbContextScopeFactory.CreateReadOnly())
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<Category>().Include(c => c.Services).ToList();
+				return dbContext.Set<ServiceCategory>().Include(c => c.ServiceSubcategories).ToList();
 			}
 		}
 
-		public List<Category> GetAllInclude(params Expression<Func<Category, object>>[] includes)
+		public List<ServiceCategory> GetAllInclude(params Expression<Func<ServiceCategory, object>>[] includes)
 		{
 
 			using (var scope = _dbContextScopeFactory.CreateReadOnly())
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				var query = dbContext.Set<Category>().AsQueryable();
+				var query = dbContext.Set<ServiceCategory>().AsQueryable();
 
 				if (includes != null)
 				{
@@ -48,27 +48,27 @@
 
 		}
 
-		public Category GetById(int id)
+		public ServiceCategory GetById(int id)
 		{
 			using (var scope = _dbContextScopeFactory.CreateReadOnly())
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
 				return dbContext
-					.Set<Category>()
-					.Include(c => c.Services)
+					.Set<ServiceCategory>()
+					.Include(c => c.ServiceSubcategories)
 					.SingleOrDefault(c => c.ID == id);
 			}
 		}
 
-		public void Update(Category value)
+		public void Update(ServiceCategory value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				var existed = dbContext.Set<Category>().SingleOrDefault(c => c.ID == value.ID);
+				var existed = dbContext.Set<ServiceCategory>().SingleOrDefault(c => c.ID == value.ID);
 
 				existed.Content = value.Content;
 				existed.Name = value.Name;
@@ -79,29 +79,29 @@
 			}
 		}
 
-		public void Insert(Category value)
+		public void Insert(ServiceCategory value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				dbContext.Set<Category>().Add(value);
+				dbContext.Set<ServiceCategory>().Add(value);
 
 				scope.SaveChanges();
 			}
 		}
 
-		public void Delete(Category value)
+		public void Delete(ServiceCategory value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				var existed = dbContext.Set<Category>().SingleOrDefault(c => c.ID == value.ID);
+				var existed = dbContext.Set<ServiceCategory>().SingleOrDefault(c => c.ID == value.ID);
 
-				dbContext.Set<Category>().Remove(existed);
+				dbContext.Set<ServiceCategory>().Remove(existed);
 
 				scope.SaveChanges();
 			}

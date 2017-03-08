@@ -8,20 +8,20 @@
 	using System.Collections.Generic;
 	using System.Web.Mvc;
 
-	public class CategoryController : BaseAdminController
+	public class ServiceSubcategoryController : BaseAdminController
 	{
-		private ICategoryService _categoryService;
+		private IServiceSubcategoryService _subcategoryService;
 
-		public CategoryController(ICategoryService categoryService)
+		public ServiceSubcategoryController(IServiceSubcategoryService subcategoryService)
 		{
-			_categoryService = categoryService;
+			_subcategoryService = subcategoryService;
 		}
 
 		// GET: Admin/Category
 		public ActionResult Index()
 		{
 			//var viewModel = Mapper.Map<IEnumerable<Client>, List<ClientViewModel>>(_clientService.GetAll());
-			var viewModel = Mapper.Map<List<Category>, List<CategoryViewModel>>(_categoryService.GetAll());
+			var viewModel = Mapper.Map<List<ServiceSubcategory>, List<ServiceSubcategoryViewModel>>(_subcategoryService.GetAll());
 
 			return View(viewModel);
 		}
@@ -59,22 +59,22 @@
 		public ActionResult Edit(int id)
 		{
 			//var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
-			var viewModel = Mapper.Map<Category, CategoryViewModel>(_categoryService.GetById(id));
+			var viewModel = Mapper.Map<ServiceSubcategory, ServiceSubcategoryViewModel>(_subcategoryService.GetById(id));
 
 			return View(viewModel);
 		}
 
 		// POST: Admin/Category/Edit
 		[HttpPost]
-		public ActionResult Edit(CategoryViewModel viewModel)
+		public ActionResult Edit(ServiceSubcategoryViewModel viewModel)
 		{
 			try
 			{
 				if (ModelState.IsValid)
 				{
-					var client = Mapper.Map<CategoryViewModel, Category>(viewModel);
+					var client = Mapper.Map<ServiceSubcategoryViewModel, ServiceSubcategory>(viewModel);
 
-					_categoryService.Update(client);
+					_subcategoryService.Update(client);
 				}
 			}
 			catch (Exception e)

@@ -11,7 +11,7 @@
 	{
 		public CategoryProfile()
 		{
-			CreateMap<Category, SelectListItem>().ConvertUsing(
+			CreateMap<ServiceCategory, SelectListItem>().ConvertUsing(
 				(src, target) =>
 				{
 					return new SelectListItem
@@ -21,7 +21,7 @@
 					};
 				});
 
-			CreateMap<Category, CategoryViewModel>();
+			CreateMap<ServiceCategory, ServiceCategoryViewModel>();
 				//.AfterMap((entity, vm) =>
 				//{
 				//	if (entity.Services != null)
@@ -30,7 +30,7 @@
 				//	}
 				//});
 
-			CreateMap<CategoryViewModel, Category>()
+			CreateMap<ServiceCategoryViewModel, ServiceCategory>()
 				.AfterMap((vm, entity) =>
 				{
 					if (vm.File != null)

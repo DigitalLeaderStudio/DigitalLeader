@@ -14,10 +14,10 @@
 
 	public class HomeController : BaseController
 	{
-		private ICategoryService _categoryService;
+		private IServiceCategoryService _categoryService;
 		private IServiceService _serviceService;
 
-		public HomeController(ICategoryService categoryService, IServiceService serviceService)
+		public HomeController(IServiceCategoryService categoryService, IServiceService serviceService)
 		{
 			_categoryService = categoryService;
 
@@ -28,7 +28,7 @@
 		{
 			var data = _categoryService.GetAll();
 
-			var viewModel = Mapper.Map<List<Category>, List<CategoryViewModel>>(data);
+			var viewModel = Mapper.Map<List<ServiceCategory>, List<ServiceCategoryViewModel>>(data);
 
 			return View(viewModel);
 		}
@@ -37,7 +37,7 @@
 		{
 			var data = _categoryService.GetAll();
 
-			var viewModel = Mapper.Map<List<Category>, List<CategoryViewModel>>(data);
+			var viewModel = Mapper.Map<List<ServiceCategory>, List<ServiceCategoryViewModel>>(data);
 
 			return View(viewModel);
 		}

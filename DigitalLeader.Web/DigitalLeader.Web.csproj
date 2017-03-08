@@ -224,7 +224,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogpostController.cs" />
-    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServiceSubcategoryController .cs" />
+    <Compile Include="Areas\Admin\Controllers\ServiceCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ClientController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
@@ -440,8 +441,8 @@
     <Content Include="Areas\Admin\Views\Technology\Delete.cshtml" />
     <Content Include="Content\bootstrap-chosen.scss" />
     <Content Include="Content\bootstrap-chosen.less" />
-    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Blogpost\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Blogpost\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Blogpost\Details.cshtml" />
@@ -458,6 +459,8 @@
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Content\Images\logo icons.zip" />
     <Content Include="Content\Images\favicon.psd" />
+    <Content Include="Areas\Admin\Views\ServiceSubcategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceSubcategory\Index.cshtml" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

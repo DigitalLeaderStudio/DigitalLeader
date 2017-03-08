@@ -2,7 +2,7 @@
 {
 	using DigitalLeader.Entities;
 
-	public interface ICategoryService : IService<Category>
+	public interface IServiceCategoryService : IService<ServiceCategory>
 	{
 	}
 }
