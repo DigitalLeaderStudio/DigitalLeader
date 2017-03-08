@@ -34,88 +34,163 @@
         <div class="home container">
             <div class="row presentation">
 
-
-
-
                 <div class="col-md-10 showcase">
-
-                    <div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="2000">
+                    <div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="100000">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-demo" data-slide-to="1"></li>
                             <li data-target="#carousel-demo" data-slide-to="2"></li>
-                            <li data-target="#carousel-demo" data-slide-to="3"></li>
                         </ol>
 
                         <!-- Sliding images statring here -->
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="~/Content/images/company/world-map.png" alt="banana">
+                            <div class="item active main-slide">
+                                @*<img src="~/Content/images/company/world-map.png" alt="banana">*@
                                 <div class="carousel-caption">
-                                    <h3>The Banana slide</h3>
-                                    <p>Banana is useful for health</p>
+                                    <h1>we are your best IT solutions provider</h1>
                                 </div>
                             </div>
-                            <div class="item">
-                                <img src="~/Content/images/company/world-map.png" alt="currant">
+                            <div class="item main-slide">
+                                @*<img src="~/Content/images/company/world-map.png" alt="banana">*@
                                 <div class="carousel-caption">
-                                    <h3>The currant slide</h3>
-                                    <p>Text here</p>
+                                    <h1>Technology solutions</h1>
                                 </div>
                             </div>
-                            <div class="item">
-                                <img src="~/Content/images/company/world-map.png" alt="mango">
+                            <div class="item main-slide">
+                                @*<img src="~/Content/images/company/world-map.png" alt="banana">*@
                                 <div class="carousel-caption">
-                                    <h3>The Mangos</h3>
-                                    <p>Text here</p>
+                                    <h1>Digital Marketing Solutions</h1>
                                 </div>
                             </div>
-                            <div class="item">
-                                <img src="~/Content/images/company/world-map.png" alt="strawberries">
-                                <div class="carousel-caption">
-                                    <h3>The strawberries</h3>
-                                    <p>Text here</p>
-                                </div>
-                            </div>
-
                         </div>
 
                         <!-- Next / Previous controls here -->
                         <a class="up carousel-control" href="#carousel-demo" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-up"></span>
+                            <i class="fa fa-angle-up" aria-hidden="true"></i>
                         </a>
                         <a class="down carousel-control" href="#carousel-demo" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
-
-                        <div>
-
-                        </div>
                     </div>
-
-
-
-                    <!--  <h1>We are your best technology solutions provider</h1> -->
                 </div>
-                <div class="col-md-2 services">
+
+                <div class="col-md-2 service-categories">
                     <div class="row">
                         @foreach (var category in Model)
                         {
                             //var srcAction = category.ImageId.HasValue ?
                             //Url.Action("Show", "File", new { area = "", id = category.ImageId }) : "";
 
-                            <a href="#" class="col-md-12 service">
+                            <div id="technology" class="col-md-12 service-category">
                                 <div class="@category.CssClass"></div>
                                 <hr />
                                 <h3>@category.Name</h3>
-                            </a>
+
+                                <div class="technology-menu-wrapper">
+                                    <div id="menu" class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h2>Development</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Website</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Web application</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Mobile application</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Enterprise system</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Developemnt Consulting</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h2>Design</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>UI/UX Design</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Brand Identity Design</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Graphic Design</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Design Consulting</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h2>Maintenance</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Software upgrade</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Software infrastructure</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Software consulting</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <h3>Cloud management</h3>
+                                                            <p>some text</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         }
+
                     </div>
                 </div>
-
-
-
 
             </div>
 
