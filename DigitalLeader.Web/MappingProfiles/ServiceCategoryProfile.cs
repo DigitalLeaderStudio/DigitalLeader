@@ -7,9 +7,9 @@
 	using System.Web.Mvc;
 	using System.Linq;
 
-	public class CategoryProfile : Profile
+	public class ServiceCategoryProfile : Profile
 	{
-		public CategoryProfile()
+		public ServiceCategoryProfile()
 		{
 			CreateMap<ServiceCategory, SelectListItem>().ConvertUsing(
 				(src, target) =>

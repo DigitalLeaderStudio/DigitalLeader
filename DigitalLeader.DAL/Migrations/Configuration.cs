@@ -89,6 +89,7 @@ namespace DigitalLeader.DAL.Migrations
 					Name = "Technology Solutions",
 					Content = @"IT outsourcing is the way of use of external information technology service provider to effectively deliver IT-enabled business process and infrastructure solutions for its client. It includes many information technology services such as software as a service and cloud services. Your enterprise can benefit by delegating IT related processes to information technology outsourcing company. Those benefits include costs reduction, marketing life cycle acceleration, and external expertise, assets and intellectual property exploitation.",
 					ServiceSubcategories = new List<ServiceSubcategory>(),
+                    CssClass = "technology",
 					Image = new DigitalLeader.Entities.File
 					{
 						ContentType = "image/svg+xml",
@@ -103,6 +104,7 @@ namespace DigitalLeader.DAL.Migrations
 					Name = "Digital Marketing",
 					Content = @"This is the most important method of marketing your products in today's economy. The volume of sales made via Internet or digital devices increases with every day. Digital Marketing consists of many modern methodologies and techniques, which if used and performed properly can sky rocket your business revenues. Friendly saying, if you don't do Digital Marketing or do it badly, your businesses becomes dead very soon in the severe ocean of competition.",
 					ServiceSubcategories = new List<ServiceSubcategory>(),
+                    CssClass = "marketing",
 					Image = new DigitalLeader.Entities.File
 					{
 						ContentType = "image/svg+xml",

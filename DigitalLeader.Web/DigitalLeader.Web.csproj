@@ -251,7 +251,7 @@
     <Compile Include="MappingProfiles\TestimonialProfile.cs" />
     <Compile Include="MappingProfiles\UserProfile.cs" />
     <Compile Include="MappingProfiles\BlogpostProfile.cs" />
-    <Compile Include="MappingProfiles\CategoryProfile.cs" />
+    <Compile Include="MappingProfiles\ServiceCategoryProfile.cs" />
     <Compile Include="MappingProfiles\ServiceProfile.cs" />
     <Compile Include="MappingProfiles\TechnologyProfile.cs" />
     <Compile Include="MappingProfiles\MapperImageConverter.cs" />

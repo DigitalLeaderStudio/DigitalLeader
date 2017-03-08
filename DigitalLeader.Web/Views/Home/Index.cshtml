@@ -79,110 +79,32 @@
                     <div class="row">
                         @foreach (var category in Model)
                         {
-                            //var srcAction = category.ImageId.HasValue ?
-                            //Url.Action("Show", "File", new { area = "", id = category.ImageId }) : "";
-
-                            <div id="technology" class="col-md-12 service-category">
-                                <div class="@category.CssClass"></div>
+                            <div class="col-md-12 service-category @category.CssClass">
+                                <div class="image"></div>
                                 <hr />
                                 <h3>@category.Name</h3>
 
-                                <div class="technology-menu-wrapper">
+                                <div class="@category.CssClass-menu-wrapper">
                                     <div id="menu" class="container-fluid">
                                         <div class="row">
+                                            @foreach (var subcategory in Model.ServiceSubcategories)
+                                            {
                                             <div class="col-md-4">
-                                                <h2>Development</h2>
+                                                <h2>subcategory.Name</h2>
                                                 <ul>
+                                                    @foreach (var service in subcategory.Services)
+                                                    {
                                                     <li>
                                                         <a href="#">
-                                                            <h3>Website</h3>
-                                                            <p>some text</p>
+                                                            <h3>@service.Title</h3>
+                                                            <p>@service.Description</p>
                                                         </a>
                                                     </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Web application</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Mobile application</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Enterprise system</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Developemnt Consulting</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
+                                                   
+                                                    }
                                                 </ul>
                                             </div>
-                                            <div class="col-md-4">
-                                                <h2>Design</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>UI/UX Design</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Brand Identity Design</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Graphic Design</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Design Consulting</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <h2>Maintenance</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Software upgrade</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Software infrastructure</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Software consulting</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>Cloud management</h3>
-                                                            <p>some text</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            }
                                         </div>
                                     </div>
                                 </div>

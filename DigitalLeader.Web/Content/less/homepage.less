@@ -2,7 +2,6 @@
 
 body {
     background-image: url("../images/home-background.png");
-    
 }
 
 .home {
@@ -19,7 +18,7 @@ body {
         }
 
         .showcase {
-            padding: 0;            
+            padding: 0;
 
             .carousel {
                 position: relative;
@@ -29,7 +28,7 @@ body {
 
                 .carousel-inner {
                     background-color: white;
-                
+
                     .item {
                         width: 100%;
                         height: 100%;
@@ -52,7 +51,7 @@ body {
                             }
                         }
                     }
-               }
+                }
 
                 .carousel-indicators {
                     font-size: 2em;
@@ -82,7 +81,6 @@ body {
                     .active.left {
                         top: -100%;
                     }
-
                 }
 
                 .carousel-control {
@@ -118,8 +116,6 @@ body {
                     &:active {
                         color: #fff;
                     }
-
-
                 }
 
                 .carousel-indicators {
@@ -162,34 +158,223 @@ body {
                     background: @color-blue;
                     text-decoration: none;
 
-                    .technology-image, .marketing-image {
-                        background-position: 0 0;
+                    .technology, .marketing {
+
+                        .image {
+                            background-position: 0 0;
+                        }
                     }
                 }
 
-                .technology-image {
-                    width: 100px;
-                    height: 100px;
-                    margin: 0 auto;
-                    background: url('../images/services/technology-glyph-icon.png') no-repeat left top;
-                    background-size: cover;
-                    background-position: -100px 0;
+                &.technology {
+                    .image {
+                        width: 100px;
+                        height: 100px;
+                        margin: 0 auto;
+                        background: url('../images/services/technology-glyph-icon.png') no-repeat left top;
+                        background-size: cover;
+                        background-position: -100px 0;
+
+                        &:hover {
+                            background-position: 0 0;
+                        }
+                    }
+
+                    position: relative;
 
                     &:hover {
-                        background-position: 0 0;
+
+                        .technology-menu-wrapper {
+                            display: block;
+                        }
+                    }
+
+                    .technology-menu-wrapper {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        right: 170px;
+                        padding-right: 20px;
+                        width: 970px;
+                        height: 500px;
+                        z-index: 100;
+
+                        #menu {
+                            background: #303131;
+                            color: #fff;
+                            height: 500px;
+                            padding: 10px;
+
+                            > div > div {
+                                padding: 10px;
+                            }
+
+                            h2 {
+                                text-transform: uppercase;
+                                text-align: left;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                                background: #393939;
+                                padding: 15px;
+                                margin: 0 0 5px;
+                            }
+
+                            ul {
+                                padding: 0;
+                                list-style: none;
+                                text-align: left;
+
+                                li {
+                                    text-align: left;
+                                    margin-bottom: 4px;
+
+                                    a, a:visited {
+                                        background: #393939;
+                                        padding: 15px;
+                                        display: block;
+                                        text-decoration: none;
+
+                                        h3 {
+                                            text-align: left;
+                                            font-size: 16px;
+                                            text-transform: uppercase;
+                                            font-weight: bold;
+                                            color: @color-blue;
+                                        }
+
+                                        p {
+                                            color: #bababa;
+                                            font-size: 14px;
+                                            margin: 0;
+                                            padding: 0;
+                                        }
+
+                                        &:hover {
+                                            color: #fff;
+                                            background: @color-blue;
+                                            transition: color ease 0.2s;
+                                            transition: background ease 0.2s;
+
+                                            h3 {
+                                                color: #fff;
+                                                transition: color ease 0.2s;
+                                            }
+
+                                            p {
+                                                color: #fff;
+                                                transition: color ease 0.2s
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
-                .marketing-image {
-                    width: 100px;
-                    height: 100px;
-                    margin: 0 auto;
-                    background: url('../images/services/marketing-glyph-icon.png') no-repeat left top;
-                    background-size: cover;
-                    background-position: -100px 0;
+                &.marketing {
+                    .image {
+                        width: 100px;
+                        height: 100px;
+                        margin: 0 auto;
+                        background: url('../images/services/marketing-glyph-icon.png') no-repeat left top;
+                        background-size: cover;
+                        background-position: -100px 0;
+
+                        &:hover {
+                            background-position: 0 0;
+                        }
+                    }
+
+                    position: relative;
 
                     &:hover {
-                        background-position: 0 0;
+
+                        .technology-menu-wrapper {
+                            display: block;
+                        }
+                    }
+
+                    .technology-menu-wrapper {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        right: 170px;
+                        padding-right: 20px;
+                        width: 970px;
+                        height: 500px;
+                        z-index: 100;
+
+                        #menu {
+                            background: #303131;
+                            color: #fff;
+                            height: 500px;
+                            padding: 10px;
+
+                            > div > div {
+                                padding: 10px;
+                            }
+
+                            h2 {
+                                text-transform: uppercase;
+                                text-align: left;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                                background: #393939;
+                                padding: 15px;
+                                margin: 0 0 5px;
+                            }
+
+                            ul {
+                                padding: 0;
+                                list-style: none;
+                                text-align: left;
+
+                                li {
+                                    text-align: left;
+                                    margin-bottom: 4px;
+
+                                    a, a:visited {
+                                        background: #393939;
+                                        padding: 15px;
+                                        display: block;
+                                        text-decoration: none;
+
+                                        h3 {
+                                            text-align: left;
+                                            font-size: 16px;
+                                            text-transform: uppercase;
+                                            font-weight: bold;
+                                            color: @color-blue;
+                                        }
+
+                                        p {
+                                            color: #bababa;
+                                            font-size: 14px;
+                                            margin: 0;
+                                            padding: 0;
+                                        }
+
+                                        &:hover {
+                                            color: #fff;
+                                            background: @color-blue;
+                                            transition: color ease 0.2s;
+                                            transition: background ease 0.2s;
+
+                                            h3 {
+                                                color: #fff;
+                                                transition: color ease 0.2s;
+                                            }
+
+                                            p {
+                                                color: #fff;
+                                                transition: color ease 0.2s
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -206,117 +391,7 @@ body {
                     font-family: @open-sans;
                     text-transform: uppercase;
                 }
-
-                &#technology {
-                    position: relative;
-
-                    &:hover {
-                     
-                        .technology-menu-wrapper {
-                            display: block;
-
-                        }
-                    }
-                    
-                    .technology-menu-wrapper {
-                        display: none;
-
-                        position: absolute;
-                        top:0;
-                        right: 170px;
-
-                        padding-right: 20px;
-
-                        width: 970px;
-                        height: 500px;
-
-
-                        z-index: 100;
-
-                        #menu {
-                            background: #303131;
-                            color: #fff;
-                            height: 500px;
-                            padding: 10px;
-
-                            > div > div {
-                                padding: 10px;
-                            }
-
-                            h2 {
-                                text-transform: uppercase;  
-                                text-align: left;
-                                font-weight: bold;
-                                margin-bottom: 5px;
-                                background: #393939;
-                                padding: 15px;
-                                margin: 0 0 5px;
-
-                            }
-
-                            ul {
-                                padding: 0;
-                                list-style: none;
-                                text-align: left;
-
-                                li {
-                                    text-align: left;
-                                    margin-bottom: 4px;
-                                    
-                                    a, a:visited {
-                                            background: #393939;
-                                            padding: 15px;
-                                            display: block;
-                                            text-decoration: none;
-
-                                            h3 {
-                                                text-align: left;
-                                                font-size: 16px;
-                                                text-transform: uppercase;  
-                                                font-weight: bold;
-                                                color: @color-blue;
-                                            }
-
-                                            p {
-                                                color: #bababa;
-                                                font-size: 14px;
-                                                margin: 0;
-                                                padding: 0;
-                                            }
-
-                                            &:hover {
-                                                color: #fff;
-                                                background: @color-blue;
-                                                transition: color ease 0.2s; 
-                                                transition: background ease 0.2s; 
-
-                                                h3 {
-                                                    color: #fff;
-                                                    transition: color ease 0.2s; 
-                                                }
-
-                                                p {
-                                                    color: #fff;
-                                                    transition: color ease 0.2s
-                                                }
-                                            }
-
-
-                                        }
-                                    
-                                    
-                                }
-                            }
-                        }
-
-                        
-                    }
-                }
-
-                
             }
-
-
         }
     }
 
