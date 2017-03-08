@@ -118,37 +118,7 @@ namespace DigitalLeader.DAL.Migrations
 
 			#region Services
 
-			#region Development services
-
-			developmentCategory.Services.Add(new Service
-			{
-				Title = "Web applications",
-				Description = "Solve problems and create new oppurtunities"
-			});
-
-			developmentCategory.Services.Add(new Service
-			{
-				Title = "Websites",
-				Description = "Get new cutomers and retain the old ones"
-			});
-
-			developmentCategory.Services.Add(new Service
-			{
-				Title = "Mobile applications",
-				Description = "Solutions that are always in hand"
-			});
-
-			developmentCategory.Services.Add(new Service
-			{
-				Title = "Enterprise systems",
-				Description = "Simple software for complex business"
-			});
-
-			developmentCategory.Services.Add(new Service
-			{
-				Title = "CMS customization",
-				Description = "Enhance existing solutions"
-			});
+			
 
 			#endregion
 
@@ -198,7 +168,7 @@ namespace DigitalLeader.DAL.Migrations
 
 			context.SaveChanges();
 
-			#endregion
+			
 
 			#region Technologies
 

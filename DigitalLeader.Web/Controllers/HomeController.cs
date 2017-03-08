@@ -71,12 +71,10 @@
 				mailMessage.Body = String.Format(@"
                                         <h1>New contact from the website</h1>
                                         <p><strong>Name:</strong> {0}</p>
-                                        <p><strong>Last name:</strong> {1}</p>
-                                        <p><strong>Company:</strong> {2}</p>
                                         <p><strong>Email:</strong> {3}</p>
                                         <p><strong>Phone:</strong> {4}</p>
                                         <p><strong>Message:</strong> {5}</p>
-                                    ", model.FirstName, model.LastName, model.Company, model.Email, model.Phone, model.Message);
+                                    ", model.FirstName, model.Email, model.Phone, model.Message);
 				mailMessage.IsBodyHtml = true;
 
 				using (var smtp = new SmtpClient())

@@ -13,12 +13,13 @@ body {
 
     .presentation {
         .col-md-10 {
-            padding:0;
+            padding: 0;
         }
+
         .showcase {
             border: 2px solid @color-blue;
             background: rgba(255, 255, 255, 0.8);
-            padding: 0;            
+            padding: 0;
 
             h1 {
                 text-align: center;
@@ -226,7 +227,7 @@ body {
                 margin: 20px 0 10px;
             }
 
-            form.cta-form {
+            .cta-form {
                 padding: 0;
                 margin: 0;
 
@@ -238,7 +239,7 @@ body {
                     padding-left: 0;
                 }
 
-                textarea {
+                input {
                     width: 100%;
                     height: 60px;
                     background: rgba(255, 255, 255, 0.1);
@@ -257,7 +258,27 @@ body {
                     }
                 }
 
-                button {
+                textarea {
+                    width: 100%;
+                    height: 120px;
+                    background: rgba(255, 255, 255, 0.1);
+                    color: rgba(255, 255, 255, 0.3);
+                    font-size: 26px;
+                    padding: 5px 15px 0px;
+                    margin: 5px 0;
+                    outline: none;
+                    border: 0;
+                    resize: none;
+                    font-style: italic;
+                    font-size: 15px;
+                    border-bottom: 3px solid #303131;
+
+                    &:focus {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                }
+
+                button.next-step {
                     width: 100%;
                     height: 60px;
                     padding: 5px 10px;
@@ -275,6 +296,11 @@ body {
                         transition: background ease 0.5s;
                         transition: color ease 0.5s;
                     }
+                }
+
+                button.final-step {
+                    height: 120px;
+                    font-size: 20px;
                 }
             }
         }
