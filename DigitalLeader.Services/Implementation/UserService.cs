@@ -19,14 +19,24 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public List<User> GetAll()
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+        public Expression<Func<User, object>>[] Includes
+        {
+            get
+            {
+                return new Expression<Func<User, object>>[]
+                {
+                    user => user.Image,
+                    user => user.Services,
+                    user => user.Blogposts,
+                    user => user.Technologies,
+                    user => user.Projects
+                };
+            }
+        }
 
-				return dbContext.Set<User>().ToList();
-			}
+        public List<User> GetAll()
+		{
+            return GetAllInclude(Includes);
 		}
 
 		public List<User> GetAllInclude(params Expression<Func<User, object>>[] includes)
@@ -52,7 +62,14 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<User>().SingleOrDefault(u => u.Id == id);
+				var query = dbContext.Set<User>().AsQueryable();
+
+				if (Includes != null)
+				{
+					query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
+
+				return query.SingleOrDefault(c => c.Id == id);
 			}
 		}
 
@@ -108,12 +125,6 @@
 		public void Delete(User value)
 		{
 			throw new NotImplementedException();
-		}
-
-
-		public Expression<Func<User, object>>[] Includes
-		{
-			get { throw new NotImplementedException(); }
 		}
 	}
 }

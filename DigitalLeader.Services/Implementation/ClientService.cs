@@ -4,10 +4,13 @@
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Linq.Expressions;
 
-	public class ClientService : IClientService
+    public class ClientService : IClientService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
@@ -16,24 +19,41 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public List<Client> GetAll()
+        public Expression<Func<Client, object>>[] Includes
+        {
+            get
+            {
+                return new Expression<Func<Client, object>>[]
+                {
+                    client => client.Image,
+                    client => client.Testimonial,
+                    client => client.Industries,
+                    client => client.Projects
+                };
+            }
+        }
+
+        public List<Client> GetAll()
 		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
-				return dbContext.Clients.ToList();
-			}
+            return GetAllInclude(Includes);
 		}
 
 		public Client GetById(int id)
 		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
-				return dbContext.Clients.Find(id);
-			}
-		}
+                var query = dbContext.Set<Client>().AsQueryable();
+
+                if (Includes != null)
+                {
+                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.SingleOrDefault(c => c.ID == id);
+            }
+        }
 
 		public void Update(Client value)
 		{
@@ -91,12 +111,6 @@
 		public List<Client> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Client, object>>[] includes)
 		{
 			throw new System.NotImplementedException();
-		}
-
-
-		public System.Linq.Expressions.Expression<System.Func<Client, object>>[] Includes
-		{
-			get { throw new System.NotImplementedException(); }
 		}
 	}
 }

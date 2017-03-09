@@ -4,10 +4,13 @@
 	using DigitalLeader.Entities;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Linq.Expressions;
 
-	public class ServiceService : BaseService, IServiceService
+    public class ServiceService : BaseService, IServiceService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
@@ -16,25 +19,41 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public List<Entities.Service> GetAll()
+        public Expression<Func<Service, object>>[] Includes
+        {
+            get
+            {
+                return new Expression<Func<Service, object>>[]
+                {
+                    x => x.ServiceSubcategory,
+                    x => x.Blogposts,
+                    x => x.Employees,
+                    x => x.Projects
+                };
+            }
+        }
+
+        public List<Entities.Service> GetAll()
+        {
+            return GetAllInclude(Includes);
+        }
+
+		public Service GetById(int id)
 		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<Service>().ToList();
-			}
-		}
+                var query = dbContext.Set<Service>().AsQueryable();
 
-		public Entities.Service GetById(int id)
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+                if (Includes != null)
+                {
+                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
 
-				return dbContext.Set<Service>().SingleOrDefault(s => s.ID == id);
-			}
-		}
+                return query.SingleOrDefault(c => c.ID == id);
+            }
+        }
 
 		public void Update(Entities.Service value)
 		{
@@ -55,7 +74,7 @@
 			}
 		}
 
-		public void Insert(Entities.Service value)
+		public void Insert(Service value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
@@ -109,12 +128,6 @@
 					.Where(t => ids.Contains(t.ID))
 					.ToList();
 			}
-		}
-
-
-		public System.Linq.Expressions.Expression<System.Func<Service, object>>[] Includes
-		{
-			get { throw new System.NotImplementedException(); }
 		}
 	}
 }

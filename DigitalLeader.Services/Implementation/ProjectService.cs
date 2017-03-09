@@ -27,46 +27,53 @@
 			{
 				return new Expression<Func<Project, object>>[] 
 				{
-					x => x.Client,
-					x => x.Technologies,
-					x => x.Services,
-					x => x.Contributors
+					project => project.Client,
+					project => project.Technologies,
+					project => project.Services,
+					project => project.Contributors
 				};
 			}
 		}
 
 		public List<Project> GetAll()
 		{
-			//using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			//{
-			//	var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
-
-			//	return dbContext.Set<Project>()
-			//		.Include(p => p.Client)
-			//		.Include(p => p.Technologies)
-			//		.Include(p => p.Services)
-			//		.Include(p => p.Contributors)
-			//		.ToList();
-			//}
-
 			return GetAllInclude(Includes);
 		}
 
-		public Project GetById(int id)
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Projects
-					.Include(p => p.Client)
-					.Include(p => p.Technologies)
-					.Include(p => p.Services)
-					.Include(p => p.Contributors)
-					.First(p => p.ID == id);
-			}
-		}
+        public List<Project> GetAllInclude(params Expression<Func<Project, object>>[] includes)
+        {
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
+                var query = dbContext.Set<Project>().AsQueryable();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.ToList();
+            }
+        }
+
+        public Project GetById(int id)
+        {
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+                var query = dbContext.Set<Project>().AsQueryable();
+
+                if (Includes != null)
+                {
+                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+                return query.SingleOrDefault(c => c.ID == id);
+                
+            }
+        }
 		public void Update(Project value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
@@ -145,10 +152,10 @@
 			}
 		}
 
-		public List<Project> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Project, object>>[] includes)
-		{
-			throw new System.NotImplementedException();
-		}
+	//	public List<Project> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Project, object>>[] includes)
+	//	{
+	//		throw new System.NotImplementedException();
+	//	}
 
 
 

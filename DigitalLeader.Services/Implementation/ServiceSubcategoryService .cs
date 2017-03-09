@@ -19,16 +19,20 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public List<ServiceSubcategory> GetAll()
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+        public Expression<Func<ServiceSubcategory, object>>[] Includes
+        {
+            get
+            {
+                return new Expression<Func<ServiceSubcategory, object>>[] {
+                    serviceSubcategory => serviceSubcategory.Services,
+                    serviceSucategory => serviceSucategory.ServiceCategory
+                };
+            }
+        }
 
-				return dbContext.Set<ServiceSubcategory>()
-					.Include(c => c.Services)
-					.ToList();
-			}
+        public List<ServiceSubcategory> GetAll()
+		{
+            return GetAllInclude(Includes);
 		}
 
 		public List<ServiceSubcategory> GetAllInclude(params Expression<Func<ServiceSubcategory, object>>[] includes)
@@ -52,16 +56,20 @@
 
 		public ServiceSubcategory GetById(int id)
 		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext
-					.Set<ServiceSubcategory>()
-					.Include(c => c.Services)
-					.SingleOrDefault(c => c.ID == id);
-			}
-		}
+                var query = dbContext.Set<ServiceSubcategory>().AsQueryable();
+
+                if (Includes != null)
+                {
+                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.SingleOrDefault(c => c.ID == id);
+            }
+        }
 
 		public void Update(ServiceSubcategory value)
 		{
@@ -104,12 +112,6 @@
 
 				scope.SaveChanges();
 			}
-		}
-
-
-		public Expression<Func<ServiceSubcategory, object>>[] Includes
-		{
-			get { throw new NotImplementedException(); }
 		}
 	}
 }

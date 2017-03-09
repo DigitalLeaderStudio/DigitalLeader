@@ -4,10 +4,13 @@
 	using DigitalLeader.Entities;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Linq.Expressions;
 
-	public class BlogpostService : IBlogpostService
+    public class BlogpostService : IBlogpostService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
@@ -16,25 +19,58 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public List<Blogpost> GetAll()
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+        public Expression<Func<Blogpost, object>>[] Includes
+        {
+            get
+            {
+                return new Expression<Func<Blogpost, object>>[]
+                {
+                    blogpost => blogpost.Author,
+                    blogpost => blogpost.Service
+                };
+            }
+        }
 
-				return dbContext.Set<Blogpost>().ToList();
-			}
+        public List<Blogpost> GetAll()
+		{
+            return GetAllInclude(Includes);
 		}
 
-		public Blogpost GetById(int id)
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+        public List<Blogpost> GetAllInclude(params Expression<Func<Blogpost, object>>[] includes)
+        {
 
-				return dbContext.Set<Blogpost>().SingleOrDefault(c => c.ID == id);
-			}
-		}
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+                var query = dbContext.Set<Blogpost>().AsQueryable();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.ToList();
+            }
+
+        }
+
+        public Blogpost GetById(int id)
+		{
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+                var query = dbContext.Set<Blogpost>().AsQueryable();
+
+                if (Includes != null)
+                {
+                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.SingleOrDefault(c => c.ID == id);
+            }
+        }
 
 		public void Update(Blogpost value)
 		{
@@ -89,18 +125,6 @@
 
 				scope.SaveChanges();
 			}
-		}
-
-
-		public List<Blogpost> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Blogpost, object>>[] includes)
-		{
-			throw new System.NotImplementedException();
-		}
-
-
-		public System.Linq.Expressions.Expression<System.Func<Blogpost, object>>[] Includes
-		{
-			get { throw new System.NotImplementedException(); }
 		}
 	}
 }
