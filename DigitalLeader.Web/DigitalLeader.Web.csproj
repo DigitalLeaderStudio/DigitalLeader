@@ -248,6 +248,7 @@
     </Compile>
     <Compile Include="Managers\ApplicationSignInManager.cs" />
     <Compile Include="Managers\ApplicationUserManager.cs" />
+    <Compile Include="MappingProfiles\ServiceSubcategoryProfile.cs" />
     <Compile Include="MappingProfiles\TestimonialProfile.cs" />
     <Compile Include="MappingProfiles\UserProfile.cs" />
     <Compile Include="MappingProfiles\BlogpostProfile.cs" />

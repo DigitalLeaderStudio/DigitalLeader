@@ -13,7 +13,11 @@
 
 		public string Name { get; set; }
 
-		public virtual ICollection<Service> Services { get; set; }
+        public virtual ICollection<Service> Services { get; set; }
 
-	}
+        public int ServiceCategoryID { get; set; }
+
+        public virtual ServiceCategory ServiceCategory { get; set; }
+
+    }
 }

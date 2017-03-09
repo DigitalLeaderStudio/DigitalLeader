@@ -25,7 +25,9 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<ServiceCategory>().Include(c => c.ServiceSubcategories).ToList();
+				return dbContext.Set<ServiceCategory>()
+                    .Include(c => c.ServiceSubcategories)
+                    .ToList();
 			}
 		}
 

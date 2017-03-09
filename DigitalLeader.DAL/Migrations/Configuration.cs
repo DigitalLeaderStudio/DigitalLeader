@@ -97,7 +97,33 @@ namespace DigitalLeader.DAL.Migrations
 						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/technology-glyph-icon.png"))
 					}
 				};
-			context.ServiceCategories.AddOrUpdate(c => c.Name, technologyCategory);
+
+            #region Technology Services Subcategories 
+
+            var developmentServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Development",
+                Services = new List<Service>(),
+            };
+            technologyCategory.ServiceSubcategories.Add(developmentServiceSubcategory);
+
+            var designServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Design",
+                Services = new List<Service>(),
+            };
+            technologyCategory.ServiceSubcategories.Add(designServiceSubcategory);
+
+            var maintenanceServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Meaintenance",
+                Services = new List<Service>(),
+            };
+            technologyCategory.ServiceSubcategories.Add(maintenanceServiceSubcategory);
+
+            #endregion
+
+            context.ServiceCategories.AddOrUpdate(c => c.Name, technologyCategory);
 
             var marketingCategory = new ServiceCategory
 				{
@@ -112,64 +138,36 @@ namespace DigitalLeader.DAL.Migrations
 						Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/marketing-glyph-icon.png"))
 					}
 				};
-			context.ServiceCategories.AddOrUpdate(c => c.Name, marketingCategory);
 
-			context.SaveChanges();
-
-            #endregion
-
-            #region ServiceSubcategories
-            
-            //Technology Services Subcategories
-            var developmentServiceSubcategory = new ServiceSubcategory
-            {
-                Name = "Development",
-                Services = new List<Service>(),
-            };
-            context.ServiceSubcategories.AddOrUpdate(c => c.Name, developmentServiceSubcategory);
-
-            var designServiceSubcategory = new ServiceSubcategory
-            {
-                Name = "Design",
-                Services = new List<Service>(),
-            };
-            context.ServiceSubcategories.AddOrUpdate(c => c.Name, designServiceSubcategory);
-
-            var maintenanceServiceSubcategory = new ServiceSubcategory
-            {
-                Name = "Meaintenance",
-                Services = new List<Service>(),
-            };
-            context.ServiceSubcategories.AddOrUpdate(c => c.Name, maintenanceServiceSubcategory);
-
-
-            // Marketing Services Subcategories
+            #region Marketing Services Subcategories
             var contentServiceSubcategory = new ServiceSubcategory
             {
                 Name = "Content",
                 Services = new List<Service>(),
             };
-            context.ServiceSubcategories.AddOrUpdate(c => c.Name, contentServiceSubcategory);
+            marketingCategory.ServiceSubcategories.Add(contentServiceSubcategory);
 
             var smmServiceSubcategory = new ServiceSubcategory
             {
                 Name = "SMM",
                 Services = new List<Service>(),
             };
-            context.ServiceSubcategories.AddOrUpdate(c => c.Name, smmServiceSubcategory);
+            marketingCategory.ServiceSubcategories.Add(smmServiceSubcategory);
 
             var paidServiceSubcategory = new ServiceSubcategory
             {
                 Name = "Paid",
                 Services = new List<Service>(),
             };
-            context.ServiceSubcategories.AddOrUpdate(c => c.Name, paidServiceSubcategory);
-
-
-            context.SaveChanges();
+            marketingCategory.ServiceSubcategories.Add(paidServiceSubcategory);
 
             #endregion
 
+            context.ServiceCategories.AddOrUpdate(c => c.Name, marketingCategory);
+
+			context.SaveChanges();
+
+            #endregion
 
             #region Services
 

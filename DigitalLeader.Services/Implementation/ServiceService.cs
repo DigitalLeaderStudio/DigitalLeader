@@ -45,7 +45,6 @@
 
 				var existed = dbContext.Set<Service>().SingleOrDefault(s => s.ID == value.ID);
 
-				existed.CategoryID = value.CategoryID;
 				existed.Content = value.Content;
 				existed.Description = value.Description;
 				existed.Title = value.Title;

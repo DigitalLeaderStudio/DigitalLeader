@@ -21,16 +21,17 @@
 					};
 				});
 
-			CreateMap<ServiceCategory, ServiceCategoryViewModel>();
-				//.AfterMap((entity, vm) =>
-				//{
-				//	if (entity.Services != null)
-				//	{
-				//		vm.Services = Mapper.Map<List<Service>, List<ServiceViewModel>>(entity.Services.ToList());
-				//	}
-				//});
+			CreateMap<ServiceCategory, ServiceCategoryViewModel>()
+				.AfterMap((entity, vm) =>
+                {
+                    if (entity.ServiceSubcategories != null)
+                    {
+                        vm.ServiceSubcategories = Mapper.Map<List<ServiceSubcategory>, 
+                            List<ServiceSubcategoryViewModel>>(entity.ServiceSubcategories.ToList());
+                    }
+                });
 
-			CreateMap<ServiceCategoryViewModel, ServiceCategory>()
+            CreateMap<ServiceCategoryViewModel, ServiceCategory>()
 				.AfterMap((vm, entity) =>
 				{
 					if (vm.File != null)

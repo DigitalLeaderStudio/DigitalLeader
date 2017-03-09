@@ -24,7 +24,7 @@
 
 		public virtual File Image { get; set; }
 
-		public int CategoryID { get; set; }
+		public int ServiceSubcategoryID { get; set; }
 
 		public virtual ServiceSubcategory ServiceSubcategory { get; set; }
 
