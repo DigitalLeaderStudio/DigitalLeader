@@ -10,6 +10,8 @@
 
 		List<T> GetAllInclude(params Expression<Func<T, object>>[] includes);
 
+		Expression<Func<T, object>>[] Includes { get; }
+
 		T GetById(int id);
 
 		void Update(T value);

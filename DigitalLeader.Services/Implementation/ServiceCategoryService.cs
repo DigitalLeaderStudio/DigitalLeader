@@ -14,6 +14,16 @@
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
+		public Expression<Func<ServiceCategory, object>>[] Includes
+		{
+			get
+			{
+				return new Expression<Func<ServiceCategory, object>>[] { 
+					serviceCategory => serviceCategory.ServiceSubcategories.Select(sub => sub.Services)
+				};
+			}
+		}
+
 		public ServiceCategoryService(IDbContextScopeFactory dbContextScopeFactory)
 		{
 			_dbContextScopeFactory = dbContextScopeFactory;
@@ -21,19 +31,11 @@
 
 		public List<ServiceCategory> GetAll()
 		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
-
-				return dbContext.Set<ServiceCategory>()
-                    .Include(c => c.ServiceSubcategories)
-                    .ToList();
-			}
+			return GetAllInclude(Includes);
 		}
 
 		public List<ServiceCategory> GetAllInclude(params Expression<Func<ServiceCategory, object>>[] includes)
 		{
-
 			using (var scope = _dbContextScopeFactory.CreateReadOnly())
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
@@ -47,7 +49,6 @@
 
 				return query.ToList();
 			}
-
 		}
 
 		public ServiceCategory GetById(int id)
@@ -56,10 +57,14 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext
-					.Set<ServiceCategory>()
-					.Include(c => c.ServiceSubcategories)
-					.SingleOrDefault(c => c.ID == id);
+				var query = dbContext.Set<ServiceCategory>().AsQueryable();
+
+				if (Includes != null)
+				{
+					query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
+
+				return query.SingleOrDefault(c => c.ID == id);
 			}
 		}
 

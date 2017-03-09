@@ -25,7 +25,9 @@
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<ServiceSubcategory>().Include(c => c.Services).ToList();
+				return dbContext.Set<ServiceSubcategory>()
+					.Include(c => c.Services)
+					.ToList();
 			}
 		}
 
@@ -102,6 +104,12 @@
 
 				scope.SaveChanges();
 			}
+		}
+
+
+		public Expression<Func<ServiceSubcategory, object>>[] Includes
+		{
+			get { throw new NotImplementedException(); }
 		}
 	}
 }

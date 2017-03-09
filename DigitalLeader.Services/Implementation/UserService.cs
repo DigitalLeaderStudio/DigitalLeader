@@ -109,5 +109,11 @@
 		{
 			throw new NotImplementedException();
 		}
+
+
+		public Expression<Func<User, object>>[] Includes
+		{
+			get { throw new NotImplementedException(); }
+		}
 	}
 }

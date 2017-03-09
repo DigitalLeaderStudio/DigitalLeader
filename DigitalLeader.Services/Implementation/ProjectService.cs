@@ -9,6 +9,8 @@
 	using System.Linq;
 	using DigitalLeader.Services.Extensions;
 	using DigitalLeader.Entities.Identity;
+	using System.Linq.Expressions;
+	using System;
 
 	public class ProjectService : BaseService, IProjectService
 	{
@@ -19,19 +21,35 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
+		public Expression<Func<Project, object>>[] Includes
+		{
+			get
+			{
+				return new Expression<Func<Project, object>>[] 
+				{
+					x => x.Client,
+					x => x.Technologies,
+					x => x.Services,
+					x => x.Contributors
+				};
+			}
+		}
+
 		public List<Project> GetAll()
 		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+			//using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			//{
+			//	var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				return dbContext.Set<Project>()
-					.Include(p => p.Client)
-					.Include(p => p.Technologies)
-					.Include(p => p.Services)
-					.Include(p => p.Contributors)
-					.ToList();
-			}
+			//	return dbContext.Set<Project>()
+			//		.Include(p => p.Client)
+			//		.Include(p => p.Technologies)
+			//		.Include(p => p.Services)
+			//		.Include(p => p.Contributors)
+			//		.ToList();
+			//}
+
+			return GetAllInclude(Includes);
 		}
 
 		public Project GetById(int id)
@@ -104,7 +122,7 @@
 
 				value.Technologies = HandleCollection<Technology>(value.Technologies.ToList(), dbContext);
 				value.Contributors = HandleCollection<User>(value.Contributors.ToList(), dbContext);
-				value.Services	= HandleCollection<Service>(value.Services.ToList(), dbContext);
+				value.Services = HandleCollection<Service>(value.Services.ToList(), dbContext);
 
 				dbContext.Projects.Add(value);
 
@@ -131,5 +149,8 @@
 		{
 			throw new System.NotImplementedException();
 		}
+
+
+
 	}
 }

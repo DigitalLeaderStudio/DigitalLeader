@@ -116,5 +116,11 @@
 				scope.SaveChanges();
 			}
 		}
+
+
+		public Expression<Func<Testimonial, object>>[] Includes
+		{
+			get { throw new NotImplementedException(); }
+		}
 	}
 }

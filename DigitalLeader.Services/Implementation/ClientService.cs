@@ -92,5 +92,11 @@
 		{
 			throw new System.NotImplementedException();
 		}
+
+
+		public System.Linq.Expressions.Expression<System.Func<Client, object>>[] Includes
+		{
+			get { throw new System.NotImplementedException(); }
+		}
 	}
 }

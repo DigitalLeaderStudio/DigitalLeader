@@ -110,5 +110,11 @@
 					.ToList();
 			}
 		}
+
+
+		public System.Linq.Expressions.Expression<System.Func<Service, object>>[] Includes
+		{
+			get { throw new System.NotImplementedException(); }
+		}
 	}
 }

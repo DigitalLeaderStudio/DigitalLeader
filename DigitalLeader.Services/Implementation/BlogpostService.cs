@@ -96,5 +96,11 @@
 		{
 			throw new System.NotImplementedException();
 		}
+
+
+		public System.Linq.Expressions.Expression<System.Func<Blogpost, object>>[] Includes
+		{
+			get { throw new System.NotImplementedException(); }
+		}
 	}
 }
