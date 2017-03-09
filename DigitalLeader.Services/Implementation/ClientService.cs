@@ -38,7 +38,24 @@
             return GetAllInclude(Includes);
 		}
 
-		public Client GetById(int id)
+        public List<Client> GetAllInclude(params Expression<Func<Client, object>>[] includes)
+        {
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+                var query = dbContext.Set<Client>().AsQueryable();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.ToList();
+            }
+        }
+
+        public Client GetById(int id)
 		{
             using (var scope = _dbContextScopeFactory.CreateReadOnly())
             {
@@ -107,10 +124,5 @@
 			}
 		}
 
-
-		public List<Client> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Client, object>>[] includes)
-		{
-			throw new System.NotImplementedException();
-		}
 	}
 }

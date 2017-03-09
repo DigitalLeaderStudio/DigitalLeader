@@ -100,26 +100,26 @@ namespace DigitalLeader.DAL.Migrations
 
             #region Technology Services Subcategories 
 
-			//var developmentServiceSubcategory = new ServiceSubcategory
-			//{
-			//	Name = "Development",
-			//	Services = new List<Service>(),
-			//};
-			//technologyCategory.ServiceSubcategories.Add(developmentServiceSubcategory);
+            var developmentServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Development",
+                Services = new List<Service>(),
+            };
+            technologyCategory.ServiceSubcategories.Add(developmentServiceSubcategory);
 
-			//var designServiceSubcategory = new ServiceSubcategory
-			//{
-			//	Name = "Design",
-			//	Services = new List<Service>(),
-			//};
-			//technologyCategory.ServiceSubcategories.Add(designServiceSubcategory);
+            var designServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Design",
+                Services = new List<Service>(),
+            };
+            technologyCategory.ServiceSubcategories.Add(designServiceSubcategory);
 
-			//var maintenanceServiceSubcategory = new ServiceSubcategory
-			//{
-			//	Name = "Meaintenance",
-			//	Services = new List<Service>(),
-			//};
-			//technologyCategory.ServiceSubcategories.Add(maintenanceServiceSubcategory);
+            var maintenanceServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Meaintenance",
+                Services = new List<Service>(),
+            };
+            technologyCategory.ServiceSubcategories.Add(maintenanceServiceSubcategory);
 
             #endregion
 
@@ -140,26 +140,26 @@ namespace DigitalLeader.DAL.Migrations
 				};
 
             #region Marketing Services Subcategories
-			//var contentServiceSubcategory = new ServiceSubcategory
-			//{
-			//	Name = "Content",
-			//	Services = new List<Service>(),
-			//};
-			//marketingCategory.ServiceSubcategories.Add(contentServiceSubcategory);
+            var contentServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Content",
+                Services = new List<Service>(),
+            };
+            marketingCategory.ServiceSubcategories.Add(contentServiceSubcategory);
 
-			//var smmServiceSubcategory = new ServiceSubcategory
-			//{
-			//	Name = "SMM",
-			//	Services = new List<Service>(),
-			//};
-			//marketingCategory.ServiceSubcategories.Add(smmServiceSubcategory);
+            var smmServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "SMM",
+                Services = new List<Service>(),
+            };
+            marketingCategory.ServiceSubcategories.Add(smmServiceSubcategory);
 
-			//var paidServiceSubcategory = new ServiceSubcategory
-			//{
-			//	Name = "Paid",
-			//	Services = new List<Service>(),
-			//};
-			//marketingCategory.ServiceSubcategories.Add(paidServiceSubcategory);
+            var paidServiceSubcategory = new ServiceSubcategory
+            {
+                Name = "Paid",
+                Services = new List<Service>(),
+            };
+            marketingCategory.ServiceSubcategories.Add(paidServiceSubcategory);
 
             #endregion
 
@@ -171,111 +171,111 @@ namespace DigitalLeader.DAL.Migrations
 
             #region Services
 
-		   // #region Development services
+            #region Development services
 
-		   // developmentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Website",
-		   //	 Description = "Some text"
-		   // });
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Website",
+                Description = "Some text"
+            });
 
-		   // developmentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Design",
-		   //	 Description = "Some text"
-		   // });
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Design",
+                Description = "Some text"
+            });
 
-		   // developmentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Web Application",
-		   //	 Description = "Some text"
-		   // });
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Web Application",
+                Description = "Some text"
+            });
 
-		   // developmentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Mobile Application",
-		   //	 Description = "Some text"
-		   // });
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Mobile Application",
+                Description = "Some text"
+            });
 
-		   // developmentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Enterprise System",
-		   //	 Description = "Some text"
-		   // });
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Enterprise System",
+                Description = "Some text"
+            });
 
-		   // developmentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Development consulting",
-		   //	 Description = "Some text"
-		   // });
+            developmentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Development consulting",
+                Description = "Some text"
+            });
 
-		   // designServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "UI/UX Design",
-		   //	 Description = "Some text"
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "UI/UX Design",
+                Description = "Some text"
 
-		   // });
+            });
 
-		   // designServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Brand Identity Design",
-		   //	 Description = "Some text"
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Brand Identity Design",
+                Description = "Some text"
 
-		   // });
+            });
 
-		   // designServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Brand Identity Design",
-		   //	 Description = "Some text"
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Brand Identity Design",
+                Description = "Some text"
 
-		   // });
+            });
 
-		   // designServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Graphic Design",
-		   //	 Description = "Some text"
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Graphic Design",
+                Description = "Some text"
 
-		   // });
+            });
 
-		   // designServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Design Consulting",
-		   //	 Description = "Some text"
+            designServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Design Consulting",
+                Description = "Some text"
 
-		   // });
+            });
 
-		   // maintenanceServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Software Upgrade",
-		   //	 Description = "Some text"
+            maintenanceServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Software Upgrade",
+                Description = "Some text"
 
-		   // });
+            });
 
-		   // #endregion
+            #endregion
 
-		   // #region Marketing services
+            #region Marketing services
 
-		   // contentServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Copy Wrighting",
-		   //	 Description = "Reach your customers precisly and fastly"
-		   // });
-
-
-		   // smmServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Facebook",
-		   //	 Description = "Reach your customers precisly and fastly"
-		   // });
-
-		   //paidServiceSubcategory.Services.Add(new Service
-		   // {
-		   //	 Title = "Google",
-		   //	 Description = "Reach your customers precisly and fastly"
-		   // });
+            contentServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Copy Wrighting",
+                Description = "Reach your customers precisly and fastly"
+            });
 
 
-		   // #endregion
+            smmServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Facebook",
+                Description = "Reach your customers precisly and fastly"
+            });
+
+            paidServiceSubcategory.Services.Add(new Service
+            {
+                Title = "Google",
+                Description = "Reach your customers precisly and fastly"
+            });
+
+
+            #endregion
 
             #endregion
 

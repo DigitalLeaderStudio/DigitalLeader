@@ -33,6 +33,24 @@
             }
         }
 
+
+        public List<Service> GetAllInclude(params Expression<Func<Service, object>>[] includes)
+        {
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+                var query = dbContext.Set<Service>().AsQueryable();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.ToList();
+            }
+        }
+
         public List<Entities.Service> GetAll()
         {
             return GetAllInclude(Includes);
@@ -100,12 +118,6 @@
 
 				scope.SaveChanges();
 			}
-		}
-
-
-		public List<Service> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Service, object>>[] includes)
-		{
-			throw new System.NotImplementedException();
 		}
 
 		public Service GetByName(string name)
