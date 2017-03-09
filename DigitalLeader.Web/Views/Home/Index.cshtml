@@ -1,218 +1,184 @@
 ﻿@model List<DigitalLeader.ViewModels.ServiceCategoryViewModel>
 
 @{
-    Layout = null;
-    ViewBag.Title = "Digital Leader  - your best digital solutions provider";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Digital Leader  - your best digital solutions provider";
 }
 
 @Styles.Render("~/Content/homepage.less")
-@*@Styles.Render("~/Content/service.less")*@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#fff" />
-    <link rel="icon" href="@Url.Content("~/content/images/favicon.ico")" type="image/x-icon">
+<div class="home container">
+	<div class="row presentation">
+		<div class="col-md-10 showcase">
+			<div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="100000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-demo" data-slide-to="1"></li>
+					<li data-target="#carousel-demo" data-slide-to="2"></li>
+				</ol>
 
-    <title>@ViewBag.Title</title>
+				<!-- Sliding images statring here -->
+				<div class="carousel-inner">
+					<div class="item active main-slide">
+						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
+						<div class="carousel-caption">
+							<h1>we are your best IT solutions provider</h1>
+						</div>
+					</div>
+					<div class="item main-slide">
+						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
+						<div class="carousel-caption">
+							<h1>Technology solutions</h1>
+						</div>
+					</div>
+					<div class="item main-slide">
+						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
+						<div class="carousel-caption">
+							<h1>Digital Marketing Solutions</h1>
+						</div>
+					</div>
+				</div>
 
-    @Scripts.Render("~/bundles/modernizr")
+				<!-- Next / Previous controls here -->
+				<a class="up carousel-control" href="#carousel-demo" data-slide="prev">
+					<i class="fa fa-angle-up" aria-hidden="true"></i>
+				</a>
+				<a class="down carousel-control" href="#carousel-demo" data-slide="next">
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+				</a>
+			</div>
+		</div>
 
-    @Styles.Render("~/Content/core-css")
-    @Styles.Render("~/Content/core-less")
-    @Styles.Render("~/Content/homepage.less")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+		<div class="col-md-2 service-categories">
+			<div class="row">
+				@foreach (var category in Model)
+				{
+					<div class="col-md-12 service-category @category.CssClass">
+						<div class="image"></div>
+						<hr />
+						<h3>@category.Name</h3>
 
-</head>
-<body>
-    @Html.Partial("_NavigationBar")
+						<div class="menu-wrapper">
+							<div id="menu" class="container-fluid">
+								<div class="row">
+									@foreach (var subcategory in category.ServiceSubcategories)
+									{
+										<div class="col-md-4">
+											<h2>@subcategory.Name</h2>
+											<ul>
+												@foreach (var service in subcategory.Services)
+												{
+													<li>
+														<a href="#">
+															<h3>@service.Title</h3>
+															<p>@service.Description</p>
+														</a>
+													</li>
 
-    <div class="body-content">
-        <div class="home container">
-            <div class="row presentation">
+												}
+											</ul>
+										</div>
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+				}
 
-                <div class="col-md-10 showcase">
-                    <div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="100000">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-demo" data-slide-to="1"></li>
-                            <li data-target="#carousel-demo" data-slide-to="2"></li>
-                        </ol>
+			</div>
+		</div>
 
-                        <!-- Sliding images statring here -->
-                        <div class="carousel-inner">
-                            <div class="item active main-slide">
-                                @*<img src="~/Content/images/company/world-map.png" alt="banana">*@
-                                <div class="carousel-caption">
-                                    <h1>we are your best IT solutions provider</h1>
-                                </div>
-                            </div>
-                            <div class="item main-slide">
-                                @*<img src="~/Content/images/company/world-map.png" alt="banana">*@
-                                <div class="carousel-caption">
-                                    <h1>Technology solutions</h1>
-                                </div>
-                            </div>
-                            <div class="item main-slide">
-                                @*<img src="~/Content/images/company/world-map.png" alt="banana">*@
-                                <div class="carousel-caption">
-                                    <h1>Digital Marketing Solutions</h1>
-                                </div>
-                            </div>
-                        </div>
+	</div>
 
-                        <!-- Next / Previous controls here -->
-                        <a class="up carousel-control" href="#carousel-demo" data-slide="prev">
-                            <i class="fa fa-angle-up" aria-hidden="true"></i>
-                        </a>
-                        <a class="down carousel-control" href="#carousel-demo" data-slide="next">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
+	<div class="row footer">
+		<div class="col-md-4 cta-title">
+			<h2>Let's upgrade your business!</h2>
+		</div>
+		@using (Html.BeginForm("Promo", "Home", FormMethod.Post))
+		{
+			<div class="col-md-8 form-wrapper">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 id="form-header">What's your name?</h3>
+					</div>
+				</div>
+				<div class="row cta-form">
 
-                <div class="col-md-2 service-categories">
-                    <div class="row">
-                        @foreach (var category in Model)
-                        {
-                            <div class="col-md-12 service-category @category.CssClass">
-                                <div class="image"></div>
-                                <hr />
-                                <h3>@category.Name</h3>
+					<div class="col-md-10" id="name">
+						<input placeholder="Your name" name="FirstName">
+					</div>
 
-                                <div class="@category.CssClass-menu-wrapper">
-                                    <div id="menu" class="container-fluid">
-                                        <div class="row">
-                                            @foreach (var subcategory in category.ServiceSubcategories)
-                                            {
-                                            <div class="col-md-4">
-                                                <h2>subcategory.Name</h2>
-                                                <ul>
-                                                    @foreach (var service in subcategory.Services)
-                                                    {
-                                                    <li>
-                                                        <a href="#">
-                                                            <h3>@service.Title</h3>
-                                                            <p>@service.Description</p>
-                                                        </a>
-                                                    </li>
-                                                   
-                                                    }
-                                                </ul>
-                                            </div>
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
+					<div class="col-md-10 hidden" id="email">
+						<input placeholder="example@gmail.com" name="Email">
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+								2/4
+							</div>
+						</div>
+					</div>
 
-                    </div>
-                </div>
+					<div class="col-md-10 hidden" id="phone">
+						<input placeholder="(099)-555-55-55" name="Phone">
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+								3/4
+							</div>
+						</div>
+					</div>
 
-            </div>
+					<div class="col-md-10 hidden" id="message">
+						<textarea placeholder="Describe your problem" name="Message"></textarea>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+								4/4
+							</div>
+						</div>
+					</div>
 
-            <div class="row footer">
-                <div class="col-md-4 cta-title">
-                    <h2>Let's upgrade your business!</h2>
-                </div>
-@using (Html.BeginForm("Promo", "Home", FormMethod.Post))
-{
-    <div class="col-md-8 form-wrapper">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 id="form-header">What's your name?</h3>
-                        </div>
-                    </div>
-                    <div class="row cta-form">
-                        
-                        <div class="col-md-10" id="name">
-                            <input placeholder="Your name" name="FirstName">
-                               </div>
+					<div class="col-md-2">
+						<button type="button" id="send-btn" class="next-step"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
 
-                        <div class="col-md-10 hidden" id="email" >
-                            <input placeholder="example@gmail.com" name="Email">
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                    2/4
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-10 hidden" id="phone">
-                            <input placeholder="(099)-555-55-55" name="Phone">
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
-                                   3/4
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-10 hidden" id="message">
-                            <textarea placeholder="Describe your problem" name="Message"></textarea>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                                    4/4
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2">
-                            <button type="button" id="send-btn" class="next-step"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                           </div>
-                    </div>
-                </div>
-}
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-    @*@Html.Partial("_Footer")*@
-</body>
-</html>
-
+</div>
 
 <script>
-    $(document).ready(function () {
-        $step = 0;
+	$(document).ready(function () {
+		$step = 0;
 
-        $("#send-btn").click(function () {
-            if ($step == 0) {
-                $("#name").addClass("hidden");
-                $("#email").removeClass("hidden");
-                $("#form-header").text($("#name").find("input").val() + " ,what's your email address?");               
-                $step++;
-                return;
-            }
-            if ($step == 1) {
-                $("#email").addClass("hidden");
-                $("#phone").removeClass("hidden");
-                $("#form-header").text("Please, enter your phone number");
-                $step++;
-                return;
-            }
+		$("#send-btn").click(function () {
+			if ($step == 0) {
+				$("#name").addClass("hidden");
+				$("#email").removeClass("hidden");
+				$("#form-header").text($("#name").find("input").val() + " ,what's your email address?");
+				$step++;
+				return;
+			}
+			if ($step == 1) {
+				$("#email").addClass("hidden");
+				$("#phone").removeClass("hidden");
+				$("#form-header").text("Please, enter your phone number");
+				$step++;
+				return;
+			}
 
-            if ($step == 2) {
-                $("#phone").addClass("hidden");
-                $("#message").removeClass("hidden");
-                $("#form-header").hide();
-                $("#message").find("textarea").attr("placeholder","Thank's " + $("#name").find("input").val() + ". How can we help you?");
-                $step++;
-                $(this).attr("type", "submit");
-                $(this).text("SUBMIT");
-                $(this).addClass("final-step");
-                return false;
-            }
-        });
-    });
+			if ($step == 2) {
+				$("#phone").addClass("hidden");
+				$("#message").removeClass("hidden");
+				$("#form-header").hide();
+				$("#message").find("textarea").attr("placeholder", "Thank's " + $("#name").find("input").val() + ". How can we help you?");
+				$step++;
+				$(this).attr("type", "submit");
+				$(this).text("SUBMIT");
+				$(this).addClass("final-step");
+				return false;
+			}
+		});
+	});
 
 </script>
 
@@ -228,28 +194,28 @@
 
 <!-- contacts -->
 @*<div class="col-md-12 contacts">
-        <p>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:office@digitalleader.solutions">office@digitalleader.solutions</a>
-        </p>
-        <p>
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <a href="call:+380961212713">+380961212713</a>
-        </p>
-        <p class="social-links">
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-        </p>
-    </div>*@
+		<p>
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+			<a href="mailto:office@digitalleader.solutions">office@digitalleader.solutions</a>
+		</p>
+		<p>
+			<i class="fa fa-phone" aria-hidden="true"></i>
+			<a href="call:+380961212713">+380961212713</a>
+		</p>
+		<p class="social-links">
+			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+		</p>
+	</div>*@
 
 
 @*@foreach (var service in category.Services)
-    {
-        <div class="specific-wrapper">
-            <a href="@Url.Action("Index", "Service", new { service = service.Title })" class="specific">
-                <h5>@service.Title</h5>
-                <p>@service.Description</p>
-            </a>
-        </div>
-    }*@
+	{
+		<div class="specific-wrapper">
+			<a href="@Url.Action("Index", "Service", new { service = service.Title })" class="specific">
+				<h5>@service.Title</h5>
+				<p>@service.Description</p>
+			</a>
+		</div>
+	}*@
