@@ -27,7 +27,7 @@
 				@{
 		var srcAction = item.ImageId.HasValue ?
 		Url.Action("Show", "File", new { area = "", id = item.ImageId }) :
-		"/Content/img/default-user.png";
+		"/Content/Images/default-user.png";
 				}
 				<img src="@srcAction" alt="@item.Name" class="img-responsive" width="50"/>
 

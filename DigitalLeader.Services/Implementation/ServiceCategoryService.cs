@@ -79,7 +79,7 @@
 
 				existed.Content = value.Content;
 				existed.Name = value.Name;
-
+                existed.CssClass = value.CssClass;
 				existed.Image = HandleFile(existed.Image, value.Image);
 
 				scope.SaveChanges();

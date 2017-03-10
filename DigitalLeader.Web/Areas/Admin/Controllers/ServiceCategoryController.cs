@@ -26,37 +26,37 @@
 			return View(viewModel);
 		}
 
-		//// GET: Admin/Category/Create
-		//public ActionResult Create()
-		//{
-		//	return View();
-		//}
+        // GET: Admin/ServiceCategory/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
-		// POST: Admin/Category/Create
-		//[HttpPost]
-		//public ActionResult Create(ClientViewModel viewModel)
-		//{
-		//	try
-		//	{
-		//		if (ModelState.IsValid)
-		//		{
-		//			var client = Mapper.Map<ClientViewModel, Client>(viewModel);
+        //POST: Admin/ServiceCategory/Create
+       [HttpPost]
+        public ActionResult Create(ServiceCategoryViewModel viewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var serviceCategory = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
 
-		//			_clientService.Insert(client);
+                    _categoryService.Insert(serviceCategory);
 
-		//			return RedirectToAction("Index");
-		//		}
-		//	}
-		//	catch (Exception e)
-		//	{
-		//		ModelState.AddModelError("", e.Message);
-		//	}
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
 
-		//	return View(viewModel);
-		//}
+            return View(viewModel);
+        }
 
-		// GET: Admin/Category/Edit
-		public ActionResult Edit(int id)
+        // GET: Admin/ServiceCategory/Edit
+        public ActionResult Edit(int id)
 		{
 			//var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
 			var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
@@ -64,7 +64,7 @@
 			return View(viewModel);
 		}
 
-		// POST: Admin/Category/Edit
+		// POST: Admin/ServiceCategory/Edit
 		[HttpPost]
 		public ActionResult Edit(ServiceCategoryViewModel viewModel)
 		{
@@ -72,9 +72,9 @@
 			{
 				if (ModelState.IsValid)
 				{
-					var client = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
+					var categoryService = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
 
-					_categoryService.Update(client);
+					_categoryService.Update(categoryService);
 				}
 			}
 			catch (Exception e)
@@ -87,12 +87,43 @@
 			return RedirectToAction("Index");
 		}
 
-		//// GET: Admin/Clinet/Details
-		//public ActionResult Details(int id)
-		//{
-		//	var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
+        // GET: Admin/ServiceCategory/Details
+        public ActionResult Details(int id)
+        {
+            var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
 
-		//	return View(viewModel);
-		//}
-	}
+            return View(viewModel);
+        }
+
+        // GET: Admin/ServiceCategory/Delete
+        public ActionResult Delete(int id)
+        {
+            var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/ServiceCategory/Delete
+        [HttpPost]
+        public ActionResult Delete(ServiceCategoryViewModel viewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var entity = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
+
+                    _categoryService.Delete(entity);
+
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
+
+            return View(viewModel);
+        }
+    }
 }

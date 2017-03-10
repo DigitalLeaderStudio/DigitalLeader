@@ -462,6 +462,10 @@
     <Content Include="Content\Images\favicon.psd" />
     <Content Include="Areas\Admin\Views\ServiceSubcategory\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceSubcategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogpost\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Details.cshtml" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

@@ -109,5 +109,36 @@
 
 			return View(viewModel);
 		}
-	}
+
+        // GET: Admin/Blogpost/Delete
+        public ActionResult Delete(int id)
+        {
+            var viewModel = Mapper.Map<Blogpost, BlogpostViewModel>(_blogpostService.GetById(id));
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/Blogpost/Delete
+        [HttpPost]
+        public ActionResult Delete(BlogpostViewModel viewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var entity = Mapper.Map<BlogpostViewModel, Blogpost>(viewModel);
+
+                    _blogpostService.Delete(entity);
+
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
+
+            return View(viewModel);
+        }
+    }
 }
