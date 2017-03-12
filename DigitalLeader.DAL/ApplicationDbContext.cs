@@ -10,7 +10,7 @@
 		IdentityDbContext<User, Role, int, UserLogin, UserRole, UserClaim>, IDbContext
 	{
 		public ApplicationDbContext()
-			: base("DegitalLeaderConnection")
+			: base("DigitalLeader")
 		{
 		}
 

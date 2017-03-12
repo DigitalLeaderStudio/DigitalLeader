@@ -5,8 +5,6 @@
 	ViewBag.Title = "Digital Leader  - your best digital solutions provider";
 }
 
-@Styles.Render("~/Content/homepage.less")
-
 <div class="home container">
 	<div class="row presentation">
 		<div class="col-md-10 showcase">
@@ -95,8 +93,8 @@
 		<div class="col-md-4 cta-title">
 			<h2>Let's upgrade your business!</h2>
 		</div>
-		@using (Html.BeginForm("Promo", "Home", FormMethod.Post))
-		{
+		@using (Html.BeginForm("Promo", "Home", FormMethod.Post, new { autocomplete = "off" }))
+        {
 			<div class="col-md-8 form-wrapper">
 				<div class="row">
 					<div class="col-md-12">
@@ -113,7 +111,6 @@
 						<input placeholder="example@gmail.com" name="Email">
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-								2/4
 							</div>
 						</div>
 					</div>
@@ -122,7 +119,6 @@
 						<input placeholder="(099)-555-55-55" name="Phone">
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								3/4
 							</div>
 						</div>
 					</div>
@@ -131,12 +127,11 @@
 						<textarea placeholder="Describe your problem" name="Message"></textarea>
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-								4/4
 							</div>
 						</div>
 					</div>
 
-					<div class="col-md-2">
+					<div class="col-md-2 button-wrapper">
 						<button type="button" id="send-btn" class="next-step"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
 					</div>
 				</div>
@@ -154,14 +149,14 @@
 			if ($step == 0) {
 				$("#name").addClass("hidden");
 				$("#email").removeClass("hidden");
-				$("#form-header").text($("#name").find("input").val() + " ,what's your email address?");
+				$("#form-header").text("Email address");
 				$step++;
 				return;
 			}
 			if ($step == 1) {
 				$("#email").addClass("hidden");
 				$("#phone").removeClass("hidden");
-				$("#form-header").text("Please, enter your phone number");
+				$("#form-header").text("Phone number");
 				$step++;
 				return;
 			}
@@ -170,10 +165,10 @@
 				$("#phone").addClass("hidden");
 				$("#message").removeClass("hidden");
 				$("#form-header").hide();
-				$("#message").find("textarea").attr("placeholder", "Thank's " + $("#name").find("input").val() + ". How can we help you?");
+				$("#message").find("textarea").attr("placeholder", "your problem or message");
 				$step++;
 				$(this).attr("type", "submit");
-				$(this).text("SUBMIT");
+				$(this).text("Send");
 				$(this).addClass("final-step");
 				return false;
 			}
@@ -181,41 +176,3 @@
 	});
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-<!-- contacts -->
-@*<div class="col-md-12 contacts">
-		<p>
-			<i class="fa fa-envelope" aria-hidden="true"></i>
-			<a href="mailto:office@digitalleader.solutions">office@digitalleader.solutions</a>
-		</p>
-		<p>
-			<i class="fa fa-phone" aria-hidden="true"></i>
-			<a href="call:+380961212713">+380961212713</a>
-		</p>
-		<p class="social-links">
-			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-		</p>
-	</div>*@
-
-
-@*@foreach (var service in category.Services)
-	{
-		<div class="specific-wrapper">
-			<a href="@Url.Action("Index", "Service", new { service = service.Title })" class="specific">
-				<h5>@service.Title</h5>
-				<p>@service.Description</p>
-			</a>
-		</div>
-	}*@
