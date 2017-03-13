@@ -57,10 +57,12 @@
         </dt>
 
         <dd>
+            <ol>
             @foreach (var subCategory in Model.ServiceSubcategories)
             {
-                <p>@subCategory.Name </p>
+                <li>@subCategory.Name </li>
             }
+                </ol>
         </dd>
 
 	</dl>

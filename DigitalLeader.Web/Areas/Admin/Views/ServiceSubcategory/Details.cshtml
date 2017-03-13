@@ -1,0 +1,43 @@
+﻿@model DigitalLeader.ViewModels.ServiceSubcategoryViewModel
+
+@{
+	ViewBag.Title = "serviceCategory details";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">View ServiceSubcategory details</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
+
+<div>
+	<h4>ServiceSubcategoryViewModel</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Services)
+        </dt>
+
+        <dd>
+            <ol>
+                @foreach (var service in Model.Services)
+            {
+                    <li>@service.Title </li>
+                }
+            </ol>
+        </dd>
+
+	</dl>
+</div>
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+	@Html.ActionLink("Back to List", "Index")
+</p>

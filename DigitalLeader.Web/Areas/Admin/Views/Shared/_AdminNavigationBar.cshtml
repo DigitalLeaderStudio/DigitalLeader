@@ -1,17 +1,17 @@
 ﻿<nav class="navbar navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<div class="branding-container">
-				<div class="site-name">@Html.ActionLink("Digital Leader", "Index", "Home", new { area = "" }, new { @class = "" })</div>
-				<div class="motto">your best digital solutions provider</div>
-				@*<div class="motto">Today you are reader<br /> tomorrow you are Leader!</div>*@
+			<div class="navbar-brand">
+				<a class="navbar-brand">@Html.ActionLink("Digital Leader", "Index", "Home", new { area = "" }, new { @class = "" })</a>
+			@*	<div class="motto">your best digital solutions provider</div>
+				<div class="motto">Today you are reader<br /> tomorrow you are Leader!</div> *@
 			</div>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavLinks">
 				<i class="fa fa-bars" aria-hidden="true"></i>
 			</button>
 		</div>
 		<div class="collapse navbar-collapse" id="mainNavLinks">
-			<ul class="navbar-links">
+			<ul class="navbar-nav">
 				<li>
 					<a href="@Url.Action("Index", "Admin", new { area = "Admin"})"><i class="fa fa-home"></i></a>
 				</li>

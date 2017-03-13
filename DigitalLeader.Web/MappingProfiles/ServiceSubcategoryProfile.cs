@@ -21,9 +21,10 @@
                     };
                 });
 
-            CreateMap<ServiceSubcategory, ServiceSubcategoryViewModel>();
+            CreateMap<ServiceSubcategory, ServiceSubcategoryViewModel>()
+               .ForMember(vm => vm.Services, opt => opt.MapFrom(entity => entity.Services));
 
-            CreateMap<ServiceCategoryViewModel, ServiceCategory>();
+            CreateMap<ServiceSubcategoryViewModel, ServiceSubcategory>();
             //.AfterMap((vm, entity) =>
             //{
             //	if (vm.File != null)
