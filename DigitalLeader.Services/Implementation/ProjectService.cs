@@ -96,7 +96,7 @@
 				existed.Title = value.Title;
 				existed.WorkOverview = value.WorkOverview;
 
-				existed.Image = HandleFile(existed.Image, value.Image);
+				existed.Image = value.Image;
 
 				existed.Technologies = HandleCollection<Technology, int>(
 					existed.Technologies.ToList(),
@@ -151,13 +151,5 @@
 				scope.SaveChanges();
 			}
 		}
-
-	//	public List<Project> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Project, object>>[] includes)
-	//	{
-	//		throw new System.NotImplementedException();
-	//	}
-
-
-
 	}
 }

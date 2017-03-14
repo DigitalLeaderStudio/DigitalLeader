@@ -470,6 +470,8 @@
     <Content Include="Areas\Admin\Views\ServiceSubcategory\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceSubcategory\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Service\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Client\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Project\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

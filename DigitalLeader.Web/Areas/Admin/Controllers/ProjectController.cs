@@ -177,5 +177,37 @@
 
 			return View(viewModel);
 		}
-	}
+        // GET: Admin/Project/Delete
+        public ActionResult Delete(int id)
+        {
+            var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/Project/Delete
+        [HttpPost]
+        public ActionResult Delete(ProjectViewModel viewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var entity = Mapper.Map<ProjectViewModel, Project>(viewModel);
+
+                    _projectService.Delete(entity);
+
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
+
+            return View(viewModel);
+        }
+    }
+
+
 }
