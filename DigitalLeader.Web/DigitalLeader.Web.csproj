@@ -275,6 +275,7 @@
     <Content Include="Content\Images\company\header bg.png" />
     <Content Include="Content\Images\company\world-map.png" />
     <Content Include="Content\Images\default-user.png" />
+    <Content Include="Content\Images\dl logo v2 white.png" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\home-background.png" />
@@ -466,6 +467,11 @@
     <Content Include="Areas\Admin\Views\ServiceCategory\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceCategory\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceCategory\Details.cshtml" />
+    <Content Include="Content\Images\dl logo v2 white.psd" />
+    <Content Include="Content\Images\dl logo v2.psd" />
+    <Content Include="Content\Images\home-bg.psd" />
+    <Content Include="Content\Images\world-map.ai" />
+    <Content Include="Content\Images\home-background.psd" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

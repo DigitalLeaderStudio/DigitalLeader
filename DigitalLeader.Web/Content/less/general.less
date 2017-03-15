@@ -64,6 +64,7 @@ body {
         textarea {
             resize: vertical;
             height: 260px;
+            margin-bottom: 0;
         }
         input[type="submit"] {
             width: 100% !important;
@@ -72,12 +73,12 @@ body {
             outline: none;
             display: block;
             border-radius: 0;
-            border: 2px solid #0094ff;
-            font-weight: bold;
-            font-size: 1.1em;
-            background: #fff;
-            color: #333;
-            padding: 7px 0;
+            border: 2px solid @color-dark-grey;
+            font-size: 20px;
+            text-transform: uppercase;
+            background: @color-dark-grey;
+            color: #fff;
+            padding: 10px 0;
 
             &:hover {
                 border: 2px solid #333;

@@ -1,13 +1,97 @@
 ﻿<footer class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <hr>
-            <ul class="copyright-and-additional-links">
-                <li>&copy; @DateTime.Now.Year Digital Leader - your best IT serives provider.</li>
-                <li>@Html.ActionLink("Privacy", "Company", "Home")</li>
-                <li>@Html.ActionLink("Terms of Use", "Serives", "Home")</li>
-                <li>@Html.ActionLink("Feedback", "Clients", "Home")</li>
-            </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 brand">
+                <img src="~/Content/images/dl logo v2 white.png" />
+            </div>
+            <div class="col-md-7">
+                <div class="col-md-12 message">
+                    <p>
+                        We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.
+                    </p>
+                </div>
+                <div class="contacts">
+                    <div class="col-md-4">
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i></p>
+                        <h3>Ukraine, Kyiv, Mykhailo Stelmakh Street</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <p><i class="fa fa-phone" aria-hidden="true"></i></p>
+                        <h3><a href="">+333 5555 4444</a></h3>
+                    </div>
+                    <div class="col-md-4">
+                        <p><i class="fa fa-at" aria-hidden="true"></i></p>
+                        <h3><a href="">info@digitalleader.solutions</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <hr>
+            </div>
         </div>
-    </div> 
+
+        <div class="row menu">
+            <div class="col-md-2 col-md-offset-2">
+                <h3>Services</h3>
+                <ul class="menu-list">
+                    <li>@Html.ActionLink("Technology Solutions", "Company", "Home")</li>
+                    <li>@Html.ActionLink("Digital Marketing", "Serives", "Home")</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h3>Portfolio</h3>
+                <ul class="menu-list">
+                    <li>@Html.ActionLink("Projects", "Company", "Home")</li>
+                    <li>@Html.ActionLink("Case Studies", "Clients", "Home")</li>
+                    <li>@Html.ActionLink("Testimonials", "Serives", "Home")</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h3>Company</h3>
+                <ul class="menu-list">
+                    <li>@Html.ActionLink("Our Story", "Company", "Home")</li>
+                    <li>@Html.ActionLink("Creed", "Serives", "Home")</li>
+                    <li>@Html.ActionLink("Team", "Clients", "Home")</li>
+                    <li>@Html.ActionLink("Careers", "Clients", "Home")</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h3>Resources</h3>
+                <ul class="menu-list">
+                    <li>@Html.ActionLink("Blog", "Company", "Home")</li>
+                    <li>@Html.ActionLink("White Papers", "Serives", "Home")</li>
+                    <li>@Html.ActionLink("Guides", "Clients", "Home")</li>
+                    <li>@Html.ActionLink("Infographics", "Clients", "Home")</li>
+                    <li>@Html.ActionLink("Videos", "Clients", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid last-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 copyright">
+                    <p>&copy; @DateTime.Now.Year Digital Leader - your best IT serives provider.</p>
+                </div>
+                <div class="col-md-4 social-links">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 terms">
+                    <ul>
+                        <li>@Html.ActionLink("Privacy", "Company", "Home")</li>
+                        <li>@Html.ActionLink("Terms of Use", "Serives", "Home")</li>
+                        <li>@Html.ActionLink("Feedback", "Clients", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+

@@ -2,33 +2,38 @@
 
 
 .contact {
-    margin-bottom: 100px;
     padding: 0;
 
     .row .row div {
-        padding: 0;
+        padding: 10px;
     }
 
     .header {
-        background: @color-light-blue;
+        background: @color-dark-blue;
+        height: 220px;
         width: 100%;
-        margin: 0 0 20px 0;
+        margin: 0 0 5px 0;
         position: relative;
         display: inline-block;
+        background: @color-light-blue;
+
+
 
         & > div {
             float: left;
             width: 100%;
             padding: 5%;
             display: inline-block;
-                       
+
             h1 {
                 text-align: center;
                 font-size: 3em;
                 color: white;
                 font-weight: bold;
                 margin-top: 0;
+                text-transform: uppercase;
             }
+
             h2 {
                 text-align: center;
                 font-size: 1.2em;
@@ -38,48 +43,104 @@
         }
 
         &:after {
-         visibility: hidden !important;
-         display: block !important;
-         font-size: 0 !important;
-         content: " " !important;
-         clear: both !important;
-         height: 0 !important;
-         }
-    }
-   
-
-
-    .follow-us p i {
-        margin-right: 10px;
-        font-size: 1.1em;
-        color: #666;
-        display: inline-block;
-        width: 27px;
-        height: 27px;
-        border: 1px solid #0094ff;
-        padding: 8px 0 0 0;
-        text-align: center;
-        line-height: 10px;
-
-        &:hover {
-            margin-right: 10px;
-            font-size: 1.1em;
-            color: #0094ff;
-            display: inline-block;
-            width: 27px;
-            height: 27px;
-            border: 1px solid #333;
-            padding: 8px 0 0 0;
-            text-align: center;
-            line-height: 10px;
+            visibility: hidden !important;
+            display: block !important;
+            font-size: 0 !important;
+            content: " " !important;
+            clear: both !important;
+            height: 0 !important;
         }
     }
 
-    h3 {
-        text-align: left !important;
-        margin: 5px 0 10px !important;
+    .connect-content {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px 10px 80px;
+        border-left: 1px solid @color-grey;
+
+        .connect-form {
+
+            h2 {
+                margin: 0 0 10px;
+                font-size: 36px;
+                text-transform: uppercase;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+
+            form > div {
+                padding: 10px 10px 0 0;
+            }
+        }
+
+        .text-contacts {
+            background: @color-dark-grey;
+            padding-bottom: 40px !important;
+
+            & > div {
+                padding: 0;
+
+                > div {
+                    margin-bottom: 10px;
+                }
+            }
+
+            h3 {
+                text-align: left;
+                margin: 5px 0 10px;
+                text-transform: uppercase;
+                color: #fff;
+                font-size: 26px;
+            }
+
+            p, address {
+                color: #fff;
+                margin-bottom: 0;
+            }
+
+            .follow-us {
+
+                p {
+                    margin-bottom: 10px;
+
+                    i {
+                        margin-right: 10px;
+                        font-size: 1.1em;
+                        color: #fff;
+                        display: inline-block;
+                        width: 27px;
+                        height: 27px;
+                        border: 1px solid #fff;
+                        padding: 8px 0 0 0;
+                        text-align: center;
+                        line-height: 10px;
+
+                        &:hover {
+                            margin-right: 10px;
+                            font-size: 1.1em;
+                            color: #0094ff;
+                            display: inline-block;
+                            width: 27px;
+                            height: 27px;
+                            border: 1px solid #333;
+                            padding: 8px 0 0 0;
+                            text-align: center;
+                            line-height: 10px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+
+
+
+
+
+
 
 
 

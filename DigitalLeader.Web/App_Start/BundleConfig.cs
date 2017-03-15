@@ -54,7 +54,8 @@ namespace DigitalLeader.Web
 				.Include("~/Content/less/general.less")
 				.Include("~/Content/less/navbar.less")
 				.Include("~/Content/less/footer.less")
-                .Include("~/Content/less/homepage.less"));
+                .Include("~/Content/less/homepage.less")
+                .Include("~/Content/less/contact.less"));
 
 			bundles.Add(new LessBundle("~/Content/company.less")
 				.Include("~/Content/less/company.less"));
