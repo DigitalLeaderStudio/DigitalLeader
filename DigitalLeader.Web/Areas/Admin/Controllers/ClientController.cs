@@ -92,5 +92,35 @@
 
 			return View(viewModel);
 		}
-	}
+        // GET: Admin/Client/Delete
+        public ActionResult Delete(int id)
+        {
+            var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/Client/Delete
+        [HttpPost]
+        public ActionResult Delete(ClientViewModel viewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var entity = Mapper.Map<ClientViewModel, Client>(viewModel);
+
+                    _clientService.Delete(entity);
+
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
+
+            return View(viewModel);
+        }
+    }
 }

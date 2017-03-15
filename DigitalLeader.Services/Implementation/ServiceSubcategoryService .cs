@@ -81,6 +81,7 @@
 				var existed = dbContext.Set<ServiceSubcategory>().SingleOrDefault(c => c.ID == value.ID);
 
 				existed.Name = value.Name;
+                existed.ServiceCategoryID = value.ServiceCategoryID;
 
 				scope.SaveChanges();
 			}

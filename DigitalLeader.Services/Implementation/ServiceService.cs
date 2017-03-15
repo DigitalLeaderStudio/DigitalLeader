@@ -85,6 +85,8 @@
 				existed.Content = value.Content;
 				existed.Description = value.Description;
 				existed.Title = value.Title;
+                existed.SubTitle = value.SubTitle;
+                existed.ServiceSubcategoryID = value.ServiceSubcategoryID;
 
 				existed.Image = HandleFile(existed.Image, value.Image);
 

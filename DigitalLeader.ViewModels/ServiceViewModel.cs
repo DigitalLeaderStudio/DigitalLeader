@@ -18,10 +18,10 @@ namespace DigitalLeader.ViewModels
 		[UIHint("tinymce_full_compressed")]
 		public string Content { get; set; }
 
-		[Display(Name = "Category")]
-		public int CategoryID { get; set; }
+		[Display(Name = "Subcategory")]
+		public int ServiceSubcategoryID { get; set; }
 
-		[Display(Name = "Category")]
-		public List<SelectListItem> CategoriesSelectList { get; set; }
+		[Display(Name = "SeervicesSubcategoties")]
+		public List<SelectListItem> ServiceSubcategoriesSelectList { get; set; }
 	}
 }

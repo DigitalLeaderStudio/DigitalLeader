@@ -11,20 +11,20 @@
 	public class ServiceController : BaseAdminController
 	{
 		private ITechnologyService _technologyService;
-		private IServiceCategoryService _categoryService;
+		private IServiceSubcategoryService _subcategoryService;
 		private IServiceService _serviceService;
 		private IProjectService _projectService;
 		private IClientService _clientService;
 
 		public ServiceController(
 			ITechnologyService technologyService,
-			IServiceCategoryService categoryService,
+			IServiceSubcategoryService subcategoryService,
 			IServiceService serviceService,
 			IProjectService projectService,
 			IClientService clientService)
 		{
 			_technologyService = technologyService;
-			_categoryService = categoryService;
+			_subcategoryService = subcategoryService;
 			_serviceService = serviceService;
 			_projectService = projectService;
 			_clientService = clientService;
@@ -44,7 +44,7 @@
 		{
 			var viewModel = new ServiceViewModel
 			{
-				CategoriesSelectList = Mapper.Map<List<ServiceCategory>, List<SelectListItem>>(_categoryService.GetAll())
+				ServiceSubcategoriesSelectList = Mapper.Map<List<ServiceSubcategory>, List<SelectListItem>>(_subcategoryService.GetAll())
 			};
 
 			return View(viewModel);
@@ -70,14 +70,14 @@
 				ModelState.AddModelError("", e.Message);
 			}
 
-			viewModel.CategoriesSelectList = Mapper.Map<List<ServiceCategory>, List<SelectListItem>>(_categoryService.GetAll());
+			viewModel.ServiceSubcategoriesSelectList = Mapper.Map<List<ServiceSubcategory>, List<SelectListItem>>(_subcategoryService.GetAll());
 			return View(viewModel);
 		}
 
 		public ActionResult Edit(int id)
 		{
 			var viewModel = Mapper.Map<Service, ServiceViewModel>(_serviceService.GetById(id));
-			viewModel.CategoriesSelectList = Mapper.Map<List<ServiceCategory>, List<SelectListItem>>(_categoryService.GetAll());
+			viewModel.ServiceSubcategoriesSelectList = Mapper.Map<List<ServiceSubcategory>, List<SelectListItem>>(_subcategoryService.GetAll());
 
 			return View(viewModel);
 		}
@@ -112,5 +112,36 @@
 
 			return View(viewModel);
 		}
-	}
+
+        // GET: Admin/Service/Delete
+        public ActionResult Delete(int id)
+        {
+            var viewModel = Mapper.Map<Service, ServiceViewModel>(_serviceService.GetById(id));
+
+            return View(viewModel);
+        }
+
+        // POST: Admin/Service/Delete
+        [HttpPost]
+        public ActionResult Delete(ServiceViewModel viewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var entity = Mapper.Map<ServiceViewModel, Service>(viewModel);
+
+                    _serviceService.Delete(entity);
+
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
+
+            return View(viewModel);
+        }
+    }
 }
