@@ -10,7 +10,7 @@
                     @*<div class="motto">your best digital solutions provider</div>*@
                     @*<div class="motto">Today you are reader<br /> tomorrow you are Leader!</div>*@
                 </div>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavLinks">
+                <button type="button" class="navbar-toggle"  data-target="#mainNavLinks">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </button>
                 <div class="main-cta">
@@ -26,7 +26,7 @@
     </div>
     <div class="navigation-wrapper">
         <div class="container">
-            <div class="collapse navbar-collapse" id="mainNavLinks">
+            <div class="" id="mainNavLinks">
                 <ul class="navbar-links">
                     <li>@Html.ActionLink("Services", "Index", "Home")</li>
                     <li class="dropdown">
@@ -52,7 +52,7 @@
                            data-toggle="dropdown" 
                            role="button" 
                            aria-haspopup="true" 
-                           aria-expanded="false">Company @*<span class="caret"></span>*@</a>
+                           aria-expanded="false">Company @**@<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Projects", "Portfolio")">Our story</a>
@@ -106,19 +106,18 @@
 <script>
     $(document).ready(function () {
         $('.navbar-toggle').on('click', function () {
-            $navMenuCont = $($(this).data('target'));
-            $navMenuCont.animate({ 'width': 'toggle' }, 100);
             $sign = $(this).find("i");
             
             if ($sign.hasClass("fa-bars")) {
-                $(this).find("i").removeClass("fa-bars");
-                $(this).find("i").addClass("fa-times");
-                $(".main-cta").hide();
+                $sign.removeClass("fa-bars");
+                $sign.addClass("fa-times");
+                $(".navigation-wrapper").animate({ 'width': '100%' }, 500);
             }
             else {
-                $(this).find("i").removeClass("fa-times");
-                $(this).find("i").addClass("fa-bars");
-                $(".main-cta").show();
+                $sign.removeClass("fa-times");
+                $sign.addClass("fa-bars");
+                $(".navigation-wrapper").animate({ 'width': '0' }, 500);
+
             }
         });
     });
