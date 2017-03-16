@@ -52,7 +52,7 @@
                            data-toggle="dropdown" 
                            role="button" 
                            aria-haspopup="true" 
-                           aria-expanded="false">Company @**@<span class="caret"></span></a>
+                           aria-expanded="false">Company @*<span class="caret"></span>*@</a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Projects", "Portfolio")">Our story</a>
@@ -117,7 +117,15 @@
                 $sign.removeClass("fa-times");
                 $sign.addClass("fa-bars");
                 $(".navigation-wrapper").animate({ 'width': '0' }, 500);
+            }
+        });
 
+        $(window).resize(function () {
+            console.log('Window Size changed');
+            if ($(window).width() >= 768) {
+                console.log('GOT SIZE > 1991');
+                $('.navigation-wrapper').removeAttr("style");
+                return this;
             }
         });
     });
