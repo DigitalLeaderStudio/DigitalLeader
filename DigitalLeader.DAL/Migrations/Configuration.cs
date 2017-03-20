@@ -303,8 +303,45 @@ namespace DigitalLeader.DAL.Migrations
 				new Technology { Name = "Web API" }
 				);
 
-			#endregion
-		}
+            #endregion
+
+            #region Vacancies
+
+            var seniorDeveloperVacancy = new Vacancy {
+                Title = "Senior Developer .NET/C#",
+                ShortDescription = "DigitalLeader Solutions, development center of international company Edsson Software, is looking for",
+                WeOffer = "Higher education; preferably Master's degree in Computer Science, or Computer Engineering, or Applied Mathematics",
+                Bonuses = "Experience in working with foreign clients Foreign passport, readiness for business trips to European countries",
+                Requirments = "Good understanding of OOP, Design Patterns and re-factoring principles;" +
+                "Good knowledge of C#;" +
+                "Good knowledge of.NET framework 4 ,4.5;" +
+                "Experience in developing Web Application with ASP.NET;" +
+                "Good knowledge of client side development(JavaScript, jQuery, Ajax, HTML5);" +
+                "Experience of implementation of third - party libraries: DevExpress;" +
+                " Good knowledge of SQL programming for MS SQL Server Database;",
+                Responsibilities = "Develop software changes based on detailed specifications;" +
+                "Take part in estimation of implementation efforts;" +
+                "Suggest software improvements and technical solutions;" +
+                "Take part in code review and refactoring;" +
+                "Support technical documentation;" +
+                "Interact with customer technical experts;",
+                IsPositionOpen = true,
+                CreatedDate = DateTime.Now,
+                Technologies = new List<Technology>()
+            };
+
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "C#" });
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "ASP.NET MVC" });
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Entity Framework" });
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "MS SQL Server" });
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Less" });
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "HMTL 5" });
+            seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Bootstrap" });
+
+            #endregion
+
+            context.Vacancies.AddOrUpdate(v => v.Title, seniorDeveloperVacancy);
+        }
 
 		private string MapPath(string seedFile)
 		{

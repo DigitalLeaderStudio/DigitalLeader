@@ -16,5 +16,7 @@
 		public virtual ICollection<Project> Projects { get; set; }
 
 		public virtual ICollection<User> Employees { get; set; }
+
+        public virtual ICollection<Vacancy> Vacancies { get; set; } 
 	}
 }

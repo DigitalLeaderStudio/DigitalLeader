@@ -1,0 +1,94 @@
+﻿@model DigitalLeader.ViewModels.VacancyViewModel
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">View Vacancy details</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
+<div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="thumbnail">
+				<div class="caption">
+					<h3>@Model.Title</h3>
+					<p>
+						<dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CreatedDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CreatedDate)
+                            </dd>
+							<dt>
+								@Html.DisplayNameFor(model => model.ShortDescription)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.ShortDescription)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.Requirments)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.Requirments)
+							</dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.Responsibilities)
+							</dt>
+
+							<dd>
+								@Html.DisplayFor(model => model.Responsibilities)
+							</dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.WeOffer)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.WeOffer)
+                            </dd>
+
+							<dt>
+								@Html.DisplayNameFor(model => model.Technologies)
+							</dt>
+                            <dd>
+                                <ul>
+                                    @foreach (var technology in Model.Technologies)
+                                    {
+
+                                        <li>@technology.Name</li>
+                                    }
+                                </ul>
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsPositionOpen)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.IsPositionOpen)
+                            </dd>
+
+						</dl>
+					</p>
+					<p>
+						<a href="@Url.Action("Edit", "Vacancy", new { id = Model.ID })" class="btn btn-primary" role="button">Edit</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>

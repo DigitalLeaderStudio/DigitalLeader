@@ -37,6 +37,8 @@
 
 		public virtual DbSet<Technology> Technologies { get; set; }
 
+        public virtual DbSet<Vacancy> Vacancies { get; set; }
+
 		#endregion
 
 		protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
@@ -114,7 +116,21 @@
 								map.MapLeftKey("ClientId");
 								map.MapRightKey("IndustryId");
 							});
-			#endregion
-		}
+            #endregion
+
+            #region Vacancy relations
+
+            modelBuilder.Entity<Vacancy>()
+                    .HasMany(v => v.Technologies)
+                    .WithMany(t => t.Vacancies)
+                    .Map(map =>
+                    {
+                        map.ToTable("TechnologiesWithVacancies");
+                        map.MapLeftKey("TechnologyId");
+                        map.MapRightKey("VacancyId");
+                    });
+
+            #endregion
+        }
 	}
 }

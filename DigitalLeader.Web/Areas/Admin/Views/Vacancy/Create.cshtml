@@ -1,0 +1,125 @@
+﻿@model DigitalLeader.ViewModels.VacancyViewModel
+
+@{
+	ViewBag.Title = "Create";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Create new Vacancy</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
+
+<div class="col-md-6 col-md-offset-3">
+
+	@using (Html.BeginForm("Create", "Vacancy", FormMethod.Post))
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-horizontal">
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="input-group date datetimepicker">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control", @value = DateTime.Now } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Requirments, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Requirments, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Requirments, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Responsibilities, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Responsibilities, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Responsibilities, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Bonuses, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Bonuses, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Bonuses, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.WeOffer, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.WeOffer, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.WeOffer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+			
+			<div class="form-group">
+				@Html.LabelFor(model => model.IsPositionOpen, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<div class="checkbox text-left">
+						@Html.EditorFor(model => model.IsPositionOpen)
+						@Html.ValidationMessageFor(model => model.IsPositionOpen, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.TechnologiesSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					<select id="@Html.IdFor(m => m.TechnologiesIds)"
+							name="@Html.NameFor(m => m.TechnologiesIds)"
+							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+						@foreach (var option in Model.TechnologiesSelectList)
+						{
+							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+						}
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<a href="@Url.Action("Index", "Technology", new { area = "Admin"})">Edit technologies</a>
+				</div>
+			</div>
+						
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Create" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
+	}
+</div>
+
+<div class="col-md-12">
+	<p class="text-center">
+		@Html.ActionLink("Back to List", "Index")
+	</p>
+</div>

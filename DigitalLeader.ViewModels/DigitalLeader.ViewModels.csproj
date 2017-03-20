@@ -107,6 +107,7 @@
     <Compile Include="TechnologyViewModel.cs" />
     <Compile Include="TestimonialViewModel.cs" />
     <Compile Include="UserViewModel.cs" />
+    <Compile Include="VacancyViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

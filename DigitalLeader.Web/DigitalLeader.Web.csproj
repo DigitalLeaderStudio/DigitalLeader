@@ -234,6 +234,7 @@
     <Compile Include="Areas\Admin\Controllers\ProjectController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VacancyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogpostController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="MappingProfiles\MapperImageConverter.cs" />
     <Compile Include="MappingProfiles\ProjectProfile.cs" />
     <Compile Include="MappingProfiles\ClientProfile.cs" />
+    <Compile Include="MappingProfiles\VacancyProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -475,6 +477,11 @@
     <Content Include="Areas\Admin\Views\Client\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Project\Delete.cshtml" />
     <Content Include="Content\less\navigation.less" />
+    <Content Include="Areas\Admin\Views\Vacancy\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancy\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancy\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancy\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancy\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
