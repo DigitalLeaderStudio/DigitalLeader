@@ -41,18 +41,18 @@ namespace DigitalLeader.Web
 			//CSS
 
 			bundles.Add(new StyleBundle("~/Content/core-css")
-				.Include("~/Content/bootstrap.css")
+				.Include("~/Content/bootstrap/bootstrap.css")
 				.Include("~/Content/font-awesome.css"));
 
 			bundles.Add(new StyleBundle("~/Content/chosen")
-				.Include("~/Content/bootstrap-chosen.css"));
+				.Include("~/Content/bootstrap/bootstrap-chosen.css"));
 
 			//LESS
 
 			bundles.Add(new LessBundle("~/Content/core-less")
 				.Include("~/Content/less/settings.less")
 				.Include("~/Content/less/general.less")
-				.Include("~/Content/less/navbar.less")
+				.Include("~/Content/less/navigation.less")
 				.Include("~/Content/less/footer.less")
                 .Include("~/Content/less/homepage.less")
                 .Include("~/Content/less/contact.less"));
@@ -64,7 +64,7 @@ namespace DigitalLeader.Web
 				.Include("~/Content/less/service.less"));
 
 			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker.less")
-				.Include("~/Content/bootstrap-datetimepicker-build.less"));
+				.Include("~/Content/bootstrap/bootstrap-datetimepicker-build.less"));
 
 			BundleTable.EnableOptimizations = false;
 		}

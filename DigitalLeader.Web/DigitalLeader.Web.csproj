@@ -262,13 +262,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-chosen.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\chosen-sprite%402x.png" />
-    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\bootstrap\bootstrap-chosen.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\chosen-sprite%402x.png" />
+    <Content Include="Content\bootstrap\chosen-sprite.png" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -305,7 +305,6 @@
     <Content Include="Content\Images\video-background.png" />
     <Content Include="Content\Images\world-map.svg" />
     <Content Include="Content\less\settings.less" />
-    <Content Include="Content\less\navbar.less" />
     <Content Include="Content\less\general.less" />
     <Content Include="Content\less\homepage.less" />
     <Content Include="Content\less\blog.less" />
@@ -313,9 +312,6 @@
     <Content Include="Content\less\service.less" />
     <Content Include="Content\less\footer.less" />
     <Content Include="Content\less\contact.less" />
-    <Content Include="Content\Video\5.mp4" />
-    <Content Include="Content\Video\5.ogv" />
-    <Content Include="Content\Video\5.webm" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -344,10 +340,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.css.map" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -428,8 +424,8 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
-    <Content Include="Content\bootstrap-datetimepicker-build.less" />
-    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\bootstrap\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\bootstrap\_bootstrap-datetimepicker.less" />
     <Content Include="Areas\Admin\Views\Client\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Client\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminNavigationBar.cshtml" />
@@ -441,8 +437,8 @@
     <Content Include="Areas\Admin\Views\Client\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Technology\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Technology\Delete.cshtml" />
-    <Content Include="Content\bootstrap-chosen.scss" />
-    <Content Include="Content\bootstrap-chosen.less" />
+    <Content Include="Content\bootstrap\bootstrap-chosen.scss" />
+    <Content Include="Content\bootstrap\bootstrap-chosen.less" />
     <Content Include="Areas\Admin\Views\ServiceCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceCategory\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Blogpost\Index.cshtml" />
@@ -478,6 +474,7 @@
     <Content Include="Areas\Admin\Views\Service\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Client\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Project\Delete.cshtml" />
+    <Content Include="Content\less\navigation.less" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -807,6 +804,7 @@
     <Content Include="Views\Portfolio\Projects.cshtml" />
     <Content Include="Views\Shared\_LayoutWithFooter.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_NavigationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
