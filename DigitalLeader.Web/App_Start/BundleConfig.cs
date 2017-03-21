@@ -63,7 +63,7 @@ namespace DigitalLeader.Web
 			bundles.Add(new LessBundle("~/Content/service.less")
 				.Include("~/Content/less/service.less"));
 
-			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker.less")
+			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker")
 				.Include("~/Content/bootstrap/bootstrap-datetimepicker-build.less"));
 
 			BundleTable.EnableOptimizations = false;

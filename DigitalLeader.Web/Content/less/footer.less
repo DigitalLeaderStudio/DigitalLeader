@@ -7,9 +7,21 @@ footer {
     margin-top: 20px;
     color: #fff;
     padding-top: 20px;
+    display: block;
+    clear:both;
 
     .container {
         padding: 5px;
+
+        &::after {
+            content: none;
+            display: none;
+        }
+
+        &::before {
+            content: none;
+            display: none;
+        }
 
         .brand {
             padding: 10px 40px;
