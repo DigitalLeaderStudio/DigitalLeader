@@ -1,4 +1,6 @@
-﻿@*<nav class="navigation">
+﻿@using DigitalLeader.Web.Localization
+
+@*<nav class="navigation">
     <div class="branding-line">
         <div class="brand"></div>
         <div class="cta"></div>
@@ -32,7 +34,7 @@
                         <a class="call-cta" href="callto:+38961212713">+380 9612 12 713</a>
                     </h1>
                     <h2>
-                        <a class="message-cta" href="">Request Qoute</a>
+                        <a class="message-cta" href="">@Translations.NavBarRequestQoute</a>
                     </h2>
                 </div>
             </div>
@@ -42,21 +44,21 @@
         <div class="container">
             <div class="" id="mainNavLinks">
                 <ul class="navbar-links">
-                    <li>@Html.ActionLink("Services", "Index", "Home")</li>
+                    <li>@Html.ActionLink(@Translations.LinkServices, "Index", "Home")</li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio @*<span class="caret"></span>*@</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkCompany @*<span class="caret"></span>*@</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="@Url.Action("Projects", "Portfolio")">Projects</a>
+                                <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkProjects</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Case studies", "Portfolio")">Case studies</a>
+                                <a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkCaseStudies</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Testimonials</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkTestimonials</a>
                             </li>
                             @*<li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Clients</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.NavBarLinkClients</a>
                             </li>*@
                         </ul>
                     </li>
@@ -66,50 +68,50 @@
                            data-toggle="dropdown" 
                            role="button" 
                            aria-haspopup="true" 
-                           aria-expanded="false">Company @*<span class="caret"></span>*@</a>
+                           aria-expanded="false">@Translations.LinkCompany @*<span class="caret"></span>*@</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="@Url.Action("Projects", "Portfolio")">Our story</a>
+                                <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkOurStory</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Our creed</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkOurCreed</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Case studies", "Portfolio")">Our team</a>
+                                <a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkOurTeam</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Career</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkCareer</a>
                             </li>
 
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources @*<span class="caret"></span>*@</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources @*<span class="caret"></span>*@</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="@Url.Action("Projects", "Portfolio")">Blog</a>
+                                <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkBlog</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Case studies", "Portfolio")">White Papers</a>
+                                <a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkWhitePapers</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Guides</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkGuides</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Infographics</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkInfographics</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Videos</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkVideos</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">Podcasts</a>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkPodcasts</a>
                             </li>
                         </ul>
                     </li>
 
                     
-                    <li>@Html.ActionLink("Connect", "Contact", "Home")</li>
+                    <li>@Html.ActionLink(@Translations.LinkConnect, "Contact", "Home")</li>
                     @*<li>@Html.ActionLink("Clients", "Clients", "Home")</li>*@
                     @*<li>@Html.ActionLink("News", "News", "Home")</li>*@
                 </ul>

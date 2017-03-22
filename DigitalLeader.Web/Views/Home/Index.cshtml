@@ -1,5 +1,7 @@
 ﻿@model List<DigitalLeader.ViewModels.ServiceCategoryViewModel>
 
+@using DigitalLeader.Web.Localization
+
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	ViewBag.Title = "Digital Leader  - your best digital solutions provider";
@@ -21,19 +23,19 @@
 					<div class="item active main-slide">
 						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
 						<div class="carousel-caption">
-							<h1>we are your best IT solutions provider</h1>
+							<h1>@Translations.SliderSlide1</h1>
 						</div>
 					</div>
 					<div class="item main-slide">
 						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
 						<div class="carousel-caption">
-							<h1>Technology solutions</h1>
+							<h1>@Translations.SliderSlide2</h1>
 						</div>
 					</div>
 					<div class="item main-slide">
 						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
 						<div class="carousel-caption">
-							<h1>Digital Marketing Solutions</h1>
+							<h1>@Translations.SliderSlide3</h1>
 						</div>
 					</div>
 				</div>
@@ -91,20 +93,20 @@
 
 	<div class="row footer">
 		<div class="col-md-4 cta-title">
-			<h2>Let's upgrade your business!</h2>
+			<h2>@Translations.MainPegeFormTitle</h2>
 		</div>
 		@using (Html.BeginForm("Promo", "Home", FormMethod.Post, new { autocomplete = "off" }))
         {
 			<div class="col-md-8 form-wrapper">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 id="form-header">What's your name?</h3>
+						<h3 id="form-header">@Translations.MainPageFormQuestion1</h3>
 					</div>
 				</div>
 				<div class="row cta-form">
 
 					<div class="col-md-10" id="name">
-						<input placeholder="Your name" name="FirstName">
+						<input placeholder="@Translations.MainPageFormQuestion1Placeholder" name="FirstName">
 					</div>
 
 					<div class="col-md-10 hidden" id="email">
@@ -149,14 +151,14 @@
 			if ($step == 0) {
 				$("#name").addClass("hidden");
 				$("#email").removeClass("hidden");
-				$("#form-header").text("Email address");
+				$("#form-header").text("@Translations.MainPageFormQuestion2");
 				$step++;
 				return;
 			}
 			if ($step == 1) {
 				$("#email").addClass("hidden");
 				$("#phone").removeClass("hidden");
-				$("#form-header").text("Phone number");
+				$("#form-header").text("@Translations.MainPageFormQuestion3");
 				$step++;
 				return;
 			}
@@ -165,7 +167,7 @@
 				$("#phone").addClass("hidden");
 				$("#message").removeClass("hidden");
 				$("#form-header").hide();
-				$("#message").find("textarea").attr("placeholder", "your problem or message");
+				$("#message").find("textarea").attr("placeholder", "@Translations.MainPageFormQuestion4Placeholder");
 				$step++;
 				$(this).attr("type", "submit");
 				$(this).text("Send");

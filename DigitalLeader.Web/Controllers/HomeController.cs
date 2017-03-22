@@ -23,8 +23,8 @@
 
 			_serviceService = serviceService;
 		}
-
-		public ActionResult Index()
+        [Route("")]
+        public ActionResult Index()
 		{
 			var data = _categoryService.GetAll();
 
@@ -41,7 +41,7 @@
 
 			return View(viewModel);
 		}
-
+        [Route("Contact")]
 		public ActionResult Contact()
 		{
 			PromoFormViewModel model = new PromoFormViewModel();

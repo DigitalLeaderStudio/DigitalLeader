@@ -25,14 +25,14 @@
 		{
 			return View();
 		}
-
+        [Route("Testimonials")]
 		public ActionResult Testimonials()
 		{
 			var viewModel = Mapper.Map<List<Testimonial>, List<TestimonialViewModel>>(_testimonialService.GetAll());
 
 			return View(viewModel);
 		}
-
+        [Route("Projects")]
 		public ActionResult Projects()
 		{
 			var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(_projectService.GetAll());

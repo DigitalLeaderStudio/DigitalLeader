@@ -1,4 +1,5 @@
-﻿<footer class="container-fluid">
+﻿@using DigitalLeader.Web.Localization
+<footer class="container-fluid">
     <div class="container">
         <div class="row">
             <div class="col-md-4 brand">
@@ -7,13 +8,13 @@
             <div class="col-md-7">
                 <div class="col-md-12 message">
                     <p>
-                        We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.
+                       @Translations.FooterMessage
                     </p>
                 </div>
                 <div class="contacts">
                     <div class="col-md-4">
                         <p><i class="fa fa-map-marker" aria-hidden="true"></i></p>
-                        <h3>Ukraine, Kyiv, Mykhailo Stelmakh Street</h3>
+                        <h3>@Translations.FooterAddress</h3>
                     </div>
                     <div class="col-md-4">
                         <p><i class="fa fa-phone" aria-hidden="true"></i></p>
@@ -33,37 +34,37 @@
 
         <div class="row menu">
             <div class="col-md-2 col-md-offset-2">
-                <h3>Services</h3>
+                <h3>@Translations.LinkServices</h3>
                 <ul class="menu-list">
                     <li>@Html.ActionLink("Technology Solutions", "Company", "Home")</li>
                     <li>@Html.ActionLink("Digital Marketing", "Serives", "Home")</li>
                 </ul>
             </div>
             <div class="col-md-2">
-                <h3>Portfolio</h3>
+                <h3>@Translations.LinkPortfolio</h3>
                 <ul class="menu-list">
-                    <li>@Html.ActionLink("Projects", "Company", "Home")</li>
-                    <li>@Html.ActionLink("Case Studies", "Clients", "Home")</li>
-                    <li>@Html.ActionLink("Testimonials", "Serives", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkProjects, "Company", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkCaseStudies, "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkTestimonials, "Serives", "Home")</li>
                 </ul>
             </div>
             <div class="col-md-2">
-                <h3>Company</h3>
+                <h3>@Translations.LinkCompany</h3>
                 <ul class="menu-list">
-                    <li>@Html.ActionLink("Our Story", "Company", "Home")</li>
-                    <li>@Html.ActionLink("Creed", "Serives", "Home")</li>
-                    <li>@Html.ActionLink("Team", "Clients", "Home")</li>
-                    <li>@Html.ActionLink("Careers", "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkOurStory, "Company", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkOurCreed, "Serives", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkOurTeam, "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkCareer, "Clients", "Home")</li>
                 </ul>
             </div>
             <div class="col-md-2">
-                <h3>Resources</h3>
+                <h3>@Translations.LinkResources</h3>
                 <ul class="menu-list">
-                    <li>@Html.ActionLink("Blog", "Company", "Home")</li>
-                    <li>@Html.ActionLink("White Papers", "Serives", "Home")</li>
-                    <li>@Html.ActionLink("Guides", "Clients", "Home")</li>
-                    <li>@Html.ActionLink("Infographics", "Clients", "Home")</li>
-                    <li>@Html.ActionLink("Videos", "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkBlog, "Company", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkWhitePapers, "Serives", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkGuides, "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkInfographics, "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkVideos, "Clients", "Home")</li>
                 </ul>
             </div>
         </div>
