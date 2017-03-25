@@ -1,46 +1,56 @@
 ﻿@using DigitalLeader.Web.Localization
+
 <footer class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 brand">
-                <img src="~/Content/images/dl logo v2 white.png" />
-            </div>
-            <div class="col-md-7">
-                <div class="col-md-12 message">
-                    <p>
-                       @Translations.FooterMessage
-                    </p>
+    <div class="container-fluid footer-head">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 brand">
+                    <img src="~/Content/images/dl logo v2 white.png" />
                 </div>
-                <div class="contacts">
-                    <div class="col-md-4">
+                <div class="col-md-8 col-sm-8">
+                    <div class="col-md-12 message">
+                        <p>
+                            @Translations.FooterMessage
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container footer-body">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-8 col-md-offset-2 contacts">
+                    <div class="col-md-4 col-sm-4">
                         <p><i class="fa fa-map-marker" aria-hidden="true"></i></p>
                         <h3>@Translations.FooterAddress</h3>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-4">
                         <p><i class="fa fa-phone" aria-hidden="true"></i></p>
                         <h3><a href="">+333 5555 4444</a></h3>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-4">
                         <p><i class="fa fa-at" aria-hidden="true"></i></p>
                         <h3><a href="">info@digitalleader.solutions</a></h3>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-12">
+            
+            <div class="col-md-12 col-sm-12">
                 <hr>
             </div>
         </div>
 
         <div class="row menu">
-            <div class="col-md-2 col-md-offset-2">
+            <div class="col-md-3 col-sm-3">
                 <h3>@Translations.LinkServices</h3>
                 <ul class="menu-list">
                     <li>@Html.ActionLink("Technology Solutions", "Company", "Home")</li>
                     <li>@Html.ActionLink("Digital Marketing", "Serives", "Home")</li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3 col-sm-3">
                 <h3>@Translations.LinkPortfolio</h3>
                 <ul class="menu-list">
                     <li>@Html.ActionLink(Translations.LinkProjects, "Company", "Home")</li>
@@ -48,7 +58,7 @@
                     <li>@Html.ActionLink(Translations.LinkTestimonials, "Serives", "Home")</li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3 col-sm-3">
                 <h3>@Translations.LinkCompany</h3>
                 <ul class="menu-list">
                     <li>@Html.ActionLink(Translations.LinkOurStory, "Company", "Home")</li>
@@ -57,7 +67,7 @@
                     <li>@Html.ActionLink(Translations.LinkCareer, "Clients", "Home")</li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3 col-sm-3">
                 <h3>@Translations.LinkResources</h3>
                 <ul class="menu-list">
                     <li>@Html.ActionLink(Translations.LinkBlog, "Company", "Home")</li>
@@ -70,26 +80,21 @@
         </div>
     </div>
 
-    <div class="container-fluid last-footer">
+    <div class="container-fluid footer-foot">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 copyright">
-                    <p>&copy; @DateTime.Now.Year Digital Leader - your best IT serives provider.</p>
-                </div>
-                <div class="col-md-4 social-links">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 terms">
+                <div class="col-md-4 col-sm-4 terms">
                     <ul>
                         <li>@Html.ActionLink("Privacy", "Company", "Home")</li>
                         <li>@Html.ActionLink("Terms of Use", "Serives", "Home")</li>
                         <li>@Html.ActionLink("Feedback", "Clients", "Home")</li>
                     </ul>
+                </div>
+                <div class="col-md-4 col-sm-4 top-btn">
+                    <p><a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+                </div>
+                <div class="col-md-4 col-sm-4 copyright">
+                    <p>&copy; @DateTime.Now.Year Digital Leader</p>
                 </div>
             </div>
         </div>

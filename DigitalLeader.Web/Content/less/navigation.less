@@ -7,19 +7,20 @@
     padding: 0;
     /*border-bottom: 1px solid @color-light-blue;*/
     .dropdown.open > .dropdown-menu {
-        background-color: @color-dark-blue;
+        background-color: @color-blue;
         z-index: 56;
     }
 
     .header-wrapper {
         width: 100%;
         padding: 10px 0;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+60,3e3f3f+60,3e3f3f+100 */
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+54,0094ff+55,0f466d+78,333333+100 */
         background: rgb(255,255,255); /* Old browsers */
-        background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(62,63,63,1) 60%, rgba(62,63,63,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 60%,rgba(62,63,63,1) 60%,rgba(62,63,63,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 60%,rgba(62,63,63,1) 60%,rgba(62,63,63,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#3e3f3f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 54%, rgba(0,148,255,1) 55%, rgba(15,70,109,1) 74%, @color-grey-dark 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 54%,rgba(0,148,255,1) 55%,rgba(15,70,109,1) 74%, @color-grey-dark 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(255,255,255,1) 54%,rgba(0,148,255,1) 54%,rgba(15,70,109,1) 74%, @color-grey-dark 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#333333',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        
         .navbar-header {
             width: 100%;
             float: left;
@@ -65,6 +66,11 @@
                 .call-cta {
                     color: #fff;
                     font-family: 'Orbitron', sans-serif;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #0094ff;
+                    }
                 }
 
                 .message-cta {
@@ -85,7 +91,7 @@
 
     .navigation-wrapper {
         width: 100%;
-        background: #363737;
+        background: @color-grey-dark;
         padding: 5px 0 7px;
         margin: 0;
 
@@ -106,12 +112,12 @@
 
                     a {
                         text-transform: uppercase;
-                        font-weight: bold;
-                        /*letter-spacing: 3px;*/
+                        /*font-weight: bold;*/
+                        letter-spacing: 1px;
                         text-decoration: none;
                         color: #fff !important;
                         font-family: @font-main;
-                        font-size: 12px;
+                        font-size: 13px;
 
                         &:hover {
                             color: #0094ff !important;
@@ -124,11 +130,6 @@
         }
     }
 }
-
-
-
-
-
 
 
 

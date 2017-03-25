@@ -6,8 +6,9 @@
 }
 
 .fa {
-    font-family: @font-awesome !important; 
+    font-family: @font-awesome !important;
 }
+
 .row {
     padding: 0;
     margin: 0;
@@ -24,7 +25,7 @@ body {
 
         h3 {
             text-align: center;
-            font-size: 1.8em;    
+            font-size: 1.8em;
             margin-bottom: 20px;
 
             i {
@@ -32,9 +33,10 @@ body {
                 padding-right: 10px;
             }
         }
+
         h4 {
             text-align: center;
-            font-size: 1.4em;    
+            font-size: 1.4em;
             margin-bottom: 20px;
 
             i {
@@ -50,7 +52,7 @@ body {
         textarea {
             width: 100%;
             outline: none;
-            border: 1px solid @color-light-blue;
+            border: 1px solid @color-blue;
             border-radius: 0;
             margin-bottom: 10px;
             padding: 10px;
@@ -58,14 +60,16 @@ body {
 
             &:focus {
                 background: @bg-form-field-focus;
-                border-color: @color-dark-blue;
+                border-color: @color-blue;
             }
         }
+
         textarea {
             resize: vertical;
             height: 260px;
             margin-bottom: 0;
         }
+
         input[type="submit"] {
             width: 100% !important;
             max-width: unset;
@@ -73,10 +77,10 @@ body {
             outline: none;
             display: block;
             border-radius: 0;
-            border: 2px solid @color-dark-grey;
+            border: 2px solid @color-grey-dark;
             font-size: 20px;
             text-transform: uppercase;
-            background: @color-dark-grey;
+            background: @color-grey-dark;
             color: #fff;
             padding: 10px 0;
 
@@ -87,9 +91,10 @@ body {
                 transition: border 0.3s;
             }
         }
+
         input[type="submit"].promo-btn {
             width: 100%;
-            border: 0px solid @color-dark-blue;
+            border: 0px solid @color-blue;
             background: @bg-form-btn;
             font-size: 1.3em;
             font-weight: bold;
@@ -102,7 +107,7 @@ body {
             font-family: @open-sans;
 
             &:hover {
-                background: @color-light-blue;
+                background: @color-blue;
             }
         }
     }
@@ -129,16 +134,20 @@ body {
         }
     }
 
-    
+
     hr {
         border: 0;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 148, 255, 0), rgba(0, 148, 255, 0.75), rgba(0, 148, 255, 0));
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(0, 148, 255, 0), rgba(41, 41, 41, 1), rgba(0, 148, 255, 0));
+
+        &.white {
+            background-image: linear-gradient(to right, rgba(0, 148, 255, 0), rgba(51, 51, 51, 0.75), rgba(0, 148, 255, 0));
+        }
     }
 
     a, a:active, a:visited {
-        color: @color-light-blue;
-        
+        color: @color-blue;
+
         &:hover {
             color: @color-link-hover;
         }
@@ -163,7 +172,7 @@ body {
         i {
             margin: 0 auto;
             font-size: 10em;
-            color: @color-light-blue;
+            color: @color-blue;
         }
     }
 
@@ -175,7 +184,7 @@ body {
             margin: 0 auto;
             font-size: 6em;
             padding: 40px;
-            color: @color-dark-blue;
+            color: @color-blue;
         }
     }
 }
@@ -202,7 +211,7 @@ body {
             textarea {
                 width: 100%;
                 outline: none;
-                border: 1px solid @color-light-blue;
+                border: 1px solid @color-blue;
                 border-radius: 0;
                 margin-bottom: 10px;
                 padding: 10px;
@@ -210,7 +219,7 @@ body {
 
                 &:focus {
                     background: @bg-form-field-focus;
-                    border-color: @color-dark-blue;
+                    border-color: @color-blue;
                 }
             }
 
@@ -243,7 +252,7 @@ body {
 
             input[type="submit"].promo-btn {
                 width: 100%;
-                border: 0px solid @color-dark-blue;
+                border: 0px solid @color-blue;
                 background: @bg-form-btn;
                 font-size: 1.3em;
                 font-weight: bold;
@@ -256,7 +265,7 @@ body {
                 font-family: @open-sans;
 
                 &:hover {
-                    background: @color-light-blue;
+                    background: @color-blue;
                 }
             }
         }
@@ -317,7 +326,7 @@ body {
             textarea {
                 width: 100%;
                 outline: none;
-                border: 1px solid @color-light-blue;
+                border: 1px solid @color-blue;
                 border-radius: 0;
                 margin-bottom: 10px;
                 padding: 10px;
@@ -325,7 +334,7 @@ body {
 
                 &:focus {
                     background: @bg-form-field-focus;
-                    border-color: @color-dark-blue;
+                    border-color: @color-blue;
                 }
             }
 
@@ -358,7 +367,7 @@ body {
 
             input[type="submit"].promo-btn {
                 width: 100%;
-                border: 0px solid @color-dark-blue;
+                border: 0px solid @color-blue;
                 background: @bg-form-btn;
                 font-size: 20px;
                 font-weight: bold;
@@ -371,7 +380,7 @@ body {
                 font-family: @open-sans;
 
                 &:hover {
-                    background: @color-light-blue;
+                    background: @color-blue;
                 }
             }
         }
@@ -389,12 +398,12 @@ body {
         }
 
         .body-content {
-            margin-top: 135px;
-        }
+            margin-top: 112px;
         }
     }
+}
 /* sm */
-@media (min-width: 768px) and (max-width: 991px) { 
+@media (min-width: 768px) and (max-width: 991px) {
     .body-content {
         margin-top: 116px;
     }
@@ -403,6 +412,5 @@ body {
 @media (min-width: 992px) and (max-width: 1199px) {
 }
 /* lg */
-@media (min-width: 1200px) { 
-
+@media (min-width: 1200px) {
 }
