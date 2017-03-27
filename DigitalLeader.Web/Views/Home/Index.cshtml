@@ -7,10 +7,10 @@
 	ViewBag.Title = "Digital Leader  - your best digital solutions provider";
 }
 
-<div class="home container">
+<div class="homepage container">
 	<div class="row presentation">
 		<div class="col-md-10 showcase">
-			<div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="100000">
+			<div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="3000">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
@@ -19,21 +19,20 @@
 				</ol>
 
 				<!-- Sliding images statring here -->
-				<div class="carousel-inner">
-					<div class="item active main-slide">
-						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
+				<div class="carousel-inner" style="color: #000000;">
+					<div class="item active main-slide" style="background: url('~/Content/images/company/world-map.png')">
 						<div class="carousel-caption">
 							<h1>@Translations.SliderSlide1</h1>
 						</div>
 					</div>
-					<div class="item main-slide">
-						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
+					<div class="item main-slide" style="background: url('~/Content/images/company/world-map.png')">
+						<img src="~/Content/images/company/world-map.png" alt="banana">
 						<div class="carousel-caption">
 							<h1>@Translations.SliderSlide2</h1>
 						</div>
 					</div>
-					<div class="item main-slide">
-						@*<img src="~/Content/images/company/world-map.png" alt="banana">*@
+					<div class="item main-slide" style="background: url('~/Content/images/company/world-map.png')">
+						<img src="~/Content/images/company/world-map.png" alt="banana">
 						<div class="carousel-caption">
 							<h1>@Translations.SliderSlide3</h1>
 						</div>
@@ -54,7 +53,7 @@
 			<div class="row">
 				@foreach (var category in Model)
 				{
-					<div class="col-md-12 service-category @category.CssClass">
+					<div class="col-md-12 col-sm-6 service-category @category.CssClass">
 						<div class="image"></div>
 						<hr />
 						<h3>@category.Name</h3>
@@ -64,8 +63,8 @@
 								<div class="row">
 									@foreach (var subcategory in category.ServiceSubcategories)
 									{
-										<div class="col-md-4">
-											<h2>@subcategory.Name</h2>
+										<div class="col-md-4 subcategory">
+											<h2>@subcategory.Name <i class="fa fa-angle-right" aria-hidden="true"></i></h2>
 											<ul>
 												@foreach (var service in subcategory.Services)
 												{
@@ -88,16 +87,14 @@
 
 			</div>
 		</div>
-
 	</div>
-
 	<div class="row footer">
-		<div class="col-md-4 cta-title">
+		<div class="col-md-4 col-sm-4 cta-title">
 			<h2>@Translations.MainPegeFormTitle</h2>
 		</div>
 		@using (Html.BeginForm("Promo", "Home", FormMethod.Post, new { autocomplete = "off" }))
         {
-			<div class="col-md-8 form-wrapper">
+			<div class="col-md-8 col-sm-8 form-wrapper">
 				<div class="row">
 					<div class="col-md-12">
 						<h3 id="form-header">@Translations.MainPageFormQuestion1</h3>
@@ -105,11 +102,11 @@
 				</div>
 				<div class="row cta-form">
 
-					<div class="col-md-10" id="name">
+					<div class="col-md-10 col-sm-10" id="name">
 						<input placeholder="@Translations.MainPageFormQuestion1Placeholder" name="FirstName">
 					</div>
 
-					<div class="col-md-10 hidden" id="email">
+					<div class="col-md-10 col-sm-10 hidden" id="email">
 						<input placeholder="example@gmail.com" name="Email">
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
@@ -117,7 +114,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-10 hidden" id="phone">
+					<div class="col-md-10 col-sm-10 hidden" id="phone">
 						<input placeholder="(099)-555-55-55" name="Phone">
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
@@ -125,25 +122,25 @@
 						</div>
 					</div>
 
-					<div class="col-md-10 hidden" id="message">
-						<textarea placeholder="Describe your problem" name="Message"></textarea>
+					<div class="col-md-10 col-sm-10 hidden" id="message">
+						<textarea id="message-field" placeholder="Describe your problem" name="Message"></textarea>
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
 							</div>
 						</div>
 					</div>
 
-					<div class="col-md-2 button-wrapper">
-						<button type="button" id="send-btn" class="next-step"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+					<div class="col-md-2 col-sm-2 button-wrapper">
+						<button type="button" id="send-btn" class="next-step"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
 					</div>
 				</div>
 			</div>
 		}
 	</div>
-
 </div>
 
 <script>
+    // cta
 	$(document).ready(function () {
 		$step = 0;
 
@@ -166,15 +163,41 @@
 			if ($step == 2) {
 				$("#phone").addClass("hidden");
 				$("#message").removeClass("hidden");
-				$("#form-header").hide();
-				$("#message").find("textarea").attr("placeholder", "@Translations.MainPageFormQuestion4Placeholder");
-				$step++;
-				$(this).attr("type", "submit");
-				$(this).text("Send");
+                $("#form-header").text("@Translations.MainPageFormQuestion3");
+                $("#message").find("textarea").attr("placeholder", "@Translations.MainPageFormQuestion4Placeholder");
+
+                $("#message-field").animate({ 'height': '200px' }, { duration: 400, easing: "swing" });
+                $(".cta-form").animate({ 'padding-bottom': '30px' }, { duration: 400, easing: "swing" });
+                $("#cta-title").animate({ 'height': '200px'}, { duration: 400, easing: "swing" });
+
+                $step++;
+                $(this).attr("type", "submit");
+                $(this).html('<i class="fa fa-paper-plane" aria-hidden="true"></i>');
 				$(this).addClass("final-step");
+
+
 				return false;
 			}
 		});
 	});
+
+</script>
+
+<script>
+    // categories
+    $(document).ready(function () {
+        $(".subcategory").click(function () {
+            if ($(this).find('ul').hasClass('show')) {
+                $(this).find('ul').removeClass('show');
+                $(this).find('i').removeClass('fa-angle-down');
+                $(this).find('i').addClass('fa-angle-right');
+            } else {
+                $(this).find('ul').addClass('show');
+                $(this).find('i').removeClass('fa-angle-right');
+                $(this).find('i').addClass('fa-angle-down');
+
+            }
+        });
+    });
 
 </script>

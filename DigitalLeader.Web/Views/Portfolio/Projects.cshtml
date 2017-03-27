@@ -1,40 +1,51 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.ProjectViewModel>
 
 @{
-	ViewBag.Title = "Digital Leader - Projects";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Projects";
+    ViewBag.Message = "it's all ours work";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-center">Projects</h2>
-<hr />
-<br />
+<div class="container-fluid projects">
+    <div class="row header clearfix">
+        <div>
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="project-item panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">@item.Title</h3>
+                        </div>
+                        <div class="panel-body">
+                            @{
+                                var userName = string.Format("{0} {1} ({2})", item.Client.FirstName, item.Client.LastName, item.Client.Company);
+                                var srcAction = item.Client.ImageId.HasValue ?
+                                Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
+                                "/Content/img/default-user.png";
+                            }
+                            <img src="@srcAction"
+                                 alt="@userName" />
 
-<div class="projects col-md-10 col-lg-offset-1" >
-	@foreach (var item in Model)
-	{
-		<div class="project-item panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">@item.Title</h3>
-			</div>
-			<div class="panel-body">
-				@{
-		var userName = string.Format("{0} {1} ({2})", item.Client.FirstName, item.Client.LastName, item.Client.Company);
-		var srcAction = item.Client.ImageId.HasValue ?
-		Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
-		"/Content/img/default-user.png";
-				}
-				<img src="@srcAction"
-					 alt="@userName" />
+                            <h3></h3>
+                            <p>@item.Overview</p>
+                            <p>@item.Objective</p>
+                            <hr />
+                            <p class="testimonial-info">
+                                @userName
+                                <span class="pull-right"><i class="fa fa-calendar "></i>@item.StartDate.ToShortDateString() - @item.EndDate.ToShortDateString()</span>
+                            </p>
+                        </div>
+                    </div>}
 
-				<h3></h3>
-				<p>@item.Overview</p>
-				<p>@item.Objective</p>
-				<hr />
-				<p class="testimonial-info">
-					@userName
-					<span class="pull-right"><i class="fa fa-calendar "></i>@item.StartDate.ToShortDateString() - @item.EndDate.ToShortDateString()</span>
-				</p>
-			</div>
-		</div>
-	}
+            </div>
+        </div>
+
+
+    </div>
 </div>
