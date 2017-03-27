@@ -41,6 +41,11 @@
 		}
 
 
+        public List<Project> GetAllCaseStudies()
+        {
+            return GetAllCasestudiesInclude(Includes);
+        }
+
         public List<Project> GetAllInclude(params Expression<Func<Project, object>>[] includes)
         {
             using (var scope = _dbContextScopeFactory.CreateReadOnly())
@@ -48,6 +53,23 @@
                 var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
                 var query = dbContext.Set<Project>().AsQueryable();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+                }
+
+                return query.ToList();
+            }
+        }
+
+        public List<Project> GetAllCasestudiesInclude(params Expression<Func<Project, object>>[] includes)
+        {
+            using (var scope = _dbContextScopeFactory.CreateReadOnly())
+            {
+                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+                var query = dbContext.Set<Project>().AsQueryable().Where(p => p.IsCaseStudy == true);
 
                 if (includes != null)
                 {
@@ -137,7 +159,7 @@
 			}
 		}
 
-		public void Delete(Entities.Project value)
+		public void Delete(Project value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{

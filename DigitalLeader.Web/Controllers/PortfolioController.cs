@@ -39,5 +39,13 @@
 
 			return View(viewModel);
 		}
-	}
+
+        [Route("Case-studies")]
+        public ActionResult CaseStudies()
+        {
+            var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(_projectService.GetAllCaseStudies());
+
+            return View(viewModel);
+        }
+    }
 }

@@ -834,6 +834,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Shared\_LanguagesPartial.cshtml" />
+    <Content Include="Views\Portfolio\CaseStudies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
