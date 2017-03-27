@@ -25,7 +25,7 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					<div class="input-group date datetimepicker" date-format="DD/MM/YYYY">
+					<div class="input-group date datetimepicker">
 						<span class="input-group-addon">
 							<span class="glyphicon glyphicon-calendar"></span>
 						</span>
@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit services</a>
+					<a href="@Url.Action("Index", "Client", new { area = "Admin"})" ta target="_blank">Edit clients</a>
 				</div>
 			</div>
 

@@ -42,11 +42,14 @@
 
 		public DateTime EndDate { get; set; }
 
-		public int ClientID { get; set; }
+		[Display(Name = "Client")]
+
+		public int? ClientID { get; set; }
 
 		public ClientViewModel Client { get; set; }
 
-		public List<SelectListItem> Clients { get; set; }
+		[Display(Name = "Client")]
+		public List<SelectListItem> ClientsSelectList { get; set; }
 
 		public int[] TechnologiesIds { get; set; }
 
