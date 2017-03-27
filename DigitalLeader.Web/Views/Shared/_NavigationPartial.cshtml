@@ -27,7 +27,7 @@
                     @*<div class="motto">Today you are reader<br /> tomorrow you are Leader!</div>*@
                 </div>
                 <button type="button" class="navbar-toggle"  data-target="#mainNavLinks">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                 </button>
                 <div class="main-cta">
                     <h1>
@@ -127,14 +127,14 @@
         $('.navbar-toggle').on('click', function () {
             $sign = $(this).find("i");
             
-            if ($sign.hasClass("fa-bars")) {
-                $sign.removeClass("fa-bars");
-                $sign.addClass("fa-times");
+            if ($sign.hasClass("fa-ellipsis-v")) {
+                $sign.removeClass("fa-ellipsis-v");
+                $sign.addClass("fa-angle-right");
                 $(".navigation-wrapper").animate({ 'left': '0' }, { duration: 300, easing: "swing" });   
             }
             else {
-                $sign.removeClass("fa-times");
-                $sign.addClass("fa-bars");
+                $sign.removeClass("fa-angle-right");
+                $sign.addClass("fa-ellipsis-v");
                 $width = window.screen.availWidth;
                 $(".navigation-wrapper").animate({ 'left': $width }, { duration: 300, easing: "swing" });
             }
