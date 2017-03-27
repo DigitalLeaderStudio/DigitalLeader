@@ -17,13 +17,6 @@
     @Styles.Render("~/Content/chosen")
     @Scripts.Render("~/bundles/chosen")
 
-
-
-
-
-
-
-
     <link rel="icon" href="@Url.Content("~/Content/Images/favicon.png")" />
 
 </head>
@@ -33,7 +26,8 @@
     <div class="body-content">
         @RenderBody()
     </div>
-    
+    @Html.Partial("_Footer")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
