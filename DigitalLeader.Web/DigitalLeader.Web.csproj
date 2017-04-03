@@ -247,6 +247,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogpostController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -323,6 +324,9 @@
     <Content Include="Content\Images\services\workflow\outsource proto 1.png" />
     <Content Include="Content\Images\services\workflow\outsourcing proto 2.png" />
     <Content Include="Content\Images\services\workflow\outsourcing.svg" />
+    <Content Include="Content\Images\test\coca-bg.jpg" />
+    <Content Include="Content\Images\test\coca-logo.jpg" />
+    <Content Include="Content\Images\test\trump.png" />
     <Content Include="Content\Images\video-background.png" />
     <Content Include="Content\Images\world-map.svg" />
     <Content Include="Content\less\settings.less" />
@@ -502,6 +506,8 @@
     <Content Include="Areas\Admin\Views\Vacancy\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Vacancy\Edit.cshtml" />
     <Content Include="Content\less\projects.less" />
+    <Content Include="Content\less\testimonials.less" />
+    <Content Include="Content\less\cases.less" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -835,6 +841,11 @@
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Shared\_LanguagesPartial.cshtml" />
     <Content Include="Views\Portfolio\CaseStudies.cshtml" />
+    <Content Include="Views\Portfolio\Project.cshtml" />
+    <Content Include="Views\Company\Story.cshtml" />
+    <Content Include="Views\Company\Creed.cshtml" />
+    <Content Include="Views\Company\Careers.cshtml" />
+    <Content Include="Views\Company\Team.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,8 +1,12 @@
 @import "settings.less";
 
-
 .projects {
     padding: 0;
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        padding: 0px;
+    }
 
     .row .row div {
         padding: 10px;
@@ -53,9 +57,311 @@
             height: 0 !important;
         }
     }
+
+    .project-item-wrapper {
+        position: relative;
+        padding: 5px;
+
+        .project-item {
+            background: @color-grey;
+            height: 0;
+            padding-bottom: 100%;
+            width: 100%;
+            position: relative;
+            display: block;
+            border: 10px solid @color-grey;
+
+
+            &:hover {
+                border-color: @color-blue;
+                transition: border-color 0.5s;
+
+
+                i {
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
+            }
+
+            .bg {
+                width: 100%;
+                z-index: 0;
+                opacity: 0.15;
+            }
+
+            .logo {
+                width: 50%;
+                margin: 0 auto;
+                z-index: 2;
+                opacity: 1;
+                padding: 10px;
+                display: block;
+                position: absolute;
+                top: 25%;
+                left: 25%;
+            }
+
+            h4 {
+                bottom: 4%;
+                position: absolute;
+                width: 100%;
+                padding: 10px;
+                margin: 0;
+                color: @color-white;
+                font-size: 14px;
+                text-align: center;
+            }
+
+            h5 {
+                bottom: 15%;
+                position: absolute;
+                width: 100%;
+                padding: 10px;
+                margin: 0;
+                color: @color-white;
+                font-size: 34px;
+                text-align: center;
+
+                i {
+                    opacity: 0.1;
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+
+            .project-item {
+                //background: @color-blue;
+            }
+        }
+    }
 }
 
+.project-page {
+    padding: 0;
 
+    .container {
+        background: rgba(255, 255, 255, 1);
+        padding: 0px;
+    }
+
+    .row .row div {
+        padding: 10px;
+    }
+
+    .header {
+        background: @color-blue;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+        background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        height: 220px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+
+        & > div {
+            float: left;
+            width: 100%;
+            padding: 4%;
+            display: inline-block;
+
+            h1 {
+                text-align: center;
+                font-size: 3em;
+                color: white;
+                font-weight: bold;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 1.2em;
+                color: #ffffff;
+                margin-top: 0;
+            }
+        }
+
+        &:after {
+            visibility: hidden !important;
+            display: block !important;
+            font-size: 0 !important;
+            content: " " !important;
+            clear: both !important;
+            height: 0 !important;
+        }
+    }
+
+    .about-project {
+        padding: 5px;
+
+        .overview {
+            padding: 0;
+            border-bottom: 1px solid @color-blue;
+
+            h2 {
+                margin: 0 0 10px;
+                font-size: 36px;
+                text-transform: uppercase;
+                background: #333333;
+                color: white;
+                padding: 20px;
+            }
+
+            p {
+                margin: 0;
+                font-size: 22px;
+                padding: 20px;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+        }
+
+        .objective {
+            background: @color-blue;
+            border-bottom: 1px solid @color-blue;
+
+            .objective-title {
+                color: @color-white;
+                text-transform: uppercase;
+
+                h3 {
+                    margin: 0;
+                    padding: 16% 0;
+                    font-size: 36px;
+                }
+            }
+
+            .objective-body {
+                background: @color-white;
+                color: @color-grey;
+                padding: 20px;
+                font-size: 18px;
+            }
+        }
+
+        .work {
+            background: @color-blue;
+            border-bottom: 1px solid @color-blue;
+
+
+            .work-title {
+                color: @color-white;
+                text-transform: uppercase;
+
+                h3 {
+                    margin: 0;
+                    padding: 16% 0;
+                    font-size: 36px;
+                }
+            }
+
+            .work-body {
+                background: @color-white;
+                padding: 20px;
+                font-size: 18px;
+            }
+        }
+
+        .result {
+            background: @color-blue;
+
+            .result-title {
+                color: @color-white;
+                text-transform: uppercase;
+
+                h3 {
+                    margin: 0;
+                    padding: 16% 0;
+                    font-size: 36px;
+                }
+            }
+
+            .result-body {
+                background: @color-white;
+                color: @color-grey;
+                padding: 20px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .project-aside {
+        padding: 5px;
+
+        .technologies {
+            background: @color-grey;
+            padding: 0 0 10px;
+            margin-bottom: 10px;
+
+            h2 {
+                color: @color-white;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 18px;
+                margin: 20px;
+            }
+
+            ul {
+                text-align: center;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    margin: 0 0 3px;
+                    color: @color-white;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .collaborators {
+            background: @color-grey;
+            padding: 0 5px 10px;
+
+            h2 {
+                color: @color-white;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 18px;
+                margin: 20px;
+            }
+
+            a {
+                width: 50%;
+                display: block;
+                position: relative;
+                margin-bottom: 5px;
+                float: left;
+                border: 3px solid @color-grey;
+
+                &:hover {
+                    border: 2px solid @color-grey;
+                    border-color: @color-blue;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    color: @color-white;
+                    text-align: center;
+                    padding: 10px;
+                    margin: 0;
+                    font-size: 12px;
+                    background: rgba(51, 51, 51, 0.8);
+                }
+            }
+        }
+    }
+}
 
 
 

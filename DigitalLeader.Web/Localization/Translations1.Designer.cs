@@ -88,7 +88,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Career.
+        ///   Looks up a localized string similar to Careers.
         /// </summary>
         public static string LinkCareer {
             get {
@@ -151,7 +151,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Our creed.
+        ///   Looks up a localized string similar to Creed.
         /// </summary>
         public static string LinkOurCreed {
             get {
@@ -160,7 +160,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Our story.
+        ///   Looks up a localized string similar to Story.
         /// </summary>
         public static string LinkOurStory {
             get {
@@ -169,7 +169,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Our team.
+        ///   Looks up a localized string similar to Team.
         /// </summary>
         public static string LinkOurTeam {
             get {

@@ -1,48 +1,37 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.TestimonialViewModel>
 
 @{
-	ViewBag.Title = "Digital Leader - Testimonials";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Testimonials";
+    ViewBag.Message = "these people trust us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-center">Testimonials</h2>
-<hr />
-<br />
-<div class="testimonials">
-    @{
-        int Counter = 0;
-    }
+
+<div class="container-fluid testimonials">
+    <div class="row header clearfix">
+        <div>
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </div>
+    </div>
     <div class="container">
-        @foreach (var item in Model)
-        {
-            if (Counter % 3 == 0)
+        <div class="row">
+            @foreach (var item in Model)
             {
-                <text>  <div class="row">
-                </text>
-    }
-    <div class="testimonial-item col-md-3 col-md-offset-1">
-                @{
-                    var userName = string.Format("{0} {1} ({2})", item.Client.FirstName, item.Client.LastName, item.Client.Company);
-                    var srcAction = item.Client.ImageId.HasValue ?
-                    Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
-                    "/Content/img/default-user.png";
-                }
-                <img src="@srcAction"
-                     class="img-circle img-responsive"
-                     alt="@userName" />
-            <div class="col-md-7">
-                <p>@item.Text</p>
-                <hr />
-                <p class="testimonial-info">
-                    @userName
-                    <span class="pull-right"><i class="fa fa-calendar "></i>@item.CreatedDate.ToShortDateString()</span>
-                </p>
-            </div>
-    </div>
-                    if ((Counter + 1) % 3 == 0 && Counter != 0)
-                    {
-                        @: </div>
+                <div class="col-md-4 testimonial-item-wrapper">
+                    <div class="testimonial-item">
+                        <div class="person">
+                            <img src="~/Content/images/test/trump.png" />
+                            <div>
+                                <h4>Donald Trump</h4>
+                                <h5>CEO at <span>USA</span></h5>
+                            </div>
+                        </div>
+                        <p class="text">@item.Text</p>
+                        <p class="project-link"><a href="#">See Project</a></p>
+                    </div>
+                </div>
             }
-                        Counter++;
-                    }
+        </div>
     </div>
+</div>

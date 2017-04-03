@@ -127,7 +127,7 @@
     <value>Blog</value>
   </data>
   <data name="LinkCareer" xml:space="preserve">
-    <value>Career</value>
+    <value>Careers</value>
   </data>
   <data name="LinkCaseStudies" xml:space="preserve">
     <value>Case studies</value>
@@ -148,13 +148,13 @@
     <value>Infographics</value>
   </data>
   <data name="LinkOurCreed" xml:space="preserve">
-    <value>Our creed</value>
+    <value>Creed</value>
   </data>
   <data name="LinkOurStory" xml:space="preserve">
-    <value>Our story</value>
+    <value>Story</value>
   </data>
   <data name="LinkOurTeam" xml:space="preserve">
-    <value>Our team</value>
+    <value>Team</value>
   </data>
   <data name="LinkPodcasts" xml:space="preserve">
     <value>Podcasts</value>

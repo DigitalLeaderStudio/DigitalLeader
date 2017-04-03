@@ -56,13 +56,10 @@ namespace DigitalLeader.Web
 				.Include("~/Content/less/footer.less")
                 .Include("~/Content/less/homepage.less")
                 .Include("~/Content/less/contact.less")
-                .Include("~/Content/less/projects.less"));
-
-			bundles.Add(new LessBundle("~/Content/company.less")
-				.Include("~/Content/less/company.less"));
-
-			bundles.Add(new LessBundle("~/Content/service.less")
-				.Include("~/Content/less/service.less"));
+                .Include("~/Content/less/projects.less")
+                .Include("~/Content/less/cases.less")
+                .Include("~/Content/less/company.less")
+                .Include("~/Content/less/testimonials.less"));
 
 			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker")
 				.Include("~/Content/bootstrap/bootstrap-datetimepicker-build.less"));

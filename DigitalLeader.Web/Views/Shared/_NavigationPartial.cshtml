@@ -1,19 +1,5 @@
 ﻿@using DigitalLeader.Web.Localization
 
-@*<nav class="navigation">
-    <div class="branding-line">
-        <div class="brand"></div>
-        <div class="cta"></div>
-        <div class="mobile-switch"></div>
-    </div>
-    <div class="menu">
-        <div class="brand"></div>
-        
-    </div>
-</nav>*@
-
-
-
 <nav class="navbar navbar-fixed-top">
     <div class="header-wrapper">
         <div class="container">
@@ -71,23 +57,23 @@
                            aria-expanded="false">@Translations.LinkCompany @*<span class="caret"></span>*@</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkOurStory</a>
+                                <a href="@Url.Action("Story", "Company")">@Translations.LinkOurStory</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkOurCreed</a>
+                                <a href="@Url.Action("Creed", "Company")">@Translations.LinkOurCreed</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkOurTeam</a>
+                                <a href="@Url.Action("Team", "Company")">@Translations.LinkOurTeam</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkCareer</a>
+                                <a href="@Url.Action("Careers", "Company")">@Translations.LinkCareer</a>
                             </li>
 
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources @*<span class="caret"></span>*@</a>
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources</a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkBlog</a>
@@ -108,7 +94,7 @@
                                 <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkPodcasts</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>*@
 
                     
                     <li>@Html.ActionLink(@Translations.LinkConnect, "Contact", "Home")</li>

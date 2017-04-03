@@ -1,6 +1,7 @@
 @import "settings.less";
 
-.company {
+
+.projects {
     padding: 0;
 
     .container {
@@ -57,124 +58,81 @@
             height: 0 !important;
         }
     }
-    // pages
-    &.story {
-        .container {
-            padding-bottom: 40px;
 
-            h3 {
-                text-transform: uppercase;
-                margin-top: 50px;
+    .project-item-wrapper {
+        position: relative;
+        padding: 5px;
+
+        .project-item {
+            background: @color-grey;
+            height: 0;
+            padding-bottom: 100%;
+            width: 100%;
+            position: relative;
+            display: block;
+            border: 10px solid @color-grey;
+
+
+            &:hover {
+                border-color: @color-blue;
+                transition: border-color 0.5s;
+
+
+                i {
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
             }
 
-            img {
+            .bg {
                 width: 100%;
+                z-index: 0;
+                opacity: 0.15;
             }
 
             .logo {
-                margin-top: 7%;
-            }
-
-            .where-we-serve-sub {
-                text-align: center;
-            }
-        }
-    }
-
-    &.team {
-        .employee {
-            padding: 5px;
-
-            .identity {
-                position: relative;
-
-                img {
-                    width: 100%;
-                }
-
-                div {
-                    position: absolute;
-                    bottom: 0;
-                    background: rgba(6, 151, 255, 0.6);
-                    width: 100%;
-                    padding: 10px;
-                    color: @color-white;
-
-                    h3 {
-                        text-align: center;
-                        margin: 0;
-                        padding: 0;
-                    }
-
-                    p {
-                        text-align: center;
-                        margin: 0;
-                        padding: 0;
-                    }
-                }
-            }
-
-            .experience {
-                background: @color-grey;
-                color: @color-white;
-                text-align: center;
+                width: 50%;
+                margin: 0 auto;
+                z-index: 2;
+                opacity: 1;
                 padding: 10px;
+                display: block;
+                position: absolute;
+                top: 25%;
+                left: 25%;
+            }
 
-                .years {
-                    margin: 5px 0 0;
-                    padding: 0;
-                }
+            h4 {
+                bottom: 4%;
+                position: absolute;
+                width: 100%;
+                padding: 10px;
+                margin: 0;
+                color: @color-white;
+                font-size: 14px;
+                text-align: center;
+            }
 
-                .technologies {
-                    font-size: 13px;
-                    color: @color-blue;
-                    margin: 0 0 10px;
-                    padding: 0;
+            h5 {
+                bottom: 15%;
+                position: absolute;
+                width: 100%;
+                padding: 10px;
+                margin: 0;
+                color: @color-white;
+                font-size: 34px;
+                text-align: center;
+
+                i {
+                    opacity: 0.1;
                 }
             }
         }
-    }
 
-    &.careers {
+        &:nth-child(2n) {
 
-        .vacancy-wrapper {
-            padding: 5px;
-
-            .vacancy {
-                background: @color-grey;
-                padding: 5px;
-
-                h3 {
-                    text-align: left;
-                    text-transform: uppercase;
-                    margin: 0;
-                    padding: 10px;
-                    color: @color-blue;
-                }
-
-                .description {
-                    margin: 0;
-                    padding: 0 10px 10px;
-                    font-size: 14px;
-                    color: @color-white;
-                }
-
-                .btn-wrapper {
-                    margin: 10px 0;
-                    padding: 10px;
-                    text-align: right;
-
-                    a {
-                        background: @color-grey-dark;
-                        color: @color-white;
-                        padding: 10px 25px;
-                        text-decoration: none;
-
-                        &:hover {
-                            background: @color-blue;
-                        }
-                    }
-                }
+            .project-item {
+                //background: @color-blue;
             }
         }
     }
@@ -191,7 +149,7 @@
 
 /*RESPONSIVE*/
 @media (max-width: 375px) {
-    .company {
+    .projects {
         padding: 0;
 
         .row .row div {
@@ -248,7 +206,7 @@
 }
 /* xs */
 @media (min-width: 375px) and (max-width: 767px) {
-    .company {
+    .projects {
         padding: 0;
 
         .row .row div {
@@ -305,7 +263,7 @@
 }
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
-    .company {
+    .projects {
         padding: 0;
 
         .row .row div {
