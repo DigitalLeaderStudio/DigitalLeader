@@ -35,7 +35,7 @@
                             bottom: 30%;
                             text-align: left;
                             text-shadow: none;
-                            position:static;
+                            position: static;
                         }
 
                         &.main-slide {
@@ -168,13 +168,19 @@
 
                         hr {
                             border: 0;
-                            height: 1px;
-                            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,363737+51,0094ff+100 */
-                            background: #0094ff; /* Old browsers */
-                            background: -moz-linear-gradient(left, #0094ff 0%, #363737 51%, #0094ff 100%); /* FF3.6-15 */
-                            background: -webkit-linear-gradient(left, #0094ff 0%,#363737 51%,#0094ff 100%); /* Chrome10-25,Safari5.1-6 */
-                            background: linear-gradient(to right, #0094ff 0%,#363737 51%,#0094ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#0094ff',GradientType=1 ); /* IE6-9 */
+                            height: 2px;
+                            background: #0094ff;
+                            opacity: 0;
+                        }
+
+                        #pointer {
+                            background: @color-blue;
+                            transition: background ease 0.3s;
+
+                            i {
+                                color: @color-blue;
+                                transition: color ease 0.3s;
+                            }
                         }
                     }
                 }
@@ -194,10 +200,10 @@
                         background: @color-blue;
                         color: #fff;
                         height: 500px;
-                        padding: 10px;
+                        padding: 5px;
 
                         > div > div {
-                            padding: 10px;
+                            padding: 5px;
                         }
 
                         h2 {
@@ -221,13 +227,24 @@
 
                             li {
                                 text-align: left;
-                                margin-bottom: 3px;
+                                margin-bottom: 4px;
+                                padding: 0;
+                                display: block;
+
+                                &:nth-child(2n) {
+                                    padding-left: 2px;
+                                }
+
+                                &:nth-child(2n+1) {
+                                    padding-right: 2px;
+                                }
 
                                 a, a:visited {
                                     background: #383838;
                                     padding: 13px;
                                     display: block;
                                     text-decoration: none;
+                                    height: 80px;
 
                                     h3 {
                                         text-align: left;
@@ -239,8 +256,8 @@
 
                                     p {
                                         color: #bababa;
-                                        font-size: 14px;
-                                        margin: 0;
+                                        font-size: 13px;
+                                        margin: 3px 0 0;
                                         padding: 0;
                                     }
 
@@ -313,6 +330,23 @@
                     margin: 0;
                     font-family: @open-sans;
                     text-transform: uppercase;
+                }
+
+                #pointer {
+                    background: @color-grey-dark;
+                    width: 35px;
+                    height: 35px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 20px;
+                    line-height: 20px;
+
+                    i {
+                        color: @color-white;
+                        padding: 6px 0 0 0;
+                        color: #bababa;
+                    }
                 }
             }
         }
@@ -704,11 +738,14 @@
                                 li {
                                     text-align: left;
                                     margin-bottom: 3px;
+                                    padding: 0 !important;
 
                                     a, a:visited {
                                         background: #383838;
                                         padding: 13px;
                                         display: block;
+                                        height: auto;
+                                        min-height: unset;
                                         text-decoration: none;
 
                                         h3 {
@@ -799,6 +836,10 @@
                         margin: 0;
                         font-family: @open-sans;
                         text-transform: uppercase;
+                    }
+
+                    #pointer {
+                        display: none;
                     }
                 }
             }
@@ -1190,12 +1231,15 @@
                                 li {
                                     text-align: left;
                                     margin-bottom: 3px;
+                                    padding: 0 !important;
 
                                     a, a:visited {
                                         background: #383838;
                                         padding: 13px;
                                         display: block;
                                         text-decoration: none;
+                                        height: auto;
+                                        min-height: unset;
 
                                         h3 {
                                             text-align: left;
@@ -1285,6 +1329,10 @@
                         margin: 0;
                         font-family: @open-sans;
                         text-transform: uppercase;
+                    }
+
+                    #pointer {
+                        display: none;
                     }
                 }
             }
@@ -1678,12 +1726,15 @@
                                 li {
                                     text-align: left;
                                     margin-bottom: 3px;
+                                    padding: 0 !important;
 
                                     a, a:visited {
                                         background: #383838;
                                         padding: 13px;
                                         display: block;
                                         text-decoration: none;
+                                        height: auto;
+                                        min-height: unset;
 
                                         h3 {
                                             text-align: left;
@@ -1775,6 +1826,10 @@
                         margin: 0;
                         font-family: @open-sans;
                         text-transform: uppercase;
+                    }
+
+                    #pointer {
+                        display: none;
                     }
                 }
             }
@@ -2127,7 +2182,7 @@
                             background: @color-blue;
                             color: #fff;
                             height: 500px;
-                            padding: 10px;
+                            padding: 5px;
 
                             > div > div {
                                 padding: 5px;
@@ -2157,12 +2212,14 @@
                                     text-align: left;
                                     margin-bottom: 3px;
 
+
                                     a, a:visited {
                                         background: #383838;
                                         padding: 13px;
                                         display: block;
                                         text-decoration: none;
-
+                                        height: 100px;
+                                       
                                         h3 {
                                             text-align: left;
                                             font-size: 16px;
@@ -2173,7 +2230,7 @@
 
                                         p {
                                             color: #bababa;
-                                            font-size: 14px;
+                                            font-size: 13px;
                                             margin: 0;
                                             padding: 0;
                                         }
