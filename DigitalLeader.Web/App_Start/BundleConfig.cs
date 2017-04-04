@@ -29,7 +29,8 @@ namespace DigitalLeader.Web
 					  "~/Scripts/ckeditor/ckeditor.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/core-js").Include(
-					  "~/Scripts/custom/site.js"));
+					  "~/Scripts/custom/site.js")
+                      .Include("~/Scripts/custom/slider.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/chosen").Include(
 					  "~/Scripts/chosen.jquery.js"));
@@ -42,6 +43,7 @@ namespace DigitalLeader.Web
 
 			bundles.Add(new StyleBundle("~/Content/core-css")
 				.Include("~/Content/bootstrap/bootstrap.css")
+				.Include("~/Content/animate.css")
 				.Include("~/Content/font-awesome.css"));
 
 			bundles.Add(new StyleBundle("~/Content/chosen")

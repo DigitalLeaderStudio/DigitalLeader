@@ -8,14 +8,15 @@
 
     <title>@ViewBag.Title</title>
 
-    @Scripts.Render("~/bundles/modernizr")
-
     @Styles.Render("~/Content/core-css")
     @Styles.Render("~/Content/core-less")
+    @Styles.Render("~/Content/chosen")
+
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Styles.Render("~/Content/chosen")
     @Scripts.Render("~/bundles/chosen")
+    @Scripts.Render("~/bundles/core-js")
 
     <link rel="icon" href="@Url.Content("~/Content/Images/favicon.png")" />
 

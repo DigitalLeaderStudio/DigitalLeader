@@ -10,7 +10,67 @@
 <div class="homepage container">
 	<div class="row presentation">
 		<div class="col-md-10 showcase">
-			<div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="3000">
+            
+            <section class="slider">
+                <div class="slides">
+                    
+                    <div class="slide-container active-slide" style="background: #ffd800">
+                        <div class="slide-content">
+                            <h1>Web apps development</h1>
+                            <p >text 1</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-container" style="background: #4cff00">
+                        <div class="slide-content">
+                            <h1>Web apps development</h1>
+                            <p>text 2</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-container" style="background: #00ff90">
+                        <div class="slide-content">
+                            <h1>Web apps development</h1>
+                            <p>text 3</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-container" style="background: #0094ff">
+                        <div class="slide-content">
+                            <h1>Web apps development</h1>
+                            <p>text 4</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-container" style="background: #b200ff">
+                        <div class="slide-content">
+                            <h1>Web apps development</h1>
+                            <p>text 5</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <button id="upButton" class="slider-control up">
+                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                </button>
+                
+                <button id="downButton" class="slider-control down">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </button>
+                
+                <div id="bullets">
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </section>
+
+
+			@*<div id="carousel-demo" class="carousel vertical slide" data-ride="carousel" data-interval="1000">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
@@ -19,20 +79,18 @@
 				</ol>
 
 				<!-- Sliding images statring here -->
-				<div class="carousel-inner" style="color: #000000;">
-					<div class="item active main-slide" style="background: url('~/Content/images/company/world-map.png')">
+				<div class="carousel-inner">
+					<div class="item active main-slide" style="background: #ffd800">
 						<div class="carousel-caption">
 							<h1>@Translations.SliderSlide1</h1>
 						</div>
 					</div>
-					<div class="item main-slide" style="background: url('~/Content/images/company/world-map.png')">
-						<img src="~/Content/images/company/world-map.png" alt="banana">
+					<div class="item main-slide" style="background: #ff6a00">
 						<div class="carousel-caption">
 							<h1>@Translations.SliderSlide2</h1>
 						</div>
 					</div>
-					<div class="item main-slide" style="background: url('~/Content/images/company/world-map.png')">
-						<img src="~/Content/images/company/world-map.png" alt="banana">
+					<div class="item main-slide" style="background: #b6ff00">
 						<div class="carousel-caption">
 							<h1>@Translations.SliderSlide3</h1>
 						</div>
@@ -46,7 +104,7 @@
 				<a class="down carousel-control" href="#carousel-demo" data-slide="next">
 					<i class="fa fa-angle-down" aria-hidden="true"></i>
 				</a>
-			</div>
+			</div>*@
 		</div>
 
 		<div class="col-md-2 service-categories">
