@@ -22,6 +22,7 @@
 				});
 
 			CreateMap<User, UserViewModel>()
+				.ForMember(vm => vm.ImageId, opt => opt.MapFrom(user => user.ImageId))
 				.ForMember(vm => vm.TechnologiesIds, opt => opt.MapFrom(item => item.Technologies.Select(t => t.ID).ToArray()));
 
 			CreateMap<UserViewModel, User>()
