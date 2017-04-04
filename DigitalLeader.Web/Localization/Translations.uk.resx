@@ -180,23 +180,29 @@
   <data name="LinkWhitePapers" xml:space="preserve">
     <value>Наукові статті</value>
   </data>
-  <data name="MainPageFormQuestion1" xml:space="preserve">
-    <value>Як Вас звати?</value>
-  </data>
-  <data name="MainPageFormQuestion1Placeholder" xml:space="preserve">
-    <value>Ім'я</value>
-  </data>
-  <data name="MainPageFormQuestion2" xml:space="preserve">
+  <data name="MainPage_ContactRequest_Email" xml:space="preserve">
     <value>Email адресса</value>
   </data>
-  <data name="MainPageFormQuestion3" xml:space="preserve">
-    <value>Телефон</value>
+  <data name="MainPage_ContactRequest_Email_Placeholder" xml:space="preserve">
+    <value>Input you email *</value>
   </data>
-  <data name="MainPageFormQuestion4" xml:space="preserve">
+  <data name="MainPage_ContactRequest_FirstName" xml:space="preserve">
+    <value>Як Вас звати?</value>
+  </data>
+  <data name="MainPage_ContactRequest_FirstName_Placeholder" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
+  <data name="MainPage_ContactRequest_Message" xml:space="preserve">
     <value>Ваше повідомлення</value>
   </data>
-  <data name="MainPageFormQuestion4Placeholder" xml:space="preserve">
+  <data name="MainPage_ContactRequest_Message_Placeholder" xml:space="preserve">
     <value>Залишіть ваше повідомлення</value>
+  </data>
+  <data name="MainPage_ContactRequest_Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="MainPage_ContactRequest_Phone_Placeholder" xml:space="preserve">
+    <value>Input your phone *</value>
   </data>
   <data name="MainPegeFormTitle" xml:space="preserve">
     <value>Давайте прокачаємо ваш бізнес!</value>

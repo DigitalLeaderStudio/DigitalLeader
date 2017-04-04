@@ -49,21 +49,34 @@
 					entity.Ip = Request.UserHostAddress;
 					_contactRequestService.Insert(entity);
 
-					var adminEmialAddress = System.Configuration.ConfigurationManager.AppSettings["AdminEmail"].ToString();
+					try
+					{
+						var adminEmialAddress = System.Configuration.ConfigurationManager.AppSettings["AdminEmail"].ToString();
 
-					await MailSender.Default.SendAsync(
-						adminEmialAddress,
-						adminEmialAddress,
-						"New contact",
-						String.Format(@"
+						await MailSender.Default.SendAsync(
+							adminEmialAddress,
+							adminEmialAddress,
+							"New contact",
+							String.Format(@"
 					                                   <h1>New contact from the website</h1>
 					                                   <p><strong>Name:</strong> {0}</p>
 					                                   <p><strong>Email:</strong> {1}</p>
 					                                   <p><strong>Phone:</strong> {2}</p>
 					                                   <p><strong>Message:</strong> {3}</p>
 					                               ", model.FirstName, model.Email, model.Phone, model.Message));
+					}
+					catch { }
 
 					model.RedirectLink = Url.Action("ThankYou", "Home");
+
+					if (model.Mode.Equals("Short"))
+					{
+						return new JsonResult
+						{
+							Data = model.RedirectLink
+						};
+					}
+
 					return PartialView("_ContactRequestPartialView", model);
 				}
 				catch (Exception e)

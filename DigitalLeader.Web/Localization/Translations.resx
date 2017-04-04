@@ -180,23 +180,29 @@
   <data name="LinkWhitePapers" xml:space="preserve">
     <value>White Papers</value>
   </data>
-  <data name="MainPageFormQuestion1" xml:space="preserve">
-    <value>What's your name?</value>
-  </data>
-  <data name="MainPageFormQuestion1Placeholder" xml:space="preserve">
-    <value>your name</value>
-  </data>
-  <data name="MainPageFormQuestion2" xml:space="preserve">
+  <data name="MainPage_ContactRequest_Email" xml:space="preserve">
     <value>Email address</value>
   </data>
-  <data name="MainPageFormQuestion3" xml:space="preserve">
-    <value>Phone number</value>
+  <data name="MainPage_ContactRequest_Email_Placeholder" xml:space="preserve">
+    <value>Input you email *</value>
   </data>
-  <data name="MainPageFormQuestion4" xml:space="preserve">
-    <value>your problem or message</value>
+  <data name="MainPage_ContactRequest_FirstName" xml:space="preserve">
+    <value>What's your name?</value>
   </data>
-  <data name="MainPageFormQuestion4Placeholder" xml:space="preserve">
-    <value>your problem or message</value>
+  <data name="MainPage_ContactRequest_FirstName_Placeholder" xml:space="preserve">
+    <value>Input your name *</value>
+  </data>
+  <data name="MainPage_ContactRequest_Message" xml:space="preserve">
+    <value>Your problem</value>
+  </data>
+  <data name="MainPage_ContactRequest_Message_Placeholder" xml:space="preserve">
+    <value>Describe your problem here *</value>
+  </data>
+  <data name="MainPage_ContactRequest_Phone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="MainPage_ContactRequest_Phone_Placeholder" xml:space="preserve">
+    <value>Input your phone *</value>
   </data>
   <data name="MainPegeFormTitle" xml:space="preserve">
     <value>Let's upgrade your business!</value>
