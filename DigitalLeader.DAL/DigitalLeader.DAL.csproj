@@ -130,6 +130,10 @@
     <Compile Include="Migrations\201704040831012_AddContactRequests.Designer.cs">
       <DependentUpon>201704040831012_AddContactRequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704041357452_Add-Slider.cs" />
+    <Compile Include="Migrations\201704041357452_Add-Slider.Designer.cs">
+      <DependentUpon>201704041357452_Add-Slider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704040831012_AddContactRequests.resx">
       <DependentUpon>201704040831012_AddContactRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704041357452_Add-Slider.resx">
+      <DependentUpon>201704041357452_Add-Slider.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

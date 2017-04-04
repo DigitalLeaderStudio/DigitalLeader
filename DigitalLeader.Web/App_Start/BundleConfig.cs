@@ -33,8 +33,10 @@ namespace DigitalLeader.Web
 					  "~/Scripts/ckeditor/ckeditor.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/core-js").Include(
-					  "~/Scripts/custom/site.js")
-                      .Include("~/Scripts/custom/slider.js"));
+					  "~/Scripts/custom/site.js"));
+
+			bundles.Add(new ScriptBundle("~/bundles/slider")
+				.Include("~/Scripts/custom/slider.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/chosen").Include(
 					  "~/Scripts/chosen.jquery.js"));
@@ -60,12 +62,12 @@ namespace DigitalLeader.Web
 				.Include("~/Content/less/general.less")
 				.Include("~/Content/less/navigation.less")
 				.Include("~/Content/less/footer.less")
-                .Include("~/Content/less/homepage.less")
-                .Include("~/Content/less/contact.less")
-                .Include("~/Content/less/projects.less")
-                .Include("~/Content/less/cases.less")
-                .Include("~/Content/less/company.less")
-                .Include("~/Content/less/testimonials.less"));
+				.Include("~/Content/less/homepage.less")
+				.Include("~/Content/less/contact.less")
+				.Include("~/Content/less/projects.less")
+				.Include("~/Content/less/cases.less")
+				.Include("~/Content/less/company.less")
+				.Include("~/Content/less/testimonials.less"));
 
 			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker")
 				.Include("~/Content/bootstrap/bootstrap-datetimepicker-build.less"));

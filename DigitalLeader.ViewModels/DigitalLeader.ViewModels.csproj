@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
     <Compile Include="BlogpostViewModel.cs" />
+    <Compile Include="SliderViewModel.cs" />
     <Compile Include="ServiceCategoryViewModel.cs" />
     <Compile Include="ClientViewModel.cs" />
     <Compile Include="FileViewModel.cs" />

@@ -63,6 +63,7 @@
     <Compile Include="Extensions\LinqExtensions.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Implementation\BlogpostService.cs" />
+    <Compile Include="Implementation\SliderService.cs" />
     <Compile Include="Implementation\ServiceSubcategoryService .cs" />
     <Compile Include="Implementation\ServiceCategoryService.cs" />
     <Compile Include="Implementation\FileService.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Implementation\UserService.cs" />
     <Compile Include="Implementation\VacancyService.cs" />
     <Compile Include="Interfaces\IBlogpostService.cs" />
+    <Compile Include="Interfaces\ISliderService.cs" />
     <Compile Include="Interfaces\IServiceSubcategoryService .cs" />
     <Compile Include="Interfaces\IContactRequestService.cs" />
     <Compile Include="Interfaces\ITestimonialService.cs" />

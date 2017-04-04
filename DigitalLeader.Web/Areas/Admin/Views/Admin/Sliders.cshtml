@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DigitalLeader.ViewModels.SliderViewModel>
+
+@{
+	ViewBag.Title = "Sliders";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sliders</h2>
+
+<p>
+	@Html.ActionLink("Create New", "CreateSlider")
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Title)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Description)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TargetLink)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Description)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TargetLink)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "EditSlider", new { id = item.ID }) |
+				@Html.ActionLink("Delete", "DeleteSlider", new { id = item.ID })
+			</td>
+		</tr>
+	}
+
+</table>
