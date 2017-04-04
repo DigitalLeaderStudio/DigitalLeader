@@ -70,11 +70,13 @@
     <Compile Include="Implementation\ProjectService.cs" />
     <Compile Include="Implementation\ServiceService.cs" />
     <Compile Include="Implementation\TechnologyService.cs" />
+    <Compile Include="Implementation\ContactRequestService.cs" />
     <Compile Include="Implementation\TestimonialService.cs" />
     <Compile Include="Implementation\UserService.cs" />
     <Compile Include="Implementation\VacancyService.cs" />
     <Compile Include="Interfaces\IBlogpostService.cs" />
     <Compile Include="Interfaces\IServiceSubcategoryService .cs" />
+    <Compile Include="Interfaces\IContactRequestService.cs" />
     <Compile Include="Interfaces\ITestimonialService.cs" />
     <Compile Include="Interfaces\IServiceCategoryService.cs" />
     <Compile Include="Interfaces\IFileService.cs" />

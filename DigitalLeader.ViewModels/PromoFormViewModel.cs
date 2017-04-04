@@ -36,7 +36,11 @@
 
 		[Display(Name = "Message")]
 		[Required]
-		[StringLength(1200, MinimumLength = 120, ErrorMessage = "Messageshould have 120 to 1200 letters")]
+		[StringLength(1200, MinimumLength = 60, ErrorMessage = "Messageshould have 60 to 1200 letters")]
 		public string Message { get; set; }
+
+		public List<string> Errors { get; set; }
+
+		public string RedirectLink { get; set; }
 	}
 }
