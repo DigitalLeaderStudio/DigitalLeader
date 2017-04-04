@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff" />
-    <link rel="icon" href="@Url.Content("~/content/images/favicon.ico")" type="image/x-icon">
 
+	<link rel="icon" type="image/x-icon" href="~/favicon.ico">
+    
     <title>@ViewBag.Title</title>
 
     @Styles.Render("~/Content/core-css")
@@ -18,9 +19,6 @@
     @Scripts.Render("~/bundles/chosen")
     @Scripts.Render("~/bundles/core-js")
 	@Scripts.Render("~/bundles/slider")
-
-    <link rel="icon" href="@Url.Content("~/Content/Images/favicon.png")" />
-
 </head>
 <body>
     @Html.Partial("_NavigationPartial")
