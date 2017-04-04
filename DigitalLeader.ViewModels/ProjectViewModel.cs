@@ -3,6 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 	using System.ComponentModel.DataAnnotations;
+	using System.Web;
 	using System.Web.Mvc;
 
 	public class ProjectViewModel : FileViewModel
@@ -70,7 +71,12 @@
 		public List<UserViewModel> Contributors { get; set; }
 
 		[Display(Name = "Contributors")]
-
 		public List<SelectListItem> ContributorsSelectList { get; set; }
+
+		[Display(Name = "Logo")]
+		public virtual int? LogoId { get; set; }
+
+		[Display(Name = "Logo")]
+		public virtual HttpPostedFileBase Logo { get; set; }
 	}
 }

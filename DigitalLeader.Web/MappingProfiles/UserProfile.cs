@@ -5,6 +5,7 @@
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.ViewModels;
 	using System.Web.Mvc;
+	using System.Linq;
 
 	public class UserProfile : Profile
 	{
@@ -20,7 +21,8 @@
 					};
 				});
 
-			CreateMap<User, UserViewModel>();
+			CreateMap<User, UserViewModel>()
+				.ForMember(vm => vm.TechnologiesIds, opt => opt.MapFrom(item => item.Technologies.Select(t => t.ID).ToArray()));
 
 			CreateMap<UserViewModel, User>()
 				.AfterMap((vm, entity) =>

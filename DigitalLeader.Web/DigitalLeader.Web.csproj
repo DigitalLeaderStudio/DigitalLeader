@@ -846,6 +846,7 @@
     <Content Include="Views\Company\Creed.cshtml" />
     <Content Include="Views\Company\Careers.cshtml" />
     <Content Include="Views\Company\Team.cshtml" />
+    <Content Include="Views\Company\Career.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

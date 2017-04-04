@@ -39,6 +39,10 @@
 
 		public virtual File Image { get; set; }
 
+		public int? LogoId { get; set; }
+
+		public virtual File Logo { get; set; }
+
 		public virtual ICollection<User> Contributors { get; set; }
 
 		public virtual ICollection<Technology> Technologies { get; set; }

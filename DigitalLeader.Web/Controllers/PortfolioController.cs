@@ -25,34 +25,37 @@
 		{
 			return View();
 		}
-        [Route("Testimonials")]
+		[Route("Testimonials")]
 		public ActionResult Testimonials()
 		{
 			var viewModel = Mapper.Map<List<Testimonial>, List<TestimonialViewModel>>(_testimonialService.GetAll());
 
 			return View(viewModel);
 		}
-        [Route("Projects")]
+		[Route("Projects")]
 		public ActionResult Projects()
 		{
-			var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(_projectService.GetAll());
+			var projects = _projectService.GetAll();
+
+			var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(projects);
 
 			return View(viewModel);
 		}
 
-        [Route("Case-studies")]
-        public ActionResult CaseStudies()
-        {
-            var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(_projectService.GetAllCaseStudies());
+		[Route("Case-studies")]
+		public ActionResult CaseStudies()
+		{
+			var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(_projectService.GetAllCaseStudies());
 
-            return View(viewModel);
-        }
+			return View(viewModel);
+		}
 
-        public ActionResult Project()
-        {
+		[Route("Projects/{id}")]
+		public ActionResult Project(int id)
+		{
+			var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));
 
-            return View();
-        }
-
-    }
+			return View(viewModel);
+		}
+	}
 }

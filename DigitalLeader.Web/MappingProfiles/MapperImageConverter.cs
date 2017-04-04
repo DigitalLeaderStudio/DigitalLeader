@@ -24,5 +24,25 @@
 
 			return result;
 		}
+
+		public static object ImageConverter(System.Web.HttpPostedFileBase file)
+		{
+			File result = null;
+
+			if (file != null && file.ContentLength > 0)
+			{
+				using (var reader = new System.IO.BinaryReader(file.InputStream))
+				{
+					result = new File
+					{
+						FileName = System.IO.Path.GetFileName(file.FileName),
+						ContentType = file.ContentType,
+						Content = reader.ReadBytes(file.ContentLength)
+					};
+				}
+			}
+
+			return result;
+		}
 	}
 }

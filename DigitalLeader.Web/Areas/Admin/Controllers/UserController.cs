@@ -1,19 +1,25 @@
 ﻿namespace DigitalLeader.Web.Areas.Admin.Controllers
 {
 	using AutoMapper;
+	using DigitalLeader.Entities;
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.Services.Interfaces;
 	using DigitalLeader.ViewModels;
 	using System;
 	using System.Collections.Generic;
 	using System.Web.Mvc;
+	using System.Linq;
 
 	public class UserController : BaseAdminController
 	{
+		private ITechnologyService _technologyService;
 		private IUserService _userService;
 
-		public UserController(IUserService userService)
+		public UserController(
+			ITechnologyService technologyService,
+			IUserService userService)
 		{
+			_technologyService = technologyService;
 			_userService = userService;
 		}
 
@@ -59,6 +65,12 @@
 		{
 			var viewModel = Mapper.Map<User, UserViewModel>(_userService.GetById(id));
 
+			viewModel.TechnologiesSelectList = Mapper.Map<List<Technology>, List<SelectListItem>>(_technologyService.GetAll());
+			viewModel.TechnologiesSelectList.ForEach(item =>
+			{
+				item.Selected = viewModel.TechnologiesIds.Contains(int.Parse(item.Value));
+			});
+
 			return View(viewModel);
 		}
 
@@ -71,6 +83,10 @@
 				if (ModelState.IsValid)
 				{
 					var user = Mapper.Map<UserViewModel, User>(viewModel);
+
+					user.Technologies = viewModel.TechnologiesIds != null ?
+						_technologyService.GetByIds(viewModel.TechnologiesIds) :
+						new List<Technology>();
 
 					_userService.Update(user);
 				}

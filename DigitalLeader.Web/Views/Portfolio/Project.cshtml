@@ -1,98 +1,80 @@
-﻿
+﻿@model DigitalLeader.ViewModels.ProjectViewModel
 @{
-    ViewBag.Title = "Raiduga";
-    ViewBag.Message = "it's all about kids";
-    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+	ViewBag.Title = Model.Title;
+	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
 
 <div class="container-fluid project-page">
-    <div class="row header clearfix">
-        <div>
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row general">
-            <div class="col-md-9 about-project">
-                <div class="row overview">
-                    <h2>Overview</h2>
-                    <p>We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.</p>
-                </div>
-                <div class="row objective">
-                    <div class="col-md-4 objective-title">
-                        <h3>Objective</h3>
-                    </div>
-                    <div class="col-md-8 objective-body">
-                        <p>We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.</p>
-                    </div>
-                </div>
-                <div class="row work">
-                    <div class="col-md-8 work-body">
-                        <p>We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.</p>
-                    </div>
-                    <div class="col-md-4 work-title">
-                        <h3>Work</h3>
-                    </div>
-                </div>
-                <div class="row result">
-                    <div class="col-md-4 result-title">
-                        <h3>Result</h3>
-                    </div>
-                    <div class="col-md-8 result-body">
-                        <p>We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 project-aside">
-                <div class="col-md-12 technologies">
-                    <h2>Technologies</h2>
-                    <ul>
-                        <li>Technology</li>
-                        <li>Technology</li>
-                        <li>Technology</li>
-                        <li>Technology</li>
-                        <li>Technology</li>
-                        <li>Technology</li>
-                    </ul>
-                </div>
-                <div class="col-md-12 collaborators">
-                    <h2>Collaborators</h2>
-                    <div>
-                        <a href="#">
-                            <img src="~/Content/images/test/trump.png" />
-                            <p>John SmithJohn SmithJohn Smith</p>
-                        </a>
-                        <a href="#">
-                            <div>
-                                <img src="~/Content/images/test/trump.png" />
-                                <p>John Smith</p>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div>
-                                <img src="~/Content/images/test/trump.png" />
-                                <p>John Smith</p>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div>
-                                <img src="~/Content/images/test/trump.png" />
-                                <p>John Smith</p>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div>
-                                <img src="~/Content/images/test/trump.png" />
-                                <p>John Smith</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row header clearfix">
+		<div>
+			<h1>@Model.Title</h1>
+			<h2>Project overview</h2>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row general">
+			<div class="col-md-9 about-project">
+				<div class="row overview">
+					<h2>Overview</h2>
+					<p>@Model.Overview</p>
+				</div>
+				<div class="row objective">
+					<div class="col-md-4 objective-title">
+						<h3>Objective</h3>
+					</div>
+					<div class="col-md-8 objective-body">
+						<p>@Model.Objective</p>
+					</div>
+				</div>
+				<div class="row work">
+					<div class="col-md-8 work-body">
+						<p>@Model.WorkOverview</p>
+					</div>
+					<div class="col-md-4 work-title">
+						<h3>Work</h3>
+					</div>
+				</div>
+				<div class="row result">
+					<div class="col-md-4 result-title">
+						<h3>Result</h3>
+					</div>
+					<div class="col-md-8 result-body">
+						<p>@Model.ResultOverview</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 project-aside">
+				<div class="col-md-12 technologies">
+					<h2>Technologies</h2>
+					<ul>
+						@foreach (var tech in Model.Technologies)
+						{
+							<li>@tech.Name</li>
+						}
+					</ul>
+				</div>
+				<div class="col-md-12 collaborators">
+					<h2>Contributors</h2>
+					<div>
+						@foreach (var collaborator in Model.Contributors)
+						{
+							<a href="#">
+								<div>
+									@{
+										var src = collaborator.ImageId.HasValue ?
+										Url.Action("Show", "File", new { area = "", id = collaborator.ImageId }) :
+										"/Content/img/default-user.png";
+									}
+									<img src="@src" />
+									<p>@collaborator.UserName</p>
+								</div>
+							</a>
+										}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
-

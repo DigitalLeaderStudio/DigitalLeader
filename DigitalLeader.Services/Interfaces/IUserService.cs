@@ -7,5 +7,6 @@
 	{
 		List<User> GetByIds(int[] ids);
 
+		List<User> GetAllExceptAdmins();
 	}
 }

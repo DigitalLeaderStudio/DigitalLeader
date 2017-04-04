@@ -1,37 +1,45 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.TestimonialViewModel>
 
 @{
-    ViewBag.Title = "Testimonials";
-    ViewBag.Message = "these people trust us";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Testimonials";
+	ViewBag.Message = "these people trust us";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="container-fluid testimonials">
-    <div class="row header clearfix">
-        <div>
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-4 testimonial-item-wrapper">
-                    <div class="testimonial-item">
-                        <div class="person">
-                            <img src="~/Content/images/test/trump.png" />
-                            <div>
-                                <h4>Donald Trump</h4>
-                                <h5>CEO at <span>USA</span></h5>
-                            </div>
-                        </div>
-                        <p class="text">@item.Text</p>
-                        <p class="project-link"><a href="#">See Project</a></p>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
+	<div class="row header clearfix">
+		<div>
+			<h1>@ViewBag.Title</h1>
+			<h2>@ViewBag.Message</h2>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			@foreach (var item in Model)
+			{
+				<div class="col-md-4 testimonial-item-wrapper">
+					<div class="testimonial-item">
+						<div class="person">
+							@{
+								var srcAction = item.Client.ImageId.HasValue ?
+								Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
+								"/Content/img/default-user.png";
+							}
+							<img src="@srcAction" class="img-responsive" />
+							<div>
+								<h4>@item.Client.FirstName @item.Client.LastName</h4>
+								<h5>@item.Client.Title</h5>
+							</div>
+						</div>
+						<p class="text">@item.Text</p>
+						<p class="project-link">
+							<a href="#">See Project</a>
+						</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			}
+		</div>
+	</div>
 </div>
