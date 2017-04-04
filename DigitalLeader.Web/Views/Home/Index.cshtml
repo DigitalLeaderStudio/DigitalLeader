@@ -55,18 +55,21 @@
 						<div class="image"></div>
 						<hr />
 						<h3>@category.Name</h3>
+                        <div id="pointer">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </div>
 
 						<div class="menu-wrapper">
 							<div id="menu" class="container-fluid">
 								<div class="row">
 									@foreach (var subcategory in category.ServiceSubcategories)
 									{
-										<div class="col-md-4 subcategory">
+										<div class="col-md-6 subcategory">
 											<h2>@subcategory.Name <i class="fa fa-angle-right" aria-hidden="true"></i></h2>
 											<ul>
 												@foreach (var service in subcategory.Services)
 												{
-													<li>
+													<li class="col-md-6">
 														<a href="#">
 															<h3>@service.Title</h3>
 															<p>@service.Description</p>
