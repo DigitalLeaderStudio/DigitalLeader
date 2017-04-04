@@ -54,7 +54,12 @@
             return GetAllInclude(Includes);
         }
 
-        public Vacancy GetById(int id)
+		public List<Vacancy> GetAllOpenedVacancies()
+		{
+			return GetAll().Where(v => v.IsPositionOpen).ToList();
+		}
+
+		public Vacancy GetById(int id)
         {
             using (var scope = _dbContextScopeFactory.CreateReadOnly())
             {

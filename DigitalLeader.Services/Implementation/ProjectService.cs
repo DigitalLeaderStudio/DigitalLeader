@@ -25,7 +25,7 @@
 		{
 			get
 			{
-				return new Expression<Func<Project, object>>[] 
+				return new Expression<Func<Project, object>>[]
 				{
 					project => project.Client,
 					project => project.Technologies,
@@ -41,61 +41,61 @@
 		}
 
 
-        public List<Project> GetAllCaseStudies()
-        {
-            return GetAllCasestudiesInclude(Includes);
-        }
+		public List<Project> GetAllCaseStudies()
+		{
+			return GetAllCasestudiesInclude(Includes);
+		}
 
-        public List<Project> GetAllInclude(params Expression<Func<Project, object>>[] includes)
-        {
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+		public List<Project> GetAllInclude(params Expression<Func<Project, object>>[] includes)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                var query = dbContext.Set<Project>().AsQueryable();
+				var query = dbContext.Set<Project>().AsQueryable();
 
-                if (includes != null)
-                {
-                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
+				if (includes != null)
+				{
+					query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
 
-                return query.ToList();
-            }
-        }
+				return query.ToList();
+			}
+		}
 
-        public List<Project> GetAllCasestudiesInclude(params Expression<Func<Project, object>>[] includes)
-        {
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+		public List<Project> GetAllCasestudiesInclude(params Expression<Func<Project, object>>[] includes)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                var query = dbContext.Set<Project>().AsQueryable().Where(p => p.IsCaseStudy == true);
+				var query = dbContext.Set<Project>().AsQueryable().Where(p => p.IsCaseStudy == true);
 
-                if (includes != null)
-                {
-                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
+				if (includes != null)
+				{
+					query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
 
-                return query.ToList();
-            }
-        }
+				return query.ToList();
+			}
+		}
 
-        public Project GetById(int id)
-        {
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+		public Project GetById(int id)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                var query = dbContext.Set<Project>().AsQueryable();
+				var query = dbContext.Set<Project>().AsQueryable();
 
-                if (Includes != null)
-                {
-                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
-                return query.SingleOrDefault(c => c.ID == id);
-                
-            }
-        }
+				if (Includes != null)
+				{
+					query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
+				return query.SingleOrDefault(c => c.ID == id);
+
+			}
+		}
 		public void Update(Project value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
@@ -119,6 +119,7 @@
 				existed.WorkOverview = value.WorkOverview;
 
 				existed.Image = value.Image;
+				existed.Logo = value.Logo;
 
 				existed.Technologies = HandleCollection<Technology, int>(
 					existed.Technologies.ToList(),

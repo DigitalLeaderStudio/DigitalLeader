@@ -250,56 +250,74 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What&apos;s your name?.
-        /// </summary>
-        public static string MainPageFormQuestion1 {
-            get {
-                return ResourceManager.GetString("MainPageFormQuestion1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to your name.
-        /// </summary>
-        public static string MainPageFormQuestion1Placeholder {
-            get {
-                return ResourceManager.GetString("MainPageFormQuestion1Placeholder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Email address.
         /// </summary>
-        public static string MainPageFormQuestion2 {
+        public static string MainPage_ContactRequest_Email {
             get {
-                return ResourceManager.GetString("MainPageFormQuestion2", resourceCulture);
+                return ResourceManager.GetString("MainPage_ContactRequest_Email", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone number.
+        ///   Looks up a localized string similar to Input you email *.
         /// </summary>
-        public static string MainPageFormQuestion3 {
+        public static string MainPage_ContactRequest_Email_Placeholder {
             get {
-                return ResourceManager.GetString("MainPageFormQuestion3", resourceCulture);
+                return ResourceManager.GetString("MainPage_ContactRequest_Email_Placeholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to your problem or message.
+        ///   Looks up a localized string similar to What&apos;s your name?.
         /// </summary>
-        public static string MainPageFormQuestion4 {
+        public static string MainPage_ContactRequest_FirstName {
             get {
-                return ResourceManager.GetString("MainPageFormQuestion4", resourceCulture);
+                return ResourceManager.GetString("MainPage_ContactRequest_FirstName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to your problem or message.
+        ///   Looks up a localized string similar to Input your name *.
         /// </summary>
-        public static string MainPageFormQuestion4Placeholder {
+        public static string MainPage_ContactRequest_FirstName_Placeholder {
             get {
-                return ResourceManager.GetString("MainPageFormQuestion4Placeholder", resourceCulture);
+                return ResourceManager.GetString("MainPage_ContactRequest_FirstName_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your problem.
+        /// </summary>
+        public static string MainPage_ContactRequest_Message {
+            get {
+                return ResourceManager.GetString("MainPage_ContactRequest_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Describe your problem here *.
+        /// </summary>
+        public static string MainPage_ContactRequest_Message_Placeholder {
+            get {
+                return ResourceManager.GetString("MainPage_ContactRequest_Message_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        public static string MainPage_ContactRequest_Phone {
+            get {
+                return ResourceManager.GetString("MainPage_ContactRequest_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input your phone *.
+        /// </summary>
+        public static string MainPage_ContactRequest_Phone_Placeholder {
+            get {
+                return ResourceManager.GetString("MainPage_ContactRequest_Phone_Placeholder", resourceCulture);
             }
         }
         

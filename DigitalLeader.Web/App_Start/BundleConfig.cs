@@ -21,6 +21,10 @@ namespace DigitalLeader.Web
 			bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
 						"~/Scripts/modernizr-*"));
 
+			bundles.Add(new ScriptBundle("~/bundles/unobtrusive").Include(
+					  "~/Scripts/jquery.unobtrusive-ajax.js",
+					  "~/Scripts/jquery.validate.js"));
+
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
 					  "~/Scripts/bootstrap.js",
 					  "~/Scripts/respond.js"));

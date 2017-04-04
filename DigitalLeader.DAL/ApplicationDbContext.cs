@@ -21,6 +21,8 @@
 
 		#region DbSets
 
+		public virtual DbSet<ContactRequest> ContactRequests { get; set; }
+
 		public virtual DbSet<Blogpost> Blogposts { get; set; }
 
 		public virtual DbSet<ServiceCategory> ServiceCategories { get; set; }

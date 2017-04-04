@@ -122,6 +122,14 @@
     <Compile Include="Migrations\201703201750413_AddClassVacancy.Designer.cs">
       <DependentUpon>201703201750413_AddClassVacancy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704031203473_ExtendProjectWithLogo.cs" />
+    <Compile Include="Migrations\201704031203473_ExtendProjectWithLogo.Designer.cs">
+      <DependentUpon>201704031203473_ExtendProjectWithLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704040831012_AddContactRequests.cs" />
+    <Compile Include="Migrations\201704040831012_AddContactRequests.Designer.cs">
+      <DependentUpon>201704040831012_AddContactRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703201750413_AddClassVacancy.resx">
       <DependentUpon>201703201750413_AddClassVacancy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704031203473_ExtendProjectWithLogo.resx">
+      <DependentUpon>201704031203473_ExtendProjectWithLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704040831012_AddContactRequests.resx">
+      <DependentUpon>201704040831012_AddContactRequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

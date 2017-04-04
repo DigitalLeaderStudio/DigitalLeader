@@ -1,61 +1,43 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.ProjectViewModel>
 
 @{
-    ViewBag.Title = "Projects";
-    ViewBag.Message = "it's all ours work";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Projects";
+	ViewBag.Message = "it's all ours work";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container-fluid projects">
-    <div class="row header clearfix">
-        <div>
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-        @foreach (var item in Model)
-        {
-                <div class="col-md-4 project-item-wrapper">
-                    <a class="project-item" href="#">
-                        <img class="bg" src="~/Content/images/test/coca-bg.jpg" />
-                        <img class="logo" src="~/Content/images/test/coca-logo.jpg" />
-                        <h4>Web Design, UX, ASP.NET, Content Marketing</h4>
-                        <h5 title="view this project"><i class="fa fa-eye" aria-hidden="true"></i></h5>
-                    </a>
+	<div class="row header clearfix">
+		<div>
+			<h1>@ViewBag.Title</h1>
+			<h2>@ViewBag.Message</h2>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			@foreach (var item in Model)
+			{
+				var services = @item.Services.Select(s => s.Title).Aggregate((a, b) => a + ", " + b);
 
-                    @*
-    <div class="project-item panel panel-default col-md-12">
-        <div class="panel-heading">
-                    <h3 class="panel-title">@item.Title</h3>
-                </div>
-                <div class="panel-body">
-                    @{
-                        var userName = string.Format("{0} {1} ({2})", item.Client.FirstName, item.Client.LastName, item.Client.Company);
-                        var srcAction = item.Client.ImageId.HasValue ?
-                        Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
-                        "/Content/img/default-user.png";
-                    }
-                    <img class="img-responsive"
-                         src="@srcAction"
-                         alt="@userName" />
+				<div class="col-md-4 project-item-wrapper">
+					<a class="project-item" href="@Url.Action("Project", "Portfolio", new { id = item.ID })">
+					@{
+						var srcAction = item.ImageId.HasValue ?
+						Url.Action("Show", "File", new { area = "", id = item.ImageId }) :
+						"/Content/img/default-user.png";
 
-                    <h3></h3>
-                    <p>@item.Overview</p>
-                    <p>@item.Objective</p>
-                    <hr />
-                    <p class="testimonial-info">
-                        @userName
-                        <span class="pull-right"><i class="fa fa-calendar "></i>@item.StartDate.ToShortDateString() - @item.EndDate.ToShortDateString()</span>
-                    </p>
-                </div>
-            </div>
-                    </div>
-                    *@
-                </div>
-        }
-        </div>
-    </div>
+						var srcLogoAction = item.LogoId.HasValue ?
+						Url.Action("Show", "File", new { area = "", id = item.LogoId }) :
+						"/Content/img/default-user.png";
+					}
+					<img src="@srcAction" class="bg" />
+					<img class="logo" src="@srcLogoAction" />
+					<h4>@services</h4>
+					<h5 title="view this project"><i class="fa fa-eye" aria-hidden="true"></i></h5>
+					</a>
+				</div>
+			}
+		</div>
+	</div>
 </div>
 

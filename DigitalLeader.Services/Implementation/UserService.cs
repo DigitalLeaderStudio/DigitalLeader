@@ -1,6 +1,7 @@
 ﻿namespace DigitalLeader.Services.Implementation
 {
 	using DigitalLeader.DAL;
+	using DigitalLeader.Entities;
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
@@ -19,24 +20,31 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-        public Expression<Func<User, object>>[] Includes
-        {
-            get
-            {
-                return new Expression<Func<User, object>>[]
-                {
-                    user => user.Image,
-                    user => user.Services,
-                    user => user.Blogposts,
-                    user => user.Technologies,
-                    user => user.Projects
-                };
-            }
-        }
-
-        public List<User> GetAll()
+		public Expression<Func<User, object>>[] Includes
 		{
-            return GetAllInclude(Includes);
+			get
+			{
+				return new Expression<Func<User, object>>[]
+				{
+					user => user.Image,
+					user => user.Services,
+					user => user.Blogposts,
+					user => user.Technologies,
+					user => user.Projects
+				};
+			}
+		}
+
+		public List<User> GetAll()
+		{
+			return GetAllInclude(Includes);
+		}
+
+		public List<User> GetAllExceptAdmins()
+		{
+			return GetAllInclude(Includes)
+				.Where(u => !u.UserName.ToLower().Contains("admin"))
+				.ToList();
 		}
 
 		public List<User> GetAllInclude(params Expression<Func<User, object>>[] includes)
@@ -99,11 +107,18 @@
 				existed.Biography = value.Biography;
 				existed.Email = value.Email;
 				existed.EmailConfirmed = value.EmailConfirmed;
-				existed.ExperianceYears = existed.ExperianceYears;
+				existed.ExperianceYears = value.ExperianceYears;
 				existed.PhoneNumber = value.PhoneNumber;
 				existed.PhoneNumberConfirmed = value.PhoneNumberConfirmed;
 				existed.Title = value.Title;
 				existed.UserName = value.UserName;
+
+				existed.Technologies = HandleCollection<Technology, int>(
+					existed.Technologies.ToList(),
+					value.Technologies.ToList(),
+					tech => tech.ID,
+					dbContext);
+
 
 				scope.SaveChanges();
 			}
@@ -115,6 +130,8 @@
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
+
+				value.Technologies = HandleCollection<Technology>(value.Technologies.ToList(), dbContext);
 
 				dbContext.Set<User>().Add(value);
 

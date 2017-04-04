@@ -1,4 +1,8 @@
-﻿namespace DigitalLeader.ViewModels
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
+
+namespace DigitalLeader.ViewModels
 {
 	public class UserViewModel : FileViewModel
 	{
@@ -14,5 +18,11 @@
 
 		public string Title { get; set; }
 
+		public int[] TechnologiesIds { get; set; }
+
+		public List<TechnologyViewModel> Technologies { get; set; }
+
+		[Display(Name = "Technologies")]
+		public List<SelectListItem> TechnologiesSelectList { get; set; }
 	}
 }

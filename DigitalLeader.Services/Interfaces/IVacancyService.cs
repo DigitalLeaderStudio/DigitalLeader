@@ -7,5 +7,7 @@ namespace DigitalLeader.Services.Interfaces
     public interface IVacancyService : IService<Vacancy>
     {
         List<Vacancy> GetByIds(int[] ids);
+
+		List<Vacancy> GetAllOpenedVacancies();
     }
 }

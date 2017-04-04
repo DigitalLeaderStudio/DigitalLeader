@@ -1,0 +1,67 @@
+﻿@model DigitalLeader.ViewModels.PromoFormViewModel
+@{
+	var ajaxOptions = new AjaxOptions
+	{
+		Url = Url.Action("ContactRequest", "Contact"),
+		UpdateTargetId = "contact-form-container",
+		InsertionMode = System.Web.Mvc.Ajax.InsertionMode.Replace,
+		OnComplete = "OnComplete",
+		OnBegin = "OnBegin"
+	};
+}
+@Scripts.Render("~/bundles/unobtrusive")
+<div id="contact-form-container">
+	
+	<div class="col-md-8 col-sm-7 connect-form">
+		<div class="fader">
+			<i class="fa fa-refresh fa-spin fa-3x fa-fw text-center"></i>
+		</div>
+		<div class="row">
+			<div class="col-md-12 form-title">
+				<h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact Form</h2>
+			</div>
+		</div>
+		
+		@using (Ajax.BeginForm(ajaxOptions))
+			{
+			@Html.AntiForgeryToken()
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+			<div class="col-md-12 message">
+				@Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+				@Html.TextAreaFor(m => m.Message, new { @placeholder = "Describe your business problem" })
+			</div>
+			<div class="col-md-6 inputs-left">
+				@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+				@Html.TextBoxFor(m => m.Email, new { @placeholder = "Email *" })
+
+				@Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+				@Html.TextBoxFor(m => m.Phone, new { @placeholder = "Telephone *" })
+
+				@Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger" })
+				@Html.TextBoxFor(m => m.Company, new { @placeholder = "Company" })
+			</div>
+			<div class="col-md-6 inputs-right">
+				@Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+				@Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First name *" })
+
+				@Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+				@Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last name" })
+
+				<input type="submit" id="send" value="SEND" class="btn" />
+			</div>
+			}
+
+		<script type="text/javascript">
+			function OnBegin() {
+				$('.fader').show();
+			}
+
+			function OnComplete(data) {
+				var redirectToThankYou = '@(Model == null ? "" : Model.RedirectLink)';
+
+				if (redirectToThankYou !== '') window.location = redirectToThankYou;			
+			}
+		</script>
+	</div>
+</div>
