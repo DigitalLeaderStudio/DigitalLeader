@@ -26,18 +26,18 @@
 			{
 				return new Expression<Func<User, object>>[]
 				{
-					user => user.Image,
+					user => user.Image,					
 					user => user.Services,
 					user => user.Blogposts,
 					user => user.Technologies,
-					user => user.Projects
+					user => user.Projects,
 				};
 			}
 		}
 
 		public List<User> GetAll()
 		{
-			return GetAllInclude(Includes);
+			return GetAllInclude(Includes).ToList();
 		}
 
 		public List<User> GetAllExceptAdmins()

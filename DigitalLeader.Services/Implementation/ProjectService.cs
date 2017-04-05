@@ -2,15 +2,14 @@
 {
 	using DigitalLeader.DAL;
 	using DigitalLeader.Entities;
+	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
+	using System;
 	using System.Collections.Generic;
 	using System.Data.Entity;
 	using System.Linq;
-	using DigitalLeader.Services.Extensions;
-	using DigitalLeader.Entities.Identity;
 	using System.Linq.Expressions;
-	using System;
 
 	public class ProjectService : BaseService, IProjectService
 	{
@@ -28,22 +27,22 @@
 				return new Expression<Func<Project, object>>[]
 				{
 					project => project.Client,
+					project => project.Logo,
 					project => project.Technologies,
 					project => project.Services,
-					project => project.Contributors
+					project => project.Contributors.Select(u => u.Technologies)
 				};
 			}
 		}
 
 		public List<Project> GetAll()
 		{
-			return GetAllInclude(Includes);
+			return GetAllInclude(Includes).ToList();
 		}
-
 
 		public List<Project> GetAllCaseStudies()
 		{
-			return GetAllCasestudiesInclude(Includes);
+			return GetAllInclude(Includes).Where(p => p.IsCaseStudy).ToList();
 		}
 
 		public List<Project> GetAllInclude(params Expression<Func<Project, object>>[] includes)
@@ -58,24 +57,7 @@
 				{
 					query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
 				}
-
-				return query.ToList();
-			}
-		}
-
-		public List<Project> GetAllCasestudiesInclude(params Expression<Func<Project, object>>[] includes)
-		{
-			using (var scope = _dbContextScopeFactory.CreateReadOnly())
-			{
-				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
-
-				var query = dbContext.Set<Project>().AsQueryable().Where(p => p.IsCaseStudy == true);
-
-				if (includes != null)
-				{
-					query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-				}
-
+				
 				return query.ToList();
 			}
 		}

@@ -46,7 +46,7 @@
 		{
 			var viewModel = new ProjectViewModel
 			{
-                ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll()),
+				ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll()),
 				StartDate = DateTime.Now,
 				EndDate = DateTime.Now
 			};
@@ -77,7 +77,7 @@
 						_userService.GetByIds(viewModel.ContributorsIds) : new List<User>();
 
 
-                    _projectService.Insert(project);
+					_projectService.Insert(project);
 
 					return RedirectToAction("Index");
 				}
@@ -91,12 +91,12 @@
 				viewModel.ServicesSelectList = Mapper.Map<List<Service>, List<SelectListItem>>(_serviceService.GetAll());
 			}
 
-            viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
-            viewModel.TechnologiesSelectList = Mapper.Map<List<Technology>, List<SelectListItem>>(_technologyService.GetAll());
-            viewModel.ContributorsSelectList = Mapper.Map<List<User>, List<SelectListItem>>(_userService.GetAll());
-            viewModel.ServicesSelectList = Mapper.Map<List<Service>, List<SelectListItem>>(_serviceService.GetAll());
+			viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
+			viewModel.TechnologiesSelectList = Mapper.Map<List<Technology>, List<SelectListItem>>(_technologyService.GetAll());
+			viewModel.ContributorsSelectList = Mapper.Map<List<User>, List<SelectListItem>>(_userService.GetAll());
+			viewModel.ServicesSelectList = Mapper.Map<List<Service>, List<SelectListItem>>(_serviceService.GetAll());
 
-            return View(viewModel);
+			return View(viewModel);
 		}
 
 		// GET: Admin/Project/Edit
@@ -172,25 +172,25 @@
 					item.Selected = viewModel.TechnologiesIds.Contains(int.Parse(item.Value));
 				});
 			}
-            viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
-            viewModel.ServicesSelectList = Mapper.Map<List<Service>, List<SelectListItem>>(_serviceService.GetAll());
-            viewModel.ServicesSelectList.ForEach(item =>
-            {
-                item.Selected = viewModel.ServicesIds.Contains(int.Parse(item.Value));
-            });
+			viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
+			viewModel.ServicesSelectList = Mapper.Map<List<Service>, List<SelectListItem>>(_serviceService.GetAll());
+			viewModel.ServicesSelectList.ForEach(item =>
+			{
+				item.Selected = viewModel.ServicesIds.Contains(int.Parse(item.Value));
+			});
 
-            viewModel.TechnologiesSelectList = Mapper.Map<List<Technology>, List<SelectListItem>>(_technologyService.GetAll());
-            viewModel.TechnologiesSelectList.ForEach(item =>
-            {
-                item.Selected = viewModel.TechnologiesIds.Contains(int.Parse(item.Value));
-            });
-            viewModel.ContributorsSelectList = Mapper.Map<List<User>, List<SelectListItem>>(_userService.GetAll());
-            viewModel.ContributorsSelectList.ForEach(item =>
-            {
-                item.Selected = viewModel.ContributorsIds.Contains(int.Parse(item.Value));
-            });
+			viewModel.TechnologiesSelectList = Mapper.Map<List<Technology>, List<SelectListItem>>(_technologyService.GetAll());
+			viewModel.TechnologiesSelectList.ForEach(item =>
+			{
+				item.Selected = viewModel.TechnologiesIds.Contains(int.Parse(item.Value));
+			});
+			viewModel.ContributorsSelectList = Mapper.Map<List<User>, List<SelectListItem>>(_userService.GetAll());
+			viewModel.ContributorsSelectList.ForEach(item =>
+			{
+				item.Selected = viewModel.ContributorsIds.Contains(int.Parse(item.Value));
+			});
 
-            return View(viewModel);
+			return View(viewModel);
 		}
 
 		// GET: Admin/Project/Details
@@ -200,37 +200,37 @@
 
 			return View(viewModel);
 		}
-        // GET: Admin/Project/Delete
-        public ActionResult Delete(int id)
-        {
-            var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));
+		// GET: Admin/Project/Delete
+		public ActionResult Delete(int id)
+		{
+			var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));
 
-            return View(viewModel);
-        }
+			return View(viewModel);
+		}
 
-        // POST: Admin/Project/Delete
-        [HttpPost]
-        public ActionResult Delete(ProjectViewModel viewModel)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var entity = Mapper.Map<ProjectViewModel, Project>(viewModel);
+		// POST: Admin/Project/Delete
+		[HttpPost]
+		public ActionResult Delete(ProjectViewModel viewModel)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+					var entity = Mapper.Map<ProjectViewModel, Project>(viewModel);
 
-                    _projectService.Delete(entity);
+					_projectService.Delete(entity);
 
-                    return RedirectToAction("Index");
-                }
-            }
-            catch (Exception e)
-            {
-                ModelState.AddModelError("", e.Message);
-            }
+					return RedirectToAction("Index");
+				}
+			}
+			catch (Exception e)
+			{
+				ModelState.AddModelError("", e.Message);
+			}
 
-            return View(viewModel);
-        }
-    }
+			return View(viewModel);
+		}
+	}
 
 
 }

@@ -10,15 +10,18 @@
 
 	public class HomeController : BaseController
 	{
-		private IServiceCategoryService _categoryService;
-		private IServiceService _serviceService;
+		private readonly IServiceCategoryService _categoryService;
+		private readonly IServiceService _serviceService;
+		private readonly ISliderService _sliderService;
 
 		public HomeController(
 			IServiceCategoryService categoryService,
-			IServiceService serviceService)
+			IServiceService serviceService,
+			ISliderService sliderService)
 		{
 			_categoryService = categoryService;
 			_serviceService = serviceService;
+			_sliderService = sliderService;
 		}
 
 		[Route("")]
@@ -35,6 +38,13 @@
 		public ActionResult ThankYou()
 		{
 			return View();
+		}
+
+		public ActionResult _SliderPartialView()
+		{
+			var viewModel = Mapper.Map<List<Slider>, List<SliderViewModel>>(_sliderService.GetAll());
+
+			return PartialView(viewModel);
 		}
 	}
 }

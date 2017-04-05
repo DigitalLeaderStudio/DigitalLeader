@@ -21,15 +21,17 @@
 
 		#region DbSets
 
+		public virtual DbSet<Slider> Sliders { get; set; }
+
 		public virtual DbSet<ContactRequest> ContactRequests { get; set; }
 
 		public virtual DbSet<Blogpost> Blogposts { get; set; }
 
 		public virtual DbSet<ServiceCategory> ServiceCategories { get; set; }
 
-        public virtual DbSet<ServiceSubcategory> ServiceSubcategories { get; set; }
+		public virtual DbSet<ServiceSubcategory> ServiceSubcategories { get; set; }
 
-        public virtual DbSet<Project> Projects { get; set; }
+		public virtual DbSet<Project> Projects { get; set; }
 
 		public virtual DbSet<Service> Services { get; set; }
 
@@ -39,7 +41,7 @@
 
 		public virtual DbSet<Technology> Technologies { get; set; }
 
-        public virtual DbSet<Vacancy> Vacancies { get; set; }
+		public virtual DbSet<Vacancy> Vacancies { get; set; }
 
 		#endregion
 
@@ -118,21 +120,21 @@
 								map.MapLeftKey("ClientId");
 								map.MapRightKey("IndustryId");
 							});
-            #endregion
+			#endregion
 
-            #region Vacancy relations
+			#region Vacancy relations
 
-            modelBuilder.Entity<Vacancy>()
-                    .HasMany(v => v.Technologies)
-                    .WithMany(t => t.Vacancies)
-                    .Map(map =>
-                    {
-                        map.ToTable("TechnologiesWithVacancies");
-                        map.MapLeftKey("TechnologyId");
-                        map.MapRightKey("VacancyId");
-                    });
+			modelBuilder.Entity<Vacancy>()
+					.HasMany(v => v.Technologies)
+					.WithMany(t => t.Vacancies)
+					.Map(map =>
+					{
+						map.ToTable("TechnologiesWithVacancies");
+						map.MapLeftKey("TechnologyId");
+						map.MapRightKey("VacancyId");
+					});
 
-            #endregion
-        }
+			#endregion
+		}
 	}
 }

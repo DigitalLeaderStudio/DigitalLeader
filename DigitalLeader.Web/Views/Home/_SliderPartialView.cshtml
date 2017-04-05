@@ -1,0 +1,34 @@
+﻿@model List<DigitalLeader.ViewModels.SliderViewModel>
+
+<section class="slider">
+	<div class="slides">
+		@{
+			bool isActive = true;
+		}
+		@foreach (var slider in Model)
+		{
+			<div class="slide-container @(isActive ? "active-slide" : "")" style="background-image: url('@Url.Action("Show", "File", new { id = slider.ImageId })')">
+				<div class="slide-content">
+					<h1>@slider.Title</h1>
+					<p>@slider.Description</p>
+				</div>
+			</div>
+			isActive = false;
+		}
+
+		<button id="upButton" class="slider-control up">
+			<i class="fa fa-angle-up" aria-hidden="true"></i>
+		</button>
+
+		<button id="downButton" class="slider-control down">
+			<i class="fa fa-angle-down" aria-hidden="true"></i>
+		</button>
+
+		<div id="bullets">
+			@foreach (var slider in Model)
+			{
+				<div class="indicator"></div>
+			}
+		</div>
+	</div>
+</section>

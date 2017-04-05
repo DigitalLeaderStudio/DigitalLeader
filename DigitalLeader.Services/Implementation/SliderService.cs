@@ -1,7 +1,7 @@
 ﻿namespace DigitalLeader.Services.Implementation
 {
 	using DigitalLeader.DAL;
-	using DigitalLeader.Entities.Identity;
+	using DigitalLeader.Entities;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
 	using System;
@@ -10,41 +10,38 @@
 	using System.Linq;
 	using System.Linq.Expressions;
 
-	public class ClientService : BaseService, IClientService
+	public class SliderService : BaseService, ISliderService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
-		public ClientService(IDbContextScopeFactory dbContextScopeFactory)
+		public SliderService(IDbContextScopeFactory dbContextScopeFactory)
 		{
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-		public Expression<Func<Client, object>>[] Includes
+		public Expression<Func<Slider, object>>[] Includes
 		{
 			get
 			{
-				return new Expression<Func<Client, object>>[]
+				return new Expression<Func<Slider, object>>[]
 				{
-					client => client.Image,
-					client => client.Testimonial,
-					client => client.Industries,
-					client => client.Projects
+					//client => client.Image
 				};
 			}
 		}
 
-		public List<Client> GetAll()
+		public List<Slider> GetAll()
 		{
 			return GetAllInclude(Includes);
 		}
 
-		public List<Client> GetAllInclude(params Expression<Func<Client, object>>[] includes)
+		public List<Slider> GetAllInclude(params Expression<Func<Slider, object>>[] includes)
 		{
 			using (var scope = _dbContextScopeFactory.CreateReadOnly())
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				var query = dbContext.Set<Client>().AsQueryable();
+				var query = dbContext.Set<Slider>().AsQueryable();
 
 				if (includes != null)
 				{
@@ -55,13 +52,13 @@
 			}
 		}
 
-		public Client GetById(int id)
+		public Slider GetById(int id)
 		{
 			using (var scope = _dbContextScopeFactory.CreateReadOnly())
 			{
 				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-				var query = dbContext.Set<Client>().AsQueryable();
+				var query = dbContext.Set<Slider>().AsQueryable();
 
 				if (Includes != null)
 				{
@@ -72,57 +69,50 @@
 			}
 		}
 
-		public void Update(Client value)
+		public void Update(Slider value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				var existed = dbContext
-					.Clients.Find(value.ID);
+				var existed = dbContext.Set<Slider>().Find(value.ID);
 
 				existed.Image = HandleFile(existed.Image, value.Image);
-
-				existed.Company = value.Company;
-				existed.FirstName = value.FirstName;
-				existed.Industries = value.Industries;
-				existed.JoinDate = value.JoinDate;
-				existed.LastName = value.LastName;
-				existed.Projects = value.Projects;
+				existed.Description = value.Description;
+				existed.TargetLink = value.TargetLink;
 				existed.Title = value.Title;
 
 				scope.SaveChanges();
 			}
 		}
 
-		public void Insert(Client value)
+		public void Insert(Slider value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				dbContext.Clients.Add(value);
+				dbContext.Sliders.Add(value);
 
 				scope.SaveChanges();
 			}
 		}
 
-		public void Delete(Client value)
+		public void Delete(Slider value)
 		{
 			using (var scope = _dbContextScopeFactory.Create())
 			{
 				var dbContext = scope.DbContexts
 					.Get<ApplicationDbContext>();
 
-				var existed = dbContext.Clients.Find(value.ID);
+				var existed = dbContext.Sliders.Find(value.ID);
 
-				dbContext.Clients.Remove(existed);
+				dbContext.Sliders.Remove(existed);
 
 				scope.SaveChanges();
 			}
 		}
-
 	}
 }
