@@ -29,7 +29,7 @@ $(document).ready(function () {
     };
 
     var slideIndex = 0;
-    sliderLoop = setInterval(loop, 3000);
+    sliderLoop = setInterval(loop, 4000);
 
     $('#downButton').click(function () {
         clearInterval(sliderLoop);
@@ -60,9 +60,9 @@ $(document).ready(function () {
             // activate current indicator
             indicators[slideIndex - 1].className += " active";
 
-        }, 1);
+        }, 0);
 
-        sliderLoop = setInterval(loop, 3000);
+        sliderLoop = setInterval(loop, 5000);
     }); // rightButton
 
     $('#upButton').click(function () {
@@ -92,8 +92,8 @@ $(document).ready(function () {
 
             // activate current indicator
             indicators[slideIndex - 1].className += " active";
-        }, 1);
+        }, 0);
         
-        sliderLoop = setInterval(loop, 3000);
+        sliderLoop = setInterval(loop, 5000);
     }); // leftButton
 });
