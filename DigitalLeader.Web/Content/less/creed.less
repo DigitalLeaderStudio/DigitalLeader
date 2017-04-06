@@ -1,7 +1,6 @@
 @import "settings.less";
 
-
-.projects {
+.creed {
     padding: 0;
 
     .container {
@@ -59,80 +58,31 @@
         }
     }
 
-    .project-item-wrapper {
-        position: relative;
-        padding: 5px;
 
-        .project-item {
-            background: @color-grey;
-            height: 0;
-            padding-bottom: 100%;
-            width: 100%;
-            position: relative;
-            display: block;
-            border: 10px solid @color-grey;
+    .pyramid {
+        padding: 20px;
 
+        .row {
+            text-align: center;
 
-            &:hover {
-                border-color: @color-blue;
-                transition: border-color 0.5s;
+            > div {
+                padding: 5px;
 
-
-                i {
-                    opacity: 1;
-                    transition: opacity 0.5s;
+                p {
+                    background: @color-blue;
+                    color: white;
+                    height: 200px;
+                    padding: 50px 20px 0;
+                    margin: 0;
+                    font-size: 24px;
+                    text-transform: uppercase;
                 }
-            }
 
-            .bg {
-                width: 100%;
-                z-index: 0;
-                opacity: 0.15;
-            }
-
-            .logo {
-                width: 50%;
-                margin: 0 auto;
-                z-index: 2;
-                opacity: 1;
-                padding: 10px;
-                display: block;
-                position: absolute;
-                top: 25%;
-                left: 25%;
-            }
-
-            h4 {
-                bottom: 4%;
-                position: absolute;
-                width: 100%;
-                padding: 10px;
-                margin: 0;
-                color: @color-white;
-                font-size: 14px;
-                text-align: center;
-            }
-
-            h5 {
-                bottom: 15%;
-                position: absolute;
-                width: 100%;
-                padding: 10px;
-                margin: 0;
-                color: @color-white;
-                font-size: 34px;
-                text-align: center;
-
-                i {
-                    opacity: 0.1;
+                &.number-one {
+                    p {
+                        font-size: 56px;
+                    }
                 }
-            }
-        }
-
-        &:nth-child(2n) {
-
-            .project-item {
-                //background: @color-blue;
             }
         }
     }
@@ -147,9 +97,10 @@
 
 
 
+
 /*RESPONSIVE*/
 @media (max-width: 375px) {
-    .projects {
+    .company {
         padding: 0;
 
         .row .row div {
@@ -206,7 +157,7 @@
 }
 /* xs */
 @media (min-width: 375px) and (max-width: 767px) {
-    .projects {
+    .company {
         padding: 0;
 
         .row .row div {
@@ -263,7 +214,7 @@
 }
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
-    .projects {
+    .company {
         padding: 0;
 
         .row .row div {

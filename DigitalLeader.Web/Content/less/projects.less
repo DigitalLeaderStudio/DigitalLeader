@@ -64,8 +64,7 @@
 
         .project-item {
             background: @color-grey;
-            height: 0;
-            padding-bottom: 100%;
+            height: auto;
             width: 100%;
             position: relative;
             display: block;
@@ -86,7 +85,7 @@
             .bg {
                 width: 100%;
                 z-index: 0;
-                opacity: 0.15;
+                opacity: 0.3;
             }
 
             .logo {
@@ -151,37 +150,47 @@
 
     .header {
         background: @color-blue;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
-        background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        height: 220px;
+        height: 420px;
         width: 100%;
         margin: 0;
         position: relative;
-        display: inline-block;
+        display: table;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         & > div {
-            float: left;
             width: 100%;
-            padding: 4%;
-            display: inline-block;
+            padding: 0 20%;
+            display: table-cell;
+            vertical-align: middle;
+            background: rgba(51,51,51, 0.1);
+
 
             h1 {
                 text-align: center;
-                font-size: 3em;
-                color: white;
+                font-size: 60px;
+                color: @color-white;
                 font-weight: bold;
-                margin-top: 0;
+                margin: 0;
                 text-transform: uppercase;
-            }
+                padding: 25px 25px;
+                background: rgba(0, 148, 255, 0.9);
+                
+                }
 
             h2 {
                 text-align: center;
-                font-size: 1.2em;
-                color: #ffffff;
+                font-size: 16px;
+                line-height: 26px;
+                color: @color-white;
                 margin-top: 0;
+                background: rgba(51,51,51, 0.9);
+                padding: 20px 10%;
+
+                span {
+                    color: @color-blue;
+                }
             }
         }
 
@@ -200,7 +209,6 @@
 
         .overview {
             padding: 0;
-            border-bottom: 1px solid @color-blue;
 
             h2 {
                 margin: 0 0 10px;
@@ -221,18 +229,22 @@
         }
 
         .objective {
-            background: @color-blue;
-            border-bottom: 1px solid @color-blue;
+            border-top: 1px solid @color-blue;
+            display: table;
 
             .objective-title {
                 color: @color-white;
                 text-transform: uppercase;
-
-                h3 {
-                    margin: 0;
-                    padding: 16% 0;
-                    font-size: 36px;
-                }
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 36px;
+                text-align: center;
+                float: unset;
+                width: 30%;
+                margin: 0;
+                padding: 7% 20px;
+                font-size: 36px;
+                background: @color-blue;
             }
 
             .objective-body {
@@ -240,44 +252,59 @@
                 color: @color-grey;
                 padding: 20px;
                 font-size: 18px;
+                display: table-cell;
+                vertical-align: middle;
+                float: unset;
+                width: 70%;
             }
         }
 
         .work {
-            background: @color-blue;
-            border-bottom: 1px solid @color-blue;
-
+            display: table;
 
             .work-title {
                 color: @color-white;
                 text-transform: uppercase;
-
-                h3 {
-                    margin: 0;
-                    padding: 16% 0;
-                    font-size: 36px;
-                }
+                display: table-cell;
+                vertical-align: middle;
+                width: 30%;
+                text-align: center;
+                float: unset;
+                margin: 0;
+                padding: 7% 20px;
+                font-size: 36px;
+                background: @color-grey;
             }
 
             .work-body {
                 background: @color-white;
                 padding: 20px;
                 font-size: 18px;
+                display: table-cell;
+                vertical-align: middle;
+                width: 70%;
+                float: unset;
+                text-align: right;
+                border-top: 1px solid @color-blue;
+                border-bottom: 1px solid @color-blue;
             }
         }
 
         .result {
-            background: @color-blue;
+            display: table;
 
             .result-title {
                 color: @color-white;
                 text-transform: uppercase;
-
-                h3 {
-                    margin: 0;
-                    padding: 16% 0;
-                    font-size: 36px;
-                }
+                display: table-cell;
+                vertical-align: middle;
+                width: 30%;
+                text-align: center;
+                float: unset;
+                margin: 0;
+                padding: 7% 20px;
+                font-size: 36px;
+                background: @color-blue;
             }
 
             .result-body {
@@ -285,6 +312,10 @@
                 color: @color-grey;
                 padding: 20px;
                 font-size: 18px;
+                display: table-cell;
+                vertical-align: middle;
+                width: 70%;
+                float: unset;
             }
         }
     }
