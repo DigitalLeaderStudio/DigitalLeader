@@ -19,19 +19,19 @@
             .slider {
                 position: relative;
                 height: 500px;
-                border: 2px solid @color-grey;
+                border: 0px solid @color-grey;
                 background: rgba(255, 255, 255, 0.8);
+                margin-bottom: 10px;
 
-                
+
                 .slides {
                     background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 54%, rgba(0,148,255,0.95) 55%, rgba(15,70,109,0.92) 78%, rgba(51,51,51,0.9) 100%); /* FF3.6-15 */
                     background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 54%,rgba(0,148,255,0.95) 55%,rgba(15,70,109,0.92) 78%,rgba(51,51,51,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
                     background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 55%,rgba(0,148,255,0.7) 55%,rgba(15,70,109,0.8) 78%,rgba(51,51,51,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6333333',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
                     .slide-container {
                         width: 100%;
-                        height: 496px;
+                        height: 500px;
                         position: relative;
                         background: @color-blue;
                         display: none;
@@ -72,13 +72,22 @@
                     padding-left: 12px;
                     z-index: 10;
                     border: 0;
-                    color: @color-white;
+                    color: @color-blue;
                     position: absolute;
                     outline: none;
 
                     &.up {
                         left: 5px;
                         top: 5px;
+
+                        i.fa-angle-up {
+                            margin-top: -3px;
+                            display: block;
+                        }
+
+                        i.fa-angle-left {
+                            display: none;
+                        }
                     }
 
                     &.down {
@@ -86,16 +95,21 @@
                         bottom: 5px;
                         top: unset;
                         padding-top: 2px;
+
+                        i.fa-angle-right {
+                            display: none;
+                        }
                     }
 
 
                     &:hover {
-                        background: @color-blue;
+                        background: @color-white;
                         transition: background ease 0.5s;
                     }
 
                     &:active {
-                        color: #fff;
+                        color: @color-blue;
+                        background: @color-white;
                     }
                 }
 
@@ -114,11 +128,12 @@
                         margin: 5px;
                         background: @color-grey;
                         border-radius: 0;
+                        border: 1px solid @color-blue;
 
                         &.active {
                             width: 10px;
                             height: 10px;
-                            background: @color-blue;
+                            background: @color-white;
                         }
                     }
                 }
@@ -514,92 +529,101 @@
             .showcase {
                 padding: 0;
 
-                .carousel {
+                .slider {
                     position: relative;
                     height: 400px;
-                    border: 0;
-                    border-bottom: 2px solid @color-grey;
-                    margin-bottom: 10px;
+                    border: 0px solid @color-grey;
                     background: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 10px;
 
-                    .carousel-inner {
-                        background-color: white;
 
-                        .item {
+                    .slides {
+                        background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 54%, rgba(0,148,255,0.95) 55%, rgba(15,70,109,0.92) 78%, rgba(51,51,51,0.9) 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 54%,rgba(0,148,255,0.95) 55%,rgba(15,70,109,0.92) 78%,rgba(51,51,51,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 55%,rgba(0,148,255,0.7) 55%,rgba(15,70,109,0.8) 78%,rgba(51,51,51,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6333333',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                        .slide-container {
                             width: 100%;
-                            height: 100%;
+                            height: 400px;
+                            position: relative;
+                            background: @color-blue;
+                            display: none;
+                            opacity: 1;
 
-                            .carousel-caption {
-                                font-size: 2em;
-                                top: 25%;
-                                bottom: 30%;
-                                text-align: left;
-                                text-shadow: none;
+                            &.active-slide {
+                                display: block;
                             }
 
-                            &.main-slide {
+                            .slide-content {
+                                text-align: left;
+                                padding: 7% 20px 0;
+
                                 h1 {
-                                    font-size: 50px;
-                                    color: @color-grey;
+                                    margin: 7% 0 10px;
+                                    font-size: 33px;
                                     font-weight: bold;
-                                    text-align: center;
                                     text-transform: uppercase;
+                                    word-break: break-word;
+                                }
+
+                                p {
+                                    margin: 0;
+                                    font-size: 16px;
+                                    line-height: 22px;
                                 }
                             }
                         }
                     }
 
-                    &.vertical {
-                        .item {
-                            -webkit-transition: 0.6s ease-in-out top;
-                            -moz-transition: 0.6s ease-in-out top;
-                            -ms-transition: 0.6s ease-in-out top;
-                            -o-transition: 0.6s ease-in-out top;
-                            left: 0;
-                        }
-
-                        .active, .next.left, .prev.right {
-                            top: 0;
-                        }
-
-                        .next, .active.right {
-                            top: 100%;
-                        }
-
-                        .prev,
-                        .active.left {
-                            top: -100%;
-                        }
-                    }
-
-                    .carousel-control {
-                        width: 30px;
-                        height: 30px;
-                        font-size: 20px;
+                    .slider-control {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 26px;
                         background-image: none;
                         background: @color-grey;
                         opacity: 1;
                         text-align: left;
-                        padding-left: 8px;
+                        padding-left: 12px;
                         z-index: 10;
-
-                        &.up {
-                            right: 5px;
-                            top: 5px;
-                            left: unset;
-                        }
+                        border: 0;
+                        position: absolute;
+                        outline: none;
 
                         &.down {
                             right: 5px;
+                            top: unset;
                             bottom: 5px;
                             left: unset;
+                            padding: 0 0 3px 16px;
+
+                            i.fa-angle-down {
+                                display: none;
+                            }
+
+                            i.fa-angle-right {
+                                display: block;
+                            }
+                        }
+
+                        &.up {
+                            right: unset;
+                            bottom: 5px;
                             top: unset;
-                            padding-top: 2px;
+                            left: 5px;
+                            padding: 0 0 3px 14px;
+
+                            i.fa-angle-up {
+                                display: none;
+                            }
+
+                            i.fa-angle-left {
+                                display: block;
+                            }
                         }
 
 
                         &:hover {
-                            background: @color-blue;
+                            background: @color-white;
                             transition: background ease 0.5s;
                         }
 
@@ -608,27 +632,28 @@
                         }
                     }
 
-                    .carousel-indicators {
+                    #bullets {
                         position: absolute;
-                        bottom: 46%;
-                        right: 14px;
-                        left: unset;
+                        bottom: 17px;
+                        right: unset;
+                        left: 40%;
                         display: block;
+                        width: 100px;
                         margin: 0;
-                        width: 10px;
 
-                        li {
-                            display: block;
+                        div {
+                            display: inline-block;
                             width: 10px;
                             height: 10px;
-                            margin: 5px 0;
+                            margin: 0;
                             background: @color-grey;
                             border-radius: 0;
+                            border: 1px solid @color-blue;
 
                             &.active {
                                 width: 10px;
                                 height: 10px;
-                                background: @color-blue;
+                                background: @color-white;
                             }
                         }
                     }
@@ -1007,92 +1032,101 @@
             .showcase {
                 padding: 0;
 
-                .carousel {
+                .slider {
                     position: relative;
                     height: 400px;
-                    border: 0;
-                    border-bottom: 2px solid @color-grey;
-                    margin-bottom: 10px;
+                    border: 0px solid @color-grey;
                     background: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 10px;
 
-                    .carousel-inner {
-                        background-color: white;
 
-                        .item {
+                    .slides {
+                        background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 54%, rgba(0,148,255,0.95) 55%, rgba(15,70,109,0.92) 78%, rgba(51,51,51,0.9) 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 54%,rgba(0,148,255,0.95) 55%,rgba(15,70,109,0.92) 78%,rgba(51,51,51,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 55%,rgba(0,148,255,0.7) 55%,rgba(15,70,109,0.8) 78%,rgba(51,51,51,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6333333',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                        .slide-container {
                             width: 100%;
-                            height: 100%;
+                            height: 400px;
+                            position: relative;
+                            background: @color-blue;
+                            display: none;
+                            opacity: 1;
 
-                            .carousel-caption {
-                                font-size: 2em;
-                                top: 25%;
-                                bottom: 30%;
-                                text-align: left;
-                                text-shadow: none;
+                            &.active-slide {
+                                display: block;
                             }
 
-                            &.main-slide {
+                            .slide-content {
+                                text-align: left;
+                                padding: 7% 20px 0;
+
                                 h1 {
-                                    font-size: 50px;
-                                    color: @color-grey;
+                                    margin: 7% 0 10px;
+                                    font-size: 33px;
                                     font-weight: bold;
-                                    text-align: center;
                                     text-transform: uppercase;
+                                    word-break: break-word;
+                                }
+
+                                p {
+                                    margin: 0;
+                                    font-size: 16px;
+                                    line-height: 22px;
                                 }
                             }
                         }
                     }
 
-                    &.vertical {
-                        .item {
-                            -webkit-transition: 0.6s ease-in-out top;
-                            -moz-transition: 0.6s ease-in-out top;
-                            -ms-transition: 0.6s ease-in-out top;
-                            -o-transition: 0.6s ease-in-out top;
-                            left: 0;
-                        }
-
-                        .active, .next.left, .prev.right {
-                            top: 0;
-                        }
-
-                        .next, .active.right {
-                            top: 100%;
-                        }
-
-                        .prev,
-                        .active.left {
-                            top: -100%;
-                        }
-                    }
-
-                    .carousel-control {
-                        width: 30px;
-                        height: 30px;
-                        font-size: 20px;
+                    .slider-control {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 26px;
                         background-image: none;
                         background: @color-grey;
                         opacity: 1;
                         text-align: left;
-                        padding-left: 8px;
+                        padding-left: 12px;
                         z-index: 10;
-
-                        &.up {
-                            right: 5px;
-                            top: 5px;
-                            left: unset;
-                        }
+                        border: 0;
+                        position: absolute;
+                        outline: none;
 
                         &.down {
                             right: 5px;
+                            top: unset;
                             bottom: 5px;
                             left: unset;
+                            padding: 0 0 3px 16px;
+
+                            i.fa-angle-down {
+                                display: none;
+                            }
+
+                            i.fa-angle-right {
+                                display: block;
+                            }
+                        }
+
+                        &.up {
+                            right: unset;
+                            bottom: 5px;
                             top: unset;
-                            padding-top: 2px;
+                            left: 5px;
+                            padding: 0 0 3px 14px;
+
+                            i.fa-angle-up {
+                                display: none;
+                            }
+
+                            i.fa-angle-left {
+                                display: block;
+                            }
                         }
 
 
                         &:hover {
-                            background: @color-blue;
+                            background: @color-white;
                             transition: background ease 0.5s;
                         }
 
@@ -1101,27 +1135,28 @@
                         }
                     }
 
-                    .carousel-indicators {
+                    #bullets {
                         position: absolute;
-                        bottom: 46%;
-                        right: 16px;
-                        left: unset;
+                        bottom: 17px;
+                        right: unset;
+                        left: 40%;
                         display: block;
+                        width: 100px;
                         margin: 0;
-                        width: 10px;
 
-                        li {
-                            display: block;
+                        div {
+                            display: inline-block;
                             width: 10px;
                             height: 10px;
-                            margin: 5px;
+                            margin: 0;
                             background: @color-grey;
                             border-radius: 0;
+                            border: 1px solid @color-blue;
 
                             &.active {
                                 width: 10px;
                                 height: 10px;
-                                background: @color-blue;
+                                background: @color-white;
                             }
                         }
                     }
@@ -1502,92 +1537,101 @@
             .showcase {
                 padding: 0;
 
-                .carousel {
+                .slider {
                     position: relative;
                     height: 400px;
-                    border: 0;
-                    border-bottom: 2px solid @color-grey;
-                    margin-bottom: 10px;
+                    border: 0px solid @color-grey;
                     background: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 10px;
 
-                    .carousel-inner {
-                        background-color: white;
 
-                        .item {
+                    .slides {
+                        background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 54%, rgba(0,148,255,0.95) 55%, rgba(15,70,109,0.92) 78%, rgba(51,51,51,0.9) 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 54%,rgba(0,148,255,0.95) 55%,rgba(15,70,109,0.92) 78%,rgba(51,51,51,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.95) 55%,rgba(0,148,255,0.7) 55%,rgba(15,70,109,0.8) 78%,rgba(51,51,51,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6333333',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                        .slide-container {
                             width: 100%;
-                            height: 100%;
+                            height: 400px;
+                            position: relative;
+                            background: @color-blue;
+                            display: none;
+                            opacity: 1;
 
-                            .carousel-caption {
-                                font-size: 2em;
-                                top: 25%;
-                                bottom: 30%;
-                                text-align: left;
-                                text-shadow: none;
+                            &.active-slide {
+                                display: block;
                             }
 
-                            &.main-slide {
+                            .slide-content {
+                                text-align: left;
+                                padding: 5% 40px 0;
+
                                 h1 {
-                                    font-size: 50px;
-                                    color: @color-grey;
+                                    margin: 0 0 10px;
+                                    font-size: 53px;
                                     font-weight: bold;
-                                    text-align: center;
                                     text-transform: uppercase;
+                                    word-break: break-word;
+                                }
+
+                                p {
+                                    margin: 0;
+                                    font-size: 24px;
+                                    line-height: 30px;
                                 }
                             }
                         }
                     }
 
-                    &.vertical {
-                        .item {
-                            -webkit-transition: 0.6s ease-in-out top;
-                            -moz-transition: 0.6s ease-in-out top;
-                            -ms-transition: 0.6s ease-in-out top;
-                            -o-transition: 0.6s ease-in-out top;
-                            left: 0;
-                        }
-
-                        .active, .next.left, .prev.right {
-                            top: 0;
-                        }
-
-                        .next, .active.right {
-                            top: 100%;
-                        }
-
-                        .prev,
-                        .active.left {
-                            top: -100%;
-                        }
-                    }
-
-                    .carousel-control {
-                        width: 30px;
-                        height: 30px;
-                        font-size: 20px;
+                    .slider-control {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 26px;
                         background-image: none;
                         background: @color-grey;
                         opacity: 1;
                         text-align: left;
-                        padding-left: 8px;
+                        padding-left: 12px;
                         z-index: 10;
-
-                        &.up {
-                            right: 5px;
-                            top: 5px;
-                            left: unset;
-                        }
+                        border: 0;
+                        position: absolute;
+                        outline: none;
 
                         &.down {
                             right: 5px;
+                            top: unset;
                             bottom: 5px;
                             left: unset;
+                            padding: 0 0 3px 16px;
+
+                            i.fa-angle-down {
+                                display: none;
+                            }
+
+                            i.fa-angle-right {
+                                display: block;
+                            }
+                        }
+
+                        &.up {
+                            right: unset;
+                            bottom: 5px;
                             top: unset;
-                            padding-top: 2px;
+                            left: 5px;
+                            padding: 0 0 3px 14px;
+
+                            i.fa-angle-up {
+                                display: none;
+                            }
+
+                            i.fa-angle-left {
+                                display: block;
+                            }
                         }
 
 
                         &:hover {
-                            background: @color-blue;
+                            background: @color-white;
                             transition: background ease 0.5s;
                         }
 
@@ -1596,27 +1640,28 @@
                         }
                     }
 
-                    .carousel-indicators {
+                    #bullets {
                         position: absolute;
-                        bottom: 46%;
-                        right: 16px;
-                        left: unset;
+                        bottom: 17px;
+                        right: unset;
+                        left: 45%;
                         display: block;
+                        width: 100px;
                         margin: 0;
-                        width: 10px;
 
-                        li {
-                            display: block;
+                        div {
+                            display: inline-block;
                             width: 10px;
                             height: 10px;
-                            margin: 5px;
+                            margin: 0;
                             background: @color-grey;
                             border-radius: 0;
+                            border: 1px solid @color-blue;
 
                             &.active {
                                 width: 10px;
                                 height: 10px;
-                                background: @color-blue;
+                                background: @color-white;
                             }
                         }
                     }

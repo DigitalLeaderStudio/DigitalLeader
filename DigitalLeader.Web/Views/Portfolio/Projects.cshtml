@@ -21,7 +21,7 @@
                     item.Services.Select(s => s.Title).Aggregate((a, b) => a + ", " + b)
                     : "";
 
-				<div class="col-md-4 project-item-wrapper">
+				<div class="col-md-4 col-sm-6 project-item-wrapper">
 					<a class="project-item" href="@Url.Action("Project", "Portfolio", new { id = item.ID })">
 					@{
 						var srcAction = item.ImageId.HasValue ?

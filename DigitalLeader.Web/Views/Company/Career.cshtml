@@ -1,80 +1,65 @@
 ﻿@model DigitalLeader.ViewModels.VacancyViewModel
 @{
-	ViewBag.Title = Model.Title;
-	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+    ViewBag.Title = Model.Title;
+    ViewBag.Message = "Vacancy";
+    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
-<div>
-	<h4>VacancyViewModel</h4>
-	<hr />
-	<dl class="dl-horizontal">
-		<dt>
-			@Html.DisplayNameFor(model => model.Title)
-		</dt>
+<div class="container-fluid company vacancy-page">
+    <div class="row header clearfix">
+        <div>
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container vacancy-content">
+                <div class="row">
+                    <div class="col-md-8 col-sm-7 vacancy-description">
+                        <div class="col-md-12">
+                            <h1>Job description</h1>
+                            <p>@Model.ShortDescription</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h1>Responsibilities</h1>
+                            <p>@Model.Responsibilities</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h1>Requirements</h1>
+                            <p>@Model.Requirments</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h1>Woorking conditions</h1>
+                            <p>@Model.WeOffer</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h1>Bonuses</h1>
+                            <p>@Model.Bonuses</p>
+                        </div>
+                    </div>
 
-		<dd>
-			@Html.DisplayFor(model => model.Title)
-		</dd>
+                    <div class="col-md-4 col-sm-5 vacancy-aside">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Salary</h3>
+                                <p>1233</p>
+                                <h3>Location</h3>
+                                <p>Kyiv</p>
+                                <h3>Contact now</h3>
+                            </div>
+                        </div>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.ShortDescription)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.ShortDescription)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Bonuses)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.Bonuses)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Requirments)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.Requirments)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Responsibilities)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.Responsibilities)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.WeOffer)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.WeOffer)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.CreatedDate)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.CreatedDate)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.IsPositionOpen)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.IsPositionOpen)
-		</dd>
-
-	</dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-	@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-	@Html.ActionLink("Back to List", "Index")
-</p>
+
+
+
+
+
+
+
