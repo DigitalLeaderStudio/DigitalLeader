@@ -1,9 +1,4 @@
-﻿using DigitalLeader.Services.Interfaces;
-using DigitalLeader.Web.Configuration;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Linq;
 using System.Web.Routing;
 
 namespace DigitalLeader.Web.Extensions
@@ -14,11 +9,10 @@ namespace DigitalLeader.Web.Extensions
 		{
 			var routeData = context.RouteData;
 			var currentCulture = routeData.Values["culture"] == null ? "en" : routeData.Values["culture"].ToString();
-			CultureSection cultureSection = ConfigurationManager.GetSection("SiteCultures") as CultureSection;
-
-			if (cultureSection.Cultures.Count > 0)
+			
+			if (CommonStaticData.CulturesSection.Cultures.Count > 0)
 			{
-				var result = cultureSection.Cultures
+				var result = CommonStaticData.CulturesSection.Cultures
 					.Where(c => c.Name == currentCulture)
 					.FirstOrDefault();
 

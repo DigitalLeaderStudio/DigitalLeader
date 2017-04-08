@@ -6,7 +6,7 @@
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Schema;
 
-	public class Service : IEntity, IImageble
+	public class Service : IEntity, IImageble, ILocalizedEntity
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]

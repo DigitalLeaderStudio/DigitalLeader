@@ -1,5 +1,6 @@
 ﻿@model DigitalLeader.ViewModels.VacancyViewModel
-
+@using DigitalLeader.ViewModels;
+@using DigitalLeader.Web.Extensions;
 @{
 	ViewBag.Title = "Edit project";
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -21,89 +22,134 @@
 
 			@Html.HiddenFor(model => model.ID)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="input-group date datetimepicker" >
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control"} })
-                    </div>
-                    @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<div class="input-group date datetimepicker">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+						@Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+					@Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<VacancyViewModel, VacancyViewModel.VacancyLocalizedModel>
+				("vacanly-localized-ShortDescription",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].ShortDescription, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Requirments, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Requirments, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Requirments, "", new { @class = "text-danger" })
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.Requirments, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<VacancyViewModel, VacancyViewModel.VacancyLocalizedModel>
+				("vacanly-localized-Requirments",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Requirments, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].ShortDescription, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Requirments, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Requirments, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Responsibilities, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Responsibilities, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Responsibilities, "", new { @class = "text-danger" })
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.Responsibilities, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<VacancyViewModel, VacancyViewModel.VacancyLocalizedModel>
+				("vacanly-localized-Responsibilities",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Responsibilities, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Responsibilities, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Responsibilities, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Responsibilities, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Bonuses, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Bonuses, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Bonuses, "", new { @class = "text-danger" })
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.Bonuses, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<VacancyViewModel, VacancyViewModel.VacancyLocalizedModel>
+				("vacanly-localized-Bonuses",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Bonuses, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Bonuses, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Bonuses, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Bonuses, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.WeOffer, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.WeOffer, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.WeOffer, "", new { @class = "text-danger" })
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.WeOffer, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<VacancyViewModel, VacancyViewModel.VacancyLocalizedModel>
+				("vacanly-localized-WeOffer",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].WeOffer, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].WeOffer, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.WeOffer, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.WeOffer, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.IsPositionOpen, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox text-left">
-                        @Html.EditorFor(model => model.IsPositionOpen)
-                        @Html.ValidationMessageFor(model => model.IsPositionOpen, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
+			<div class="form-group">
+				@Html.LabelFor(model => model.IsPositionOpen, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<div class="checkbox text-left">
+						@Html.EditorFor(model => model.IsPositionOpen)
+						@Html.ValidationMessageFor(model => model.IsPositionOpen, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.TechnologiesSelectList, new { @class = "control-label col-md-2" })
-                <div class="col-md-6">
-                    <select id="@Html.IdFor(m => m.TechnologiesIds)"
-                            name="@Html.NameFor(m => m.TechnologiesIds)"
-                            class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
-                        @foreach (var option in Model.TechnologiesSelectList)
-                        {
-                            <option value="@option.Value" selected="@option.Selected">@option.Text</option>
-                        }
-                    </select>
-                </div>
-                </div>
+			<div class="form-group">
+				@Html.LabelFor(m => m.TechnologiesSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					<select id="@Html.IdFor(m => m.TechnologiesIds)"
+							name="@Html.NameFor(m => m.TechnologiesIds)"
+							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+						@foreach (var option in Model.TechnologiesSelectList)
+						{
+							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+						}
+					</select>
+				</div>
+			</div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
-                    </div>
-                </div>
-            </div>
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Save" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
 	}
 
 </div>

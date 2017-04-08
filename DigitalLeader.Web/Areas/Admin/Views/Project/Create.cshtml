@@ -1,4 +1,6 @@
 ﻿@model DigitalLeader.ViewModels.ProjectViewModel
+@using DigitalLeader.ViewModels;
+@using DigitalLeader.Web.Extensions;
 
 @{
 	ViewBag.Title = "Create";
@@ -23,8 +25,17 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				("project-localized-Title",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Title, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Title, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
@@ -39,40 +50,85 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.Kewywords, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Kewywords, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Kewywords, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				("project-localized-Kewywords",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Kewywords, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Kewywords, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Kewywords, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Kewywords, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.Overview, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Overview, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Overview, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				("project-localized-Overview",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Overview, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Overview, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Overview, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Overview, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.Objective, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Objective, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Objective, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				("project-localized-Objective",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Objective, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Objective, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Objective, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Objective, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.WorkOverview, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.WorkOverview, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.WorkOverview, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				("project-localized-WorkOverview",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].WorkOverview, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].WorkOverview, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.WorkOverview, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.WorkOverview, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.ResultOverview, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.ResultOverview, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.ResultOverview, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				("project-localized-ResultOverview",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].ResultOverview, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].ResultOverview, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.ResultOverview, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.ResultOverview, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 

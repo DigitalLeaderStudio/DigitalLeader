@@ -17,12 +17,10 @@
 			routes.LowercaseUrls = true;
 
             #region Route Localization
-
-            CultureSection cultureSection = ConfigurationManager.GetSection("SiteCultures") as CultureSection;
-
+			
             string defaultCulture = "";
             ISet<string> acceptedCultures = new HashSet<string>();
-            foreach (CultureElement c in cultureSection.Cultures)
+            foreach (CultureElement c in CommonStaticData.CulturesSection.Cultures)
             {
                 acceptedCultures.Add(c.Name);
                 if (c.IsDefault)
@@ -58,7 +56,7 @@
                 configuration.AddTranslationToSimiliarUrls = true;
             }).TranslateInitialAttributeRoutes().Translate(localization =>
             {
-                foreach (CultureElement c in cultureSection.Cultures)
+                foreach (CultureElement c in CommonStaticData.CulturesSection.Cultures)
                 {
                     var cultureName = c.Name;
                     if (!c.IsDefault)

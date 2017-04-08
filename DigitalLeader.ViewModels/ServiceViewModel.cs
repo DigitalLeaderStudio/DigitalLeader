@@ -20,9 +20,11 @@ namespace DigitalLeader.ViewModels
 
 			public string SubTitle { get; set; }
 
+			[DataType(DataType.MultilineText)]
 			public string Description { get; set; }
 
 			[AllowHtml]
+			[UIHint("tinymce_full_compressed")]
 			public string Content { get; set; }
 		}
 

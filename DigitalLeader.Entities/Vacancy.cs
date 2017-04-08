@@ -1,13 +1,13 @@
 ﻿namespace DigitalLeader.Entities
 {
-    using DigitalLeader.Entities.Identity;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+	using DigitalLeader.Entities.Interfaces;
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Vacancy : IEntity
-    {
+	public class Vacancy : IEntity, ILocalizedEntity
+	{
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }

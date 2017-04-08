@@ -243,6 +243,7 @@
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\VacancyController.cs" />
+    <Compile Include="CommonStaticData.cs" />
     <Compile Include="Configuration\CultureCollection.cs" />
     <Compile Include="Configuration\CultureElement.cs" />
     <Compile Include="Configuration\CultureSection.cs" />

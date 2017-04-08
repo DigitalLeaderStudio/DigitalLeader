@@ -9,16 +9,20 @@
 	using System.Collections.Generic;
 	using System.Web.Mvc;
 	using System.Linq;
+	using DigitalLeader.Services.Localization;
 
 	public class UserController : BaseAdminController
 	{
-		private ITechnologyService _technologyService;
-		private IUserService _userService;
+		private readonly ILocalizedEntityService _localizedEntityService;
+		private readonly ITechnologyService _technologyService;
+		private readonly IUserService _userService;
 
 		public UserController(
+			ILocalizedEntityService localizedEntityService,
 			ITechnologyService technologyService,
 			IUserService userService)
 		{
+			_localizedEntityService = localizedEntityService;
 			_technologyService = technologyService;
 			_userService = userService;
 		}
@@ -34,7 +38,11 @@
 		// GET: Admin/User/Create
 		public ActionResult Create()
 		{
-			return View();
+			var viewModel = new UserViewModel();
+
+			AddLocales(viewModel.Locales, (locale, languageId) => { });
+
+			return View(viewModel);
 		}
 
 		// POST: Admin/User/Create
@@ -45,9 +53,16 @@
 			{
 				if (ModelState.IsValid)
 				{
-					var client = Mapper.Map<UserViewModel, User>(viewModel);
+					var user = Mapper.Map<UserViewModel, User>(viewModel);
 
-					_userService.Insert(client);
+					_userService.Insert(user);
+
+					viewModel.Locales.ToList().ForEach(l =>
+					{
+						_localizedEntityService.SaveLocalizedValue(user, e => e.Title, l.Title, l.LanguageId);
+						_localizedEntityService.SaveLocalizedValue(user, e => e.UserName, l.UserName, l.LanguageId);
+						_localizedEntityService.SaveLocalizedValue(user, e => e.Biography, l.Biography, l.LanguageId);
+					});
 
 					return RedirectToAction("Index");
 				}
@@ -63,12 +78,20 @@
 		// GET: Admin/User/Edit
 		public ActionResult Edit(int id)
 		{
-			var viewModel = Mapper.Map<User, UserViewModel>(_userService.GetById(id));
+			var entity = _userService.GetById(id);
+			var viewModel = Mapper.Map<User, UserViewModel>(entity);
 
 			viewModel.TechnologiesSelectList = Mapper.Map<List<Technology>, List<SelectListItem>>(_technologyService.GetAll());
 			viewModel.TechnologiesSelectList.ForEach(item =>
 			{
 				item.Selected = viewModel.TechnologiesIds.Contains(int.Parse(item.Value));
+			});
+
+			AddLocales(viewModel.Locales, (locale, languageId) =>
+			{
+				locale.Title = entity.GetLocalized(x => x.Title, languageId);
+				locale.Biography = entity.GetLocalized(x => x.Biography, languageId);
+				locale.UserName = entity.GetLocalized(x => x.UserName, languageId);
 			});
 
 			return View(viewModel);
@@ -87,6 +110,13 @@
 					user.Technologies = viewModel.TechnologiesIds != null ?
 						_technologyService.GetByIds(viewModel.TechnologiesIds) :
 						new List<Technology>();
+
+					viewModel.Locales.ToList().ForEach(l =>
+					{
+						_localizedEntityService.SaveLocalizedValue(user, e => e.Title, l.Title, l.LanguageId);
+						_localizedEntityService.SaveLocalizedValue(user, e => e.UserName, l.UserName, l.LanguageId);
+						_localizedEntityService.SaveLocalizedValue(user, e => e.Biography, l.Biography, l.LanguageId);
+					});
 
 					_userService.Update(user);
 				}

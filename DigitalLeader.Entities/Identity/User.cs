@@ -3,12 +3,21 @@
 	using DigitalLeader.Entities.Interfaces;
 	using Microsoft.AspNet.Identity.EntityFramework;
 	using System.Collections.Generic;
+	using System;
+	using System.ComponentModel.DataAnnotations.Schema;
 
 	/// <summary>
 	/// User is employee
 	/// </summary>
-	public class User : IdentityUser<int, UserLogin, UserRole, UserClaim>, IEntity, IImageble
+	public class User : IdentityUser<int, UserLogin, UserRole, UserClaim>, IEntity, IImageble, ILocalizedEntity
 	{
+		[NotMapped]
+		public int ID
+		{
+			get { return this.Id; }
+			set { this.Id = value; }
+		}
+
 		public string Biography { get; set; }
 
 		public string Title { get; set; }

@@ -5,7 +5,7 @@
 	using System;
 	using System.Collections.Generic;
 
-	public class Project : IEntity, IImageble
+	public class Project : IEntity, IImageble, ILocalizedEntity
 	{
 		public int ID { get; set; }
 

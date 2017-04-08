@@ -1,16 +1,49 @@
 ﻿namespace DigitalLeader.ViewModels
 {
+	using DigitalLeader.ViewModels.Localization;
 	using System;
 	using System.Collections.Generic;
 	using System.ComponentModel.DataAnnotations;
 	using System.Web;
 	using System.Web.Mvc;
 
-	public class ProjectViewModel : FileViewModel
+	public class ProjectViewModel : FileViewModel, ILocalizedModel<ProjectViewModel.ProjectLocalizedModel>
 	{
+		#region Nested class
+
+		public partial class ProjectLocalizedModel : ILocalizedModelLocal
+		{
+			public int LanguageId { get; set; }
+
+			public string LanguageName { get; set; }
+
+			public string Title { get; set; }
+
+			[DataType(DataType.MultilineText)]
+			public string Kewywords { get; set; }
+
+			[DataType(DataType.MultilineText)]
+			public string Overview { get; set; }
+
+			[DataType(DataType.MultilineText)]
+			public string Objective { get; set; }
+
+			[DataType(DataType.MultilineText)]
+			public string WorkOverview { get; set; }
+
+			[DataType(DataType.MultilineText)]
+			public string ResultOverview { get; set; }
+		}
+
+		#endregion
+
+		public IList<ProjectLocalizedModel> Locales { get; set; }
+
+
 		public ProjectViewModel()
 		{
 			Client = new ClientViewModel();
+			Locales = new List<ProjectLocalizedModel>();
 		}
 
 		public int ID { get; set; }

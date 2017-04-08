@@ -4,15 +4,12 @@
 	using DigitalLeader.Entities;
 	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.Services.Interfaces;
+	using DigitalLeader.Services.Localization;
 	using DigitalLeader.ViewModels;
 	using System;
 	using System.Collections.Generic;
-	using System.Web.Mvc;
-	using DigitalLeader.Services.Localization;
-	using DigitalLeader.Web.Extensions;
-	using DigitalLeader.Web.Configuration;
-	using System.Configuration;
 	using System.Linq;
+	using System.Web.Mvc;
 
 	public class TestimonialController : BaseAdminController
 	{

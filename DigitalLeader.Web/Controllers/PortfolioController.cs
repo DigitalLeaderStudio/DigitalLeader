@@ -50,7 +50,7 @@
 			return View(viewModel);
 		}
 
-		[Route("Projects/{id}")]
+		[Route("Project/{id}")]
 		public ActionResult Project(int id)
 		{
 			var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));
