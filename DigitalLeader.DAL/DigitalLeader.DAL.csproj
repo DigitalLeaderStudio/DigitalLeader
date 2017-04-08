@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201704050719367_Add-Localization.Designer.cs">
       <DependentUpon>201704050719367_Add-Localization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704081353104_ExtendSlider.cs" />
+    <Compile Include="Migrations\201704081353104_ExtendSlider.Designer.cs">
+      <DependentUpon>201704081353104_ExtendSlider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704050719367_Add-Localization.resx">
       <DependentUpon>201704050719367_Add-Localization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704081353104_ExtendSlider.resx">
+      <DependentUpon>201704081353104_ExtendSlider.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -80,6 +80,8 @@
 
 				existed.Image = HandleFile(existed.Image, value.Image);
 				existed.Description = value.Description;
+				existed.BackgroundStyle = value.BackgroundStyle;
+				existed.HasImage = value.HasImage;
 				existed.TargetLink = value.TargetLink;
 				existed.Title = value.Title;
 

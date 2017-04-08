@@ -16,6 +16,10 @@
 
 		public string TargetLink { get; set; }
 
+		public string BackgroundStyle { get; set; }
+
+		public bool HasImage { get; set; }
+
 		public int? ImageId { get; set; }
 
 		public File Image { get; set; }
