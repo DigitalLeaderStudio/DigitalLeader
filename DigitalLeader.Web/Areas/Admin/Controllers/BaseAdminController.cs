@@ -1,9 +1,14 @@
 ﻿namespace DigitalLeader.Web.Areas.Admin.Controllers
 {
 	using DigitalLeader.Entities.Identity;
+	using DigitalLeader.ViewModels.Localization;
+	using DigitalLeader.Web.Configuration;
 	using DigitalLeader.Web.Managers;
 	using Microsoft.AspNet.Identity;
 	using Microsoft.AspNet.Identity.Owin;
+	using System;
+	using System.Collections.Generic;
+	using System.Configuration;
 	using System.Web;
 	using System.Web.Mvc;
 
@@ -63,6 +68,34 @@
 			LoggedUser = UserManager.FindById<User, int>(LoggetUserID);
 
 			ViewBag.User = LoggedUser;
+		}
+
+		/// <summary>
+		/// Add locales for localizable entities
+		/// </summary>
+		/// <typeparam name="TLocalizedModelLocal">Localizable model</typeparam>
+		/// <param name="languageService">Language service</param>
+		/// <param name="locales">Locales</param>
+		/// <param name="configure">Configure action</param>
+		protected virtual void AddLocales<TLocalizedModelLocal>(
+			IList<TLocalizedModelLocal> locales, 
+			Action<TLocalizedModelLocal, int> configure) where TLocalizedModelLocal : ILocalizedModelLocal
+		{
+			CultureSection cultureSection = ConfigurationManager.GetSection("SiteCultures") as CultureSection;
+			
+			foreach (var language in cultureSection.Cultures)
+			{
+				var locale = Activator.CreateInstance<TLocalizedModelLocal>();
+				locale.LanguageId = language.Id;
+				locale.LanguageName = language.Name;
+
+				if (configure != null)
+				{
+					configure.Invoke(locale, locale.LanguageId);
+				}
+
+				locales.Add(locale);
+			}
 		}
 	}
 }

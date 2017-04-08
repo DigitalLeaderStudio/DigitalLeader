@@ -9,6 +9,7 @@
 	using EntityFramework.DbContextScope;
 	using EntityFramework.DbContextScope.Interfaces;
 	using System.Reflection;
+	using System.Web;
 	using System.Web.Mvc;
 
 
@@ -36,6 +37,13 @@
 			builder.RegisterAssemblyTypes(typeof(ServiceAssemblyMarker).Assembly)
 				.Where(t => t.Name.EndsWith("Service"))
 				.AsImplementedInterfaces();
+			
+
+			//builder.RegisterType<HttpContextBaseImpl>()
+			//	.As<IHttpContextBase>()
+			//	.SingleInstance();
+
+
 
 			var container = builder.Build();
 
