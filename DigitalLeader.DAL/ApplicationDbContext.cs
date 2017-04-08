@@ -21,6 +21,8 @@
 
 		#region DbSets
 
+		public virtual DbSet<LocalizedProperty> LocalizedProperties { get; set; }
+
 		public virtual DbSet<Slider> Sliders { get; set; }
 
 		public virtual DbSet<ContactRequest> ContactRequests { get; set; }

@@ -7,6 +7,7 @@
 	using DigitalLeader.Web.Controllers.Controllers;
 	using System.Collections.Generic;
 	using System.Web.Mvc;
+	using DigitalLeader.Web.Extensions;
 
 	public class HomeController : BaseController
 	{
@@ -28,9 +29,7 @@
 		public ActionResult Index()
 		{
 			var data = _categoryService.GetAll();
-
 			var viewModel = Mapper.Map<List<ServiceCategory>, List<ServiceCategoryViewModel>>(data);
-
 			return View(viewModel);
 		}
 

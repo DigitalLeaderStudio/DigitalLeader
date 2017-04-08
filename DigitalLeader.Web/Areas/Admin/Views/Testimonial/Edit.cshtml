@@ -1,8 +1,10 @@
-﻿@model DigitalLeader.ViewModels.TestimonialViewModel
+﻿@using DigitalLeader.ViewModels;
+@using DigitalLeader.Web.Extensions;
+@model TestimonialViewModel
 
 @{
-    ViewBag.Title = "Edit";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Edit";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2 class="text-center">Edit testimoial</h2>
@@ -47,8 +49,17 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<TestimonialViewModel, TestimonialViewModel.TestimonialLocalizedModel>
+				("testimonial-localized",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Text, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Text, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 

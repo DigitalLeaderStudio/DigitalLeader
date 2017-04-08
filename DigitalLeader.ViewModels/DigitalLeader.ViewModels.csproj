@@ -95,6 +95,8 @@
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
     <Compile Include="BlogpostViewModel.cs" />
+    <Compile Include="Localization\ILocalizedModel.cs" />
+    <Compile Include="Localization\ILocalizedModelLocal.cs" />
     <Compile Include="SliderViewModel.cs" />
     <Compile Include="ServiceCategoryViewModel.cs" />
     <Compile Include="ClientViewModel.cs" />
