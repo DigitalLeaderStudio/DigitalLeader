@@ -1,47 +1,47 @@
 ﻿@model  List<DigitalLeader.ViewModels.UserViewModel>
 @{
-	ViewBag.Title = "Our team";
-	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+    ViewBag.Title = "Our team";
+    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
 
 <div class="container-fluid company team">
-	<div class="row header clearfix">
-		<div>
-			<h1>@ViewBag.Title</h1>
-			<h2>@ViewBag.Message</h2>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				@foreach (var user in Model)
-				{
-					var technologies = user.Technologies.Count > 0 
-						? user.Technologies.Select(s => s.Name).Aggregate((a, b) => a + "," + b)
-						: "";
-					<div class="col-md-4 employee">
-						<div class="identity">
+    <div class="row header clearfix">
+        <div>
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                @foreach (var user in Model)
+                {
+                    var technologies = user.Technologies.Count > 0
+                        ? user.Technologies.Select(s => s.Name).Aggregate((a, b) => a + ", " + b)
+                        : "";
+                    <div class="col-md-4 col-sm-4 employee">
+                        <div class="identity">
 
-							@{
-								var src = user.ImageId.HasValue ?
-																Url.Action("Show", "File", new { area = "", id = user.ImageId }) :
-																"/Content/img/default-user.png";
-							}
-							<img src="@src" />
+                            @{
+                                var src = user.ImageId.HasValue ?
+                                                                                Url.Action("Show", "File", new { area = "", id = user.ImageId }) :
+                                                                                "/Content/img/default-user.png";
+                            }
+                            <img src="@src" />
 
-							<div>
-								<h3>@user.UserName</h3>
-<p>@user.Title</p>
-</div>
-</div>
-<div class="experience">
-	<p class="years">@user.ExperianceYears</p>
-<p class="technologies">@technologies</p>
-</div>
-</div>
-								}
-			</div>
-		</div>
-	</div>
+                            <div>
+                                <h3>@user.UserName</h3>
+                                <p>@user.Title</p>
+                            </div>
+                        </div>
+                        <div class="experience">
+                            <p class="years">@user.ExperianceYears years of experience in</p>
+                            <p class="technologies">@technologies</p>
+                        </div>
+                    </div>
+                                }
+            </div>
+        </div>
+    </div>
 </div>

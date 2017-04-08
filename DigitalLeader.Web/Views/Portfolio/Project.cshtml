@@ -6,10 +6,29 @@
 
 
 <div class="container-fluid project-page">
-	<div class="row header clearfix">
+	
+    @{
+        var srcAction = Model.ImageId.HasValue ?
+        Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
+        "/Content/image/test/trump.png";
+    }
+    <div class="row header clearfix" style="background-image: url('@srcAction')">
 		<div>
 			<h1>@Model.Title</h1>
-			<h2>Project overview</h2>
+            <h2>
+                @{ 
+                    int counter = Model.Services.Count;
+                }
+                @foreach (var service in Model.Services)
+                {
+                    @service.Title
+                    if (counter > 1)
+                    {
+                        <span>/</span>
+                        counter--;
+                    }
+                }
+            </h2>
 		</div>
 	</div>
 	<div class="container">
@@ -21,40 +40,32 @@
 				</div>
 				<div class="row objective">
 					<div class="col-md-4 objective-title">
-						<h3>Objective</h3>
+						Objective
 					</div>
 					<div class="col-md-8 objective-body">
-						<p>@Model.Objective</p>
+						@Model.Objective
 					</div>
 				</div>
 				<div class="row work">
-					<div class="col-md-8 work-body">
-						<p>@Model.WorkOverview</p>
-					</div>
-					<div class="col-md-4 work-title">
-						<h3>Work</h3>
+                    <div class="col-md-4 work-title">
+                        Work
+                    </div>
+                    <div class="col-md-8 work-body">
+						@Model.WorkOverview
 					</div>
 				</div>
 				<div class="row result">
 					<div class="col-md-4 result-title">
-						<h3>Result</h3>
+						Result
 					</div>
 					<div class="col-md-8 result-body">
-						<p>@Model.ResultOverview</p>
+						@Model.ResultOverview
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 project-aside">
-				<div class="col-md-12 technologies">
-					<h2>Technologies</h2>
-					<ul>
-						@foreach (var tech in Model.Technologies)
-						{
-							<li>@tech.Name</li>
-						}
-					</ul>
-				</div>
-				<div class="col-md-12 collaborators">
+				
+				<div class="col-md-12 collaborators clearfix">
 					<h2>Contributors</h2>
 					<div>
 						@foreach (var collaborator in Model.Contributors)
@@ -70,9 +81,19 @@
 									<p>@collaborator.UserName</p>
 								</div>
 							</a>
-										}
+        				}
 					</div>
 				</div>
+
+                <div class="col-md-12 technologies clearfix">
+                    <h2>Technologies</h2>
+                    <ul>
+                        @foreach (var tech in Model.Technologies)
+                        {
+                            <li>@tech.Name</li>
+                        }
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</div>

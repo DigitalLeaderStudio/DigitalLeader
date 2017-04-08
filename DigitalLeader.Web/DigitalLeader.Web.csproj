@@ -517,11 +517,11 @@
     <Content Include="Areas\Admin\Views\Vacancy\Edit.cshtml" />
     <Content Include="Content\less\projects.less" />
     <Content Include="Content\less\testimonials.less" />
-    <Content Include="Content\less\cases.less" />
     <Content Include="Areas\Admin\Views\Admin\Sliders.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\CreateSlider.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\EditSlider.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\DeleteSlider.cshtml" />
+    <Content Include="Content\less\creed.less" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
