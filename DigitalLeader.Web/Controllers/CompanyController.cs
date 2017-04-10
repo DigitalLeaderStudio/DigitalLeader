@@ -11,21 +11,30 @@ namespace DigitalLeader.Web.Controllers
 {
 	public class CompanyController : BaseController
 	{
-		private IUserService _userService;
-		private IVacancyService _vacancyService;
+		private const string STORY_KEY = "company-story";
+
+		private readonly IUserService _userService;
+		private readonly IContentService _contentService;
+		private readonly IVacancyService _vacancyService;
 
 		public CompanyController(
 			IUserService userService,
+			IContentService contentService,
 			IVacancyService vacancyService)
 		{
 			_userService = userService;
+			_contentService = contentService;
 			_vacancyService = vacancyService;
 		}
 
-		// GET: Company
+		[Route("Company/story")]
 		public ActionResult Story()
 		{
-			return View();
+			var entity = _contentService.GetByKey(STORY_KEY);
+
+			var viewModel = Mapper.Map<Content, ContentViewModel>(entity);
+
+			return View(viewModel);
 		}
 
 		public ActionResult Creed()
