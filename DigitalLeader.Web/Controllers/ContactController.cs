@@ -1,24 +1,27 @@
 ﻿namespace DigitalLeader.Web.Controllers
 {
+	using AutoMapper;
+	using DigitalLeader.Entities;
 	using DigitalLeader.Services.Interfaces;
 	using DigitalLeader.ViewModels;
 	using DigitalLeader.Web.Controllers.Controllers;
+	using Simplify.Mail;
 	using System;
-	using System.Net.Mail;
+	using System.Linq;
 	using System.Threading.Tasks;
 	using System.Web.Mvc;
-	using System.Linq;
-	using Simplify.Mail;
-	using AutoMapper;
-	using DigitalLeader.Entities;
 
 	public class ContactController : BaseController
 	{
 		private readonly IContactRequestService _contactRequestService;
+		private readonly IContentService _contentService;
 
-		public ContactController(IContactRequestService contactRequestService)
+		public ContactController(
+			IContactRequestService contactRequestService,
+			IContentService contentService)
 		{
 			_contactRequestService = contactRequestService;
+			_contentService = contentService;
 		}
 
 		[Route("Contact")]

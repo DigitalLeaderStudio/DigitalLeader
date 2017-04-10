@@ -780,6 +780,8 @@
     <Content Include="Views\Shared\EditorTemplates\tinymce_basic_compressed.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_basic.cshtml" />
     <Content Include="Views\TinyMCESample\Index.cshtml" />
+    <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Home\ConditionsOfUse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,11 +28,11 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <p><i class="fa fa-phone" aria-hidden="true"></i></p>
-                        <h3><a href="">+380 (96) 121 27 13</a></h3>
+                        <h3><a href="tel:+380961212713">+380 (96) 121 27 13</a></h3>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <p><i class="fa fa-at" aria-hidden="true"></i></p>
-                        <h3><a href="">info@digitalleader.solutions</a></h3>
+                        <h3><a href="mailto:info@digitalleader.solutions">info@digitalleader.solutions</a></h3>
                     </div>
                 </div>
             </div>
@@ -44,27 +44,29 @@
 
         <div class="row menu">
             <div class="col-md-3 col-sm-3">
-                <h3>@Translations.LinkServices</h3>
+                @*<h3>@Translations.LinkServices</h3>
                 <ul class="menu-list">
-                    <li>@Html.ActionLink(Translations.Technology_Category_Name, "Serives", "Home")</li>
+                    <li>@Html.ActionLink(Translations.Technology_Category_Name, "Serives", "Home")
+					
+					</li>
                     <li>@Html.ActionLink(Translations.Marketing_Category_Name, "Serives", "Home")</li>
-                </ul>
+                </ul>*@
             </div>
             <div class="col-md-3 col-sm-3">
                 <h3>@Translations.LinkPortfolio</h3>
                 <ul class="menu-list">
-                    <li>@Html.ActionLink(Translations.LinkProjects, "Company", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkProjects, "Projects", "Portfolio")</li>
                     @*<li>@Html.ActionLink(Translations.LinkCaseStudies, "Clients", "Home")</li>*@
-                    <li>@Html.ActionLink(Translations.LinkTestimonials, "Serives", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkTestimonials, "Testimonials", "Portfolio")</li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-3">
                 <h3>@Translations.LinkCompany</h3>
                 <ul class="menu-list">
-                    <li>@Html.ActionLink(Translations.LinkStory, "Company", "Home")</li>
-                    <li>@Html.ActionLink(Translations.LinkCreed, "Serives", "Home")</li>
-                    <li>@Html.ActionLink(Translations.LinkTeam, "Clients", "Home")</li>
-                    <li>@Html.ActionLink(Translations.LinkCareers, "Clients", "Home")</li>
+                    <li>@Html.ActionLink(Translations.LinkStory, "Story", "Company")</li>
+                    <li>@Html.ActionLink(Translations.LinkCreed, "Creed", "Company")</li>
+                    <li>@Html.ActionLink(Translations.LinkTeam, "Team", "Company")</li>
+                    <li>@Html.ActionLink(Translations.LinkCareers, "Careers", "Company")</li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-3">
@@ -85,9 +87,9 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 terms">
                     <ul>
-                        <li>@Html.ActionLink(Translations.Link_Privacy, "Company", "Home")</li>
-                        <li>@Html.ActionLink(Translations.Link_TermsOfUse, "Serives", "Home")</li>
-                        <li>@Html.ActionLink(Translations.Link_Feedback, "Clients", "Home")</li>
+                        <li>@Html.ActionLink(Translations.Link_Privacy, "Privacy", "Home")</li>
+                        <li>@Html.ActionLink(Translations.Link_TermsOfUse, "ConditionsOfUse", "Home")</li>
+                        <li>@Html.ActionLink(Translations.Link_Feedback, "Index", "Contact")</li>
                             @Html.Partial("_LanguagesPartial")
                     </ul>
                 </div>

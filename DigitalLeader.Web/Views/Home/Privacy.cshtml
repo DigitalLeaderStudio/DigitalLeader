@@ -1,0 +1,19 @@
+﻿@using DigitalLeader.Web.Localization
+@model DigitalLeader.ViewModels.ContentViewModel
+
+@{
+	ViewBag.Title = Translations.Link_Privacy;
+	ViewBag.Message = Translations.Link_Privacy;
+	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+}
+
+
+<div class="container-fluid creed">
+	<div class="row header clearfix">
+		<div>
+			<h1>@ViewBag.Title</h1>
+			<h2>@ViewBag.Message</h2>
+		</div>
+	</div>
+	@Html.Raw(Model.Html)
+</div>
