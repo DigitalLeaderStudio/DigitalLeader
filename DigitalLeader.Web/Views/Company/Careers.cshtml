@@ -1,7 +1,9 @@
 ﻿@model List<DigitalLeader.ViewModels.VacancyViewModel>
+@using DigitalLeader.Web.Localization
 @{
-	ViewBag.Title = "Careers";
-	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+    ViewBag.Title = Translations.Careers_Title;
+    ViewBag.Message = Translations.Careers_Subtitle;
+    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
 <div class="container-fluid company careers">

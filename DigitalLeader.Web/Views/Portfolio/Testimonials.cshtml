@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.TestimonialViewModel>
 
+@using DigitalLeader.Web.Localization
+
 @{
-	ViewBag.Title = "Testimonials";
-	ViewBag.Message = "these people trust us";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,8 +10,8 @@
 <div class="container-fluid testimonials">
 	<div class="row header clearfix">
 		<div>
-			<h1>@ViewBag.Title</h1>
-			<h2>@ViewBag.Message</h2>
+			<h1>@Translations.Testimonials_Title_Name</h1>
+			<h2>@Translations.Testimonials_Subtitle_Text</h2>
 		</div>
 	</div>
 	<div class="container">
@@ -34,7 +34,7 @@
 						</div>
 						<p class="text">@item.Text</p>
 						<p class="project-link">
-							<a href="#">See Project</a>
+							<a href="#">@Translations.Testimonials_See_Project</a>
 						</p>
 					</div>
 					<div class="clearfix"></div>

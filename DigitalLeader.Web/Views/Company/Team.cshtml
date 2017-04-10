@@ -1,6 +1,9 @@
 ﻿@model  List<DigitalLeader.ViewModels.UserViewModel>
+
+@using DigitalLeader.Web.Localization
 @{
-    ViewBag.Title = "Our team";
+    ViewBag.Title = Translations.Team_Title;
+    ViewBag.Subtitle = Translations.Team_Subtitle;
     Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
@@ -9,7 +12,7 @@
     <div class="row header clearfix">
         <div>
             <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
+            <h2>@ViewBag.Subtitle</h2>
         </div>
     </div>
     <div class="container">
@@ -25,8 +28,8 @@
 
                             @{
                                 var src = user.ImageId.HasValue ?
-                                                                                Url.Action("Show", "File", new { area = "", id = user.ImageId }) :
-                                                                                "/Content/img/default-user.png";
+                                    Url.Action("Show", "File", new { area = "", id = user.ImageId }) :
+                                        "/Content/img/default-user.png";
                             }
                             <img src="@src" />
 

@@ -1,10 +1,11 @@
-﻿
-@{
-        var routeDictionaryUA = new RouteValueDictionary(ViewContext.RouteData.Values);
-        routeDictionaryUA["culture"] = "uk";
+﻿@using DigitalLeader.Web.Localization
 
-        var routeDictionaryEng = new RouteValueDictionary(ViewContext.RouteData.Values);
-        routeDictionaryEng["culture"] = "en";
-    }
-   <li> <a href="@Url.RouteUrl(routeDictionaryUA)">ua</a></li>
-   <li><a href="@Url.RouteUrl(routeDictionaryEng)">eng</a></li>
+@{
+    var routeDictionaryUA = new RouteValueDictionary(ViewContext.RouteData.Values);
+    routeDictionaryUA["culture"] = "uk";
+
+    var routeDictionaryEng = new RouteValueDictionary(ViewContext.RouteData.Values);
+    routeDictionaryEng["culture"] = "en";
+}
+<li> <a href="@Url.RouteUrl(routeDictionaryUA)">@Translations.Link_Ukr</a></li>
+<li><a href="@Url.RouteUrl(routeDictionaryEng)">@Translations.Link_Eng</a></li>

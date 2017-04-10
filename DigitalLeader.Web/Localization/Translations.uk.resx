@@ -117,16 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FooterAddress" xml:space="preserve">
-    <value>Україна,Київ, Вулиця Михайла Стельмаха</value>
+  <data name="Careers_Subtitle" xml:space="preserve">
+    <value>ми наймаємо</value>
   </data>
-  <data name="FooterMessage" xml:space="preserve">
-    <value>We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends.</value>
+  <data name="Careers_Title" xml:space="preserve">
+    <value>Вакансії</value>
+  </data>
+  <data name="Careers_View_Vacancy" xml:space="preserve">
+    <value>Дивитись детальніше</value>
+  </data>
+  <data name="Career_Apply" xml:space="preserve">
+    <value>Зв'язатись зараз</value>
+  </data>
+  <data name="Career_Bonuses" xml:space="preserve">
+    <value>Бонуси</value>
+  </data>
+  <data name="Career_Job_Description" xml:space="preserve">
+    <value>Опис вакансії</value>
+  </data>
+  <data name="Career_Location" xml:space="preserve">
+    <value>Розміщення офісу</value>
+  </data>
+  <data name="Career_Requirements" xml:space="preserve">
+    <value>Вимоги</value>
+  </data>
+  <data name="Career_Responsibilities" xml:space="preserve">
+    <value>Обов'язки</value>
+  </data>
+  <data name="Career_Salary" xml:space="preserve">
+    <value>Зарплата</value>
+  </data>
+  <data name="Career_Subtitle" xml:space="preserve">
+    <value>Відкрита вакансія</value>
+  </data>
+  <data name="Career_Working_Conditions" xml:space="preserve">
+    <value>Умови роботи</value>
+  </data>
+  <data name="Contact_Form_Company_Placeholder" xml:space="preserve">
+    <value>Компанія</value>
+  </data>
+  <data name="Contact_Form_Email_Placeholder" xml:space="preserve">
+    <value>Електронна пошта *</value>
+  </data>
+  <data name="Contact_Form_FirstName_Placeholder" xml:space="preserve">
+    <value>Ім'я *</value>
+  </data>
+  <data name="Contact_Form_LastName_Placeholder" xml:space="preserve">
+    <value>Прізвище</value>
+  </data>
+  <data name="Contact_Form_Message_Placeholder" xml:space="preserve">
+    <value>Опишіть Вашу бізнес проблему</value>
+  </data>
+  <data name="Contact_Form_Phone_Placeholder" xml:space="preserve">
+    <value>Телефон *</value>
+  </data>
+  <data name="Contact_Form_SendButton" xml:space="preserve">
+    <value>Відправити</value>
+  </data>
+  <data name="Contact_Form_Title" xml:space="preserve">
+    <value>Форма зв'язку</value>
+  </data>
+  <data name="Contact_Page_Email_Title" xml:space="preserve">
+    <value>Ел. пошта</value>
+  </data>
+  <data name="Contact_Page_FollowUs_Title" xml:space="preserve">
+    <value>Соц. мережі</value>
+  </data>
+  <data name="Contact_Page_Headquarters_Adress" xml:space="preserve">
+    <value>Україна, Київ, вул. Михайла Стельмаха, буд. 10А</value>
+  </data>
+  <data name="Contact_Page_Headquarters_Title" xml:space="preserve">
+    <value>Адреса офісу</value>
+  </data>
+  <data name="Contact_Page_Phone_Title" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Contact_Subtitle_Text" xml:space="preserve">
+    <value>ми будемо раді допомогти Вам вирішити вашу ІТ проблему</value>
+  </data>
+  <data name="Contact_Title_Name" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="Copyright_Name" xml:space="preserve">
+    <value>Цифровий Лідер</value>
+  </data>
+  <data name="Creed_Subtitle" xml:space="preserve">
+    <value>цінності нашої компанії та команди</value>
+  </data>
+  <data name="Creed_Title" xml:space="preserve">
+    <value>Наше кредо</value>
+  </data>
+  <data name="FooterAddress" xml:space="preserve">
+    <value>Україна, Київ, вул. Михайла Стельмаха, буд. 10А</value>
+  </data>
+  <data name="FooterText" xml:space="preserve">
+    <value>Ми обожнюємо цифровий світ. Ми віримо, що інформаційні технології - це ключ до успіху для сьогоднішнього бізнесу. У двадцять першому столітті лише ті бізнеси будуть на вершині економічного процвітання, які вдало використовують останні цифрові тенденції.</value>
+  </data>
+  <data name="HeaderCTA" xml:space="preserve">
+    <value>Запросити оцінку</value>
+  </data>
+  <data name="HomepageCTA" xml:space="preserve">
+    <value>Оновимо ваш бізнес</value>
+  </data>
+  <data name="Homepage_ContactRequest_Email" xml:space="preserve">
+    <value>Електронна адреса</value>
+  </data>
+  <data name="Homepage_ContactRequest_FirstName" xml:space="preserve">
+    <value>Як Вас звати?</value>
+  </data>
+  <data name="Homepage_ContactRequest_Message" xml:space="preserve">
+    <value>Ваша проблема</value>
+  </data>
+  <data name="Homepage_ContactRequest_Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Homepage_ContactRequest_Placeholder" xml:space="preserve">
+    <value>напишіть тут</value>
   </data>
   <data name="LinkBlog" xml:space="preserve">
     <value>Блог</value>
   </data>
-  <data name="LinkCareer" xml:space="preserve">
+  <data name="LinkCareers" xml:space="preserve">
     <value>Кар'єра</value>
   </data>
   <data name="LinkCaseStudies" xml:space="preserve">
@@ -141,20 +252,14 @@
   <data name="LinkConnect" xml:space="preserve">
     <value>Зв'язатися</value>
   </data>
+  <data name="LinkCreed" xml:space="preserve">
+    <value>Кредо</value>
+  </data>
   <data name="LinkGuides" xml:space="preserve">
     <value>Гайди</value>
   </data>
   <data name="LinkInfographics" xml:space="preserve">
     <value>Інфографіка</value>
-  </data>
-  <data name="LinkOurCreed" xml:space="preserve">
-    <value>Наше Кредо</value>
-  </data>
-  <data name="LinkOurStory" xml:space="preserve">
-    <value>Наша Історія</value>
-  </data>
-  <data name="LinkOurTeam" xml:space="preserve">
-    <value>Наша Команда</value>
   </data>
   <data name="LinkPodcasts" xml:space="preserve">
     <value>Подкасти</value>
@@ -171,6 +276,12 @@
   <data name="LinkServices" xml:space="preserve">
     <value>Послуги</value>
   </data>
+  <data name="LinkStory" xml:space="preserve">
+    <value>Історія</value>
+  </data>
+  <data name="LinkTeam" xml:space="preserve">
+    <value>Команда</value>
+  </data>
   <data name="LinkTestimonials" xml:space="preserve">
     <value>Відгуки</value>
   </data>
@@ -180,46 +291,79 @@
   <data name="LinkWhitePapers" xml:space="preserve">
     <value>Наукові статті</value>
   </data>
-  <data name="MainPage_ContactRequest_Email" xml:space="preserve">
-    <value>Email адресса</value>
+  <data name="Link_Eng" xml:space="preserve">
+    <value>АНГЛ</value>
   </data>
-  <data name="MainPage_ContactRequest_Email_Placeholder" xml:space="preserve">
-    <value>Input you email *</value>
+  <data name="Link_Feedback" xml:space="preserve">
+    <value>Зв'язок</value>
   </data>
-  <data name="MainPage_ContactRequest_FirstName" xml:space="preserve">
-    <value>Як Вас звати?</value>
+  <data name="Link_Privacy" xml:space="preserve">
+    <value>Приватність</value>
   </data>
-  <data name="MainPage_ContactRequest_FirstName_Placeholder" xml:space="preserve">
-    <value>Ім'я</value>
+  <data name="Link_TermsOfUse" xml:space="preserve">
+    <value>Правила</value>
   </data>
-  <data name="MainPage_ContactRequest_Message" xml:space="preserve">
-    <value>Ваше повідомлення</value>
+  <data name="Link_Ukr" xml:space="preserve">
+    <value>УКР</value>
   </data>
-  <data name="MainPage_ContactRequest_Message_Placeholder" xml:space="preserve">
-    <value>Залишіть ваше повідомлення</value>
+  <data name="Marketing_Category_Name" xml:space="preserve">
+    <value>Цифровий маркетинг</value>
   </data>
-  <data name="MainPage_ContactRequest_Phone" xml:space="preserve">
-    <value>Телефон</value>
+  <data name="Projects_Subtitle_Text" xml:space="preserve">
+    <value>це наші роботи</value>
   </data>
-  <data name="MainPage_ContactRequest_Phone_Placeholder" xml:space="preserve">
-    <value>Input your phone *</value>
+  <data name="Projects_Title_Name" xml:space="preserve">
+    <value>Проекти</value>
   </data>
-  <data name="MainPegeFormTitle" xml:space="preserve">
-    <value>Давайте прокачаємо ваш бізнес!</value>
+  <data name="Project_Contributors" xml:space="preserve">
+    <value>Виконавці</value>
   </data>
-  <data name="NavBarRequestQoute" xml:space="preserve">
-    <value>Запит на оцінку</value>
+  <data name="Project_Objective" xml:space="preserve">
+    <value>Цілі</value>
   </data>
-  <data name="RequestQoute" xml:space="preserve">
-    <value>Отримати оцінку проекту</value>
+  <data name="Project_Overview" xml:space="preserve">
+    <value>Опис проекту</value>
   </data>
-  <data name="SliderSlide1" xml:space="preserve">
-    <value>Ми створюємо найкращі IT рішення!</value>
+  <data name="Project_Result" xml:space="preserve">
+    <value>Результати</value>
   </data>
-  <data name="SliderSlide2" xml:space="preserve">
-    <value>Рішення для електронного маркетингу</value>
+  <data name="Project_Technologies" xml:space="preserve">
+    <value>Технології</value>
   </data>
-  <data name="SliderSlide3" xml:space="preserve">
-    <value>Технічні рішення</value>
+  <data name="Project_Work" xml:space="preserve">
+    <value>Що було зроблено</value>
+  </data>
+  <data name="Story_Subtitle" xml:space="preserve">
+    <value>Хто ми, що ми робимо, хто наші клієнти та наша місія</value>
+  </data>
+  <data name="Story_Title" xml:space="preserve">
+    <value>Наша історія</value>
+  </data>
+  <data name="Team_ExperianceYears_Text" xml:space="preserve">
+    <value>роки (ів) досвіду в </value>
+  </data>
+  <data name="Team_Subtitle" xml:space="preserve">
+    <value>майстри своєї справи</value>
+  </data>
+  <data name="Team_Title" xml:space="preserve">
+    <value>Наша команда</value>
+  </data>
+  <data name="Technology_Category_Name" xml:space="preserve">
+    <value>ІТ рішення</value>
+  </data>
+  <data name="Testimonials_See_Project" xml:space="preserve">
+    <value>Дивитись проект</value>
+  </data>
+  <data name="Testimonials_Subtitle_Text" xml:space="preserve">
+    <value>ці люди знають, що можуть довіряти нам</value>
+  </data>
+  <data name="Testimonials_Title_Name" xml:space="preserve">
+    <value>Відгуки</value>
+  </data>
+  <data name="ThankYou_Text" xml:space="preserve">
+    <value>Ми скоро зв'яжемося з Вами</value>
+  </data>
+  <data name="ThankYou_Title" xml:space="preserve">
+    <value>Дякуємо</value>
   </data>
 </root>

@@ -59,7 +59,7 @@
 	</div>
 	<div class="row footer">
 		<div class="col-md-4 col-sm-4 cta-title">
-			<h2>@Translations.MainPegeFormTitle</h2>
+			<h2>@Translations.HomepageCTA</h2>
 		</div>
 
 		@{
@@ -80,24 +80,25 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<h3 id="form-header">@Translations.MainPage_ContactRequest_FirstName</h3>
+						<h3 id="form-header">@Translations.Homepage_ContactRequest_FirstName</h3>
 					</div>
 				</div>
 				<div class="row cta-form">
 					<div class="col-md-10 col-sm-10" id="name">
-						<input placeholder="@Translations.MainPage_ContactRequest_FirstName_Placeholder" id="FirstName" name="FirstName">
+						<input placeholder="@Translations.Homepage_ContactRequest_Placeholder" id="FirstName" name="FirstName">
 					</div>
 
 					<div class="col-md-10 col-sm-10 hidden" id="email">
-						<input placeholder="@Translations.MainPage_ContactRequest_Email_Placeholder" id="EmailInput" name="Email">
+						<input placeholder="@Translations.Homepage_ContactRequest_Placeholder" id="EmailInput" name="Email">
 						<div class="progress">
-							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+							<div class="progress-bar progress-bar-success" role="progressbar" 
+                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
 							</div>
 						</div>
 					</div>
 
 					<div class="col-md-10 col-sm-10 hidden" id="phone">
-						<input placeholder="@Translations.MainPage_ContactRequest_Phone_Placeholder" id="PhoneInput" name="Phone">
+						<input placeholder="@Translations.Homepage_ContactRequest_Placeholder" id="PhoneInput" name="Phone">
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
 							</div>
@@ -105,7 +106,7 @@
 					</div>
 
 					<div class="col-md-10 col-sm-10 hidden" id="message">
-						<textarea id="message-field" placeholder="@Translations.MainPage_ContactRequest_Message_Placeholder" name="Message"></textarea>
+						<textarea id="message-field" placeholder="@Translations.Homepage_ContactRequest_Placeholder" name="Message"></textarea>
 						<div class="progress">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
 							</div>
@@ -151,7 +152,7 @@
 
 				$("#name").addClass("hidden");
 				$("#email").removeClass("hidden");
-				$("#form-header").text("@Translations.MainPage_ContactRequest_Email");
+				$("#form-header").text("@Translations.Homepage_ContactRequest_Email");
 				$step++;
 				return;
 			}
@@ -163,7 +164,7 @@
 
 				$("#email").addClass("hidden");
 				$("#phone").removeClass("hidden");
-				$("#form-header").text("@Translations.MainPage_ContactRequest_Phone");
+				$("#form-header").text("@Translations.Homepage_ContactRequest_Phone");
 				$step++;
 				return;
 			}
@@ -176,8 +177,8 @@
 
 				$("#phone").addClass("hidden");
 				$("#message").removeClass("hidden");
-                $("#form-header").text("@Translations.MainPage_ContactRequest_Message");
-                $("#message").find("textarea").attr("placeholder", "@Translations.MainPage_ContactRequest_Message_Placeholder");
+                $("#form-header").text("@Translations.Homepage_ContactRequest_Message");
+                $("#message").find("textarea").attr("placeholder", "@Translations.Homepage_ContactRequest_Placeholder");
 
                 $("#message-field").animate({ 'height': '200px' }, { duration: 400, easing: "swing" });
                 $(".cta-form").animate({ 'padding-bottom': '30px' }, { duration: 400, easing: "swing" });

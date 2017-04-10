@@ -61,6 +61,276 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply now.
+        /// </summary>
+        public static string Career_Apply {
+            get {
+                return ResourceManager.GetString("Career_Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonuses.
+        /// </summary>
+        public static string Career_Bonuses {
+            get {
+                return ResourceManager.GetString("Career_Bonuses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job description.
+        /// </summary>
+        public static string Career_Job_Description {
+            get {
+                return ResourceManager.GetString("Career_Job_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string Career_Location {
+            get {
+                return ResourceManager.GetString("Career_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requirements.
+        /// </summary>
+        public static string Career_Requirements {
+            get {
+                return ResourceManager.GetString("Career_Requirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Responsibilities.
+        /// </summary>
+        public static string Career_Responsibilities {
+            get {
+                return ResourceManager.GetString("Career_Responsibilities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salary.
+        /// </summary>
+        public static string Career_Salary {
+            get {
+                return ResourceManager.GetString("Career_Salary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open vacancy.
+        /// </summary>
+        public static string Career_Subtitle {
+            get {
+                return ResourceManager.GetString("Career_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working сonditions.
+        /// </summary>
+        public static string Career_Working_Conditions {
+            get {
+                return ResourceManager.GetString("Career_Working_Conditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to we are hiring.
+        /// </summary>
+        public static string Careers_Subtitle {
+            get {
+                return ResourceManager.GetString("Careers_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Careers.
+        /// </summary>
+        public static string Careers_Title {
+            get {
+                return ResourceManager.GetString("Careers_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View vacancy.
+        /// </summary>
+        public static string Careers_View_Vacancy {
+            get {
+                return ResourceManager.GetString("Careers_View_Vacancy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company.
+        /// </summary>
+        public static string Contact_Form_Company_Placeholder {
+            get {
+                return ResourceManager.GetString("Contact_Form_Company_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email *.
+        /// </summary>
+        public static string Contact_Form_Email_Placeholder {
+            get {
+                return ResourceManager.GetString("Contact_Form_Email_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name *.
+        /// </summary>
+        public static string Contact_Form_FirstName_Placeholder {
+            get {
+                return ResourceManager.GetString("Contact_Form_FirstName_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string Contact_Form_LastName_Placeholder {
+            get {
+                return ResourceManager.GetString("Contact_Form_LastName_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Describe your business problem.
+        /// </summary>
+        public static string Contact_Form_Message_Placeholder {
+            get {
+                return ResourceManager.GetString("Contact_Form_Message_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone *.
+        /// </summary>
+        public static string Contact_Form_Phone_Placeholder {
+            get {
+                return ResourceManager.GetString("Contact_Form_Phone_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Contact_Form_SendButton {
+            get {
+                return ResourceManager.GetString("Contact_Form_SendButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Form.
+        /// </summary>
+        public static string Contact_Form_Title {
+            get {
+                return ResourceManager.GetString("Contact_Form_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Contact_Page_Email_Title {
+            get {
+                return ResourceManager.GetString("Contact_Page_Email_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Follow us.
+        /// </summary>
+        public static string Contact_Page_FollowUs_Title {
+            get {
+                return ResourceManager.GetString("Contact_Page_FollowUs_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ukraine, Kyiv, 03040, Mykhailo Stelmakh Street, Building 10A.
+        /// </summary>
+        public static string Contact_Page_Headquarters_Adress {
+            get {
+                return ResourceManager.GetString("Contact_Page_Headquarters_Adress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Headquarters.
+        /// </summary>
+        public static string Contact_Page_Headquarters_Title {
+            get {
+                return ResourceManager.GetString("Contact_Page_Headquarters_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string Contact_Page_Phone_Title {
+            get {
+                return ResourceManager.GetString("Contact_Page_Phone_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tell us about your problem.
+        /// </summary>
+        public static string Contact_Subtitle_Text {
+            get {
+                return ResourceManager.GetString("Contact_Subtitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Contact_Title_Name {
+            get {
+                return ResourceManager.GetString("Contact_Title_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Digital Leader.
+        /// </summary>
+        public static string Copyright_Name {
+            get {
+                return ResourceManager.GetString("Copyright_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to values of our company and team.
+        /// </summary>
+        public static string Creed_Subtitle {
+            get {
+                return ResourceManager.GetString("Creed_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creed.
+        /// </summary>
+        public static string Creed_Title {
+            get {
+                return ResourceManager.GetString("Creed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ukraine, Kyiv, Mykhailo Stelmakh Street.
         /// </summary>
         public static string FooterAddress {
@@ -70,11 +340,119 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We are in love with digital world. We believe that information technology is a key to contemporary business success. In twenty first only those businesses will be on the edge of economical prosperity that utilize recent digital trends..
+        ///   Looks up a localized string similar to We are in love with the digital world. We believe that information technology is the key to contemporary business success. In the twenty first century only those businesses will be on the edge of economical prosperity that utilize recent digital trends..
         /// </summary>
-        public static string FooterMessage {
+        public static string FooterText {
             get {
-                return ResourceManager.GetString("FooterMessage", resourceCulture);
+                return ResourceManager.GetString("FooterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Describe your problem.
+        /// </summary>
+        public static string HeaderCTA {
+            get {
+                return ResourceManager.GetString("HeaderCTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email address.
+        /// </summary>
+        public static string Homepage_ContactRequest_Email {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What&apos;s your name?.
+        /// </summary>
+        public static string Homepage_ContactRequest_FirstName {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your problem.
+        /// </summary>
+        public static string Homepage_ContactRequest_Message {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        public static string Homepage_ContactRequest_Phone {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to type here.
+        /// </summary>
+        public static string Homepage_ContactRequest_Placeholder {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let&apos;s upgrade you business.
+        /// </summary>
+        public static string HomepageCTA {
+            get {
+                return ResourceManager.GetString("HomepageCTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ENG.
+        /// </summary>
+        public static string Link_Eng {
+            get {
+                return ResourceManager.GetString("Link_Eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feedback.
+        /// </summary>
+        public static string Link_Feedback {
+            get {
+                return ResourceManager.GetString("Link_Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy.
+        /// </summary>
+        public static string Link_Privacy {
+            get {
+                return ResourceManager.GetString("Link_Privacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms of Use.
+        /// </summary>
+        public static string Link_TermsOfUse {
+            get {
+                return ResourceManager.GetString("Link_TermsOfUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UKR.
+        /// </summary>
+        public static string Link_Ukr {
+            get {
+                return ResourceManager.GetString("Link_Ukr", resourceCulture);
             }
         }
         
@@ -90,9 +468,9 @@ namespace DigitalLeader.Web.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Careers.
         /// </summary>
-        public static string LinkCareer {
+        public static string LinkCareers {
             get {
-                return ResourceManager.GetString("LinkCareer", resourceCulture);
+                return ResourceManager.GetString("LinkCareers", resourceCulture);
             }
         }
         
@@ -133,6 +511,15 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Creed.
+        /// </summary>
+        public static string LinkCreed {
+            get {
+                return ResourceManager.GetString("LinkCreed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Guides.
         /// </summary>
         public static string LinkGuides {
@@ -147,33 +534,6 @@ namespace DigitalLeader.Web.Localization {
         public static string LinkInfographics {
             get {
                 return ResourceManager.GetString("LinkInfographics", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Creed.
-        /// </summary>
-        public static string LinkOurCreed {
-            get {
-                return ResourceManager.GetString("LinkOurCreed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Story.
-        /// </summary>
-        public static string LinkOurStory {
-            get {
-                return ResourceManager.GetString("LinkOurStory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Team.
-        /// </summary>
-        public static string LinkOurTeam {
-            get {
-                return ResourceManager.GetString("LinkOurTeam", resourceCulture);
             }
         }
         
@@ -223,6 +583,24 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Story.
+        /// </summary>
+        public static string LinkStory {
+            get {
+                return ResourceManager.GetString("LinkStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team.
+        /// </summary>
+        public static string LinkTeam {
+            get {
+                return ResourceManager.GetString("LinkTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Testimonials.
         /// </summary>
         public static string LinkTestimonials {
@@ -250,128 +628,182 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email address.
+        ///   Looks up a localized string similar to Digital Marketing.
         /// </summary>
-        public static string MainPage_ContactRequest_Email {
+        public static string Marketing_Category_Name {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_Email", resourceCulture);
+                return ResourceManager.GetString("Marketing_Category_Name", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input you email *.
+        ///   Looks up a localized string similar to Contributors.
         /// </summary>
-        public static string MainPage_ContactRequest_Email_Placeholder {
+        public static string Project_Contributors {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_Email_Placeholder", resourceCulture);
+                return ResourceManager.GetString("Project_Contributors", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What&apos;s your name?.
+        ///   Looks up a localized string similar to Objective.
         /// </summary>
-        public static string MainPage_ContactRequest_FirstName {
+        public static string Project_Objective {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_FirstName", resourceCulture);
+                return ResourceManager.GetString("Project_Objective", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input your name *.
+        ///   Looks up a localized string similar to Overview.
         /// </summary>
-        public static string MainPage_ContactRequest_FirstName_Placeholder {
+        public static string Project_Overview {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_FirstName_Placeholder", resourceCulture);
+                return ResourceManager.GetString("Project_Overview", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your problem.
+        ///   Looks up a localized string similar to Results.
         /// </summary>
-        public static string MainPage_ContactRequest_Message {
+        public static string Project_Result {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_Message", resourceCulture);
+                return ResourceManager.GetString("Project_Result", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Describe your problem here *.
+        ///   Looks up a localized string similar to Technologies.
         /// </summary>
-        public static string MainPage_ContactRequest_Message_Placeholder {
+        public static string Project_Technologies {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_Message_Placeholder", resourceCulture);
+                return ResourceManager.GetString("Project_Technologies", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telephone.
+        ///   Looks up a localized string similar to What has been made.
         /// </summary>
-        public static string MainPage_ContactRequest_Phone {
+        public static string Project_Work {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_Phone", resourceCulture);
+                return ResourceManager.GetString("Project_Work", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input your phone *.
+        ///   Looks up a localized string similar to it&apos;s all our work.
         /// </summary>
-        public static string MainPage_ContactRequest_Phone_Placeholder {
+        public static string Projects_Subtitle_Text {
             get {
-                return ResourceManager.GetString("MainPage_ContactRequest_Phone_Placeholder", resourceCulture);
+                return ResourceManager.GetString("Projects_Subtitle_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Let&apos;s upgrade your business!.
+        ///   Looks up a localized string similar to Projects.
         /// </summary>
-        public static string MainPegeFormTitle {
+        public static string Projects_Title_Name {
             get {
-                return ResourceManager.GetString("MainPegeFormTitle", resourceCulture);
+                return ResourceManager.GetString("Projects_Title_Name", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Request Qoute.
+        ///   Looks up a localized string similar to Who we are, what we do, who are our clients and our mission.
         /// </summary>
-        public static string NavBarRequestQoute {
+        public static string Story_Subtitle {
             get {
-                return ResourceManager.GetString("NavBarRequestQoute", resourceCulture);
+                return ResourceManager.GetString("Story_Subtitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Request Qoute.
+        ///   Looks up a localized string similar to Story.
         /// </summary>
-        public static string RequestQoute {
+        public static string Story_Title {
             get {
-                return ResourceManager.GetString("RequestQoute", resourceCulture);
+                return ResourceManager.GetString("Story_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to we are your best IT solutions provider.
+        ///   Looks up a localized string similar to years of experience in.
         /// </summary>
-        public static string SliderSlide1 {
+        public static string Team_ExperianceYears_Text {
             get {
-                return ResourceManager.GetString("SliderSlide1", resourceCulture);
+                return ResourceManager.GetString("Team_ExperianceYears_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Digital Marketing Solutions.
+        ///   Looks up a localized string similar to masters of their work.
         /// </summary>
-        public static string SliderSlide2 {
+        public static string Team_Subtitle {
             get {
-                return ResourceManager.GetString("SliderSlide2", resourceCulture);
+                return ResourceManager.GetString("Team_Subtitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Technology solution.
+        ///   Looks up a localized string similar to Team.
         /// </summary>
-        public static string SliderSlide3 {
+        public static string Team_Title {
             get {
-                return ResourceManager.GetString("SliderSlide3", resourceCulture);
+                return ResourceManager.GetString("Team_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Technology Solutions.
+        /// </summary>
+        public static string Technology_Category_Name {
+            get {
+                return ResourceManager.GetString("Technology_Category_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See project.
+        /// </summary>
+        public static string Testimonials_See_Project {
+            get {
+                return ResourceManager.GetString("Testimonials_See_Project", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to these people know they can trust us.
+        /// </summary>
+        public static string Testimonials_Subtitle_Text {
+            get {
+                return ResourceManager.GetString("Testimonials_Subtitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Testimonials.
+        /// </summary>
+        public static string Testimonials_Title_Name {
+            get {
+                return ResourceManager.GetString("Testimonials_Title_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We shall get in touch with you soon..
+        /// </summary>
+        public static string ThankYou_Text {
+            get {
+                return ResourceManager.GetString("ThankYou_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you.
+        /// </summary>
+        public static string ThankYou_Title {
+            get {
+                return ResourceManager.GetString("ThankYou_Title", resourceCulture);
             }
         }
     }
