@@ -1,11 +1,11 @@
-﻿@model DigitalLeader.ViewModels.ContentViewModel
+﻿@using DigitalLeader.Web.Localization
+@model DigitalLeader.ViewModels.ContentViewModel
 
-
-	@{
-		ViewBag.Title = "Story";
-		ViewBag.Message = "Innovating your business with modern technologies";
-		Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
-	}
+@{
+    ViewBag.Title = Translations.Story_Title;
+    ViewBag.Message = Translations.Story_Subtitle;
+    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+}
 
 
 	<div class="container-fluid company story">

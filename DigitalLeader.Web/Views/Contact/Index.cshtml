@@ -1,18 +1,15 @@
-﻿
+﻿@using DigitalLeader.Web.Localization
 
 @{
-	ViewBag.Title = "Contact";
-	ViewBag.Message = "Feel like you need IT consultation? Tell us about your business problem.";
-
 	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
 <div class="container-fluid contact">
 	<div class="row header clearfix">
 		<div>
-			<h1>@ViewBag.Title</h1>
-			<h2>@ViewBag.Message</h2>
-		</div>
+            <h1>@Translations.Contact_Title_Name</h1>
+            <h2>@Translations.Contact_Subtitle_Text</h2>
+        </div>
 	</div>
 
 	<div class="row">
@@ -23,19 +20,19 @@
 				<div class="col-md-4 col-sm-5 text-contacts">
 					<div class="row">
 						<div class="col-md-12">
-							<h3><i class="fa fa-map-marker" aria-hidden="true"></i>Headquarters</h3>
-							<address>Ukraine, Kyiv, 03040, Mykhailo Stelmakh Street, Building 10A</address>
+							<h3><i class="fa fa-map-marker" aria-hidden="true"></i>@Translations.Contact_Page_Headquarters_Title</h3>
+							<address>@Translations.Contact_Page_Headquarters_Adress</address>
 						</div>
 						<div class="col-md-12">
-							<h3><i class="fa fa-phone" aria-hidden="true"></i>Phone</h3>
+							<h3><i class="fa fa-phone" aria-hidden="true"></i>@Translations.Contact_Page_Phone_Title</h3>
 							<address><a href="tel:+380961212713">+380 (96) 121 27 13</a></address>
 						</div>
 						<div class="col-md-12">
-							<h3><i class="fa fa-at" aria-hidden="true"></i>Email</h3>
+							<h3><i class="fa fa-at" aria-hidden="true"></i>@Translations.Contact_Page_Email_Title</h3>
 							<address><a href="mailto:info@digitalleader.solutions">info@digitalleader.solutions</a></address>
 						</div>
 						<div class="col-md-12 follow-us">
-							<h3><i class="fa fa-comments-o" aria-hidden="true"></i>Follow Us</h3>
+							<h3><i class="fa fa-comments-o" aria-hidden="true"></i>@Translations.Contact_Page_FollowUs_Title</h3>
 							<p>
 								<a href="#">Facebook</a>
 								&middot;

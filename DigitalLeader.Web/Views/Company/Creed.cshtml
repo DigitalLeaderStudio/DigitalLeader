@@ -1,9 +1,10 @@
-﻿@model DigitalLeader.ViewModels.ContentViewModel
+﻿@using DigitalLeader.Web.Localization
+@model DigitalLeader.ViewModels.ContentViewModel
 
 @{
-	ViewBag.Title = "Creed";
-	ViewBag.Message = "our values";
-	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+    ViewBag.Title = Translations.Creed_Title;
+    ViewBag.Message = Translations.Creed_Subtitle;
+    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
 

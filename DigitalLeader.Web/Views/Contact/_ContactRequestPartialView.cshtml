@@ -1,4 +1,5 @@
 ﻿@model DigitalLeader.ViewModels.PromoFormViewModel
+@using DigitalLeader.Web.Localization
 @{
 	var ajaxOptions = new AjaxOptions
 	{
@@ -17,7 +18,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 form-title">
-				<h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact Form</h2>
+				<h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i>@Translations.Contact_Form_Title</h2>
 			</div>
 		</div>
 		
@@ -28,26 +29,26 @@
 
 			<div class="col-md-12 message">
 				@Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
-				@Html.TextAreaFor(m => m.Message, new { @placeholder = "Describe your business problem" })
+				@Html.TextAreaFor(m => m.Message, new { @placeholder = Translations.Contact_Form_Message_Placeholder })
 			</div>
 			<div class="col-md-6 inputs-left">
 				@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-				@Html.TextBoxFor(m => m.Email, new { @placeholder = "Email *" })
+				@Html.TextBoxFor(m => m.Email, new { @placeholder = Translations.Contact_Form_Email_Placeholder })
 
 				@Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
-				@Html.TextBoxFor(m => m.Phone, new { @placeholder = "Telephone *" })
+				@Html.TextBoxFor(m => m.Phone, new { @placeholder = Translations.Contact_Form_Phone_Placeholder })
 
 				@Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger" })
-				@Html.TextBoxFor(m => m.Company, new { @placeholder = "Company" })
+				@Html.TextBoxFor(m => m.Company, new { @placeholder = Translations.Contact_Form_Company_Placeholder })
 			</div>
 			<div class="col-md-6 inputs-right">
 				@Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
-				@Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First name *" })
+				@Html.TextBoxFor(m => m.FirstName, new { @placeholder = Translations.Contact_Form_FirstName_Placeholder })
 
 				@Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
-				@Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last name" })
+				@Html.TextBoxFor(m => m.LastName, new { @placeholder = Translations.Contact_Form_LastName_Placeholder })
 
-				<input type="submit" id="send" value="SEND" class="btn" />
+				<input type="submit" id="send" value="@Translations.Contact_Form_SendButton" class="btn" />
 			</div>
 			}
 

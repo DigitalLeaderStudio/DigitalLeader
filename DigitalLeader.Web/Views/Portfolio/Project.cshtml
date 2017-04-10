@@ -1,4 +1,6 @@
 ﻿@model DigitalLeader.ViewModels.ProjectViewModel
+
+@using DigitalLeader.Web.Localization
 @{
 	ViewBag.Title = Model.Title;
 	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
@@ -35,12 +37,12 @@
 		<div class="row general">
 			<div class="col-md-9 about-project">
 				<div class="row overview">
-					<h2>Overview</h2>
+					<h2>@Translations.Project_Overview</h2>
 					<p>@Model.Overview</p>
 				</div>
 				<div class="row objective">
 					<div class="col-md-4 objective-title">
-						Objective
+						@Translations.Project_Objective
 					</div>
 					<div class="col-md-8 objective-body">
 						@Model.Objective
@@ -48,7 +50,7 @@
 				</div>
 				<div class="row work">
                     <div class="col-md-4 work-title">
-                        Work
+                        @Translations.Project_Work
                     </div>
                     <div class="col-md-8 work-body">
 						@Model.WorkOverview
@@ -56,7 +58,7 @@
 				</div>
 				<div class="row result">
 					<div class="col-md-4 result-title">
-						Result
+						@Translations.Project_Result
 					</div>
 					<div class="col-md-8 result-body">
 						@Model.ResultOverview
@@ -66,7 +68,7 @@
 			<div class="col-md-3 project-aside">
 				
 				<div class="col-md-12 collaborators clearfix">
-					<h2>Contributors</h2>
+					<h2>@Translations.Project_Contributors</h2>
 					<div>
 						@foreach (var collaborator in Model.Contributors)
 						{
@@ -86,7 +88,7 @@
 				</div>
 
                 <div class="col-md-12 technologies clearfix">
-                    <h2>Technologies</h2>
+                    <h2>@Translations.Project_Technologies</h2>
                     <ul>
                         @foreach (var tech in Model.Technologies)
                         {

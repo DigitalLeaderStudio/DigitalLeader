@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.ProjectViewModel>
 
+@using DigitalLeader.Web.Localization
+
 @{
-	ViewBag.Title = "Projects";
-	ViewBag.Message = "it's all ours work";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container-fluid projects">
 	<div class="row header clearfix">
 		<div>
-			<h1>@ViewBag.Title</h1>
-			<h2>@ViewBag.Message</h2>
+			<h1>@Translations.Projects_Title_Name</h1>
+			<h2>@Translations.Projects_Subtitle_Text</h2>
 		</div>
 	</div>
 	<div class="container">
