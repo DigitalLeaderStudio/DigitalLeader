@@ -12,6 +12,7 @@ namespace DigitalLeader.Web.Controllers
 	public class CompanyController : BaseController
 	{
 		private const string STORY_KEY = "company-story";
+		private const string CREED_KEY = "company-creed";
 
 		private readonly IUserService _userService;
 		private readonly IContentService _contentService;
@@ -37,9 +38,14 @@ namespace DigitalLeader.Web.Controllers
 			return View(viewModel);
 		}
 
+		[Route("Company/creed")]
 		public ActionResult Creed()
 		{
-			return View();
+			var entity = _contentService.GetByKey(CREED_KEY);
+
+			var viewModel = Mapper.Map<Content, ContentViewModel>(entity);
+
+			return View(viewModel);
 		}
 
 		[Route("Company/Team")]
