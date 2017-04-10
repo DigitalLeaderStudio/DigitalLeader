@@ -1,0 +1,105 @@
+﻿@model DigitalLeader.ViewModels.ContentViewModel
+@using DigitalLeader.ViewModels;
+@using DigitalLeader.Web.Extensions;
+
+@{
+	ViewBag.Title = "Create new html content";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Create new html content</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
+
+<div class="col-md-6 col-md-offset-3">
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-horizontal">
+
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Key, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Key, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Key, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<ContentViewModel, ContentViewModel.ContentLocalizedModel>
+				("content-localized-Description",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Description, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Description, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Keywords, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<ContentViewModel, ContentViewModel.ContentLocalizedModel>
+				("content-localized-Keywords",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Keywords, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Keywords, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Keywords, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Keywords, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Html, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@(Html.LocalizedEditor<ContentViewModel, ContentViewModel.ContentLocalizedModel>
+				("content-localized-Html",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Html, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Html, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Html, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Html, "", new { @class = "text-danger" })
+					</div>, true))
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Create" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
+	}
+</div>
+
+<div class="col-md-12">
+	<p class="text-center">
+		@Html.ActionLink("Back to List", "Index")
+	</p>
+</div>
