@@ -5,7 +5,7 @@
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Schema;
 
-	public class ServiceSubcategory : IEntity
+	public class ServiceSubcategory : IEntity, ILocalizedEntity
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,9 +15,9 @@
 
 		public virtual ICollection<Service> Services { get; set; }
 
-        public int ServiceCategoryID { get; set; }
+		public int ServiceCategoryID { get; set; }
 
-        public virtual ServiceCategory ServiceCategory { get; set; }
+		public virtual ServiceCategory ServiceCategory { get; set; }
 
-    }
+	}
 }

@@ -1,4 +1,5 @@
 ﻿@model DigitalLeader.ViewModels.ServiceSubcategoryViewModel
+@using DigitalLeader.ViewModels;
 
 @{
 	ViewBag.Title = "Edit subcategory";
@@ -21,25 +22,34 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ServiceSubcategoryViewModel, ServiceSubcategoryViewModel.ServiceSubcategoryLocalizedModel>
+				("subcategory-localized-Name",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Name, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.ServiceCategoriesSelectList, new { @class = "control-label col-md-2" })
-                <div class="col-md-6">
-                    @Html.DropDownListFor(m => m.ServiceCategoryID, Model.ServiceCategoriesSelectList,
-                    new { @class = "form-control chosen-select", data_placeholder = "Chose a category" })
-                </div>
-                </div>
+			<div class="form-group">
+				@Html.LabelFor(m => m.ServiceCategoriesSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					@Html.DropDownListFor(m => m.ServiceCategoryID, Model.ServiceCategoriesSelectList,
+					new { @class = "form-control chosen-select", data_placeholder = "Chose a category" })
+				</div>
+			</div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
-                    </div>
-                </div>
-            </div>
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Save" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
 	}
 </div>
 <div class="col-md-12">

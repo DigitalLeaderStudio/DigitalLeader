@@ -35,7 +35,7 @@
 		// GET: Admin/ServiceCategory/Create
 		public ActionResult Create()
 		{
-			var viewModel = new ContentViewModel();
+			var viewModel = new ServiceCategoryViewModel();
 
 			AddLocales(viewModel.Locales, (locale, languageId) => { });
 

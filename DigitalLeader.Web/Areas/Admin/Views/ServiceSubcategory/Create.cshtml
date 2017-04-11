@@ -1,46 +1,55 @@
 ﻿@model DigitalLeader.ViewModels.ServiceSubcategoryViewModel
+@using DigitalLeader.ViewModels;
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Create";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2 class="text-center">Create new SubCategory</h2>
+<p class="text-center">
+	@Html.ActionLink("Back to List", "Index")
+</p>
 <hr />
-
 <div class="col-md-6 col-md-offset-2">
-
-
 	@using (Html.BeginForm("Create", "ServiceSubcategory", FormMethod.Post))
 	{
 		@Html.AntiForgeryToken()
 
 		<div class="form-horizontal">
-			<h4>SubcategoryViewModel</h4>
-			<hr />
 			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
 			<div class="form-group">
 				@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ServiceSubcategoryViewModel, ServiceSubcategoryViewModel.ServiceSubcategoryLocalizedModel>
+				("subcategory-localized-Name",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Name, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.ServiceCategoriesSelectList, new { @class = "control-label col-md-2" })
-                <div class="col-md-6">
-                    @Html.DropDownListFor(m => m.ServiceCategoryID, Model.ServiceCategoriesSelectList,
-                    new { @class = "form-control chosen-select", data_placeholder = "Chose a category" })
-                </div>
-                </div>
+			<div class="form-group">
+				@Html.LabelFor(m => m.ServiceCategoriesSelectList, new { @class = "control-label col-md-2" })
+				<div class="col-md-6">
+					@Html.DropDownListFor(m => m.ServiceCategoryID, Model.ServiceCategoriesSelectList,
+					new { @class = "form-control chosen-select", data_placeholder = "Chose a category" })
+				</div>
+			</div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
-                </div>
-            </div>
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Create" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
 	}
 
 
