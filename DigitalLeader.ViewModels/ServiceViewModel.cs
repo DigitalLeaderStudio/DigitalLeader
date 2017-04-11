@@ -24,7 +24,7 @@ namespace DigitalLeader.ViewModels
 			public string Description { get; set; }
 
 			[AllowHtml]
-			[UIHint("tinymce_full_compressed")]
+			[UIHint("tinymce_basic_compressed")]
 			public string Content { get; set; }
 		}
 
@@ -47,7 +47,7 @@ namespace DigitalLeader.ViewModels
 		public string Description { get; set; }
 
 		[AllowHtml]
-		[UIHint("tinymce_full_compressed")]
+		[UIHint("tinymce_basic_compressed")]
 		public string Content { get; set; }
 
 		[Display(Name = "Subcategory")]

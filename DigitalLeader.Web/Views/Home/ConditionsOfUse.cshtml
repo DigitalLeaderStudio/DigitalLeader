@@ -2,15 +2,15 @@
 @model DigitalLeader.ViewModels.ContentViewModel
 
 @{
-	ViewBag.Title = Html.Title(Translations.Story_Title);
+	ViewBag.Title = Html.Title(Translations.Link_TermsOfUse);
 	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
-<div class="container-fluid company story">
+
+<div class="container-fluid creed">
 	<div class="row header clearfix">
 		<div>
-			<h1>@Translations.Story_Title</h1>
-			<h2>@Translations.Story_Subtitle</h2>
+			<h1>@Translations.Link_TermsOfUse</h1>
 		</div>
 	</div>
 	@Html.Raw(Model.Html)

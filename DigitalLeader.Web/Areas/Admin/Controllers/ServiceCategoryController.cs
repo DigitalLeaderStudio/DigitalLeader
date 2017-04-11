@@ -7,13 +7,19 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Web.Mvc;
+	using System.Linq;
+	using DigitalLeader.Services.Localization;
 
 	public class ServiceCategoryController : BaseAdminController
 	{
-		private IServiceCategoryService _categoryService;
+		private readonly ILocalizedEntityService _localizedEntityService;
+		private readonly IServiceCategoryService _categoryService;
 
-		public ServiceCategoryController(IServiceCategoryService categoryService)
+		public ServiceCategoryController(
+			ILocalizedEntityService localizedEntityService,
+			IServiceCategoryService categoryService)
 		{
+			_localizedEntityService = localizedEntityService;
 			_categoryService = categoryService;
 		}
 
@@ -26,40 +32,56 @@
 			return View(viewModel);
 		}
 
-        // GET: Admin/ServiceCategory/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //POST: Admin/ServiceCategory/Create
-       [HttpPost]
-        public ActionResult Create(ServiceCategoryViewModel viewModel)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var serviceCategory = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
-
-                    _categoryService.Insert(serviceCategory);
-
-                    return RedirectToAction("Index");
-                }
-            }
-            catch (Exception e)
-            {
-                ModelState.AddModelError("", e.Message);
-            }
-
-            return View(viewModel);
-        }
-
-        // GET: Admin/ServiceCategory/Edit
-        public ActionResult Edit(int id)
+		// GET: Admin/ServiceCategory/Create
+		public ActionResult Create()
 		{
-			//var viewModel = Mapper.Map<Client, ClientViewModel>(_clientService.GetById(id));
-			var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
+			var viewModel = new ServiceCategoryViewModel();
+
+			AddLocales(viewModel.Locales, (locale, languageId) => { });
+
+			return View(viewModel);
+		}
+
+		//POST: Admin/ServiceCategory/Create
+		[HttpPost]
+		public ActionResult Create(ServiceCategoryViewModel viewModel)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+					var entity = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
+
+					_categoryService.Insert(entity);
+
+					viewModel.Locales.ToList().ForEach(l =>
+					{
+						_localizedEntityService.SaveLocalizedValue(entity, e => e.Name, l.Name, l.LanguageId);
+						_localizedEntityService.SaveLocalizedValue(entity, e => e.Content, l.Content, l.LanguageId);
+					});
+
+					return RedirectToAction("Index");
+				}
+			}
+			catch (Exception e)
+			{
+				ModelState.AddModelError("", e.Message);
+			}
+
+			return View(viewModel);
+		}
+
+		// GET: Admin/ServiceCategory/Edit
+		public ActionResult Edit(int id)
+		{
+			var entity = _categoryService.GetById(id);
+			var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(entity);
+
+			AddLocales(viewModel.Locales, (locale, languageId) =>
+			{
+				locale.Name = entity.GetLocalized(x => x.Name, languageId);
+				locale.Content = entity.GetLocalized(x => x.Content, languageId);
+			});
 
 			return View(viewModel);
 		}
@@ -72,9 +94,16 @@
 			{
 				if (ModelState.IsValid)
 				{
-					var categoryService = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
+					var entity = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
 
-					_categoryService.Update(categoryService);
+					_categoryService.Update(entity);
+
+					viewModel.Locales.ToList().ForEach(l =>
+					{
+						_localizedEntityService.SaveLocalizedValue(entity, e => e.Name, l.Name, l.LanguageId);
+						_localizedEntityService.SaveLocalizedValue(entity, e => e.Content, l.Content, l.LanguageId);
+					});
+
 				}
 			}
 			catch (Exception e)
@@ -87,43 +116,43 @@
 			return RedirectToAction("Index");
 		}
 
-        // GET: Admin/ServiceCategory/Details
-        public ActionResult Details(int id)
-        {
-            var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
+		// GET: Admin/ServiceCategory/Details
+		public ActionResult Details(int id)
+		{
+			var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
 
-            return View(viewModel);
-        }
+			return View(viewModel);
+		}
 
-        // GET: Admin/ServiceCategory/Delete
-        public ActionResult Delete(int id)
-        {
-            var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
+		// GET: Admin/ServiceCategory/Delete
+		public ActionResult Delete(int id)
+		{
+			var viewModel = Mapper.Map<ServiceCategory, ServiceCategoryViewModel>(_categoryService.GetById(id));
 
-            return View(viewModel);
-        }
+			return View(viewModel);
+		}
 
-        // POST: Admin/ServiceCategory/Delete
-        [HttpPost]
-        public ActionResult Delete(ServiceCategoryViewModel viewModel)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var entity = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
+		// POST: Admin/ServiceCategory/Delete
+		[HttpPost]
+		public ActionResult Delete(ServiceCategoryViewModel viewModel)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+					var entity = Mapper.Map<ServiceCategoryViewModel, ServiceCategory>(viewModel);
 
-                    _categoryService.Delete(entity);
+					_categoryService.Delete(entity);
 
-                    return RedirectToAction("Index");
-                }
-            }
-            catch (Exception e)
-            {
-                ModelState.AddModelError("", e.Message);
-            }
+					return RedirectToAction("Index");
+				}
+			}
+			catch (Exception e)
+			{
+				ModelState.AddModelError("", e.Message);
+			}
 
-            return View(viewModel);
-        }
-    }
+			return View(viewModel);
+		}
+	}
 }

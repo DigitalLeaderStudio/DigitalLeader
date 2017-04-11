@@ -4,13 +4,21 @@
 .testimonials {
 	padding: 0;
 
+	.testims {
+		-moz-column-count: 3;
+		-moz-column-gap: 10px;
+		-webkit-column-count: 3;
+		-webkit-column-gap: 10px;
+		column-count: 3;
+		column-gap: 10px;
+		-webkit-column-width: 100px;
+		-moz-column-width: 100px;
+		column-width: 100px;
+	}
+
 	.container {
 		background: rgba(255, 255, 255, 1);
 		padding: 0px;
-	}
-
-	.row .row div {
-		padding: 10px;
 	}
 
 	.header {
@@ -60,23 +68,12 @@
 	}
 
 	.testimonial-item-wrapper {
-		-moz-column-count: 3;
-		-moz-column-gap: 10px;
-		-webkit-column-count: 3;
-		-webkit-column-gap: 10px;
-		column-count: 3;
-		column-gap: 10px;
-		/*position: relative;
-		padding: 5px;*/
+		position: relative;
+		padding-bottom: 5px;
+
 		.testimonial-item {
 			background: @color-grey;
-			/*height: 0;*/
-			/*padding-bottom: 200%;*/
-			width: 100%;
-			position: relative;
-			display: block;
 			border: 5px solid @color-grey;
-
 
 			&:hover {
 				border-color: @color-blue;
@@ -96,9 +93,6 @@
 			}
 
 			.person {
-				height: 0;
-				padding-bottom: 100%;
-				width: 100%;
 				position: relative;
 
 				img {
@@ -107,38 +101,29 @@
 					opacity: 0.35;
 				}
 
-				div {
+				h4 {
+					bottom: 10%;
 					position: absolute;
-					bottom: 0;
-					height: 0;
-					padding-bottom: 25%;
+					padding-top: 10px;
+					margin: 0;
+					color: @color-white;
+					font-size: 34px;
+					text-align: center;
 					width: 100%;
+				}
 
-					h4 {
-						top: 5%;
-						position: absolute;
-						width: 100%;
-						padding: 10px;
-						margin: 0;
-						color: @color-white;
-						font-size: 34px;
-						text-align: center;
-					}
+				h5 {
+					bottom: 2%;
+					position: absolute;
+					margin: 0;
+					width: 100%;
+					color: @color-white;
+					font-size: 14px;
+					text-align: center;
+					font-style: italic;
 
-					h5 {
-						bottom: 2%;
-						position: absolute;
-						width: 100%;
-						padding: 10px;
-						margin: 0;
-						color: @color-white;
-						font-size: 14px;
-						text-align: center;
-						font-style: italic;
-
-						span {
-							font-weight: bold;
-						}
+					span {
+						font-weight: bold;
 					}
 				}
 			}
@@ -158,15 +143,6 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
 
 /*RESPONSIVE*/
 @media (max-width: 375px) {

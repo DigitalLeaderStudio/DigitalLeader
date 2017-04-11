@@ -18,328 +18,328 @@ namespace DigitalLeader.DAL.Migrations
 
 		protected override void Seed(DigitalLeader.DAL.ApplicationDbContext context)
 		{
-			//#region Users
-			
-			//var roleAdmin = new Role
-			//{
-			//	Name = "Admin"
-			//};
-			//var roleContributor = new Role
-			//{
-			//	Name = "Contributor"
-			//};
-			//context.Roles.AddOrUpdate(r => r.Name, roleAdmin, roleContributor);
-			//context.SaveChanges();
+			#region Users
 
-			//var user = new User
-			//{
-			//	UserName = "admin@digitalleader.solutions",
-			//	Email = "admin@digitalleader.solutions",
-			//	EmailConfirmed = true,
-			//	SecurityStamp = "random",
-			//	PasswordHash = new PasswordHasher().HashPassword("ProjectSpartan63")
-			//};
-			//user.Roles.Add(new UserRole
-			//{
-			//	RoleId = roleAdmin.Id,
-			//	UserId = user.Id
-			//});			
-			//context.Users.AddOrUpdate(u => u.Email, user);
+			var roleAdmin = new Role
+			{
+				Name = "Admin"
+			};
+			var roleContributor = new Role
+			{
+				Name = "Contributor"
+			};
+			context.Roles.AddOrUpdate(r => r.Name, roleAdmin, roleContributor);
+			context.SaveChanges();
 
-			//context.SaveChanges();
+			var user = new User
+			{
+				UserName = "admin@digitalleader.solutions",
+				Email = "admin@digitalleader.solutions",
+				EmailConfirmed = true,
+				SecurityStamp = "random",
+				PasswordHash = new PasswordHasher().HashPassword("ProjectSpartan63")
+			};
+			user.Roles.Add(new UserRole
+			{
+				RoleId = roleAdmin.Id,
+				UserId = user.Id
+			});
+			context.Users.AddOrUpdate(u => u.Email, user);
 
-			//var user1 = new User
-			//{
-			//	UserName = "Atnon Valintsev",
-			//	Email = "valintsev.anton@gmail.com",
-			//	EmailConfirmed = true,
-			//	SecurityStamp = "random",
-			//	PasswordHash = new PasswordHasher().HashPassword("ProjectSpartan63")
-			//};
-			//user1.Roles.Add(new UserRole
-			//{
-			//	RoleId = roleContributor.Id,
-			//	UserId = user1.Id
-			//});			
-			//context.Users.AddOrUpdate(u => u.Email, user1);
-			//context.SaveChanges();
-			
-			//var user2 = new User
-			//{
-			//	UserName = "Serhii Kalaida",
-			//	Email = "s.kalaida.biz@gmail.com",
-			//	EmailConfirmed = true,
-			//	SecurityStamp = "random",
-			//	PasswordHash = new PasswordHasher().HashPassword("ProjectSpartan63")
-			//};
-			//user2.Roles.Add(new UserRole
-			//{
-			//	RoleId = roleContributor.Id,
-			//	UserId = user2.Id
-			//});
-			//context.Users.AddOrUpdate(u => u.Email, user2);
-			//context.SaveChanges();
+			context.SaveChanges();
 
-			//#endregion
+			var user1 = new User
+			{
+				UserName = "Atnon Valintsev",
+				Email = "valintsev.anton@gmail.com",
+				EmailConfirmed = true,
+				SecurityStamp = "random",
+				PasswordHash = new PasswordHasher().HashPassword("ProjectSpartan63")
+			};
+			user1.Roles.Add(new UserRole
+			{
+				RoleId = roleContributor.Id,
+				UserId = user1.Id
+			});
+			context.Users.AddOrUpdate(u => u.Email, user1);
+			context.SaveChanges();
 
-			//#region ServiceCategories
+			var user2 = new User
+			{
+				UserName = "Serhii Kalaida",
+				Email = "s.kalaida.biz@gmail.com",
+				EmailConfirmed = true,
+				SecurityStamp = "random",
+				PasswordHash = new PasswordHasher().HashPassword("ProjectSpartan63")
+			};
+			user2.Roles.Add(new UserRole
+			{
+				RoleId = roleContributor.Id,
+				UserId = user2.Id
+			});
+			context.Users.AddOrUpdate(u => u.Email, user2);
+			context.SaveChanges();
 
-			//var technologyCategory = new ServiceCategory
-			//	{
-			//		Name = "Technology Solutions",
-			//		Content = @"IT outsourcing is the way of use of external information technology service provider to effectively deliver IT-enabled business process and infrastructure solutions for its client. It includes many information technology services such as software as a service and cloud services. Your enterprise can benefit by delegating IT related processes to information technology outsourcing company. Those benefits include costs reduction, marketing life cycle acceleration, and external expertise, assets and intellectual property exploitation.",
-			//		ServiceSubcategories = new List<ServiceSubcategory>(),
-   //                 CssClass = "technology",
-			//		Image = new DigitalLeader.Entities.File
-			//		{
-			//			ContentType = "image/svg+xml",
-			//			FileName = "technology-glyph-icon.png",
-			//			Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/technology-glyph-icon.png"))
-			//		}
-			//	};
+			#endregion
 
-   //         #region Technology Services Subcategories 
+			#region ServiceCategories
 
-   //         var developmentServiceSubcategory = new ServiceSubcategory
-   //         {
-   //             Name = "Development",
-   //             Services = new List<Service>(),
-   //         };
-   //         technologyCategory.ServiceSubcategories.Add(developmentServiceSubcategory);
+			var technologyCategory = new ServiceCategory
+			{
+				Name = "Technology Solutions",
+				Content = @"IT outsourcing is the way of use of external information technology service provider to effectively deliver IT-enabled business process and infrastructure solutions for its client. It includes many information technology services such as software as a service and cloud services. Your enterprise can benefit by delegating IT related processes to information technology outsourcing company. Those benefits include costs reduction, marketing life cycle acceleration, and external expertise, assets and intellectual property exploitation.",
+				ServiceSubcategories = new List<ServiceSubcategory>(),
+				CssClass = "technology",
+				Image = new DigitalLeader.Entities.File
+				{
+					ContentType = "image/svg+xml",
+					FileName = "technology-glyph-icon.png",
+					Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/technology-glyph-icon.png"))
+				}
+			};
 
-   //         var designServiceSubcategory = new ServiceSubcategory
-   //         {
-   //             Name = "Design",
-   //             Services = new List<Service>(),
-   //         };
-   //         technologyCategory.ServiceSubcategories.Add(designServiceSubcategory);
+			#region Technology Services Subcategories 
 
-   //         var maintenanceServiceSubcategory = new ServiceSubcategory
-   //         {
-   //             Name = "Meaintenance",
-   //             Services = new List<Service>(),
-   //         };
-   //         technologyCategory.ServiceSubcategories.Add(maintenanceServiceSubcategory);
+			var developmentServiceSubcategory = new ServiceSubcategory
+			{
+				Name = "Development",
+				Services = new List<Service>(),
+			};
+			technologyCategory.ServiceSubcategories.Add(developmentServiceSubcategory);
 
-   //         #endregion
+			var designServiceSubcategory = new ServiceSubcategory
+			{
+				Name = "Design",
+				Services = new List<Service>(),
+			};
+			technologyCategory.ServiceSubcategories.Add(designServiceSubcategory);
 
-   //         context.ServiceCategories.AddOrUpdate(c => c.Name, technologyCategory);
+			var maintenanceServiceSubcategory = new ServiceSubcategory
+			{
+				Name = "Meaintenance",
+				Services = new List<Service>(),
+			};
+			technologyCategory.ServiceSubcategories.Add(maintenanceServiceSubcategory);
 
-   //         var marketingCategory = new ServiceCategory
-			//	{
-			//		Name = "Digital Marketing",
-			//		Content = @"This is the most important method of marketing your products in today's economy. The volume of sales made via Internet or digital devices increases with every day. Digital Marketing consists of many modern methodologies and techniques, which if used and performed properly can sky rocket your business revenues. Friendly saying, if you don't do Digital Marketing or do it badly, your businesses becomes dead very soon in the severe ocean of competition.",
-			//		ServiceSubcategories = new List<ServiceSubcategory>(),
-   //                 CssClass = "marketing",
-			//		Image = new DigitalLeader.Entities.File
-			//		{
-			//			ContentType = "image/svg+xml",
-			//			FileName = "marketing-glyph-icon.png",
-			//			Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/marketing-glyph-icon.png"))
-			//		}
-			//	};
+			#endregion
 
-   //         #region Marketing Services Subcategories
-   //         var contentServiceSubcategory = new ServiceSubcategory
-   //         {
-   //             Name = "Content",
-   //             Services = new List<Service>(),
-   //         };
-   //         marketingCategory.ServiceSubcategories.Add(contentServiceSubcategory);
+			context.ServiceCategories.AddOrUpdate(c => c.Name, technologyCategory);
 
-   //         var smmServiceSubcategory = new ServiceSubcategory
-   //         {
-   //             Name = "SMM",
-   //             Services = new List<Service>(),
-   //         };
-   //         marketingCategory.ServiceSubcategories.Add(smmServiceSubcategory);
+			var marketingCategory = new ServiceCategory
+			{
+				Name = "Digital Marketing",
+				Content = @"This is the most important method of marketing your products in today's economy. The volume of sales made via Internet or digital devices increases with every day. Digital Marketing consists of many modern methodologies and techniques, which if used and performed properly can sky rocket your business revenues. Friendly saying, if you don't do Digital Marketing or do it badly, your businesses becomes dead very soon in the severe ocean of competition.",
+				ServiceSubcategories = new List<ServiceSubcategory>(),
+				CssClass = "marketing",
+				Image = new DigitalLeader.Entities.File
+				{
+					ContentType = "image/svg+xml",
+					FileName = "marketing-glyph-icon.png",
+					Content = System.IO.File.ReadAllBytes(MapPath("~/../../DigitalLeader.Web/Content/Images/services/marketing-glyph-icon.png"))
+				}
+			};
 
-   //         var paidServiceSubcategory = new ServiceSubcategory
-   //         {
-   //             Name = "Paid",
-   //             Services = new List<Service>(),
-   //         };
-   //         marketingCategory.ServiceSubcategories.Add(paidServiceSubcategory);
+			#region Marketing Services Subcategories
+			var contentServiceSubcategory = new ServiceSubcategory
+			{
+				Name = "Content",
+				Services = new List<Service>(),
+			};
+			marketingCategory.ServiceSubcategories.Add(contentServiceSubcategory);
 
-   //         #endregion
+			var smmServiceSubcategory = new ServiceSubcategory
+			{
+				Name = "SMM",
+				Services = new List<Service>(),
+			};
+			marketingCategory.ServiceSubcategories.Add(smmServiceSubcategory);
 
-   //         context.ServiceCategories.AddOrUpdate(c => c.Name, marketingCategory);
+			var paidServiceSubcategory = new ServiceSubcategory
+			{
+				Name = "Paid",
+				Services = new List<Service>(),
+			};
+			marketingCategory.ServiceSubcategories.Add(paidServiceSubcategory);
 
-			//context.SaveChanges();
+			#endregion
 
-   //         #endregion
+			context.ServiceCategories.AddOrUpdate(c => c.Name, marketingCategory);
 
-   //         #region Services
+			context.SaveChanges();
 
-   //         #region Development services
+			#endregion
 
-   //         developmentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Website",
-   //             Description = "Some text"
-   //         });
+			#region Services
 
-   //         developmentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Design",
-   //             Description = "Some text"
-   //         });
+			#region Development services
 
-   //         developmentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Web Application",
-   //             Description = "Some text"
-   //         });
+			developmentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Website",
+				Description = "Some text"
+			});
 
-   //         developmentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Mobile Application",
-   //             Description = "Some text"
-   //         });
+			developmentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Design",
+				Description = "Some text"
+			});
 
-   //         developmentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Enterprise System",
-   //             Description = "Some text"
-   //         });
+			developmentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Web Application",
+				Description = "Some text"
+			});
 
-   //         developmentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Development consulting",
-   //             Description = "Some text"
-   //         });
+			developmentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Mobile Application",
+				Description = "Some text"
+			});
 
-   //         designServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "UI/UX Design",
-   //             Description = "Some text"
+			developmentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Enterprise System",
+				Description = "Some text"
+			});
 
-   //         });
+			developmentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Development consulting",
+				Description = "Some text"
+			});
 
-   //         designServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Brand Identity Design",
-   //             Description = "Some text"
+			designServiceSubcategory.Services.Add(new Service
+			{
+				Title = "UI/UX Design",
+				Description = "Some text"
 
-   //         });
+			});
 
-   //         designServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Brand Identity Design",
-   //             Description = "Some text"
+			designServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Brand Identity Design",
+				Description = "Some text"
 
-   //         });
+			});
 
-   //         designServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Graphic Design",
-   //             Description = "Some text"
+			designServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Brand Identity Design",
+				Description = "Some text"
 
-   //         });
+			});
 
-   //         designServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Design Consulting",
-   //             Description = "Some text"
+			designServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Graphic Design",
+				Description = "Some text"
 
-   //         });
+			});
 
-   //         maintenanceServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Software Upgrade",
-   //             Description = "Some text"
+			designServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Design Consulting",
+				Description = "Some text"
 
-   //         });
+			});
 
-   //         #endregion
+			maintenanceServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Software Upgrade",
+				Description = "Some text"
 
-   //         #region Marketing services
+			});
 
-   //         contentServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Copy Wrighting",
-   //             Description = "Reach your customers precisly and fastly"
-   //         });
+			#endregion
 
+			#region Marketing services
 
-   //         smmServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Facebook",
-   //             Description = "Reach your customers precisly and fastly"
-   //         });
-
-   //         paidServiceSubcategory.Services.Add(new Service
-   //         {
-   //             Title = "Google",
-   //             Description = "Reach your customers precisly and fastly"
-   //         });
+			contentServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Copy Wrighting",
+				Description = "Reach your customers precisly and fastly"
+			});
 
 
-   //         #endregion
+			smmServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Facebook",
+				Description = "Reach your customers precisly and fastly"
+			});
 
-   //         #endregion
+			paidServiceSubcategory.Services.Add(new Service
+			{
+				Title = "Google",
+				Description = "Reach your customers precisly and fastly"
+			});
 
-   //         context.SaveChanges();
 
-			//#region Technologies
+			#endregion
 
-			//context.Technologies.AddOrUpdate(t => t.Name,
-			//	new Technology { Name = "C#" },
-			//	new Technology { Name = "ASP.NET MVC" },
-			//	new Technology { Name = "Entity Framework" },
-			//	new Technology { Name = "MS SQL Server" },
-			//	new Technology { Name = "Less" },
-			//	new Technology { Name = "HMTL 5" },
-			//	new Technology { Name = "Bootstrap" },
-			//	new Technology { Name = "Materialize" },
-			//	new Technology { Name = "jQuery" },
-			//	new Technology { Name = "NopCommerce" },
-			//	new Technology { Name = "Ajax" },
-			//	new Technology { Name = "Knockout" },
-			//	new Technology { Name = "Angular" },
-			//	new Technology { Name = "Web Serivces" },
-			//	new Technology { Name = "Web API" }
-			//	);
+			#endregion
 
-   //         #endregion
+			context.SaveChanges();
 
-   //         #region Vacancies
+			#region Technologies
 
-   //         var seniorDeveloperVacancy = new Vacancy {
-   //             Title = "Senior Developer .NET/C#",
-   //             ShortDescription = "DigitalLeader Solutions, development center of international company Edsson Software, is looking for",
-   //             WeOffer = "Higher education; preferably Master's degree in Computer Science, or Computer Engineering, or Applied Mathematics",
-   //             Bonuses = "Experience in working with foreign clients Foreign passport, readiness for business trips to European countries",
-   //             Requirments = "Good understanding of OOP, Design Patterns and re-factoring principles;" +
-   //             "Good knowledge of C#;" +
-   //             "Good knowledge of.NET framework 4 ,4.5;" +
-   //             "Experience in developing Web Application with ASP.NET;" +
-   //             "Good knowledge of client side development(JavaScript, jQuery, Ajax, HTML5);" +
-   //             "Experience of implementation of third - party libraries: DevExpress;" +
-   //             " Good knowledge of SQL programming for MS SQL Server Database;",
-   //             Responsibilities = "Develop software changes based on detailed specifications;" +
-   //             "Take part in estimation of implementation efforts;" +
-   //             "Suggest software improvements and technical solutions;" +
-   //             "Take part in code review and refactoring;" +
-   //             "Support technical documentation;" +
-   //             "Interact with customer technical experts;",
-   //             IsPositionOpen = true,
-   //             CreatedDate = DateTime.Now,
-   //             Technologies = new List<Technology>()
-   //         };
+			context.Technologies.AddOrUpdate(t => t.Name,
+				new Technology { Name = "C#" },
+				new Technology { Name = "ASP.NET MVC" },
+				new Technology { Name = "Entity Framework" },
+				new Technology { Name = "MS SQL Server" },
+				new Technology { Name = "Less" },
+				new Technology { Name = "HMTL 5" },
+				new Technology { Name = "Bootstrap" },
+				new Technology { Name = "Materialize" },
+				new Technology { Name = "jQuery" },
+				new Technology { Name = "NopCommerce" },
+				new Technology { Name = "Ajax" },
+				new Technology { Name = "Knockout" },
+				new Technology { Name = "Angular" },
+				new Technology { Name = "Web Serivces" },
+				new Technology { Name = "Web API" }
+				);
 
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "C#" });
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "ASP.NET MVC" });
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Entity Framework" });
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "MS SQL Server" });
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Less" });
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "HMTL 5" });
-   //         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Bootstrap" });
+			#endregion
 
-   //         #endregion
+			//         #region Vacancies
 
-   //         context.Vacancies.AddOrUpdate(v => v.Title, seniorDeveloperVacancy);
-        }
+			//         var seniorDeveloperVacancy = new Vacancy {
+			//             Title = "Senior Developer .NET/C#",
+			//             ShortDescription = "DigitalLeader Solutions, development center of international company Edsson Software, is looking for",
+			//             WeOffer = "Higher education; preferably Master's degree in Computer Science, or Computer Engineering, or Applied Mathematics",
+			//             Bonuses = "Experience in working with foreign clients Foreign passport, readiness for business trips to European countries",
+			//             Requirments = "Good understanding of OOP, Design Patterns and re-factoring principles;" +
+			//             "Good knowledge of C#;" +
+			//             "Good knowledge of.NET framework 4 ,4.5;" +
+			//             "Experience in developing Web Application with ASP.NET;" +
+			//             "Good knowledge of client side development(JavaScript, jQuery, Ajax, HTML5);" +
+			//             "Experience of implementation of third - party libraries: DevExpress;" +
+			//             " Good knowledge of SQL programming for MS SQL Server Database;",
+			//             Responsibilities = "Develop software changes based on detailed specifications;" +
+			//             "Take part in estimation of implementation efforts;" +
+			//             "Suggest software improvements and technical solutions;" +
+			//             "Take part in code review and refactoring;" +
+			//             "Support technical documentation;" +
+			//             "Interact with customer technical experts;",
+			//             IsPositionOpen = true,
+			//             CreatedDate = DateTime.Now,
+			//             Technologies = new List<Technology>()
+			//         };
+
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "C#" });
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "ASP.NET MVC" });
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Entity Framework" });
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "MS SQL Server" });
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Less" });
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "HMTL 5" });
+			//         seniorDeveloperVacancy.Technologies.Add(new Technology { Name = "Bootstrap" });
+
+			//         #endregion
+
+			//         context.Vacancies.AddOrUpdate(v => v.Title, seniorDeveloperVacancy);
+		}
 
 		private string MapPath(string seedFile)
 		{

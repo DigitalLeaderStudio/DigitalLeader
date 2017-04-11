@@ -1,11 +1,18 @@
 ﻿@model DigitalLeader.ViewModels.ServiceViewModel
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
-	ViewBag.Title = "Digital Leader  - " + Model.Title;
+	ViewBag.Title = Html.Title(Model.Title);
+
 }
 
-<h1 class="text-center">@Model.Title</h1>
-<hr />
-<p>
-	@Html.Raw(Model.Content)
-</p>
+<div class="container-fluid projects">
+	<div class="row header clearfix">
+		<div>
+			<h1>@Model.Title</h1>			
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">			
+		</div>
+	</div>
+</div>

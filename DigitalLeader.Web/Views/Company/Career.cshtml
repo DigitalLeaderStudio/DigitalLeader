@@ -1,63 +1,65 @@
 ﻿@model DigitalLeader.ViewModels.VacancyViewModel
 @using DigitalLeader.Web.Localization
 @{
-    ViewBag.Title = Model.Title;
-    ViewBag.Subtitle = Translations.Careers_Subtitle;
-    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+	ViewBag.Title = Model.Title;
+
+	ViewBag.Title = Html.Title(Model.Title);
+
+	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
 <div class="container-fluid company vacancy-page">
-    <div class="row header clearfix">
-        <div>
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Subtitle</h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="container vacancy-content">
-                <div class="row">
-                    <div class="col-md-8 col-sm-7 vacancy-description">
-                        <div class="col-md-12 job-heading">
-                            <h1><i class="fa fa-align-left" aria-hidden="true"></i>@Translations.Career_Job_Description</h1>
-                            <p>@Model.ShortDescription</p>
-                        </div>
-                        <div class="col-md-12">
-                            <h2>@Translations.Career_Responsibilities</h2>
-                            <p>@Model.Responsibilities</p>
-                        </div>
-                        <div class="col-md-12">
-                            <h2>@Translations.Career_Requirements</h2>
-                            <p>@Model.Requirments</p>
-                        </div>
-                        <div class="col-md-12">
-                            <h2>@Translations.Career_Working_Conditions</h2>
-                            <p>@Model.WeOffer</p>
-                        </div>
-                        <div class="col-md-12">
-                            <h2>@Translations.Career_Bonuses</h2>
-                            <p>@Model.Bonuses</p>
-                        </div>
-                    </div>
+	<div class="row header clearfix">
+		<div>
+			<h1>@Model.Title</h1>
+			<h2>@Translations.Careers_Subtitle</h2>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="container vacancy-content">
+				<div class="row">
+					<div class="col-md-8 col-sm-7 vacancy-description">
+						<div class="col-md-12 job-heading">
+							<h1><i class="fa fa-align-left" aria-hidden="true"></i>@Translations.Career_Job_Description</h1>
+							<p>@Model.ShortDescription</p>
+						</div>
+						<div class="col-md-12">
+							<h2>@Translations.Career_Responsibilities</h2>
+							<p>@Model.Responsibilities</p>
+						</div>
+						<div class="col-md-12">
+							<h2>@Translations.Career_Requirements</h2>
+							<p>@Model.Requirments</p>
+						</div>
+						<div class="col-md-12">
+							<h2>@Translations.Career_Working_Conditions</h2>
+							<p>@Model.WeOffer</p>
+						</div>
+						<div class="col-md-12">
+							<h2>@Translations.Career_Bonuses</h2>
+							<p>@Model.Bonuses</p>
+						</div>
+					</div>
 
-                    <div class="col-md-4 col-sm-5 vacancy-aside">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3><i class="fa fa-money" aria-hidden="true"></i> @Translations.Career_Salary</h3>
-                                <p>$ 200</p>
-                                <h3><i class="fa fa-map-marker" aria-hidden="true"></i> @Translations.Career_Location</h3>
-                                <p>Kyiv</p>
-                            </div>
-                            <div class="col-md-12 apply-now">
-                                <a href="#">@Translations.Career_Apply <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
+					<div class="col-md-4 col-sm-5 vacancy-aside">
+						<div class="row">
+							<div class="col-md-12">
+								<h3><i class="fa fa-money" aria-hidden="true"></i> @Translations.Career_Salary</h3>
+								<p>$ 200</p>
+								<h3><i class="fa fa-map-marker" aria-hidden="true"></i> @Translations.Career_Location</h3>
+								<p>Kyiv</p>
+							</div>
+							<div class="col-md-12 apply-now">
+								<a href="#">@Translations.Career_Apply <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

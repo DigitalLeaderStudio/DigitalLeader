@@ -25,14 +25,14 @@
 		{
 			return View();
 		}
-		[Route("Testimonials")]
+		[Route("Portfolio/Testimonials")]
 		public ActionResult Testimonials()
 		{
 			var viewModel = Mapper.Map<List<Testimonial>, List<TestimonialViewModel>>(_testimonialService.GetAll());
 
 			return View(viewModel);
 		}
-		[Route("Projects")]
+		[Route("Portfolio/Projects")]
 		public ActionResult Projects()
 		{
 			var projects = _projectService.GetAll();
@@ -42,7 +42,7 @@
 			return View(viewModel);
 		}
 
-		[Route("Case-studies")]
+		[Route("Portfolio/Case-studies")]
 		public ActionResult CaseStudies()
 		{
 			var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(_projectService.GetAllCaseStudies());
@@ -50,7 +50,7 @@
 			return View(viewModel);
 		}
 
-		[Route("Project/{id}")]
+		[Route("Portfolio/Project/{id}")]
 		public ActionResult Project(int id)
 		{
 			var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));

@@ -366,4 +366,16 @@
   <data name="ThankYou_Title" xml:space="preserve">
     <value>Дякуємо</value>
   </data>
+  <data name="CaseStudies_Text" xml:space="preserve">
+    <value>Історії успіху наших кліентів</value>
+  </data>
+  <data name="CaseStudies_Title" xml:space="preserve">
+    <value>Історії успіху</value>
+  </data>
+  <data name="Home_Title" xml:space="preserve">
+    <value>Ваш кращий постачальник цифрових послуг</value>
+  </data>
+  <data name="Site_Name" xml:space="preserve">
+    <value> - Цифровий Лідер</value>
+  </data>
 </root>

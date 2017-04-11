@@ -169,6 +169,24 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Success stories of our clients.
+        /// </summary>
+        public static string CaseStudies_Text {
+            get {
+                return ResourceManager.GetString("CaseStudies_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Case studies.
+        /// </summary>
+        public static string CaseStudies_Title {
+            get {
+                return ResourceManager.GetString("CaseStudies_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Company.
         /// </summary>
         public static string Contact_Form_Company_Placeholder {
@@ -354,6 +372,15 @@ namespace DigitalLeader.Web.Localization {
         public static string HeaderCTA {
             get {
                 return ResourceManager.GetString("HeaderCTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your best digital solutions provider.
+        /// </summary>
+        public static string Home_Title {
+            get {
+                return ResourceManager.GetString("Home_Title", resourceCulture);
             }
         }
         
@@ -705,6 +732,15 @@ namespace DigitalLeader.Web.Localization {
         public static string Projects_Title_Name {
             get {
                 return ResourceManager.GetString("Projects_Title_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  - Digital Leader.
+        /// </summary>
+        public static string Site_Name {
+            get {
+                return ResourceManager.GetString("Site_Name", resourceCulture);
             }
         }
         

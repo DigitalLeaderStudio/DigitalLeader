@@ -1,56 +1,17 @@
 ﻿@using DigitalLeader.Web.Localization
+@model DigitalLeader.ViewModels.ContentViewModel
+
 @{
-    ViewBag.Title = Translations.Creed_Title;
-    ViewBag.Message = Translations.Creed_Subtitle;
-    Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
+	ViewBag.Title = Html.Title(Translations.Creed_Title);
+	Layout = "~/Views/Shared/_LayoutWithFooter.cshtml";
 }
 
-
 <div class="container-fluid creed">
-    <div class="row header clearfix">
-        <div>
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
-        </div>
-    </div>
-    <div class="container pyramid">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4 number-one">
-                <p>Be #1</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-md-offset-3">
-                <p>Deliver top quality</p>
-            </div>
-            <div class="col-md-3">
-                <p>Educate customers</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-md-offset-1">
-                <p>The tougher challenge the higher growth</p>
-            </div>
-            <div class="col-md-4">
-                <p>Results of our customers are our results</p>
-            </div>
-            <div class="col-md-3">
-                <p>Collaborate for something greater</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-md-offset-0">
-                <p>The happier staff, the happier customers </p>
-            </div>
-            <div class="col-md-3">
-                <p>Every day learning</p>
-            </div>
-            <div class="col-md-3">
-                <p>Look from customer's perspective</p>
-            </div>
-            <div class="col-md-3">
-                <p>Give more than take</p>
-            </div>
-        </div>
-    </div>
+	<div class="row header clearfix">
+		<div>
+			<h1>@Translations.Creed_Title</h1>
+			<h2>@Translations.Creed_Subtitle</h2>
+		</div>
+	</div>
+	@Html.Raw(Model.Html)
 </div>

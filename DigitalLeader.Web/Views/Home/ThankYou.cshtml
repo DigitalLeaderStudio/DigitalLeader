@@ -1,29 +1,27 @@
 ﻿@using DigitalLeader.Web.Localization
 
 @{
-    ViewBag.Title = Translations.ThankYou_Title;
-    ViewBag.Message = Translations.ThankYou_Text;
-
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = Html.Title(Translations.ThankYou_Title);
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container-fluid contact">
-    <div class="row header clearfix">
-        <div>
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
-        </div>
-    </div>
+	<div class="row header clearfix">
+		<div>
+			<h1>@Translations.ThankYou_Title</h1>
+			<h2>@Translations.ThankYou_Text</h2>
+		</div>
+	</div>
 
-    <div class="row">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 thanks">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 thanks">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 
