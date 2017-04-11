@@ -34,12 +34,12 @@ namespace DigitalLeader.Web.Extensions
 							"Standard"));
 					tabStrip.AppendLine("</li>");
 
-					
+
 					foreach (var locale in helper.ViewData.Model.Locales)
 					{
 						tabStrip.AppendLine("<li>");
 						var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
-						
+
 						tabStrip.AppendLine(string.Format("<a data-tab-name=\"{0}-{1}-tab\" href=\"#{0}-{1}-tab\" data-toggle=\"tab\">{2}</a>",
 								name,
 								locale.LanguageId,
@@ -72,6 +72,18 @@ namespace DigitalLeader.Web.Extensions
 					standardTemplate(helper.ViewData.Model).WriteTo(writer);
 				}
 			});
+		}
+
+		/// <summary>
+		/// Generate all title parts
+		/// </summary>
+		/// <param name="html">HTML helper</param>
+		/// <param name="addDefaultTitle">A value indicating whether to insert a default title</param>
+		/// <param name="part">Title part</param>
+		/// <returns>Generated string</returns>
+		public static MvcHtmlString Title(this HtmlHelper html, string part = "")
+		{
+			return MvcHtmlString.Create(html.Encode(string.Format("{0}{1}", part, Localization.Translations.Site_Name)));
 		}
 	}
 }

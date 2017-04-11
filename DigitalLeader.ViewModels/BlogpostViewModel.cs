@@ -23,7 +23,7 @@
 		public bool IsPublished { get; set; }
 
 		[AllowHtml]
-		[UIHint("tinymce_full_compressed")]
+		[UIHint("tinymce_basic_compressed")]
 		public string Content { get; set; }
 		//public int AuthorId { get; set; }
 

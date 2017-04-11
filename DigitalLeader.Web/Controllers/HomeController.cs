@@ -27,6 +27,7 @@
 		{
 			_categoryService = categoryService;
 			_serviceService = serviceService;
+			_contentService = contentService;
 			_sliderService = sliderService;
 		}
 

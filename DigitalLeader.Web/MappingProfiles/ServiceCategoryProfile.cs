@@ -2,10 +2,11 @@
 {
 	using AutoMapper;
 	using DigitalLeader.Entities;
+	using DigitalLeader.Services.Localization;
 	using DigitalLeader.ViewModels;
-	using System.Collections.Generic;
+	using DigitalLeader.Web.Extensions;
+	using System.Web;
 	using System.Web.Mvc;
-	using System.Linq;
 
 	public class ServiceCategoryProfile : Profile
 	{
@@ -14,27 +15,28 @@
 			CreateMap<ServiceCategory, SelectListItem>().ConvertUsing(
 				(src, target) =>
 				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+
 					return new SelectListItem
 					{
-						Text = src.Name,
+						Text = src.GetLocalized(x => x.Name, languageId),
 						Value = src.ID.ToString()
 					};
 				});
 
 			CreateMap<ServiceCategory, ServiceCategoryViewModel>()
-				.ForMember(vm => vm.ServiceSubcategories, opt => opt.MapFrom(entity => entity.ServiceSubcategories));
-			//.ForMember(vm => vm.ServiceSubcategories, opt => opt.ResolveUsing(entity =>
-			//	{
-			//		return Mapper.Map<List<ServiceSubcategoryViewModel>>(entity.ServiceSubcategories.ToList());
-			//	}));
-			//.AfterMap((entity, vm) =>
-			//{
-			//	if (entity.ServiceSubcategories != null)
-			//	{
-			//		vm.ServiceSubcategories = Mapper.Map<List<ServiceSubcategory>, 
-			//			List<ServiceSubcategoryViewModel>>(entity.ServiceSubcategories.ToList());
-			//	}
-			//});
+				.ForMember(vm => vm.ServiceSubcategories, opt => opt.MapFrom(entity => entity.ServiceSubcategories))
+				.ForMember(vm => vm.Name, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+					return x.GetLocalized(item => item.Name, languageId);
+				}))
+				.ForMember(vm => vm.Content, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+					return x.GetLocalized(item => item.Content, languageId);
+				}));
+
 
 			CreateMap<ServiceCategoryViewModel, ServiceCategory>()
 				.AfterMap((vm, entity) =>

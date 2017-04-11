@@ -5,7 +5,7 @@
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Schema;
 
-	public class ServiceCategory : IEntity, IImageble
+	public class ServiceCategory : IEntity, IImageble, ILocalizedEntity
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,9 +15,9 @@
 
 		public string Content { get; set; }
 
-        public string CssClass { get; set; }
+		public string CssClass { get; set; }
 
-        public int? ImageId { get; set; }
+		public int? ImageId { get; set; }
 
 		public virtual File Image { get; set; }
 

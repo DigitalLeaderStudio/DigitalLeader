@@ -1,32 +1,32 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#fff" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#fff" />
 
 	<link rel="icon" type="image/x-icon" href="~/favicon.ico">
-    
-    <title>@ViewBag.Title</title>
 
-    @Styles.Render("~/Content/core-css")
-    @Styles.Render("~/Content/core-less")
-    @Styles.Render("~/Content/chosen")
+	<title>@ViewBag.Title</title>
 
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/chosen")
-    @Scripts.Render("~/bundles/core-js")
+	@Styles.Render("~/Content/core-css")
+	@Styles.Render("~/Content/core-less")
+	@Styles.Render("~/Content/chosen")
+
+	@Scripts.Render("~/bundles/modernizr")
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@Scripts.Render("~/bundles/chosen")
+	@Scripts.Render("~/bundles/core-js")
 </head>
 <body>
-    @Html.Partial("_NavigationPartial")
+	@Html.Partial("_NavigationPartial")
 
-    <div class="body-content">
-        @RenderBody()
-    </div>
-    @Html.Partial("_Footer")
+	<div class="body-content">
+		@RenderBody()
+	</div>
+	@Html.Partial("_Footer")
 
-    @RenderSection("scripts", required: false)
+	@RenderSection("scripts", required: false)
 </body>
 </html>

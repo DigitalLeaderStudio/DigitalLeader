@@ -1,4 +1,5 @@
 ﻿@model DigitalLeader.ViewModels.ServiceCategoryViewModel
+@using DigitalLeader.ViewModels;
 
 @{
 	ViewBag.Title = "Edit category";
@@ -20,9 +21,9 @@
 				@Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
 					@{
-		var srcAction = Model.ImageId.HasValue ?
-		Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
-		"/Content/Images/default-user.png";
+						var srcAction = Model.ImageId.HasValue ?
+						Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
+						"/Content/Images/default-user.png";
 					}
 					<img src="@srcAction" class="img-responsive" />
 
@@ -31,28 +32,47 @@
 			</div>
 
 			@Html.HiddenFor(model => model.ID)
-
+			
+			<div class="form-group">
+				@Html.LabelFor(model => model.CssClass, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.CssClass, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.CssClass, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			
 			<div class="form-group">
 				@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ServiceCategoryViewModel, ServiceCategoryViewModel.ServiceCategoryLocalizedModel>
+				("category-localized-Name",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Name, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.CssClass, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CssClass, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CssClass, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<ServiceCategoryViewModel, ServiceCategoryViewModel.ServiceCategoryLocalizedModel>
+				("category-localized-Content",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Content, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Content, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
@@ -62,7 +82,7 @@
 				</div>
 			</div>
 		</div>
-	}
+						}
 </div>
 <div class="col-md-12">
 	<p class="text-center">
