@@ -29,11 +29,27 @@
             <div class="" id="mainNavLinks">
                 <ul class="navbar-links">
                     <li class="active"><a href="@Url.Action("Index", "Admin", new { area = "Admin"})"><i class="fa fa-home"></i></a></li>
-                    <li>
-                        <a href="@Url.Action("Index", "Blogpost", new { area = "Admin"})">Blog</a>
-                    </li>
+				   
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-tasks"></i> Service <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="@Url.Action("Index", "Service", new { area = "Admin" })">Services</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "ServiceCategory", new { area = "Admin"})">Categories</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "ServiceSubcategory", new { area = "Admin"})">Subcategories</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "Technology", new { area = "Admin" })">Technologies</a>
+							</li>
+						</ul>
+					</li>       
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-star"></i> Portfolio <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Index", "Project", new { area = "Admin"})">Projects</a>
@@ -43,12 +59,34 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Client", new { area = "Admin"})">Clients</a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "User", new { area = "Admin"})"><i class="fa fa-users"></i> Users</a>
-                    </li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> System <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="@Url.Action("Index", "Slider", new { area = "Admin"})">Slider</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "Content", new { area = "Admin"})">Html content</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "Blogpost", new { area = "Admin"})">Blog</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "Vacancy", new { area = "Admin"})">Vacancy</a>
+							</li>
+						</ul>
+					</li> 
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users"></i> People <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="@Url.Action("Index", "Client", new { area = "Admin"})">Clients</a>
+							</li>
+							<li>
+								<a href="@Url.Action("Index", "User", new { area = "Admin"})">Users</a>
+							</li>
+						</ul>
+					</li>                   
                 </ul>
             </div>
         </div>

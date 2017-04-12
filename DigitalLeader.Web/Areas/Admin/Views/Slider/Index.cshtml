@@ -8,7 +8,7 @@
 <h2>Sliders</h2>
 
 <p>
-	@Html.ActionLink("Create New", "CreateSlider")
+	@Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
 	<tr>
@@ -37,8 +37,8 @@
 				@Html.DisplayFor(modelItem => item.TargetLink)
 			</td>
 			<td>
-				@Html.ActionLink("Edit", "EditSlider", new { id = item.ID }) |
-				@Html.ActionLink("Delete", "DeleteSlider", new { id = item.ID })
+				@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.ID })
 			</td>
 		</tr>
 	}

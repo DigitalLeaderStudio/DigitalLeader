@@ -522,10 +522,10 @@
     <Content Include="Areas\Admin\Views\Vacancy\Edit.cshtml" />
     <Content Include="Content\less\projects.less" />
     <Content Include="Content\less\testimonials.less" />
-    <Content Include="Areas\Admin\Views\Admin\Sliders.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\CreateSlider.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\EditSlider.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\DeleteSlider.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Delete.cshtml" />
     <Content Include="Content\less\creed.less" />
     <Content Include="Areas\Admin\Views\Content\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Index.cshtml" />

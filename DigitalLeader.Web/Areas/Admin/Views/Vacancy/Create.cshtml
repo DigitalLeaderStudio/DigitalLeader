@@ -25,8 +25,17 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<VacancyViewModel, VacancyViewModel.VacancyLocalizedModel>
+				("vacanly-localized-Title",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Title, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Title, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 

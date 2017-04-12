@@ -1,4 +1,6 @@
 ﻿@model DigitalLeader.ViewModels.SliderViewModel
+@using DigitalLeader.ViewModels;
+@using DigitalLeader.Web.Extensions;
 
 @{
 	ViewBag.Title = "Create";
@@ -8,7 +10,7 @@
 <h2 class="text-center">Create new slider</h2>
 <hr />
 <div class="col-md-6 col-md-offset-2">
-	@using (Html.BeginForm("CreateSlider", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	@using (Html.BeginForm("Create", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
 		@Html.AntiForgeryToken()
 
@@ -25,16 +27,34 @@
 			<div class="form-group">
 				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<SliderViewModel, SliderViewModel.SliderLocalizedModel>
+				("slider-localized-title",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Title, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Title, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
 				<div class="col-md-10">
-					@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+					@(Html.LocalizedEditor<SliderViewModel, SliderViewModel.SliderLocalizedModel>
+				("slider-localized-Description",
+				@<div>
+					@Html.EditorFor(model => model.Locales[item].Description, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Locales[item].Description, "", new { @class = "text-danger" })
+					@Html.HiddenFor(model => model.Locales[item].LanguageId)
+				</div>,
+					@<div>
+						@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+					</div>, true))
 				</div>
 			</div>
 
@@ -69,5 +89,5 @@
 			</div>
 		</div>
 	}
-	@Html.ActionLink("Back to List", "Sliders")
+	@Html.ActionLink("Back to List", "Index")
 </div>
