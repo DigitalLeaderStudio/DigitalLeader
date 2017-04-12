@@ -4,7 +4,7 @@
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Schema;
 
-	public class Slider : IEntity, IImageble
+	public class Slider : IEntity, IImageble, ILocalizedEntity
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]

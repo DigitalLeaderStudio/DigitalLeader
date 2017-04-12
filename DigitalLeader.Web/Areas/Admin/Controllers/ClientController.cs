@@ -34,7 +34,10 @@
 		// GET: Admin/Client/Create
 		public ActionResult Create()
 		{
-			var viewModel = new ClientViewModel();
+			var viewModel = new ClientViewModel
+			{
+				JoinDate = DateTime.UtcNow
+			};
 
 			AddLocales(viewModel.Locales, (locale, languageId) => { });
 
