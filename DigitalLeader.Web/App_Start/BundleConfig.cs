@@ -66,6 +66,7 @@ namespace DigitalLeader.Web
 				.Include("~/Content/less/contact.less")
 				.Include("~/Content/less/projects.less")
 				.Include("~/Content/less/cases.less")
+				.Include("~/Content/less/clients.less")
 				.Include("~/Content/less/company.less")
 				.Include("~/Content/less/creed.less")
 				.Include("~/Content/less/testimonials.less"));

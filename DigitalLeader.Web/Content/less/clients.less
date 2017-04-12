@@ -1,0 +1,308 @@
+@import "settings.less";
+
+.clients {
+    padding: 0;
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        padding: 0px;
+    }
+
+    .row .row div {
+        padding: 10px;
+    }
+
+    .header {
+        background: @color-blue;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+        background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        height: 220px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+
+        & > div {
+            float: left;
+            width: 100%;
+            padding: 4%;
+            display: inline-block;
+
+            h1 {
+                text-align: center;
+                font-size: 3em;
+                color: white;
+                font-weight: bold;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 1.2em;
+                color: #ffffff;
+                margin-top: 0;
+            }
+        }
+
+        &:after {
+            visibility: hidden !important;
+            display: block !important;
+            font-size: 0 !important;
+            content: " " !important;
+            clear: both !important;
+            height: 0 !important;
+        }
+    }
+
+    .client-item-wrapper {
+        position: relative;
+        padding: 5px;
+
+        .client-item {
+            background: @color-grey;
+            height: auto;
+            width: 100%;
+            position: relative;
+            display: block;
+            border: 10px solid @color-grey-light;
+            padding: 10%;
+
+            .logo {
+                width: 100%;
+                margin: 0 auto;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+
+/*RESPONSIVE*/
+@media (max-width: 375px) {
+    .clients {
+        padding: 0;
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            height: auto;
+            width: 100%;
+            margin: 0;
+            padding: 5% 2%;
+            position: relative;
+            display: inline-block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4%;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 3em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+
+        .clients-container {
+            padding: 0 5px;
+        }
+
+        .client-item-wrapper {
+            position: relative;
+            padding: 5px;
+
+            .client-item {
+                background: @color-grey;
+                height: auto;
+                width: 100%;
+                position: relative;
+                display: block;
+                border: 10px solid @color-grey-light;
+
+                .logo {
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+/* xs */
+@media (min-width: 375px) and (max-width: 767px) {
+    .clients {
+        padding: 0;
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            height: auto;
+            width: 100%;
+            margin: 0;
+            padding: 5% 2%;
+            position: relative;
+            display: inline-block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4%;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 3em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+
+        .clients-container {
+            padding: 0 5px;
+        }
+
+        .client-item-wrapper {
+            position: relative;
+            padding: 5px;
+
+            .client-item {
+                background: @color-grey;
+                height: auto;
+                width: 100%;
+                position: relative;
+                display: block;
+                border: 10px solid @color-grey-light;
+
+                .logo {
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .clients {
+        padding: 0;
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            height: auto;
+            width: 100%;
+            margin: 0;
+            padding: 5% 2%;
+            position: relative;
+            display: inline-block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4%;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 42px;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 18px;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+    }
+}
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/* lg */
+@media (min-width: 1200px) {
+}

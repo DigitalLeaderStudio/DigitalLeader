@@ -171,9 +171,9 @@ namespace DigitalLeader.Web.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Success stories of our clients.
         /// </summary>
-        public static string CaseStudies_Text {
+        public static string CaseStudies_Subtitle {
             get {
-                return ResourceManager.GetString("CaseStudies_Text", resourceCulture);
+                return ResourceManager.GetString("CaseStudies_Subtitle", resourceCulture);
             }
         }
         
@@ -183,6 +183,24 @@ namespace DigitalLeader.Web.Localization {
         public static string CaseStudies_Title {
             get {
                 return ResourceManager.GetString("CaseStudies_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These companies trust us.
+        /// </summary>
+        public static string Clients_Subtitle {
+            get {
+                return ResourceManager.GetString("Clients_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clients.
+        /// </summary>
+        public static string Clients_Title {
+            get {
+                return ResourceManager.GetString("Clients_Title", resourceCulture);
             }
         }
         

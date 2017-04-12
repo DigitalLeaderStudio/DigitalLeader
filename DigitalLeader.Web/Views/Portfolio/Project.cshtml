@@ -39,30 +39,35 @@
 					<h2>@Translations.Project_Overview</h2>
 					<p>@Model.Overview</p>
 				</div>
-				<div class="row objective">
-					<div class="col-md-4 objective-title">
-						@Translations.Project_Objective
-					</div>
-					<div class="col-md-8 objective-body">
-						@Model.Objective
-					</div>
-				</div>
-				<div class="row work">
-                    <div class="col-md-4 work-title">
-                        @Translations.Project_Work
+
+                @if (Model.IsCaseStudy)
+                {
+                    <div class="row objective">
+                        <div class="col-md-4 objective-title">
+                            @Translations.Project_Objective
+                        </div>
+                        <div class="col-md-8 objective-body">
+                            @Model.Objective
+                        </div>
                     </div>
-                    <div class="col-md-8 work-body">
-						@Model.WorkOverview
-					</div>
-				</div>
-				<div class="row result">
-					<div class="col-md-4 result-title">
-						@Translations.Project_Result
-					</div>
-					<div class="col-md-8 result-body">
-						@Model.ResultOverview
-					</div>
-				</div>
+                    <div class="row work">
+                        <div class="col-md-4 work-title">
+                            @Translations.Project_Work
+                        </div>
+                        <div class="col-md-8 work-body">
+                            @Model.WorkOverview
+                        </div>
+                    </div>
+                    <div class="row result">
+                        <div class="col-md-4 result-title">
+                            @Translations.Project_Result
+                        </div>
+                        <div class="col-md-8 result-body">
+                            @Model.ResultOverview
+                        </div>
+                    </div>
+                }
+				
 			</div>
 			<div class="col-md-3 project-aside">
 				

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DigitalLeader.ViewModels.ProjectViewModel>
+
+@using DigitalLeader.Web.Localization
+
+@{
+    ViewBag.Title = Html.Title(Translations.Projects_Title_Name);
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid clients">
+    <div class="row header clearfix">
+        <div>
+            <h1>@Translations.Clients_Title</h1>
+            <h2>@Translations.Clients_Subtitle</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row clients-container">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-4 col-xs-6  client-item-wrapper">
+                    <a class="client-item" href="@Url.Action("Project", "Portfolio", new { id = item.ID })">
+                        @{
+                            var srcLogoAction = item.LogoId.HasValue ?
+                            Url.Action("Show", "File", new { area = "", id = item.LogoId }) :
+                            "/Content/img/default-user.png";
+                        }
+                        <img class="logo" src="@srcLogoAction" />
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

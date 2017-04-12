@@ -238,10 +238,10 @@
     <value>Блог</value>
   </data>
   <data name="LinkCareers" xml:space="preserve">
-    <value>Кар'єра</value>
+    <value>Вакансії</value>
   </data>
   <data name="LinkCaseStudies" xml:space="preserve">
-    <value>Історії Успіху</value>
+    <value>Приклади</value>
   </data>
   <data name="LinkClients" xml:space="preserve">
     <value>Клієнти</value>
@@ -366,7 +366,7 @@
   <data name="ThankYou_Title" xml:space="preserve">
     <value>Дякуємо</value>
   </data>
-  <data name="CaseStudies_Text" xml:space="preserve">
+  <data name="CaseStudies_Subtitle" xml:space="preserve">
     <value>Історії успіху наших кліентів</value>
   </data>
   <data name="CaseStudies_Title" xml:space="preserve">
@@ -377,5 +377,11 @@
   </data>
   <data name="Site_Name" xml:space="preserve">
     <value> - Цифровий Лідер</value>
+  </data>
+  <data name="Clients_Subtitle" xml:space="preserve">
+    <value>Ці компанії довіряють нам</value>
+  </data>
+  <data name="Clients_Title" xml:space="preserve">
+    <value>Клієнти</value>
   </data>
 </root>
