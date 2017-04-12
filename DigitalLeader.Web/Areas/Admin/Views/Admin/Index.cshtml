@@ -6,44 +6,37 @@
 <h2 class="text-center">Admin main page</h2>
 <hr />
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<ul class="list-group">
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "User", new { area = "Admin"})"><i class="fa fa-users"></i>&nbsp;View users</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Slider", new { area = "Admin"})">View sliders</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Content", new { area = "Admin"})">View html content</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Blogpost", new { area = "Admin"})">View blog</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "ServiceCategory", new { area = "Admin"})">View categories</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "ServiceSubcategory", new { area = "Admin"})">View subcategories</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Service", new { area = "Admin" })">View services</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Project",new { area = "Admin"})">View projects</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Testimonial", new { area = "Admin" })">View testimonials</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Client",new { area = "Admin"})">View clients</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Technology", new { area = "Admin" })">View technologies</a>
-			</li>
-			<li class="list-group-item">
-				<a href="@Url.Action("Index", "Vacancy", new { area = "Admin" })">View vacancies</a>
-			</li>
-		</ul>
+	<div class="col-md-2 col-md-offset-2">
+		<div class="list-group">
+			<a class="list-group-item disabled" href="#"><i class="fa fa-tasks"></i>&nbsp;Service</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Service", new { area = "Admin" })">Manage services</a>
+			<a class="list-group-item" href="@Url.Action("Index", "ServiceCategory", new { area = "Admin"})">Manage categories</a>
+			<a class="list-group-item" href="@Url.Action("Index", "ServiceSubcategory", new { area = "Admin"})">Manage subcategories</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Technology", new { area = "Admin" })">Manage technologies</a>
+		</div>
+	</div>
+
+	<div class="col-md-2">
+		<div class="list-group">
+			<a class="list-group-item disabled" href="@Url.Action("Index", "User", new { area = "Admin"})"><i class="fa fa-star"></i>&nbsp;Portfolio</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Project",new { area = "Admin"})">View projects</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Testimonial", new { area = "Admin" })">View testimonials</a>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="list-group">
+			<a class="list-group-item disabled" href="#"><i class="fa fa-cogs"></i>&nbsp;System</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Slider", new { area = "Admin"})">Manage slider</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Content", new { area = "Admin"})">Manage html content</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Blogpost", new { area = "Admin"})">Manage blog</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Vacancy", new { area = "Admin" })">Manage vacancies</a>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="list-group">
+			<a class="list-group-item disabled" href="#"><i class="fa fa-users"></i>&nbsp;People</a>
+			<a class="list-group-item" href="@Url.Action("Index", "Client",new { area = "Admin"})">Manage clients</a>
+			<a class="list-group-item" href="@Url.Action("Index", "User",new { area = "Admin"})">Manage users</a>
+		</div>
 	</div>
 </div>

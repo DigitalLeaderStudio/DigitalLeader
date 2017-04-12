@@ -30,7 +30,7 @@
                     <li>@Html.ActionLink(@Translations.LinkServices, "Index", "Home")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
-                           aria-expanded="false">@Translations.LinkPortfolio @*<span class="caret"></span>*@</a>
+                           aria-expanded="false">@Translations.LinkPortfolio <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkProjects</a>
@@ -41,9 +41,6 @@
                             <li>
                                 <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkTestimonials</a>
                             </li>
-                            @*<li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.NavBarLinkClients</a>
-                            </li>*@
                         </ul>
                     </li>
                     
@@ -52,7 +49,7 @@
                            data-toggle="dropdown" 
                            role="button" 
                            aria-haspopup="true" 
-                           aria-expanded="false">@Translations.LinkCompany @*<span class="caret"></span>*@</a>
+                           aria-expanded="false">@Translations.LinkCompany <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Story", "Company")">@Translations.LinkStory</a>
