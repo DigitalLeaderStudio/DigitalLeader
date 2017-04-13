@@ -13,20 +13,20 @@
 @Scripts.Render("~/bundles/unobtrusive")
 
 	<div id="contact-form-container" class="col-md-8 col-sm-7 connect-form">
-		<div class="fader">
-			<i class="fa fa-refresh fa-spin fa-3x fa-fw text-center"></i>
-		</div>
 		<div class="row">
 			<div class="col-md-12 form-title">
 				<h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i>@Translations.Contact_Form_Title</h2>
 			</div>
 		</div>
 		
-		@using (Ajax.BeginForm(ajaxOptions))
-			{
+		@using (Ajax.BeginForm(null, null, ajaxOptions, new { @class = "row" }))
+        {
 			@Html.AntiForgeryToken()
 			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+            <div class="fader">
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw text-center"></i>
+            </div>
 			<div class="col-md-12 message">
 				@Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
 				@Html.TextAreaFor(m => m.Message, new { @placeholder = Translations.Contact_Form_Message_Placeholder })
