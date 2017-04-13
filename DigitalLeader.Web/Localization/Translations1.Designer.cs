@@ -457,7 +457,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ENG.
+        ///   Looks up a localized string similar to ENGLISH.
         /// </summary>
         public static string Link_Eng {
             get {
@@ -493,7 +493,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UKR.
+        ///   Looks up a localized string similar to УКРАЇНСЬКА.
         /// </summary>
         public static string Link_Ukr {
             get {

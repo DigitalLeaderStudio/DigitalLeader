@@ -56,8 +56,9 @@
                 <h3>@Translations.LinkPortfolio</h3>
                 <ul class="menu-list">
                     <li>@Html.ActionLink(Translations.LinkProjects, "Projects", "Portfolio")</li>
-                    @*<li>@Html.ActionLink(Translations.LinkCaseStudies, "Clients", "Home")</li>*@
+                    <li>@Html.ActionLink(Translations.LinkCaseStudies, "CaseStudies", "Portfolio")</li>
                     <li>@Html.ActionLink(Translations.LinkTestimonials, "Testimonials", "Portfolio")</li>
+                    <li>@Html.ActionLink(Translations.LinkClients, "Clients", "Portfolio")</li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-3">
@@ -87,10 +88,10 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 terms">
                     <ul>
-                        <li>@Html.ActionLink(Translations.Link_Privacy, "Privacy", "Home")</li>
+                        @Html.Partial("_LanguagesPartial")
+                        @*<li>@Html.ActionLink(Translations.Link_Privacy, "Privacy", "Home")</li>
                         <li>@Html.ActionLink(Translations.Link_TermsOfUse, "ConditionsOfUse", "Home")</li>
-                        <li>@Html.ActionLink(Translations.Link_Feedback, "Index", "Contact")</li>
-                            @Html.Partial("_LanguagesPartial")
+                        <li>@Html.ActionLink(Translations.Link_Feedback, "Index", "Contact")</li>*@
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-4 top-btn">

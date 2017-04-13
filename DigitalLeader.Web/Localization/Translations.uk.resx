@@ -292,7 +292,7 @@
     <value>Наукові статті</value>
   </data>
   <data name="Link_Eng" xml:space="preserve">
-    <value>АНГЛ</value>
+    <value>ENGLISH</value>
   </data>
   <data name="Link_Feedback" xml:space="preserve">
     <value>Зв'язок</value>
@@ -304,7 +304,7 @@
     <value>Правила</value>
   </data>
   <data name="Link_Ukr" xml:space="preserve">
-    <value>УКР</value>
+    <value>УКРАЇНСЬКА</value>
   </data>
   <data name="Marketing_Category_Name" xml:space="preserve">
     <value>Цифровий маркетинг</value>
