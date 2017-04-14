@@ -33,7 +33,11 @@
 			return result;
 		}
 
-		public List<T> HandleCollection<T, TKey>(List<T> existed, List<T> value, Func<T, TKey> getKey, ApplicationDbContext dbContext) where T : class
+		public List<T> HandleCollection<T, TKey>(
+			List<T> existed,
+			List<T> value,
+			Func<T, TKey> getKey,
+			ApplicationDbContext dbContext) where T : class
 		{
 			var result = existed;
 
@@ -47,7 +51,8 @@
 
 			foreach (var addedItem in addedItems)
 			{
-				if (dbContext.Entry(addedItem).State == EntityState.Detached)
+				var entry = dbContext.Entry(addedItem);
+				if (entry.State == EntityState.Detached)
 				{
 					dbContext.Set<T>().Attach(addedItem);
 				}

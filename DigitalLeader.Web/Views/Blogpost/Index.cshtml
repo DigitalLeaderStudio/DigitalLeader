@@ -1,8 +1,41 @@
-﻿
-@{
-    ViewBag.Title = "Blog";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model IEnumerable<DigitalLeader.ViewModels.BlogpostViewModel>
+    @{
+        ViewBag.Title = "Blog";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+        <div class="container-fluid projects">
+            <div class="row header clearfix">
+                <div>
+                    <h1>@Translations.LinkBlog</h1>
+                    <h2>@Translations.LinkBlog</h2>
+                </div>
+            </div>
+            <div class="row">
 
-<h2>Blog</h2>
+                <div class="col-sm-9">
+                    
+                    <hr>
+                    @foreach (var post in Model)
+                    {
+                        <h2>@post.Title</h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> @post.PublishedDate</h5>
 
+
+                        String[] tags = post.Keywords.Split(' ');
+                        <h5>
+
+                            @foreach (String tag in tags)
+                            {
+
+                                <span class="label label-info">
+                                    @tag
+                                </span>
+                            }
+                        </h5>
+                        <br>
+                        @Html.Raw(post.Content)
+                        <br><br>
+                    }
+                </div>
+            </div>
+        </div>

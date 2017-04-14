@@ -3,58 +3,58 @@
 @using DigitalLeader.Web.Extensions;
 
 @{
-	ViewBag.Title = "Edit project";
+	ViewBag.Title = @Model.Title + " - Edit project";
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-center">Edit project</h2>
-<p class="text-center">
-	@Html.ActionLink("Back to List", "Index")
-</p>
-<hr />
-<div class="col-md-6 col-md-offset-2">
-	@using (Html.BeginForm("Edit", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
-	{
-		@Html.AntiForgeryToken()
+<h2 class="text-center">Edit project - @Model.Title</h2>
+	<p class="text-center">
+		@Html.ActionLink("Back to List", "Index")
+	</p>
+	<hr />
+	<div class="col-md-6 col-md-offset-2">
+		@using (Html.BeginForm("Edit", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+		{
+			@Html.AntiForgeryToken()
 
-		<div class="form-horizontal">
+			<div class="form-horizontal">
 
-			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-			@Html.HiddenFor(model => model.ID)
+				@Html.HiddenFor(model => model.ID)
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@{
-						var srcAction = Model.ImageId.HasValue ?
-						Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
-						"/Content/img/default-user.png";
-					}
-					<img src="@srcAction" class="img-responsive" />
+				<div class="form-group">
+					@Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@{
+							var srcAction = Model.ImageId.HasValue ?
+							Url.Action("Show", "File", new { area = "", id = Model.ImageId }) :
+							"/Content/img/default-user.png";
+						}
+						<img src="@srcAction" class="img-responsive" />
 
-					@Html.TextBoxFor(model => model.File, new { @type = "file" })
+						@Html.TextBoxFor(model => model.File, new { @type = "file" })
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@{
-						var srcLogoAction = Model.LogoId.HasValue ?
-						Url.Action("Show", "File", new { area = "", id = Model.LogoId }) :
-						"/Content/img/default-user.png";
-					}
-					<img src="@srcLogoAction" class="img-responsive" />
+				<div class="form-group">
+					@Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@{
+							var srcLogoAction = Model.LogoId.HasValue ?
+							Url.Action("Show", "File", new { area = "", id = Model.LogoId }) :
+							"/Content/img/default-user.png";
+						}
+						<img src="@srcLogoAction" class="img-responsive" />
 
-					@Html.TextBoxFor(model => model.Logo, new { @type = "file" })
+						@Html.TextBoxFor(model => model.Logo, new { @type = "file" })
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
 				("project-localized-title",
 				@<div>
 					@Html.EditorFor(model => model.Locales[item].Title, new { htmlAttributes = new { @class = "form-control" } })
@@ -65,22 +65,22 @@
 						@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
 					</div>, true))
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.ProjectUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@Html.EditorFor(model => model.ProjectUrl, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.ProjectUrl, "", new { @class = "text-danger" })
+				<div class="form-group">
+					@Html.LabelFor(model => model.ProjectUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.ProjectUrl, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.ProjectUrl, "", new { @class = "text-danger" })
+					</div>
 				</div>
-			</div>
 
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.Kewywords, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Kewywords, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
 				("project-localized-kewywords",
 				@<div>
 					@Html.EditorFor(model => model.Locales[item].Kewywords, new { htmlAttributes = new { @class = "form-control" } })
@@ -91,13 +91,13 @@
 						@Html.EditorFor(model => model.Kewywords, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(model => model.Kewywords, "", new { @class = "text-danger" })
 					</div>, true))
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.Overview, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Overview, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
 				("project-localized-overview",
 				@<div>
 					@Html.EditorFor(model => model.Locales[item].Overview, new { htmlAttributes = new { @class = "form-control" } })
@@ -108,13 +108,13 @@
 						@Html.EditorFor(model => model.Overview, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(model => model.Overview, "", new { @class = "text-danger" })
 					</div>, true))
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.Objective, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Objective, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
 				("project-localized-objective",
 				@<div>
 					@Html.EditorFor(model => model.Locales[item].Objective, new { htmlAttributes = new { @class = "form-control" } })
@@ -125,13 +125,13 @@
 						@Html.EditorFor(model => model.Objective, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(model => model.Objective, "", new { @class = "text-danger" })
 					</div>, true))
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.WorkOverview, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				<div class="form-group">
+					@Html.LabelFor(model => model.WorkOverview, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
 				("project-localized-workOverview",
 				@<div>
 					@Html.EditorFor(model => model.Locales[item].WorkOverview, new { htmlAttributes = new { @class = "form-control" } })
@@ -142,13 +142,13 @@
 						@Html.EditorFor(model => model.WorkOverview, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(model => model.WorkOverview, "", new { @class = "text-danger" })
 					</div>, true))
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.ResultOverview, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
+				<div class="form-group">
+					@Html.LabelFor(model => model.ResultOverview, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@(Html.LocalizedEditor<ProjectViewModel, ProjectViewModel.ProjectLocalizedModel>
 				("project-localized-resultOverview",
 				@<div>
 					@Html.EditorFor(model => model.Locales[item].ResultOverview, new { htmlAttributes = new { @class = "form-control" } })
@@ -159,132 +159,132 @@
 						@Html.EditorFor(model => model.ResultOverview, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(model => model.ResultOverview, "", new { @class = "text-danger" })
 					</div>, true))
-				</div>
-			</div>
-
-
-			<div class="form-group">
-				@Html.LabelFor(model => model.IsCaseStudy, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					<div class="checkbox">
-						@Html.EditorFor(model => model.IsCaseStudy)
-						@Html.ValidationMessageFor(model => model.IsCaseStudy, "", new { @class = "text-danger" })
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.IsFeatured, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					<div class="checkbox">
-						@Html.EditorFor(model => model.IsFeatured)
-						@Html.ValidationMessageFor(model => model.IsFeatured, "", new { @class = "text-danger" })
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.IsCaseStudy, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						<div class="checkbox">
+							@Html.EditorFor(model => model.IsCaseStudy)
+							@Html.ValidationMessageFor(model => model.IsCaseStudy, "", new { @class = "text-danger" })
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					<div class="input-group date datetimepicker">
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-						@Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+				<div class="form-group">
+					@Html.LabelFor(model => model.IsFeatured, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						<div class="checkbox">
+							@Html.EditorFor(model => model.IsFeatured)
+							@Html.ValidationMessageFor(model => model.IsFeatured, "", new { @class = "text-danger" })
+						</div>
 					</div>
-					@Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					<div class="input-group date datetimepicker">
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-						@Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+				<div class="form-group">
+					@Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						<div class="input-group date datetimepicker">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+							@Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+						</div>
+						@Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
 					</div>
-					@Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
 				</div>
-			</div>
 
-			<div class="form-group">
-				@Html.LabelFor(m => m.ClientsSelectList, new { @class = "control-label col-md-2" })
-				<div class="col-md-6">
-					@Html.DropDownListFor(m => m.ClientID, Model.ClientsSelectList,
+				<div class="form-group">
+					@Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						<div class="input-group date datetimepicker">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+							@Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+						</div>
+						@Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(m => m.ClientsSelectList, new { @class = "control-label col-md-2" })
+					<div class="col-md-6">
+						@Html.DropDownListFor(m => m.ClientID, Model.ClientsSelectList,
 					new { @class = "form-control chosen-select", data_placeholder = "Chose a client" })
+					</div>
+					<div class="col-md-4">
+						<a href="@Url.Action("Index", "Client", new { area = "Admin"})">Edit clients</a>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<a href="@Url.Action("Index", "Client", new { area = "Admin"})">Edit clients</a>
+
+				<div class="form-group">
+					@Html.LabelFor(m => m.TechnologiesSelectList, new { @class = "control-label col-md-2" })
+					<div class="col-md-6">
+						<select id="@Html.IdFor(m => m.TechnologiesIds)"
+								name="@Html.NameFor(m => m.TechnologiesIds)"
+								class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+							@foreach (var option in Model.TechnologiesSelectList)
+							{
+								<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+							}
+						</select>
+					</div>
+
+					<div class="col-md-4">
+						<a href="@Url.Action("Index", "Technology", new { area = "Admin"})" target="_blank">Edit technologies</a>
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(m => m.ServicesSelectList, new { @class = "control-label col-md-2" })
+					<div class="col-md-6">
+						<select id="@Html.IdFor(m => m.ServicesIds)"
+								name="@Html.NameFor(m => m.ServicesIds)"
+								class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+							@foreach (var option in Model.ServicesSelectList)
+							{
+								<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+							}
+						</select>
+					</div>
+
+					<div class="col-md-4">
+						<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit services</a>
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(m => m.ContributorsSelectList, new { @class = "control-label col-md-2" })
+					<div class="col-md-6">
+						<select id="@Html.IdFor(m => m.ContributorsIds)"
+								name="@Html.NameFor(m => m.ContributorsIds)"
+								class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
+							@foreach (var option in Model.ContributorsSelectList)
+							{
+								<option value="@option.Value" selected="@option.Selected">@option.Text</option>
+							}
+						</select>
+					</div>
+
+					<div class="col-md-4">
+						<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit users</a>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<input type="submit" value="Save" class="btn btn-default" />
+					</div>
 				</div>
 			</div>
+							}
 
-			<div class="form-group">
-				@Html.LabelFor(m => m.TechnologiesSelectList, new { @class = "control-label col-md-2" })
-				<div class="col-md-6">
-					<select id="@Html.IdFor(m => m.TechnologiesIds)"
-							name="@Html.NameFor(m => m.TechnologiesIds)"
-							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
-						@foreach (var option in Model.TechnologiesSelectList)
-						{
-							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
-						}
-					</select>
-				</div>
-
-				<div class="col-md-4">
-					<a href="@Url.Action("Index", "Technology", new { area = "Admin"})" target="_blank">Edit technologies</a>
-				</div>
-			</div>
-
-			<div class="form-group">
-				@Html.LabelFor(m => m.ServicesSelectList, new { @class = "control-label col-md-2" })
-				<div class="col-md-6">
-					<select id="@Html.IdFor(m => m.ServicesIds)"
-							name="@Html.NameFor(m => m.ServicesIds)"
-							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
-						@foreach (var option in Model.ServicesSelectList)
-						{
-							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
-						}
-					</select>
-				</div>
-
-				<div class="col-md-4">
-					<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit services</a>
-				</div>
-			</div>
-
-			<div class="form-group">
-				@Html.LabelFor(m => m.ContributorsSelectList, new { @class = "control-label col-md-2" })
-				<div class="col-md-6">
-					<select id="@Html.IdFor(m => m.ContributorsIds)"
-							name="@Html.NameFor(m => m.ContributorsIds)"
-							class="form-control chosen-select" multiple="multiple" data-placeholder="Choose a technologies...">
-						@foreach (var option in Model.ContributorsSelectList)
-						{
-							<option value="@option.Value" selected="@option.Selected">@option.Text</option>
-						}
-					</select>
-				</div>
-
-				<div class="col-md-4">
-					<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit users</a>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-10">
-					<input type="submit" value="Save" class="btn btn-default" />
-				</div>
-			</div>
-		</div>
-						}
-
-</div>
-<div class="col-md-12">
-	<p class="text-center">
-		@Html.ActionLink("Back to List", "Index")
-	</p>
-</div>
+	</div>
+	<div class="col-md-12">
+		<p class="text-center">
+			@Html.ActionLink("Back to List", "Index")
+		</p>
+	</div>
