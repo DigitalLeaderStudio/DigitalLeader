@@ -1,142 +1,128 @@
 ﻿namespace DigitalLeader.Services.Implementation
 {
-    using DigitalLeader.DAL;
-    using DigitalLeader.Entities;
-    using DigitalLeader.Services.Interfaces;
-    using EntityFramework.DbContextScope.Interfaces;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Linq.Expressions;
+	using DigitalLeader.DAL;
+	using DigitalLeader.Entities;
+	using DigitalLeader.Services.Interfaces;
+	using EntityFramework.DbContextScope.Interfaces;
+	using System;
+	using System.Collections.Generic;
+	using System.Data.Entity;
+	using System.Linq;
+	using System.Linq.Expressions;
 
 
-    public class TechnologyService : ITechnologyService
-    {
-        private readonly IDbContextScopeFactory _dbContextScopeFactory;
+	public class TechnologyService : ITechnologyService
+	{
+		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
-        public TechnologyService(IDbContextScopeFactory dbContextScopeFactory)
-        {
-            _dbContextScopeFactory = dbContextScopeFactory;
-        }
+		public TechnologyService(IDbContextScopeFactory dbContextScopeFactory)
+		{
+			_dbContextScopeFactory = dbContextScopeFactory;
+		}
 
-        public Expression<Func<Technology, object>>[] Includes
-        {
-            get
-            {
-                return new Expression<Func<Technology, object>>[] {
-                    technology => technology.Projects,
-                    technology => technology.Employees
-                };
-            }
-        }
+		public Expression<Func<Technology, object>>[] Includes
+		{
+			get
+			{
+				return new Expression<Func<Technology, object>>[] {
+					technology => technology.Projects,
+					technology => technology.Employees
+				};
+			}
+		}
 
-        public List<Technology> GetAll()
-        {
-            return GetAllInclude(Includes);
-        }
+		public List<Technology> GetAll()
+		{
+			return GetAllInclude(Includes);
+		}
 
-        public Technology GetById(int id)
-        {
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+		public Technology GetById(int id)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                var query = dbContext.Set<Technology>().AsQueryable();
+				var query = dbContext.Set<Technology>().AsQueryable();
 
-                if (Includes != null)
-                {
-                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
+				if (Includes != null)
+				{
+					query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
 
-                return query.SingleOrDefault(c => c.ID == id);
-            }
-        }
+				return query.SingleOrDefault(c => c.ID == id);
+			}
+		}
 
-        public List<Technology> GetAllInclude(params Expression<Func<Technology, object>>[] includes)
-        {
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+		public List<Technology> GetByIds(int[] ids)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                var query = dbContext.Set<Technology>().AsQueryable();
+				return dbContext.Set<Technology>()
+					.Where(t => ids.Contains(t.ID))
+					.ToList();
+			}
+		}
 
-                if (includes != null)
-                {
-                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
+		public List<Technology> GetAllInclude(params Expression<Func<Technology, object>>[] includes)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                return query.ToList();
-            }
-        }
+				var query = dbContext.Set<Technology>().AsQueryable();
 
-        public void Update(Technology value)
-        {
-            using (var scope = _dbContextScopeFactory.Create())
-            {
-                var dbContext = scope.DbContexts
-                    .Get<ApplicationDbContext>();
+				if (includes != null)
+				{
+					query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
 
-                var existed = dbContext.Set<Technology>().SingleOrDefault(t => t.ID == value.ID);
+				return query.ToList();
+			}
+		}
 
-                existed.Name = value.Name;
+		public void Update(Technology value)
+		{
+			using (var scope = _dbContextScopeFactory.Create())
+			{
+				var dbContext = scope.DbContexts
+					.Get<ApplicationDbContext>();
 
-                scope.SaveChanges();
-            }
-        }
+				var existed = dbContext.Set<Technology>().SingleOrDefault(t => t.ID == value.ID);
 
-        public void Insert(Technology value)
-        {
-            using (var scope = _dbContextScopeFactory.Create())
-            {
-                var dbContext = scope.DbContexts
-                    .Get<ApplicationDbContext>();
+				existed.Name = value.Name;
 
-                dbContext.Set<Technology>().Add(value);
+				scope.SaveChanges();
+			}
+		}
 
-                scope.SaveChanges();
-            }
-        }
+		public void Insert(Technology value)
+		{
+			using (var scope = _dbContextScopeFactory.Create())
+			{
+				var dbContext = scope.DbContexts
+					.Get<ApplicationDbContext>();
 
-        public void Delete(Technology value)
-        {
-            using (var scope = _dbContextScopeFactory.Create())
-            {
-                var dbContext = scope.DbContexts
-                    .Get<ApplicationDbContext>();
+				dbContext.Set<Technology>().Add(value);
 
-                var existed = dbContext.Set<Technology>().SingleOrDefault(t => t.ID == value.ID);
+				scope.SaveChanges();
+			}
+		}
 
-                dbContext.Set<Technology>().Remove(existed);
+		public void Delete(Technology value)
+		{
+			using (var scope = _dbContextScopeFactory.Create())
+			{
+				var dbContext = scope.DbContexts
+					.Get<ApplicationDbContext>();
 
-                scope.SaveChanges();
-            }
-        }
+				var existed = dbContext.Set<Technology>().SingleOrDefault(t => t.ID == value.ID);
 
-        public List<Technology> GetByIds(int[] ids)
-        {
-            using (var scope = _dbContextScopeFactory.Create())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+				dbContext.Set<Technology>().Remove(existed);
 
-                return dbContext.Set<Technology>()
-                    .Where(t => ids.Contains(t.ID))
-                    .ToList();
-            }
-        }
-
-
-        /*	public List<Technology> GetAllInclude(params System.Linq.Expressions.Expression<System.Func<Technology, object>>[] includes)
-            {
-                throw new System.NotImplementedException();
-            }
-
-
-            public System.Linq.Expressions.Expression<System.Func<Technology, object>>[] Includes
-            {
-                get { throw new System.NotImplementedException(); }
-            }
-        }
-        */
-    }
+				scope.SaveChanges();
+			}
+		}
+	}
 }

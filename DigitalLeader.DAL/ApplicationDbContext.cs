@@ -134,8 +134,8 @@
 					.Map(map =>
 					{
 						map.ToTable("TechnologiesWithVacancies");
-						map.MapLeftKey("TechnologyId");
-						map.MapRightKey("VacancyId");
+						map.MapLeftKey("VacancyId");
+						map.MapRightKey("TechnologyId");
 					});
 
 			#endregion
