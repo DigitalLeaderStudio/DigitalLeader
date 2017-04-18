@@ -314,6 +314,8 @@
                                 top: 29px;
                                 border-right: 2px solid @color-blue;
                                 margin-top: 10px;
+                                display: block;
+                                position: static;
 
                                 li {
                                     padding: 3px 15px 3px 20px;
@@ -500,6 +502,8 @@
                                 top: 29px;
                                 border-right: 2px solid @color-blue;
                                 margin-top: 10px;
+                                display: block;
+                                position: static;
 
                                 li {
                                     padding: 3px 15px 3px 20px;
@@ -639,6 +643,7 @@
 
             .container {
                 padding-right: 30px;
+                width: 100%;
             }
 
             #mainNavLinks {
@@ -648,7 +653,7 @@
                 .navbar-links {
                     float: right;
                     padding: 0;
-                    margin: 0;
+                    margin: 20px 20px 0;
 
                     > li {
                         list-style: none;
@@ -665,7 +670,7 @@
                             text-decoration: none;
                             color: #fff !important;
                             font-family: @font-main;
-                            font-size: 23px;
+                            font-size: 33px;
 
                             &:hover {
                                 color: #0094ff !important;
@@ -689,17 +694,19 @@
                                 top: 29px;
                                 border-right: 2px solid @color-blue;
                                 margin-top: 10px;
+                                display: block;
+                                position: static;
 
                                 li {
-                                    padding: 3px 15px 3px 20px;
+                                    padding: 3px 15px 10px 20px;
                                     text-align: right;
-
 
                                     a {
                                         padding: 0;
                                         color: @color-white;
                                         display: inline;
                                         text-transform: uppercase;
+                                        font-size: 20px;
 
                                         &:hover {
                                             background: none;
