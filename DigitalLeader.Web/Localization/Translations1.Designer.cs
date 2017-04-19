@@ -412,6 +412,15 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Before continuing, what&apos;s your email address?.
+        /// </summary>
+        public static string Homepage_ContactRequest_Email2 {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Email2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What&apos;s your name?.
         /// </summary>
         public static string Homepage_ContactRequest_FirstName {
@@ -430,11 +439,29 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to YourProblem(more than 10 symbols).
+        /// </summary>
+        public static string Homepage_ContactRequest_Message_Hint {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Message_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Telephone.
         /// </summary>
         public static string Homepage_ContactRequest_Phone {
             get {
                 return ResourceManager.GetString("Homepage_ContactRequest_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before continuing, what&apos;s your phone number?.
+        /// </summary>
+        public static string Homepage_ContactRequest_Phone2 {
+            get {
+                return ResourceManager.GetString("Homepage_ContactRequest_Phone2", resourceCulture);
             }
         }
         

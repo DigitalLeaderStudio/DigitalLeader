@@ -384,4 +384,13 @@
   <data name="Clients_Title" xml:space="preserve">
     <value>Клієнти</value>
   </data>
+  <data name="Homepage_ContactRequest_Email2" xml:space="preserve">
+    <value>Будь ласка, введіть Email</value>
+  </data>
+  <data name="Homepage_ContactRequest_Message_Hint" xml:space="preserve">
+    <value>Ваша проблема(більше 10 символів)</value>
+  </data>
+  <data name="Homepage_ContactRequest_Phone2" xml:space="preserve">
+    <value>Будь ласка, введіть номер телефону</value>
+  </data>
 </root>

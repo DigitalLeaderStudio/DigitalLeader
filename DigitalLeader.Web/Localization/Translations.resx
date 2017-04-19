@@ -384,4 +384,13 @@
   <data name="Clients_Title" xml:space="preserve">
     <value>Clients</value>
   </data>
+  <data name="Homepage_ContactRequest_Email2" xml:space="preserve">
+    <value>Before continuing, what's your email address?</value>
+  </data>
+  <data name="Homepage_ContactRequest_Message_Hint" xml:space="preserve">
+    <value>YourProblem(more than 10 symbols)</value>
+  </data>
+  <data name="Homepage_ContactRequest_Phone2" xml:space="preserve">
+    <value>Before continuing, what's your phone number?</value>
+  </data>
 </root>
