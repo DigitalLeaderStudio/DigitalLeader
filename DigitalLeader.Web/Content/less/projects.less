@@ -785,6 +785,132 @@
 }
 /* xs */
 @media (min-width: 375px) and (max-width: 767px) {
+    .projects {
+        padding: 0;
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            height: auto;
+            width: 100%;
+            margin: 0;
+            padding: 5% 2%;
+            position: relative;
+            display: block;
+            clear: none;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4%;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 3em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+
+        .project-item-wrapper {
+            position: relative;
+            padding: 5px 5px 0;
+
+            .project-item {
+                background: @color-grey;
+                height: auto;
+                width: 100%;
+                position: relative;
+                display: block;
+                border: 10px solid @color-grey;
+
+
+                &:hover {
+                    border-color: @color-blue;
+                    transition: border-color 0.5s;
+
+
+                    i {
+                        opacity: 1;
+                        transition: opacity 0.5s;
+                    }
+                }
+
+                .bg {
+                    width: 100%;
+                    z-index: 0;
+                    opacity: 0.3;
+                }
+
+                .logo {
+                    width: 50%;
+                    margin: 0 auto;
+                    z-index: 2;
+                    opacity: 1;
+                    padding: 10px;
+                    display: block;
+                    position: absolute;
+                    top: 10%;
+                    left: 25%;
+                }
+
+                h5 {
+                    bottom: 25%;
+                    position: absolute;
+                    width: 100%;
+                    padding: 10px;
+                    margin: 0;
+                    color: @color-white;
+                    font-size: 34px;
+                    text-align: center;
+
+                    i {
+                        opacity: 0.1;
+                    }
+                }
+
+                h4 {
+                    bottom: 3%;
+                    position: absolute;
+                    width: 100%;
+                    padding: 10px;
+                    margin: 0;
+                    color: @color-white;
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    
     .project-page {
         padding: 0;
 

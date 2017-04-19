@@ -349,7 +349,6 @@
     <Content Include="Content\less\homepage.less" />
     <Content Include="Content\less\blog.less" />
     <Content Include="Content\less\company.less" />
-    <Content Include="Content\less\service.less" />
     <Content Include="Content\less\footer.less" />
     <Content Include="Content\less\contact.less" />
     <Content Include="favicon.ico" />
@@ -526,7 +525,6 @@
     <Content Include="Areas\Admin\Views\Slider\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Slider\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Slider\Delete.cshtml" />
-    <Content Include="Content\less\creed.less" />
     <Content Include="Areas\Admin\Views\Content\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Edit.cshtml" />
