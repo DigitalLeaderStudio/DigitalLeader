@@ -367,6 +367,15 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://www.facebook.com/Digital-Leader-222116434917757/.
+        /// </summary>
+        public static string Facebook_Link {
+            get {
+                return ResourceManager.GetString("Facebook_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ukraine, Kyiv, Mykhailo Stelmakh Street.
         /// </summary>
         public static string FooterAddress {

@@ -393,4 +393,7 @@
   <data name="Homepage_ContactRequest_Phone2" xml:space="preserve">
     <value>Будь ласка, введіть номер телефону</value>
   </data>
+  <data name="Facebook_Link" xml:space="preserve">
+    <value>https://www.facebook.com/Цифровий-Лідер-1656394374666651/</value>
+  </data>
 </root>
