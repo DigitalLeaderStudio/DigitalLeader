@@ -30,7 +30,7 @@
                     <li>@Html.ActionLink(@Translations.LinkServices, "Index", "Home")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
-                           aria-expanded="false">@Translations.LinkPortfolio</a>
+                           aria-expanded="false">@Translations.LinkPortfolio <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkProjects</a>
@@ -52,7 +52,7 @@
                            data-toggle="dropdown" 
                            role="button" 
                            aria-haspopup="true" 
-                           aria-expanded="false">@Translations.LinkCompany</a>
+                           aria-expanded="false">@Translations.LinkCompany <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="@Url.Action("Story", "Company")">@Translations.LinkStory</a>
@@ -66,17 +66,17 @@
                             <li>
                                 <a href="@Url.Action("Careers", "Company")">@Translations.LinkCareers</a>
                             </li>
-
                         </ul>
                     </li>
 
-                    @*<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                           role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkBlog</a>
+                                <a href="@Url.Action("Index", "Blogpost")">@Translations.LinkBlog</a>
                             </li>
-                            <li>
+                            @*<li>
                                 <a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkWhitePapers</a>
                             </li>
                             <li>
@@ -90,14 +90,18 @@
                             </li>
                             <li>
                                 <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkPodcasts</a>
-                            </li>
+                            </li>*@
                         </ul>
-                    </li>*@
+                    </li>
 
                     
                     <li>@Html.ActionLink(@Translations.LinkConnect, "Index", "Contact")</li>
                     @*<li>@Html.ActionLink("Clients", "Clients", "Home")</li>*@
                     @*<li>@Html.ActionLink("News", "News", "Home")</li>*@
+
+                    <li class="languages">
+                        <ul>@Html.Partial("_TopLanguagesPartial")</ul>
+                    </li>
                 </ul>
             </div>
         </div>

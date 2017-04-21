@@ -247,7 +247,7 @@
     <value>Клієнти</value>
   </data>
   <data name="LinkCompany" xml:space="preserve">
-    <value>Про компанію</value>
+    <value>Компанія</value>
   </data>
   <data name="LinkConnect" xml:space="preserve">
     <value>Зв'язатися</value>
@@ -395,5 +395,11 @@
   </data>
   <data name="Facebook_Link" xml:space="preserve">
     <value>https://www.facebook.com/Цифровий-Лідер-1656394374666651/</value>
+  </data>
+  <data name="Link_Short_Eng" xml:space="preserve">
+    <value>ENG</value>
+  </data>
+  <data name="Link_Short_Ukr" xml:space="preserve">
+    <value>УКР</value>
   </data>
 </root>

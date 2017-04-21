@@ -784,6 +784,7 @@
     <Content Include="Views\Home\ConditionsOfUse.cshtml" />
     <Content Include="Views\Portfolio\Clients.cshtml" />
     <Content Include="Views\Tracking\GoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\_TopLanguagesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
