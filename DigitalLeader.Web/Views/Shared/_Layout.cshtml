@@ -18,6 +18,8 @@
 	@Scripts.Render("~/bundles/bootstrap")
 	@Scripts.Render("~/bundles/chosen")
 	@Scripts.Render("~/bundles/core-js")
+
+    @Html.Action("GoogleAnalytics", "Tracking")
 </head>
 <body>
 	@Html.Partial("_NavigationPartial")

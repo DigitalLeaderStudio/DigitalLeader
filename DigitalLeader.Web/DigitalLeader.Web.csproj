@@ -262,6 +262,7 @@
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\TinyMCESampleController.cs" />
+    <Compile Include="Controllers\TrackingController.cs" />
     <Compile Include="Extensions\RequestContextExtensions.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
@@ -309,7 +310,6 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\Images\company\header bg.png" />
     <Content Include="Content\Images\company\world-map.png" />
     <Content Include="Content\Images\default-user.png" />
     <Content Include="Content\Images\dl logo v2 white.png" />
@@ -783,6 +783,7 @@
     <Content Include="Views\Home\Privacy.cshtml" />
     <Content Include="Views\Home\ConditionsOfUse.cshtml" />
     <Content Include="Views\Portfolio\Clients.cshtml" />
+    <Content Include="Views\Tracking\GoogleAnalytics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
