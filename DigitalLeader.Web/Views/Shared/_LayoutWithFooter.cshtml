@@ -19,6 +19,8 @@
 	@Styles.Render("~/Content/core-css")
 	@Styles.Render("~/Content/core-less")
 	@Styles.Render("~/Content/chosen")
+
+	@Html.Action("GoogleAnalytics", "Tracking")
 </head>
 <body>
 	@Html.Partial("_NavigationPartial")
