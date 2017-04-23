@@ -87,6 +87,7 @@
         #mainNavLinks {
             width: 100%;
             float: left;
+            position: relative;
 
             .navbar-links {
                 float: right;
@@ -116,6 +117,13 @@
                     }
 
                     &.dropdown {
+                        .dropdown-toggle {
+                            i {
+                                opacity: 0.4;
+                                /*color: @color-blue;*/
+                            }
+                        }
+
                         > .dropdown-menu {
                             background-color: @color-blue;
                             z-index: 100000;
@@ -124,6 +132,8 @@
                             margin: 0;
                             padding: 5px 0 10px;
                             border: 0;
+                            border: 1px dotted @color-grey;
+                            border-top: 0;
                             min-width: unset;
                             width: auto;
                             left: 15px;
@@ -144,6 +154,30 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+
+            .languages {
+                left: 0;
+                top: 0;
+                position: absolute;
+                padding: 3px 0 0 5px !important;
+
+                ul {
+                    padding: 0;
+                    list-style: none;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+
+                    li {
+                        display: inline-block;
+                        padding-right: 10px;
+
+                        a {
+                            text-transform:uppercase;
+                            text-decoration: none;
                         }
                     }
                 }
@@ -314,7 +348,7 @@
                                 top: 29px;
                                 border-right: 2px solid @color-blue;
                                 margin-top: 10px;
-                                display: block;
+                                display: none;
                                 position: static;
 
                                 li {
@@ -338,6 +372,31 @@
 
                             &.open > .dropdown-menu {
                                 position: static;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .languages {
+                    left: auto;
+                    top: auto;
+                    position: static;
+                    padding: 3px 0 0 5px !important;
+
+                    ul {
+                        padding: 0;
+                        list-style: none;
+                        font-size: 13px;
+                        letter-spacing: 1px;
+
+                        li {
+                            display: inline-block;
+                            padding-right: 10px;
+
+                            a {
+                                text-transform: uppercase;
+                                text-decoration: none;
                             }
                         }
                     }
@@ -502,8 +561,8 @@
                                 top: 29px;
                                 border-right: 2px solid @color-blue;
                                 margin-top: 10px;
-                                display: block;
-                                position: static;
+                                display: none;
+                                position: absolute;
 
                                 li {
                                     padding: 3px 15px 3px 20px;
@@ -526,6 +585,31 @@
 
                             &.open > .dropdown-menu {
                                 position: static;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .languages {
+                    left: auto;
+                    top: auto;
+                    position: static;
+                    padding: 3px 0 0 5px !important;
+
+                    ul {
+                        padding: 0;
+                        list-style: none;
+                        font-size: 13px;
+                        letter-spacing: 1px;
+
+                        li {
+                            display: inline-block;
+                            padding-right: 10px;
+
+                            a {
+                                text-transform: uppercase;
+                                text-decoration: none;
                             }
                         }
                     }
@@ -694,8 +778,8 @@
                                 top: 29px;
                                 border-right: 2px solid @color-blue;
                                 margin-top: 10px;
-                                display: block;
-                                position: static;
+                                display: none;
+                                position: absolute;
 
                                 li {
                                     padding: 3px 15px 10px 20px;
@@ -718,6 +802,31 @@
 
                             &.open > .dropdown-menu {
                                 position: static;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .languages {
+                    left: auto;
+                    top: auto;
+                    position: static;
+                    padding: 3px 0 0 5px !important;
+
+                    ul {
+                        padding: 0;
+                        list-style: none;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+
+                        li {
+                            display: inline-block;
+                            padding-right: 10px;
+
+                            a {
+                                text-transform: uppercase;
+                                text-decoration: none;
                             }
                         }
                     }

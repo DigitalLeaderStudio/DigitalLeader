@@ -396,4 +396,10 @@
   <data name="Facebook_Link" xml:space="preserve">
     <value>https://www.facebook.com/Digital-Leader-222116434917757/</value>
   </data>
+  <data name="Link_Short_Eng" xml:space="preserve">
+    <value>ENG</value>
+  </data>
+  <data name="Link_Short_Ukr" xml:space="preserve">
+    <value>УКР</value>
+  </data>
 </root>

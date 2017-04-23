@@ -1,0 +1,16 @@
+﻿@using DigitalLeader.Web.Localization
+
+@{
+    var routeDictionaryUA = new RouteValueDictionary(ViewContext.RouteData.Values);
+    routeDictionaryUA["culture"] = "uk";
+
+    var routeDictionaryEN = new RouteValueDictionary(ViewContext.RouteData.Values);
+    routeDictionaryEN["culture"] = "en";
+
+    var lang = System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+
+    string ukStyle = (lang == "uk") ? "color: #0094ff;" : "color: white;";
+    string enStyle = (lang == "en") ? "color: #0094ff;" : "color: white;";
+}
+<li><a style="@enStyle" href="@Url.RouteUrl(routeDictionaryEN)">@Translations.Link_Short_Eng</a></li>
+<li><a style="@ukStyle" href="@Url.RouteUrl(routeDictionaryUA)">@Translations.Link_Short_Ukr</a></li>

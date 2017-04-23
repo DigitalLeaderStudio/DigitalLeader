@@ -520,6 +520,24 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ENG.
+        /// </summary>
+        public static string Link_Short_Eng {
+            get {
+                return ResourceManager.GetString("Link_Short_Eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to УКР.
+        /// </summary>
+        public static string Link_Short_Ukr {
+            get {
+                return ResourceManager.GetString("Link_Short_Ukr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Terms of Use.
         /// </summary>
         public static string Link_TermsOfUse {
