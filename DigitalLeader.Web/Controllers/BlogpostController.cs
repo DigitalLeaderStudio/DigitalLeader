@@ -18,7 +18,7 @@
 			_blogpostService = blogpostService;
 		}
 
-		// GET: Blogpost
+		[Route("Blog")]
 		public ActionResult Index()
 		{
 			var viewModel = Mapper.Map<List<Blogpost>, List<BlogpostViewModel>>(_blogpostService.GetAll());

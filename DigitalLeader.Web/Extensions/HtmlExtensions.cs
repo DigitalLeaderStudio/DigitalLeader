@@ -1,8 +1,10 @@
-﻿using DigitalLeader.ViewModels.Localization;
+﻿using DigitalLeader.Services.Interfaces;
+using DigitalLeader.ViewModels.Localization;
 using System;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using DigitalLeader.Services.Localization;
 using System.Web.WebPages;
 
 namespace DigitalLeader.Web.Extensions
@@ -84,6 +86,35 @@ namespace DigitalLeader.Web.Extensions
 		public static MvcHtmlString Title(this HtmlHelper html, string part = "")
 		{
 			return MvcHtmlString.Create(html.Encode(string.Format("{0}{1}", part, Localization.Translations.Site_Name)));
+		}
+
+		public static MvcHtmlString SEO(this HtmlHelper helper)
+		{
+			var result = MvcHtmlString.Empty;
+
+			var seoKey = string.Format("{0}-{1}",
+				helper.ViewContext.RouteData.Values["controller"],
+				helper.ViewContext.RouteData.Values["action"]);
+
+			var service = DependencyResolver.Current.GetService<ISEOService>();
+			if (service != null)
+			{
+				var seoEntity = service.GetByKey(seoKey);
+
+				if (seoEntity != null)
+				{
+					var languageId = helper.ViewContext.RequestContext.CurrectLanguageId();
+
+					var seoString = string.Format(
+						@"<meta name=""description"" content=""{0}""><meta name=""keywords"" content=""{1}"">",
+						seoEntity.GetLocalized(x => x.Description, languageId),
+						seoEntity.GetLocalized(x => x.Keywords, languageId));
+
+					result = MvcHtmlString.Create(seoString);
+				}
+			}
+
+			return result;
 		}
 	}
 }

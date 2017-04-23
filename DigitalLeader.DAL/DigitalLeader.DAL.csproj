@@ -150,6 +150,10 @@
     <Compile Include="Migrations\201704121102145_ChangeVacancyManyToMany.Designer.cs">
       <DependentUpon>201704121102145_ChangeVacancyManyToMany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704230728584_AddSEO.cs" />
+    <Compile Include="Migrations\201704230728584_AddSEO.Designer.cs">
+      <DependentUpon>201704230728584_AddSEO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704121102145_ChangeVacancyManyToMany.resx">
       <DependentUpon>201704121102145_ChangeVacancyManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704230728584_AddSEO.resx">
+      <DependentUpon>201704230728584_AddSEO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

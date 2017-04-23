@@ -1,11 +1,12 @@
 ﻿namespace DigitalLeader.Entities
 {
 	using DigitalLeader.Entities.Identity;
+	using DigitalLeader.Entities.Interfaces;
 	using System;
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Schema;
 
-	public class Blogpost : IEntity
+	public class Blogpost : IEntity, ILocalizedEntity
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]

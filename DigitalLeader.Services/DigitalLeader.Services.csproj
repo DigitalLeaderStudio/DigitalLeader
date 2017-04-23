@@ -87,6 +87,7 @@
     <Compile Include="Helpers\CommonHelper.cs" />
     <Compile Include="Implementation\ContentService.cs" />
     <Compile Include="Implementation\BlogpostService.cs" />
+    <Compile Include="Implementation\SEOService.cs" />
     <Compile Include="Implementation\SliderService.cs" />
     <Compile Include="Implementation\ServiceSubcategoryService .cs" />
     <Compile Include="Implementation\ServiceCategoryService.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Implementation\VacancyService.cs" />
     <Compile Include="Interfaces\IContentService.cs" />
     <Compile Include="Interfaces\IBlogpostService.cs" />
+    <Compile Include="Interfaces\ISEOService.cs" />
     <Compile Include="Interfaces\ISliderService.cs" />
     <Compile Include="Interfaces\IServiceSubcategoryService .cs" />
     <Compile Include="Interfaces\IContactRequestService.cs" />

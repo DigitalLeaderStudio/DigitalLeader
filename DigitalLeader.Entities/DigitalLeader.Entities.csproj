@@ -60,6 +60,7 @@
     <Compile Include="Content.cs" />
     <Compile Include="Interfaces\ILocalizedEntity.cs" />
     <Compile Include="LocalizedProperty.cs" />
+    <Compile Include="SEO.cs" />
     <Compile Include="Slider.cs" />
     <Compile Include="ContactRequest.cs" />
     <Compile Include="Blogpost.cs" />
