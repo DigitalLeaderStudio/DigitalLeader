@@ -4,13 +4,13 @@
 	using DigitalLeader.Entities;
 	using DigitalLeader.Services.Interfaces;
 	using EntityFramework.DbContextScope.Interfaces;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Linq.Expressions;
+	using System;
+	using System.Collections.Generic;
+	using System.Data.Entity;
+	using System.Linq;
+	using System.Linq.Expressions;
 
-    public class BlogpostService : IBlogpostService
+	public class BlogpostService : IBlogpostService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
@@ -19,58 +19,75 @@
 			_dbContextScopeFactory = dbContextScopeFactory;
 		}
 
-        public Expression<Func<Blogpost, object>>[] Includes
-        {
-            get
-            {
-                return new Expression<Func<Blogpost, object>>[]
-                {
-                    blogpost => blogpost.Author,
-                    blogpost => blogpost.Service
-                };
-            }
-        }
-
-        public List<Blogpost> GetAll()
+		public Expression<Func<Blogpost, object>>[] Includes
 		{
-            return GetAllInclude(Includes);
+			get
+			{
+				return new Expression<Func<Blogpost, object>>[]
+				{
+					blogpost => blogpost.Author,
+					blogpost => blogpost.Service
+				};
+			}
 		}
 
-        public List<Blogpost> GetAllInclude(params Expression<Func<Blogpost, object>>[] includes)
-        {
-
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
-
-                var query = dbContext.Set<Blogpost>().AsQueryable();
-
-                if (includes != null)
-                {
-                    query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
-
-                return query.ToList();
-            }
-
-        }
-
-        public Blogpost GetById(int id)
+		public List<Blogpost> GetAll()
 		{
-            using (var scope = _dbContextScopeFactory.CreateReadOnly())
-            {
-                var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+			return GetAllInclude(Includes);
+		}
 
-                var query = dbContext.Set<Blogpost>().AsQueryable();
+		public List<Blogpost> GetAllByService(int serviceId)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
 
-                if (Includes != null)
-                {
-                    query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
-                }
+				var query = dbContext.Set<Blogpost>().AsQueryable();
 
-                return query.SingleOrDefault(c => c.ID == id);
-            }
-        }
+				if (Includes != null)
+				{
+					query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
+
+				return query
+					.Where(b => b.ServiceId == serviceId)
+					.ToList();
+			}
+		}
+
+		public List<Blogpost> GetAllInclude(params Expression<Func<Blogpost, object>>[] includes)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+				var query = dbContext.Set<Blogpost>().AsQueryable();
+
+				if (includes != null)
+				{
+					query = includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
+
+				return query.ToList();
+			}
+		}
+
+		public Blogpost GetById(int id)
+		{
+			using (var scope = _dbContextScopeFactory.CreateReadOnly())
+			{
+				var dbContext = scope.DbContexts.Get<ApplicationDbContext>();
+
+				var query = dbContext.Set<Blogpost>().AsQueryable();
+
+				if (Includes != null)
+				{
+					query = Includes.Aggregate(query, (curr, incl) => curr.Include(incl));
+				}
+
+				return query.SingleOrDefault(c => c.ID == id);
+			}
+		}
 
 		public void Update(Blogpost value)
 		{

@@ -792,6 +792,8 @@
     <Content Include="Views\Portfolio\Clients.cshtml" />
     <Content Include="Views\Tracking\GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_TopLanguagesPartial.cshtml" />
+    <Content Include="Views\Blogpost\_ServicesFilterPartial.cshtml" />
+    <Content Include="Views\Blogpost\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
