@@ -1,77 +1,77 @@
 ﻿@using DigitalLeader.Web.Localization
 
 <nav class="navbar navbar-fixed-top">
-	<div class="header-wrapper">
-		<div class="container">
-			<div class="navbar-header">
-				<div class="branding-container">
-					<div class="logo">
-						<a href="@Url.Action("Index", "Home")"><img src="~/Content/images/logo.png" /></a>
-					</div>
-				</div>
-				<button type="button" class="navbar-toggle" data-target="#mainNavLinks">
-					<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-				</button>
-				<div class="main-cta">
-					<h1>
-						<a class="call-cta" href="tel:+38961212713">+380 (96) 121 27 13</a>
-					</h1>
-					<h2>
-						<a class="message-cta" href="@Url.Action("Index", "Contact")">@Translations.HeaderCTA</a>
-					</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="navigation-wrapper">
-		<div class="container">
-			<div class="" id="mainNavLinks">
-				<ul class="navbar-links">
-					<li>@Html.ActionLink(@Translations.LinkServices, "Index", "Home")</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false">@Translations.LinkPortfolio<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkProjects</a>
-							</li>
-							<li>
-								<a href="@Url.Action("CaseStudies", "Portfolio")">@Translations.LinkCaseStudies</a>
-							</li>
-							<li>
-								<a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkTestimonials</a>
-							</li>
-							<li>
-								<a href="@Url.Action("Clients", "Portfolio")">@Translations.LinkClients</a>
-							</li>
-						</ul>
-					</li>
-
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle"
-						   data-toggle="dropdown"
-						   role="button"
-						   aria-haspopup="true"
-						   aria-expanded="false">@Translations.LinkCompany<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="@Url.Action("Story", "Company")">@Translations.LinkStory</a>
-							</li>
-							<li>
-								<a href="@Url.Action("Creed", "Company")">@Translations.LinkCreed</a>
-							</li>
-							<li>
-								<a href="@Url.Action("Team", "Company")">@Translations.LinkTeam</a>
-							</li>
-							<li>
-								<a href="@Url.Action("Careers", "Company")">@Translations.LinkCareers</a>
-							</li>
-						</ul>
-					</li>
+    <div class="header-wrapper">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="branding-container">
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/images/logo.png" /></a>
+                    </div>
+                </div>
+                <button type="button" class="navbar-toggle"  data-target="#mainNavLinks">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <div class="main-cta">
+                    <h1>
+                        <a class="call-cta" href="tel:+38961212713">+380 (96) 121 27 13</a>
+                    </h1>
+                    <h2>
+                        <a class="message-cta" href="@Url.Action("Index", "Contact")">@Translations.HeaderCTA</a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navigation-wrapper">
+        <div class="container">
+            <div class="" id="mainNavLinks">
+                <ul class="navbar-links">
+                    <li>@Html.ActionLink(@Translations.LinkServices, "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" style="padding-left: 13px;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
+                           aria-expanded="false">@Translations.LinkPortfolio <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="@Url.Action("Projects", "Portfolio")">@Translations.LinkProjects</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("CaseStudies", "Portfolio")">@Translations.LinkCaseStudies</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkTestimonials</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Clients", "Portfolio")">@Translations.LinkClients</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" 
+                           data-toggle="dropdown" 
+                           role="button" 
+                           aria-haspopup="true" 
+                           aria-expanded="false">@Translations.LinkCompany <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="@Url.Action("Story", "Company")">@Translations.LinkStory</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Creed", "Company")">@Translations.LinkCreed</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Team", "Company")">@Translations.LinkTeam</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Careers", "Company")">@Translations.LinkCareers</a>
+                            </li>
+                        </ul>
+                    </li>
 
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"
-						   role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						   role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources <i class="fa fa-angle-down" aria-hidden="true"></i></a>
 						<ul class="dropdown-menu">
 							<li>
 								<a href="@Url.Action("Index", "Blogpost")">@Translations.LinkBlog</a>

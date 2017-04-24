@@ -34,22 +34,25 @@
 							<h2>@Translations.Career_Working_Conditions</h2>
 							<p>@Model.WeOffer</p>
 						</div>
-						<div class="col-md-12">
-							<h2>@Translations.Career_Bonuses</h2>
-							<p>@Model.Bonuses</p>
-						</div>
+                        @if (@Model.Bonuses != null)
+	                    {
+						    <div class="col-md-12">
+							    <h2>@Translations.Career_Bonuses</h2>
+							    <p>@Model.Bonuses</p>
+						    </div>     
+	                    }
 					</div>
 
 					<div class="col-md-4 col-sm-5 vacancy-aside">
 						<div class="row">
-							<div class="col-md-12">
+							@*<div class="col-md-12">
 								<h3><i class="fa fa-money" aria-hidden="true"></i> @Translations.Career_Salary</h3>
 								<p>$ 200</p>
 								<h3><i class="fa fa-map-marker" aria-hidden="true"></i> @Translations.Career_Location</h3>
 								<p>Kyiv</p>
-							</div>
+							</div>*@
 							<div class="col-md-12 apply-now">
-								<a href="#">@Translations.Career_Apply <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+								<a href="@Url.Action("Index", "Contact")">@Translations.Career_Apply <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 							</div>
 						</div>
 
