@@ -2,147 +2,140 @@
 
 
 .testimonials {
-	padding: 0;
+    padding: 0;
 
-	.testims {
-		-moz-column-count: 3;
-		-moz-column-gap: 10px;
-		-webkit-column-count: 3;
-		-webkit-column-gap: 10px;
-		column-count: 3;
-		column-gap: 10px;
-		-webkit-column-width: 100px;
-		-moz-column-width: 100px;
-		column-width: 100px;
-	}
+    .container {
+        background: rgba(255, 255, 255, 1);
+        padding: 0px;
+    }
 
-	.container {
-		background: rgba(255, 255, 255, 1);
-		padding: 0px;
-	}
+    .header {
+        background: @color-blue;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+        background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        height: 220px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        display: inline-block;
 
-	.header {
-		background: @color-blue;
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
-		background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-		height: 220px;
-		width: 100%;
-		margin: 0;
-		position: relative;
-		display: inline-block;
+        & > div {
+            float: left;
+            width: 100%;
+            padding: 4%;
+            display: inline-block;
 
-		& > div {
-			float: left;
-			width: 100%;
-			padding: 4%;
-			display: inline-block;
+            h1 {
+                text-align: center;
+                font-size: 3em;
+                color: white;
+                font-weight: bold;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
 
-			h1 {
-				text-align: center;
-				font-size: 3em;
-				color: white;
-				font-weight: bold;
-				margin-top: 0;
-				text-transform: uppercase;
-			}
+            h2 {
+                text-align: center;
+                font-size: 1.2em;
+                color: #ffffff;
+                margin-top: 0;
+            }
+        }
 
-			h2 {
-				text-align: center;
-				font-size: 1.2em;
-				color: #ffffff;
-				margin-top: 0;
-			}
-		}
+        &:after {
+            visibility: hidden !important;
+            display: block !important;
+            font-size: 0 !important;
+            content: " " !important;
+            clear: both !important;
+            height: 0 !important;
+        }
+    }
 
-		&:after {
-			visibility: hidden !important;
-			display: block !important;
-			font-size: 0 !important;
-			content: " " !important;
-			clear: both !important;
-			height: 0 !important;
-		}
-	}
+    .testimonial-item-gutter-sizer {
+        width: 1%;
+    }
 
-	.testimonial-item-wrapper {
-		position: relative;
-		padding-bottom: 5px;
-		display: inline-block;
+    .testimonial-item-sizer {
+        width: 32.333%;
+    }
 
-		.testimonial-item {
-			background: @color-grey;
-			border: 5px solid @color-grey;
+    .testimonial-item {
+        float: left;
+        width: 32.333%;
+        background: @color-grey;
+        border: 5px solid @color-grey;
+        margin-bottom: 10px;
 
-			&:hover {
-				border-color: @color-blue;
-				transition: border-color 1s;
+        &:hover {
+            border-color: @color-blue;
+            transition: border-color 1s;
 
-				.person {
-					img {
-						opacity: 1;
-						transition: opacity 2s ease-in;
-					}
+            .person {
+                img {
+                    opacity: 1;
+                    transition: opacity 1s ease-in;
+                }
 
-					div {
-						background: rgba(51, 51, 51, 0.8);
-						transition: background 2s ease-in;
-					}
-				}
-			}
+                div {
+                    background: rgba(51, 51, 51, 0.8);
+                    transition: background 1s ease-in;
+                }
+            }
+        }
 
-			.person {
-				position: relative;
+        .person {
+            position: relative;
 
-				img {
-					width: 100%;
-					z-index: 0;
-					opacity: 0.35;
-				}
+            img {
+                width: 100%;
+                z-index: 0;
+                opacity: 0.35;
+            }
 
-				h4 {
-					bottom: 10%;
-					position: absolute;
-					padding-top: 10px;
-					margin: 0;
-					color: @color-white;
-					font-size: 34px;
-					text-align: center;
-					width: 100%;
-				}
+            .name-and-title {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
 
-				h5 {
-					bottom: 2%;
-					position: absolute;
-					margin: 0;
-					width: 100%;
-					color: @color-white;
-					font-size: 14px;
-					text-align: center;
-					font-style: italic;
+                h4 {
+                    padding: 10px 20px 0;
+                    margin: 0;
+                    color: @color-white;
+                    font-size: 34px;
+                    text-align: center;
+                }
 
-					span {
-						font-weight: bold;
-					}
-				}
-			}
+                h5 {
+                    margin: 0 0 20px;
+                    color: @color-white;
+                    font-size: 14px;
+                    text-align: center;
+                    font-style: italic;
 
-			.text {
-				color: @color-white;
-				padding: 15px;
-			}
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
 
-			.project-link {
-				text-align: center;
+        .text {
+            color: @color-white;
+            padding: 15px;
+        }
 
-				a:hover {
-					color: @color-white;
-				}
-			}
-		}
-	}
+        .project-link {
+            text-align: center;
+
+            a:hover {
+                color: @color-white;
+            }
+        }
+    }
 }
 
 /*RESPONSIVE*/
@@ -200,8 +193,17 @@
 				height: 0 !important;
 			}
 		}
+
+		.testimonial-item-sizer {
+			width: 99%;
+		}
+
+		.testimonial-item {
+			width: 99%;
+		}
 	}
 }
+
 /* xs */
 @media (min-width: 375px) and (max-width: 767px) {
 	.testimonials {
@@ -256,6 +258,14 @@
 				clear: both !important;
 				height: 0 !important;
 			}
+		}
+
+		.testimonial-item-sizer {
+			width: 100%;
+		}
+
+		.testimonial-item {
+			width: 100%;
 		}
 	}
 }
@@ -313,6 +323,14 @@
 				clear: both !important;
 				height: 0 !important;
 			}
+		}
+
+		.testimonial-item-sizer {
+			width: 49%;
+		}
+
+		.testimonial-item {
+			width: 49%;
 		}
 	}
 }

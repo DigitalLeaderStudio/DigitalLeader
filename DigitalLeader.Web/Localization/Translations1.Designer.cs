@@ -898,7 +898,7 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We shall get in touch with you soon..
+        ///   Looks up a localized string similar to We shall get in touch with you soon.
         /// </summary>
         public static string ThankYou_Text {
             get {

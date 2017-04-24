@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
+    <Compile Include="SEOViewModel.cs" />
     <Compile Include="BlogpostViewModel.cs" />
     <Compile Include="ContentViewModel.cs" />
     <Compile Include="Localization\ILocalizedModel.cs" />

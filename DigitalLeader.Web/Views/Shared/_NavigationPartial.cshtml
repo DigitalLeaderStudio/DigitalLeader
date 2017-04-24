@@ -38,9 +38,9 @@
                             <li>
                                 <a href="@Url.Action("CaseStudies", "Portfolio")">@Translations.LinkCaseStudies</a>
                             </li>
-                            @*<li>
+                            <li>
                                 <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkTestimonials</a>
-                            </li>*@
+                            </li>
                             <li>
                                 <a href="@Url.Action("Clients", "Portfolio")">@Translations.LinkClients</a>
                             </li>
@@ -69,63 +69,63 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                           role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="@Url.Action("Index", "Blogpost")">@Translations.LinkBlog</a>
-                            </li>
-                            @*<li>
-                                <a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkWhitePapers</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkGuides</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkInfographics</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkVideos</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkPodcasts</a>
-                            </li>*@
-                        </ul>
-                    </li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+						   role="button" aria-haspopup="true" aria-expanded="false">@Translations.LinkResources <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="@Url.Action("Index", "Blogpost")">@Translations.LinkBlog</a>
+							</li>
+							@*<li>
+									<a href="@Url.Action("Case studies", "Portfolio")">@Translations.LinkWhitePapers</a>
+								</li>
+								<li>
+									<a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkGuides</a>
+								</li>
+								<li>
+									<a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkInfographics</a>
+								</li>
+								<li>
+									<a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkVideos</a>
+								</li>
+								<li>
+									<a href="@Url.Action("Testimonials", "Portfolio")">@Translations.LinkPodcasts</a>
+								</li>*@
+						</ul>
+					</li>
 
-                    
-                    <li>@Html.ActionLink(@Translations.LinkConnect, "Index", "Contact")</li>
-                    @*<li>@Html.ActionLink("Clients", "Clients", "Home")</li>*@
-                    @*<li>@Html.ActionLink("News", "News", "Home")</li>*@
 
-                    <li class="languages">
-                        <ul>@Html.Partial("_TopLanguagesPartial")</ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+					<li>@Html.ActionLink(@Translations.LinkConnect, "Index", "Contact")</li>
+					@*<li>@Html.ActionLink("Clients", "Clients", "Home")</li>*@
+					@*<li>@Html.ActionLink("News", "News", "Home")</li>*@
+
+					<li class="languages">
+						<ul>@Html.Partial("_TopLanguagesPartial")</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </nav>
 <script>
-    $(document).ready(function () {
-        $screenWidth = window.screen.width + 'px';
-        $('.navigation-wrapper').css({ 'left' : $screenWidth, 'display' : 'block' });
+	$(document).ready(function () {
+		$screenWidth = window.screen.width + 'px';
+		$('.navigation-wrapper').css({ 'left': $screenWidth, 'display': 'block' });
 
-        $('.navbar-toggle').on('click', function () {
-            $sign = $(this).find("i");
-            
-            if ($sign.hasClass("fa-ellipsis-v")) {
-                $sign.removeClass("fa-ellipsis-v");
-                $sign.addClass("fa-angle-right");
-                $(".navigation-wrapper").animate({ 'left': '0' }, { duration: 300, easing: "swing" });   
-            }
-            else {
-                $sign.removeClass("fa-angle-right");
-                $sign.addClass("fa-ellipsis-v");
-                $width = window.screen.availWidth;
-                $(".navigation-wrapper").animate({ 'left': $width }, { duration: 300, easing: "swing" });
-            }
-        });
-    });
-    </script>
+		$('.navbar-toggle').on('click', function () {
+			$sign = $(this).find("i");
+
+			if ($sign.hasClass("fa-ellipsis-v")) {
+				$sign.removeClass("fa-ellipsis-v");
+				$sign.addClass("fa-angle-right");
+				$(".navigation-wrapper").animate({ 'left': '0' }, { duration: 300, easing: "swing" });
+			}
+			else {
+				$sign.removeClass("fa-angle-right");
+				$sign.addClass("fa-ellipsis-v");
+				$width = window.screen.availWidth;
+				$(".navigation-wrapper").animate({ 'left': $width }, { duration: 300, easing: "swing" });
+			}
+		});
+	});
+</script>

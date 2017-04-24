@@ -2,7 +2,10 @@
 {
 	using AutoMapper;
 	using DigitalLeader.Entities;
+	using DigitalLeader.Services.Localization;
 	using DigitalLeader.ViewModels;
+	using DigitalLeader.Web.Extensions;
+	using System.Web;
 	using System.Web.Mvc;
 
 	public class BlogpostProfile : Profile
@@ -19,7 +22,27 @@
 					};
 				});
 
-			CreateMap<Blogpost, BlogpostViewModel>();
+			CreateMap<Blogpost, BlogpostViewModel>()
+				.ForMember(vm => vm.Title, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+					return x.GetLocalized(item => item.Title, languageId);
+				}))
+				.ForMember(vm => vm.Keywords, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+					return x.GetLocalized(item => item.Keywords, languageId);
+				}))
+				.ForMember(vm => vm.Overview, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+					return x.GetLocalized(item => item.Overview, languageId);
+				}))
+				.ForMember(vm => vm.Content, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+					return x.GetLocalized(item => item.Content, languageId);
+				}));
 
 			CreateMap<BlogpostViewModel, Blogpost>();
 			//	.AfterMap((vm, entity) =>

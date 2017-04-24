@@ -230,6 +230,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\SEOController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogpostController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceSubcategoryController .cs" />
@@ -280,6 +281,7 @@
     </Compile>
     <Compile Include="Managers\ApplicationSignInManager.cs" />
     <Compile Include="Managers\ApplicationUserManager.cs" />
+    <Compile Include="MappingProfiles\SEOProfile.cs" />
     <Compile Include="MappingProfiles\ContentProfile.cs" />
     <Compile Include="MappingProfiles\SliderProfile.cs" />
     <Compile Include="MappingProfiles\ContactRequestProfile.cs" />
@@ -531,6 +533,10 @@
     <Content Include="Areas\Admin\Views\Content\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Delete.cshtml" />
     <Content Include="Content\less\clients.less" />
+    <Content Include="Areas\Admin\Views\SEO\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SEO\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SEO\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SEO\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\digitalleader.solutions - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\temp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

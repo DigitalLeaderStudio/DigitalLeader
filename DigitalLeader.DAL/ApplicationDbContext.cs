@@ -21,6 +21,8 @@
 
 		#region DbSets
 
+		public virtual DbSet<SEO> SEOs { get; set; }
+
 		public virtual DbSet<Content> Contents { get; set; }
 
 		public virtual DbSet<LocalizedProperty> LocalizedProperties { get; set; }

@@ -41,6 +41,9 @@ namespace DigitalLeader.Web
 			bundles.Add(new ScriptBundle("~/bundles/chosen").Include(
 					  "~/Scripts/chosen.jquery.js"));
 
+			bundles.Add(new ScriptBundle("~/bundles/masonry").Include(
+					  "~/Scripts/masonry.pkgd.min.js"));
+
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap-datetime")
 				.Include("~/Scripts/moment.js")
 				.Include("~/Scripts/bootstrap-datetimepicker.js"));
