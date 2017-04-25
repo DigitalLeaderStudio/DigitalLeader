@@ -349,7 +349,7 @@
     <Content Include="Content\less\settings.less" />
     <Content Include="Content\less\general.less" />
     <Content Include="Content\less\homepage.less" />
-    <Content Include="Content\less\blog.less" />
+    <Content Include="Content\less\resources.less" />
     <Content Include="Content\less\company.less" />
     <Content Include="Content\less\footer.less" />
     <Content Include="Content\less\contact.less" />

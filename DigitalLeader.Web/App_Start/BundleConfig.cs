@@ -72,6 +72,7 @@ namespace DigitalLeader.Web
 				.Include("~/Content/less/clients.less")
 				.Include("~/Content/less/company.less")
 				.Include("~/Content/less/creed.less")
+				.Include("~/Content/less/resources.less")
 				.Include("~/Content/less/testimonials.less"));
 
 			bundles.Add(new LessBundle("~/Content/bootstrap-datetimepicker")

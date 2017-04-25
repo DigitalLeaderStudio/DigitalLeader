@@ -6,10 +6,37 @@
 	ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-	<h4>BlogpostViewModel</h4>
-	<hr />
-	<div>@Html.Raw(Model.Content)</div>
+<div class="container-fluid resources blogpost">
+    <div class="row header clearfix">
+        <div>
+            <h1>@Model.Title</h1>
+            <div class="post-info">
+                <div>
+                    <div class="info-item">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        @String.Format("{0:MMMM d, yyyy}", Model.PublishedDate)
+                    </div>
+                    <div class="separator"></div>
+                </div>
+                <div>
+                    <div class="info-item">
+                        <i class="fa fa-align-left" aria-hidden="true"></i> Web applications
+                    </div>
+                    <div class="separator"></div>
+                </div>
+                <div>
+                    <div class="info-item">
+                        <i class="fa fa-user" aria-hidden="true"></i> Serhii Kalaida
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </div>
 </div>

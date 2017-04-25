@@ -61,6 +61,15 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to company and industry news.
+        /// </summary>
+        public static string Blog_Subtitle {
+            get {
+                return ResourceManager.GetString("Blog_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply now.
         /// </summary>
         public static string Career_Apply {

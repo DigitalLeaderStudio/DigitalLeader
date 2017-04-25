@@ -1,0 +1,1022 @@
+@import "settings.less";
+
+
+
+.resources {
+    padding: 0;
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        padding: 0px;
+    }
+
+    .row .row div {
+        padding: 10px;
+    }
+
+    .header {
+        background: @color-blue;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+        background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        min-height: 220px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        display: block;
+
+        & > div {
+            float: left;
+            width: 100%;
+            padding: 4% 20% 0;
+            display: inline-block;
+
+            h1 {
+                text-align: center;
+                font-size: 3em;
+                color: white;
+                font-weight: bold;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 1.2em;
+                color: #ffffff;
+                margin-top: 0;
+            }
+
+            .post-info {
+                padding: 10px 0 0;
+                margin: 10px auto;
+                border-top: 1px dashed @color-blue;
+                text-align: center;
+                color: @color-white;
+
+                > div {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 0;
+                    position: relative;
+
+                    .info-item {
+                        display: inline-block;
+                        top: -5px;
+                        position: relative;
+                    }
+
+                    .separator {
+                        height: 25px;
+                        width: 1px;
+                        border-right: 1px dashed @color-blue;
+                        transform: rotate(25deg);
+                        display: inline-block;
+                        margin: 0 15px;
+                    }
+                }
+            }
+        }
+
+        &:after {
+            visibility: hidden !important;
+            display: block !important;
+            font-size: 0 !important;
+            content: " " !important;
+            clear: both !important;
+            height: 0 !important;
+        }
+    }
+    // pages
+    &.blog {
+        .container {
+            padding-bottom: 40px;
+
+            .blog-list {
+                padding: 10px 10px 5px !important;
+
+                .blogpost-item {
+                    h2 {
+                        margin: 0 0 10px;
+                        font-size: 36px;
+                        text-transform: uppercase;
+                        color: @color-white;
+                        padding: 20px 0 0;
+                        line-height: 46px;
+                    }
+
+                    .post-description {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+
+                    .post-info {
+                        padding: 5px 0 0;
+                        margin: 10px 0;
+                        border-top: 1px dashed @color-blue;
+
+                        > div {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 0;
+                            position: relative;
+
+                            .info-item {
+                                display: inline-block;
+                                top: -5px;
+                                position: relative;
+                            }
+
+                            .separator {
+                                height: 25px;
+                                width: 1px;
+                                border-right: 1px dashed @color-blue;
+                                transform: rotate(25deg);
+                                display: inline-block;
+                                margin: 0 15px;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    line-height: 26px !important;
+                }
+            }
+
+            .blog-aside {
+                padding-bottom: 40px;
+                padding: 10px !important;
+
+                .filter-wrapper {
+                    background: @color-grey;
+                    padding: 10px;
+
+                    h3 {
+                        text-align: center;
+                        margin: 10px 0;
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-size: 22px;
+                    }
+
+                    .services-filter {
+                        padding: 10px;
+                        list-style: none;
+
+                        li {
+                            padding-bottom: 5px;
+                        }
+
+                        .selected, .selected a {
+                            color: white !important;
+                        }
+
+                        a, a:visited, a:active {
+                            color: @color-blue;
+                            text-decoration: none;
+                        }
+
+                        a:hover {
+                            color: @color-white;
+                        }
+
+                        a:first-letter {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+
+                .apply-now {
+                    padding: 10px;
+
+                    a, a:visited, a:active {
+                        color: @color-white;
+                        text-decoration: none;
+                        padding: 20px;
+                        background: @color-blue;
+                        text-align: center;
+                        width: 100%;
+                        display: block;
+                        font-size: 22px;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            background: @color-white;
+                            color: @color-grey;
+                        }
+
+                        i {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            height: 220px;
+            width: 100%;
+            margin: 0;
+            position: relative;
+            display: block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4%;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 3em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+    }
+
+    &.blogpost {
+        .container {
+            padding-bottom: 40px;
+        }
+    }
+}
+
+
+/*RESPONSIVE*/
+@media (max-width: 375px) {
+    .resources {
+        padding: 0;
+
+        .container {
+            background: rgba(255, 255, 255, 1);
+            padding: 0px;
+        }
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            min-height: 220px;
+            width: 100%;
+            margin: 0;
+            position: relative;
+            display: block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4% 10px 0;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 3em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+
+                .post-info {
+                    padding: 10px 0 0;
+                    margin: 10px auto;
+                    border-top: 1px dashed @color-blue;
+                    text-align: center;
+                    color: @color-white;
+
+                    > div {
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 5px 0 0;
+                        position: relative;
+
+                        .info-item {
+                            display: inline-block;
+                            top: -5px;
+                            position: relative;
+                        }
+
+                        .separator {
+                            height: 15px;
+                            width: 1px;
+                            border-right: 1px dashed @color-blue;
+                            transform: rotate(25deg);
+                            display: inline-block;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+        // pages
+        &.blog {
+            .container {
+                padding-bottom: 10px;
+
+                .blog-list {
+                    padding: 10px 10px 5px !important;
+
+                    .blogpost-item {
+                        h2 {
+                            margin: 0 0 10px;
+                            font-size: 26px;
+                            text-transform: uppercase;
+                            color: @color-white;
+                            padding: 10px 0 0;
+                            line-height: 30px;
+                        }
+
+                        .post-description {
+                            line-height: 18px;
+                            font-size: 13px;
+                        }
+
+                        .post-info {
+                            padding: 5px 0 0;
+                            margin: 10px 0;
+                            border-top: 1px dashed @color-blue;
+
+                            > div {
+                                display: inline-block;
+                                vertical-align: middle;
+                                padding: 0;
+                                position: relative;
+
+                                .info-item {
+                                    display: inline-block;
+                                    top: -5px;
+                                    position: relative;
+                                }
+
+                                .separator {
+                                    height: 25px;
+                                    width: 1px;
+                                    border-right: 1px dashed @color-blue;
+                                    transform: rotate(25deg);
+                                    display: inline-block;
+                                    margin: 0 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    p {
+                        line-height: 26px !important;
+                    }
+                }
+
+                .blog-aside {
+                    padding-bottom: 40px;
+                    padding: 5px !important;
+
+                    .filter-wrapper {
+                        background: @color-grey;
+                        padding: 10px;
+
+                        h3 {
+                            text-align: center;
+                            margin: 10px 0;
+                            text-transform: uppercase;
+                            color: #fff;
+                            font-size: 22px;
+                        }
+
+                        .services-filter {
+                            padding: 10px;
+                            list-style: none;
+
+                            li {
+                                padding-bottom: 5px;
+                            }
+
+                            .selected, .selected a {
+                                color: white !important;
+                            }
+
+                            a, a:visited, a:active {
+                                color: @color-blue;
+                                text-decoration: none;
+                            }
+
+                            a:hover {
+                                color: @color-white;
+                            }
+
+                            a:first-letter {
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header {
+                background: @color-blue;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+                background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                height: auto;
+                width: 100%;
+                margin: 0;
+                padding: 16% 2%;
+
+                & > div {
+                    float: left;
+                    width: 100%;
+                    padding: 4%;
+                    display: inline-block;
+
+                    h1 {
+                        text-align: center;
+                        font-size: 3em;
+                        color: white;
+                        font-weight: bold;
+                        margin-top: 0;
+                        text-transform: uppercase;
+                    }
+
+                    h2 {
+                        text-align: center;
+                        font-size: 1.2em;
+                        color: #ffffff;
+                        margin-top: 0;
+                    }
+                }
+
+                &:after {
+                    visibility: hidden !important;
+                    display: block !important;
+                    font-size: 0 !important;
+                    content: " " !important;
+                    clear: both !important;
+                    height: 0 !important;
+                }
+            }
+        }
+    }
+}
+/* xs */
+@media (min-width: 375px) and (max-width: 767px) {
+    .resources {
+        padding: 0;
+
+        .container {
+            background: rgba(255, 255, 255, 1);
+            padding: 0px;
+        }
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            min-height: 220px;
+            width: 100%;
+            margin: 0;
+            position: relative;
+            display: block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 7% 10% 0;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 2.8em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+
+                .post-info {
+                    padding: 10px 0 0;
+                    margin: 10px auto;
+                    border-top: 1px dashed @color-blue;
+                    text-align: center;
+                    color: @color-white;
+
+                    > div {
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 5px 0 0;
+                        position: relative;
+
+                        .info-item {
+                            display: inline-block;
+                            top: -5px;
+                            position: relative;
+                        }
+
+                        .separator {
+                            height: 15px;
+                            width: 1px;
+                            border-right: 1px dashed @color-blue;
+                            transform: rotate(25deg);
+                            display: inline-block;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+        // pages
+        &.blog {
+            .container {
+                padding-bottom: 10px;
+
+                .blog-list {
+                    padding: 10px 10px 5px !important;
+
+                    .blogpost-item {
+                        h2 {
+                            margin: 0 0 10px;
+                            font-size: 26px;
+                            text-transform: uppercase;
+                            color: @color-white;
+                            padding: 10px 0 0;
+                            line-height: 30px;
+                        }
+
+                        .post-description {
+                            line-height: 22px;
+                            font-size: 15px;
+                        }
+
+                        .post-info {
+                            padding: 5px 0 0;
+                            margin: 10px 0;
+                            line-height: 22px;
+                            font-size: 15px;
+                            border-top: 1px dashed @color-blue;
+
+                            > div {
+                                display: inline-block;
+                                vertical-align: middle;
+                                padding: 0;
+                                position: relative;
+
+                                .info-item {
+                                    display: inline-block;
+                                    top: -5px;
+                                    position: relative;
+                                }
+
+                                .separator {
+                                    height: 25px;
+                                    width: 1px;
+                                    border-right: 1px dashed @color-blue;
+                                    transform: rotate(25deg);
+                                    display: inline-block;
+                                    margin: 0 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    p {
+                        line-height: 26px !important;
+                    }
+                }
+
+                .blog-aside {
+                    padding-bottom: 40px;
+                    padding: 5px !important;
+
+                    .filter-wrapper {
+                        background: @color-grey;
+                        padding: 10px;
+
+                        h3 {
+                            text-align: center;
+                            margin: 10px 0;
+                            text-transform: uppercase;
+                            color: #fff;
+                            font-size: 22px;
+                        }
+
+                        .services-filter {
+                            padding: 10px;
+                            list-style: none;
+
+                            li {
+                                padding-bottom: 5px;
+                            }
+
+                            .selected, .selected a {
+                                color: white !important;
+                            }
+
+                            a, a:visited, a:active {
+                                color: @color-blue;
+                                text-decoration: none;
+                            }
+
+                            a:hover {
+                                color: @color-white;
+                            }
+
+                            a:first-letter {
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header {
+                background: @color-blue;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+                background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                height: auto;
+                width: 100%;
+                margin: 0;
+                padding: 5% 2%;
+                display: block;
+
+                & > div {
+                    float: left;
+                    width: 100%;
+                    padding: 4%;
+                    display: inline-block;
+
+                    h1 {
+                        text-align: center;
+                        font-size: 42px;
+                        color: white;
+                        font-weight: bold;
+                        margin-top: 0;
+                        text-transform: uppercase;
+                    }
+
+                    h2 {
+                        text-align: center;
+                        font-size: 18px;
+                        color: #ffffff;
+                        margin-top: 0;
+                    }
+                }
+
+                &:after {
+                    visibility: hidden !important;
+                    display: block !important;
+                    font-size: 0 !important;
+                    content: " " !important;
+                    clear: both !important;
+                    height: 0 !important;
+                }
+            }
+        }
+    }
+}
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .resources {
+        padding: 0;
+
+        .container {
+            background: rgba(255, 255, 255, 1);
+            padding: 0px;
+        }
+
+        .row .row div {
+            padding: 10px;
+        }
+
+        .header {
+            background: @color-blue;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+            background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            min-height: 220px;
+            width: 100%;
+            margin: 0;
+            position: relative;
+            display: block;
+
+            & > div {
+                float: left;
+                width: 100%;
+                padding: 4% 10% 0;
+                display: inline-block;
+
+                h1 {
+                    text-align: center;
+                    font-size: 2.8em;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    text-align: center;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    margin-top: 0;
+                }
+
+                .post-info {
+                    padding: 10px 0 0;
+                    margin: 10px auto;
+                    border-top: 1px dashed @color-blue;
+                    text-align: center;
+                    color: @color-white;
+
+                    > div {
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 5px 0 0;
+                        position: relative;
+
+                        .info-item {
+                            display: inline-block;
+                            top: -5px;
+                            position: relative;
+                        }
+
+                        .separator {
+                            height: 15px;
+                            width: 1px;
+                            border-right: 1px dashed @color-blue;
+                            transform: rotate(25deg);
+                            display: inline-block;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+            }
+
+            &:after {
+                visibility: hidden !important;
+                display: block !important;
+                font-size: 0 !important;
+                content: " " !important;
+                clear: both !important;
+                height: 0 !important;
+            }
+        }
+        // pages
+        &.blog {
+            .container {
+                padding-bottom: 10px;
+
+                .blog-list {
+                    padding: 10px 10px 5px !important;
+
+                    .blogpost-item {
+                        h2 {
+                            margin: 0 0 10px;
+                            font-size: 36px;
+                            text-transform: uppercase;
+                            color: @color-white;
+                            padding: 20px 0 0;
+                            line-height: 46px;
+                        }
+
+                        .post-description {
+                            line-height: 24px;
+                            font-size: 16px;
+                        }
+
+                        .post-info {
+                            padding: 5px 0 0;
+                            margin: 10px 0;
+                            border-top: 1px dashed @color-blue;
+
+                            > div {
+                                display: inline-block;
+                                vertical-align: middle;
+                                padding: 0;
+                                position: relative;
+
+                                .info-item {
+                                    display: inline-block;
+                                    top: -5px;
+                                    position: relative;
+                                }
+
+                                .separator {
+                                    height: 25px;
+                                    width: 1px;
+                                    border-right: 1px dashed @color-blue;
+                                    transform: rotate(25deg);
+                                    display: inline-block;
+                                    margin: 0 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    p {
+                        line-height: 26px !important;
+                    }
+                }
+
+                .blog-aside {
+                    padding-bottom: 40px;
+                    padding: 10px !important;
+
+                    .filter-wrapper {
+                        background: @color-grey;
+                        padding: 10px;
+
+                        h3 {
+                            text-align: center;
+                            margin: 10px 0;
+                            text-transform: uppercase;
+                            color: #fff;
+                            font-size: 22px;
+                        }
+
+                        .services-filter {
+                            padding: 10px;
+                            list-style: none;
+
+                            li {
+                                padding-bottom: 5px;
+                            }
+
+                            .selected, .selected a {
+                                color: white !important;
+                            }
+
+                            a, a:visited, a:active {
+                                color: @color-blue;
+                                text-decoration: none;
+                            }
+
+                            a:hover {
+                                color: @color-white;
+                            }
+
+                            a:first-letter {
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                    .apply-now {
+                        padding: 10px;
+
+                        a, a:visited, a:active {
+                            color: @color-white;
+                            text-decoration: none;
+                            padding: 20px;
+                            background: @color-blue;
+                            text-align: center;
+                            width: 100%;
+                            display: block;
+                            font-size: 22px;
+                            text-transform: uppercase;
+
+                            &:hover {
+                                background: @color-white;
+                                color: @color-grey;
+                            }
+
+                            i {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header {
+                background: @color-blue;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0094ff+0,0094ff+60,ffffff+100&1+0,0.53+100 */
+                background: -moz-linear-gradient(-45deg, rgba(0,148,255,1) 0%, rgba(0,148,255,0.72) 60%, rgba(255,255,255,0.53) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, rgba(0,148,255,1) 0%,rgba(0,148,255,0.72) 60%,rgba(255,255,255,0.53) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094ff', endColorstr='#87ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                height: auto;
+                width: 100%;
+                margin: 0;
+                padding: 5% 2%;
+
+                & > div {
+                    float: left;
+                    width: 100%;
+                    padding: 4%;
+                    display: inline-block;
+
+                    h1 {
+                        text-align: center;
+                        font-size: 42px;
+                        color: white;
+                        font-weight: bold;
+                        margin-top: 0;
+                        text-transform: uppercase;
+                    }
+
+                    h2 {
+                        text-align: center;
+                        font-size: 18px;
+                        color: #ffffff;
+                        margin-top: 0;
+                    }
+                }
+
+                &:after {
+                    visibility: hidden !important;
+                    display: block !important;
+                    font-size: 0 !important;
+                    content: " " !important;
+                    clear: both !important;
+                    height: 0 !important;
+                }
+            }
+        }
+    }
+}
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+}
+/* lg */
+@media (min-width: 1200px) {
+}

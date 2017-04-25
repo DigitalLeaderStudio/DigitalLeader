@@ -402,4 +402,7 @@
   <data name="Link_Short_Ukr" xml:space="preserve">
     <value>УКР</value>
   </data>
+  <data name="Blog_Subtitle" xml:space="preserve">
+    <value>company and industry news</value>
+  </data>
 </root>
