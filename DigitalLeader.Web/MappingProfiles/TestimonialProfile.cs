@@ -15,9 +15,18 @@
 				.ForMember(vm => vm.ClientImageID, opt => opt.MapFrom(x => x.Project.Client.ImageId))
 				.ForMember(vm => vm.ClientName, opt => opt.ResolveUsing(x =>
 				{
-					return string.Format("{0} {1}", x.Project.Client.FirstName, x.Project.Client.LastName);
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+
+					return string.Format("{0} {1}",
+						x.Project.Client.GetLocalized(c => c.FirstName, languageId),
+						x.Project.Client.GetLocalized(c => c.LastName, languageId));
 				}))
-				.ForMember(vm => vm.ClientTitle, opt => opt.MapFrom(x => x.Project.Client.Title))
+				.ForMember(vm => vm.ClientTitle, opt => opt.ResolveUsing(x =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+
+					return x.Project.Client.GetLocalized(c => c.Title, languageId);
+				}))
 				.ForMember(vm => vm.Text, opt => opt.ResolveUsing(x =>
 				{
 					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();

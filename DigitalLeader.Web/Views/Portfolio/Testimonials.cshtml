@@ -21,22 +21,26 @@
 			<div class="testimonial-item-sizer"></div>
 			<div class="testimonial-item-gutter-sizer"></div>
 			<div class="testimonial-item">
-				<div class="person">
-					@{
-						var srcAction = item.ClientImageID.HasValue ?
-											Url.Action("Show", "File", new { area = "", id = item.ClientImageID }) :
-											"/Content/img/default-user.png";
-					}
-					<img src="@srcAction" class="img-responsive" />
-					<h4>@item.ClientName</h4>
-					<h5>@item.ClientTitle</h5>
-				</div>
-				<p class="text">@item.Text</p>
-				<p class="project-link">
-					<a href="@Url.Action("Project", "Portfolio", new { id = item.ProjectID.Value })">@Translations.Testimonials_See_Project</a>
-				</p>
-			</div>
+				<div class="person-wrapper">
+					<div class="person">
+						@{
+							var srcAction = item.ClientImageID.HasValue ?
+												Url.Action("Show", "File", new { area = "", id = item.ClientImageID }) :
+												"/Content/img/default-user.png";
 						}
+						<img src="@srcAction" class="img-responsive" />
+						<div class="name-and-title">
+							<h4>@item.ClientName</h4>
+							<h5>@item.ClientTitle</h5>
+						</div>
+					</div>
+					<p class="text">@item.Text</p>
+					<p class="project-link">
+						<a href="@Url.Action("Project", "Portfolio", new { id = item.ProjectID.Value })">@Translations.Testimonials_See_Project</a>
+					</p>
+				</div>
+			</div>
+							}
 	</div>
 </div>
 
