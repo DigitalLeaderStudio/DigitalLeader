@@ -22,23 +22,26 @@
             <div class="testimonial-item-sizer"></div>
             <div class="testimonial-item-gutter-sizer"></div>
             <div class="testimonial-item">
-                <div class="person">
-                    @{
-                        var srcAction = item.Client.ImageId.HasValue ?
-                                                            Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
-                                                            "/Content/img/default-user.png";
-                    }
-                    <img src="@srcAction" class="img-responsive" />
-                    <div class="name-and-title">
-                        <h4>@item.Client.FirstName @item.Client.LastName</h4>
-                        <h5>@item.Client.Title</h5>
+                <div class="person-wrapper">
+                    <div class="person">
+                        @{
+                            var srcAction = item.Client.ImageId.HasValue ?
+                                                                Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
+                                                                "/Content/img/default-user.png";
+                        }
+                        <img src="@srcAction" class="img-responsive" />
+                        <div class="name-and-title">
+                            <h4>@item.Client.FirstName @item.Client.LastName</h4>
+                            <h5>@item.Client.Title</h5>
+                        </div>
                     </div>
+                    <p class="text">@item.Text</p>
+                    <p class="project-link">
+                        <a href="#">@Translations.Testimonials_See_Project</a>
+                    </p>
                 </div>
-                <p class="text">@item.Text</p>
-                <p class="project-link">
-                    <a href="#">@Translations.Testimonials_See_Project</a>
-                </p>
-            </div>}
+            </div>
+        }
     </div>
 </div>
 
