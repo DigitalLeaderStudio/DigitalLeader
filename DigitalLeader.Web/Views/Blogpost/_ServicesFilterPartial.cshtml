@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SelectListItem>
+
+
+@*remove it!*@
+<style>
+	.selected, .selected a {
+		color: red !important;
+	}
+</style>
+
+<ul class="services-filter">
+	<li>
+		<a href="@Url.Action("Index", "Blogpost")">all</a>
+	</li>
+	<hr />
+	@foreach (var srv in Model)
+	{
+		srv.Selected = srv.Value == Request.QueryString.Get("serviceId");
+		<li class="@(srv.Selected ? "selected" : "")">
+			<a href="@Url.Action("Index", "Blogpost", new { serviceId = srv.Value })">@srv.Text</a>
+		</li>
+	}
+</ul>
