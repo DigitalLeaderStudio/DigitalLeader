@@ -4,9 +4,8 @@
 	using System;
 	using System.Collections.Generic;
 	using System.ComponentModel.DataAnnotations;
-	using System.Web.Mvc;
 
-	public class TestimonialViewModel : ILocalizedModel<TestimonialViewModel.TestimonialLocalizedModel>
+	public class TestimonialWithProjectViewModel : ILocalizedModel<TestimonialWithProjectViewModel.TestimonialLocalizedModel>
 	{
 		#region Nested class
 
@@ -24,7 +23,7 @@
 
 		public IList<TestimonialLocalizedModel> Locales { get; set; }
 
-		public TestimonialViewModel()
+		public TestimonialWithProjectViewModel()
 		{
 			Locales = new List<TestimonialLocalizedModel>();
 		}
@@ -36,20 +35,12 @@
 		[DataType(DataType.MultilineText)]
 		public string Text { get; set; }
 
-		[Display(Name = "Client")]
-		public int? ClientID { get; set; }
+		public int? ClientImageID { get; set; }
 
-		public ClientViewModel Client { get; set; }
+		public string ClientName { get; set; }
 
-		[Display(Name = "Client")]
-		public List<SelectListItem> ClientsSelectList { get; set; }
+		public string ClientTitle { get; set; }
 
-		[Display(Name = "Project")]
 		public int? ProjectID { get; set; }
-
-		public ProjectViewModel Project { get; set; }
-
-		[Display(Name = "Project")]
-		public List<SelectListItem> ProjectsSelectList { get; set; }
 	}
 }

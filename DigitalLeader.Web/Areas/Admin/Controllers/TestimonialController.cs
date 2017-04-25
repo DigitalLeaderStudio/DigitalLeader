@@ -14,15 +14,18 @@
 	public class TestimonialController : BaseAdminController
 	{
 		private readonly IClientService _clientService;
+		private readonly IProjectService _projectService;
 		private readonly ITestimonialService _testimonialService;
 		private readonly ILocalizedEntityService _localizedEntityService;
 
 		public TestimonialController(
 			IClientService clientService,
+			IProjectService projectService,
 			ITestimonialService testimonialService,
 			ILocalizedEntityService localizedEntityService)
 		{
 			_clientService = clientService;
+			_projectService = projectService;
 			_testimonialService = testimonialService;
 			_localizedEntityService = localizedEntityService;
 		}
@@ -74,7 +77,8 @@
 				ModelState.AddModelError("", e.Message);
 			}
 
-			viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
+			//viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
+			viewModel.ProjectsSelectList = Mapper.Map<List<Project>, List<SelectListItem>>(_projectService.GetAll());
 
 			return View(viewModel);
 		}
@@ -84,7 +88,7 @@
 		{
 			var entity = _testimonialService.GetById(id);
 			var viewModel = Mapper.Map<Testimonial, TestimonialViewModel>(entity);
-			viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
+			viewModel.ProjectsSelectList = Mapper.Map<List<Project>, List<SelectListItem>>(_projectService.GetAll());
 
 			AddLocales(viewModel.Locales, (locale, languageId) =>
 			{
@@ -118,6 +122,7 @@
 			{
 				ModelState.AddModelError("", e.Message);
 			}
+
 			viewModel.ClientsSelectList = Mapper.Map<List<Client>, List<SelectListItem>>(_clientService.GetAll());
 
 			return View(viewModel);

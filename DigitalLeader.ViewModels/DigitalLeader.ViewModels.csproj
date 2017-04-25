@@ -110,6 +110,7 @@
     <Compile Include="ServiceSubcategoryViewModel .cs" />
     <Compile Include="ServiceViewModel.cs" />
     <Compile Include="TechnologyViewModel.cs" />
+    <Compile Include="TestimonialWithProjectViewModel.cs" />
     <Compile Include="TestimonialViewModel.cs" />
     <Compile Include="UserViewModel.cs" />
     <Compile Include="VacancyViewModel.cs" />

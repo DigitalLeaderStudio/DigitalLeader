@@ -7,11 +7,24 @@
 	using DigitalLeader.Web.Extensions;
 	using System.Linq;
 	using System.Web;
+	using System.Web.Mvc;
 
 	public class ProjectProfile : Profile
 	{
 		public ProjectProfile()
 		{
+			CreateMap<Project, SelectListItem>().ConvertUsing(
+				(src, target) =>
+				{
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
+
+					return new SelectListItem
+					{
+						Text = src.GetLocalized(x => x.Title, languageId),
+						Value = src.ID.ToString()
+					};
+				});
+
 			CreateMap<Project, ProjectViewModel>()
 				.ForMember(vm => vm.Client, opt => opt.ResolveUsing(e =>
 				{

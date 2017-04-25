@@ -35,14 +35,14 @@
 			</div>
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.ClientsSelectList, new { @class = "control-label col-md-2" })
+				@Html.LabelFor(m => m.ProjectsSelectList, new { @class = "control-label col-md-2" })
 				<div class="col-md-6">
-					@Html.DropDownListFor(m => m.ClientID, Model.ClientsSelectList,
+					@Html.DropDownListFor(m => m.ProjectID, Model.ProjectsSelectList,
 					new { @class = "form-control chosen-select", data_placeholder = "Chose a client" })
 				</div>
 
 				<div class="col-md-4">
-					<a href="@Url.Action("Index", "Service", new { area = "Admin"})" ta target="_blank">Edit services</a>
+					<a href="@Url.Action("Index", "Project", new { area = "Admin"})" ta target="_blank">Edit projects</a>
 				</div>
 			</div>
 
