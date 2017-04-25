@@ -1,9 +1,9 @@
-﻿@model IEnumerable<DigitalLeader.ViewModels.TestimonialViewModel>
+﻿@model IEnumerable<DigitalLeader.ViewModels.TestimonialWithProjectViewModel>
 @using DigitalLeader.Web.Localization
 
 @{
-    ViewBag.Title = Html.Title(Translations.Testimonials_Title_Name);
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = Html.Title(Translations.Testimonials_Title_Name);
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @Scripts.Render("~/bundles/masonry")
@@ -23,17 +23,17 @@
 			<div class="testimonial-item">
 				<div class="person">
 					@{
-						var srcAction = item.Client.ImageId.HasValue ?
-											Url.Action("Show", "File", new { area = "", id = item.Client.ImageId }) :
+						var srcAction = item.ClientImageID.HasValue ?
+											Url.Action("Show", "File", new { area = "", id = item.ClientImageID }) :
 											"/Content/img/default-user.png";
 					}
 					<img src="@srcAction" class="img-responsive" />
-					<h4>@item.Client.FirstName @item.Client.LastName</h4>
-					<h5>@item.Client.Title</h5>
+					<h4>@item.ClientName</h4>
+					<h5>@item.ClientTitle</h5>
 				</div>
 				<p class="text">@item.Text</p>
 				<p class="project-link">
-					<a href="#">@Translations.Testimonials_See_Project</a>
+					<a href="@Url.Action("Project", "Portfolio", new { id = item.ProjectID.Value })">@Translations.Testimonials_See_Project</a>
 				</p>
 			</div>
 						}

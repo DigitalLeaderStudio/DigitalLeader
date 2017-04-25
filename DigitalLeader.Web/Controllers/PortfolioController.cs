@@ -28,7 +28,7 @@
 		[Route("Portfolio/Testimonials")]
 		public ActionResult Testimonials()
 		{
-			var viewModel = Mapper.Map<List<Testimonial>, List<TestimonialViewModel>>(_testimonialService.GetAll());
+			var viewModel = Mapper.Map<List<Testimonial>, List<TestimonialWithProjectViewModel>>(_testimonialService.GetAll());
 
 			return View(viewModel);
 		}
@@ -50,17 +50,17 @@
 			return View(viewModel);
 		}
 
-        [Route("Portfolio/Clients")]
-        public ActionResult Clients()
-        {
-            var projects = _projectService.GetAll();
+		[Route("Portfolio/Clients")]
+		public ActionResult Clients()
+		{
+			var projects = _projectService.GetAll();
 
-            var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(projects);
+			var viewModel = Mapper.Map<List<Project>, List<ProjectViewModel>>(projects);
 
-            return View(viewModel);
-        }
+			return View(viewModel);
+		}
 
-        [Route("Portfolio/Project/{id}")]
+		[Route("Portfolio/Project/{id}")]
 		public ActionResult Project(int id)
 		{
 			var viewModel = Mapper.Map<Project, ProjectViewModel>(_projectService.GetById(id));

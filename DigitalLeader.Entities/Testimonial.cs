@@ -1,7 +1,6 @@
 ﻿namespace DigitalLeader.Entities
 {
 	using DigitalLeader.Entities.Attributes;
-	using DigitalLeader.Entities.Identity;
 	using DigitalLeader.Entities.Interfaces;
 	using System;
 	using System.ComponentModel.DataAnnotations;
@@ -17,9 +16,9 @@
 
 		[LocalizedProperty]
 		public string Text { get; set; }
+				
+		public int? ProjectID { get; set; }
 
-		public int? ClientID { get; set; }
-
-		public virtual Client Client { get; set; }
+		public virtual Project Project { get; set; }
 	}
 }
