@@ -217,7 +217,7 @@
     <value>Запросити оцінку</value>
   </data>
   <data name="HomepageCTA" xml:space="preserve">
-    <value>Оновимо ваш бізнес</value>
+    <value>Оновимо ваш бізнес?</value>
   </data>
   <data name="Homepage_ContactRequest_Email" xml:space="preserve">
     <value>Електронна адреса</value>
