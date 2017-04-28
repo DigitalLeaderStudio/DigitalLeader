@@ -196,6 +196,24 @@ namespace DigitalLeader.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All categories.
+        /// </summary>
+        public static string Categories_All_Caption {
+            get {
+                return ResourceManager.GetString("Categories_All_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string Categories_Title {
+            get {
+                return ResourceManager.GetString("Categories_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to These companies trust us.
         /// </summary>
         public static string Clients_Subtitle {

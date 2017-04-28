@@ -58,11 +58,13 @@
 
 		public bool IsPublished { get; set; }
 
-		//public int AuthorId { get; set; }
+		public int AuthorId { get; set; }
 
-		//public virtual User Author { get; set; }
+		public virtual UserViewModel Author { get; set; }
 
 		public int ServiceId { get; set; }
+
+		public virtual ServiceViewModel Service { get; set; }
 
 		[Display(Name = "Service")]
 		public List<SelectListItem> ServicesSelectList { get; set; }

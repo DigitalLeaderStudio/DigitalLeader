@@ -30,6 +30,7 @@ namespace DigitalLeader.ViewModels
 		public UserViewModel()
 		{
 			Locales = new List<UserLocalizedModel>();
+			Technologies = new List<TechnologyViewModel>();
 		}
 
 		public int Id { get; set; }

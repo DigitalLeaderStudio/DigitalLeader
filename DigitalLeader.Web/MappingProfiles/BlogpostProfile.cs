@@ -23,6 +23,7 @@
 				});
 
 			CreateMap<Blogpost, BlogpostViewModel>()
+				.ForMember(vm => vm.Author, opt => opt.MapFrom(x => x.Author))				
 				.ForMember(vm => vm.Title, opt => opt.ResolveUsing(x =>
 				{
 					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();

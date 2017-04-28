@@ -26,6 +26,7 @@
 				return new Expression<Func<Blogpost, object>>[]
 				{
 					blogpost => blogpost.Author,
+					blogpost => blogpost.Author.Technologies,
 					blogpost => blogpost.Service
 				};
 			}

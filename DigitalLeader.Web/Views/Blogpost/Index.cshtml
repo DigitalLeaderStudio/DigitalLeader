@@ -1,69 +1,66 @@
 ﻿@model IEnumerable<DigitalLeader.ViewModels.BlogpostViewModel>
 @{
-    ViewBag.Title = "Blog";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Blog";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container-fluid resources blog">
-    <div class="row header clearfix">
-        <div>
-            <h1>@Translations.LinkBlog</h1>
-            <h2>@Translations.Blog_Subtitle</h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 blog-list">
-                @foreach (var post in Model)
-                {
-                    <div class="blogpost-item">
-                        <h2>
-                            <a href="@Url.Action("Details", "Blogpost", new { id = post.ID })">@post.Title</a>
-                        </h2>
-                        <h5></h5>
-                        <div class="post-description">
-                            dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </div>
-                        <div class="post-info">
-                            <div>
-                                <div class="info-item">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    @String.Format("{0:MMMM d, yyyy}", post.PublishedDate)
-                                </div>
-                                <div class="separator"></div>
-                            </div>
-                            <div>
-                                <div class="info-item">
-                                    <i class="fa fa-align-left" aria-hidden="true"></i> Web applications
-                                </div>
-                                <div class="separator"></div>
-                            </div>
-                            <div>
-                                <div class="info-item">
-                                    <i class="fa fa-user" aria-hidden="true"></i> Serhii Kalaida
-                                </div>
-                                <div class="separator"></div>
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-            <div class="col-md-3 blog-aside">
-                <div class="filter-wrapper">
-                    <h3>Categories</h3>
-                    @Html.Action("_ServicesFilterPartial")
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row header clearfix">
+		<div>
+			<h1>@Translations.LinkBlog</h1>
+			<h2>@Translations.Blog_Subtitle</h2>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 blog-list">
+				@foreach (var post in Model)
+				{
+					<div class="blogpost-item">
+						<h2>
+							<a href="@Url.Action("Details", "Blogpost", new { id = post.ID })">@post.Title</a>
+						</h2>
+						<h5></h5>
+						<div class="post-description">
+							@post.Overview
+						</div>
+						<div class="post-info">
+							<div>
+								<div class="info-item">
+									<i class="fa fa-clock-o" aria-hidden="true"></i>
+									@String.Format("{0:MMMM d, yyyy}", post.PublishedDate)
+								</div>
+								<div class="separator"></div>
+							</div>
+							<div>
+								<div class="info-item">
+									<i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;@post.Service.Title
+								</div>
+								<div class="separator"></div>
+							</div>
+							<div>
+								<div class="info-item">
+									<i class="fa fa-user" aria-hidden="true"></i>&nbsp;@post.Author.UserName
+								</div>
+								<div class="separator"></div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+			<div class="col-md-3 blog-aside">
+				@Html.Action("_ServicesFilterPartial")
+			</div>
+		</div>
+	</div>
 </div>
 
 @*String[] tags = post.Keywords.Split(' ');
-    <h5>
-        @foreach (String tag in tags)
-        {
-            <span class="label label-info">
-                @tag
-            </span>
-        }
-    </h5>*@
+	<h5>
+		@foreach (String tag in tags)
+		{
+			<span class="label label-info">
+				@tag
+			</span>
+		}
+	</h5>*@
