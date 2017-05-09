@@ -405,4 +405,10 @@
   <data name="Blog_Subtitle" xml:space="preserve">
     <value>company and industry news</value>
   </data>
+  <data name="Categories_All_Caption" xml:space="preserve">
+    <value>All categories</value>
+  </data>
+  <data name="Categories_Title" xml:space="preserve">
+    <value>Categories</value>
+  </data>
 </root>

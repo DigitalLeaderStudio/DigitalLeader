@@ -30,7 +30,7 @@
 				_blogpostService.GetAll();
 
 			var viewModel = Mapper.Map<List<Blogpost>, List<BlogpostViewModel>>(entities);
-
+			
 			return View(viewModel);
 		}
 

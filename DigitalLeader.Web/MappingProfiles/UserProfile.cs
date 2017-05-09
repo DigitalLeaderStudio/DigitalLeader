@@ -17,7 +17,7 @@
 			CreateMap<User, SelectListItem>().ConvertUsing(
 				(src, target) =>
 				{
-					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();					
+					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
 					return new SelectListItem
 					{
 						Text = src.GetLocalized(x => x.UserName, languageId),
@@ -41,8 +41,9 @@
 					var languageId = HttpContext.Current.Request.RequestContext.CurrectLanguageId();
 					return x.GetLocalized(item => item.UserName, languageId);
 				}))
-				.ForMember(vm => vm.ImageId, opt => opt.MapFrom(user => user.ImageId))
+				.ForMember(vm => vm.ImageId, opt => opt.MapFrom(user => user.ImageId))								
 				.ForMember(vm => vm.TechnologiesIds, opt => opt.MapFrom(item => item.Technologies.Select(t => t.ID).ToArray()));
+
 
 			CreateMap<UserViewModel, User>()
 				.AfterMap((vm, entity) =>
