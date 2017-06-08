@@ -131,12 +131,42 @@
 			return RedirectToAction("Index");
 		}
 
-		// GET: Admin/User/Details
-		public ActionResult Details(int id)
+		// GET: Admin/User/Delete
+		public ActionResult Delete(int id)
 		{
 			var viewModel = Mapper.Map<User, UserViewModel>(_userService.GetById(id));
 
 			return View(viewModel);
 		}
+		// POST: Admin/User/Delete
+		[HttpPost]
+		public ActionResult Delete(UserViewModel viewModel)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+					var entity = Mapper.Map<UserViewModel, User>(viewModel);
+
+					_userService.Delete(entity);
+
+					return RedirectToAction("Index");
+				}
+			}
+			catch (Exception e)
+			{
+				ModelState.AddModelError("", e.Message);
+			}
+
+			return View(viewModel);
+		}
+
+		// GET: Admin/User/Details
+		public ActionResult Details(int id)
+{
+	var viewModel = Mapper.Map<User, UserViewModel>(_userService.GetById(id));
+
+	return View(viewModel);
+}
 	}
 }

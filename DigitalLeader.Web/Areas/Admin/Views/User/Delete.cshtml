@@ -1,11 +1,11 @@
-﻿@model DigitalLeader.ViewModels.ClientViewModel
+﻿@model DigitalLeader.ViewModels.UserViewModel
 
 @{
 	ViewBag.Title = "Delete";
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-center">Delete client</h2>
+<h2 class="text-center">Delete user</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <hr />
@@ -13,27 +13,27 @@
     <dl class="dl-horizontal">
 
         <dt>
-            @Html.DisplayNameFor(model => model.Company)
+			@Html.DisplayNameFor(model => model.UserName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Company)
+            @Html.DisplayFor(model => model.UserName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.Email)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.Biography)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => model.Biography)
         </dd>
 
         <dt>
@@ -45,11 +45,14 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.JoinDate)
+            @Html.DisplayNameFor(model => model.Technologies)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.JoinDate)
+           @foreach (var tech in Model.Technologies)
+		   {
+			<p>@tech.Name</p>
+		   }
         </dd>
 
     </dl>

@@ -26,7 +26,7 @@
 			{
 				return new Expression<Func<User, object>>[]
 				{
-					user => user.Image,					
+					user => user.Image,
 					user => user.Services,
 					user => user.Blogposts,
 					user => user.Technologies,
@@ -141,7 +141,19 @@
 
 		public void Delete(User value)
 		{
-			throw new NotImplementedException();
+			using (var scope = _dbContextScopeFactory.Create())
+			{
+				var dbContext = scope.DbContexts
+					.Get<ApplicationDbContext>();
+
+				var existed = dbContext.Users.Find(value.ID);
+
+
+				dbContext.Set<User>().Remove(existed);
+
+				scope.SaveChanges();
+
+			}
 		}
 	}
 }
